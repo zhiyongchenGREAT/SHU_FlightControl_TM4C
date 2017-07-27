@@ -1,0 +1,1 @@
+#include "sensorsettings.h"
