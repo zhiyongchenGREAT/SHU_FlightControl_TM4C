@@ -45,6 +45,10 @@
         <FreqHi>0</FreqHi>
         <MultiCoreRunAll>1</MultiCoreRunAll>
     </Simulator>
+    <JLinkDriver>
+        <CStepIntDis>_ 0</CStepIntDis>
+        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
+    </JLinkDriver>
     <DisassembleMode>
         <mode>0</mode>
     </DisassembleMode>
@@ -55,8 +59,4 @@
         <Count>0</Count>
         <SuppressDialog>0</SuppressDialog>
     </Aliases>
-    <JLinkDriver>
-        <CStepIntDis>_ 0</CStepIntDis>
-        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
-    </JLinkDriver>
 </settings>
