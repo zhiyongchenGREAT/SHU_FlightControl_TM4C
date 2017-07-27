@@ -23,9 +23,9 @@ param([String]$debugfile = "");
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\victo\Desktop\SHU_FlightControl_TM4C\Project_Files\settings\Project.Debug.general.xcl" --backend -f "C:\Users\victo\Desktop\SHU_FlightControl_TM4C\Project_Files\settings\Project.Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\settings\Project.Debug.general.xcl" --backend -f "C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\settings\Project.Debug.driver.xcl" 
 }
 else
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\victo\Desktop\SHU_FlightControl_TM4C\Project_Files\settings\Project.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\victo\Desktop\SHU_FlightControl_TM4C\Project_Files\settings\Project.Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\settings\Project.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\settings\Project.Debug.driver.xcl" 
 }

@@ -57,7 +57,7 @@
 
 
                                                             /* ------------------- STATISTIC TASK ------------------- */
-#define  OS_CFG_STAT_TASK_PRIO            11u               /* Priority                                               */
+#define  OS_CFG_STAT_TASK_PRIO            30u               /* Priority                                               */
 #define  OS_CFG_STAT_TASK_RATE_HZ         10u               /* Rate of execution (1 to 10 Hz)                         */
 #define  OS_CFG_STAT_TASK_STK_SIZE       100u               /* Stack size (number of CPU_STK elements)                */
 
@@ -69,7 +69,7 @@
 
 
                                                             /* ----------------------- TIMERS ----------------------- */
-#define  OS_CFG_TMR_TASK_PRIO             11u               /* Priority of 'Timer Task'                               */
+#define  OS_CFG_TMR_TASK_PRIO             2u                /* Priority of 'Timer Task'                               */
 #define  OS_CFG_TMR_TASK_RATE_HZ          10u               /* Rate for timers (10 Hz Typ.)                           */
 #define  OS_CFG_TMR_TASK_STK_SIZE        100u               /* Stack size (number of CPU_STK elements)                */
 
