@@ -34,7 +34,6 @@ uint16 ddd;
 uint32 autostart_count=0;
 uint8 Uart6Date;
 
-
 /******************************************************************************/
 OS_MUTEX FLOW_MUTEX;
 
@@ -101,7 +100,8 @@ void PIT_IRQHandler(void)
 */ 
 void flight_routine_task(void *p_arg)
 {
-  OS_ERR err; 
+  OS_ERR err;
+
   p_arg = p_arg;
   CPU_TS ts;
   CPU_SR_ALLOC();
@@ -109,9 +109,11 @@ void flight_routine_task(void *p_arg)
   while(DEF_TRUE)
   {    
 //    CPU_CRITICAL_ENTER();
-
-    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
+    t_tim0_cnt = TimerValueGet(TIMER0_BASE, TIMER_A);
     
+    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
+
+    t_tim0_cnt = TimerValueGet(TIMER0_BASE, TIMER_A);
 //    OSSchedLock(&err);
 //    mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);
     

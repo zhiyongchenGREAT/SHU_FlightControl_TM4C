@@ -52,7 +52,7 @@
 #include "core_uart.h"
 #include "core_camera.h"
 #include "core_autopilot.h"
-
+#include "core_t_timer.h"
 /*
 ************************************************************************************************************************
 *                                               Start task

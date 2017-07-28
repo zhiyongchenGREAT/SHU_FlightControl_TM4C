@@ -31,18 +31,18 @@ void uart_init(uint32 band,void (*pfnHandler)(void))
 void tim1_init(void (*pfnHandler)(void))
 {
     
-          uint32_t ui32Period=0; 
-	  SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);
-	  TimerConfigure(TIMER1_BASE, TIMER_CFG_PERIODIC);
-
-		ui32Period = ROM_SysCtlClockGet()/400;                   //400hz
-		TimerLoadSet(TIMER1_BASE, TIMER_A, ui32Period -1);
-
-		IntRegister(INT_TIMER1A,pfnHandler);
-		IntEnable(INT_TIMER1A);
-		TimerIntEnable(TIMER1_BASE, TIMER_TIMA_TIMEOUT);
-
-		TimerEnable(TIMER1_BASE, TIMER_A);
+  uint32_t ui32Period=0; 
+  SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);
+  TimerConfigure(TIMER1_BASE, TIMER_CFG_PERIODIC);
+  
+  ui32Period = ROM_SysCtlClockGet()/400;                   //400hz
+  TimerLoadSet(TIMER1_BASE, TIMER_A, ui32Period -1);
+  
+  IntRegister(INT_TIMER1A, pfnHandler);
+  IntEnable(INT_TIMER1A);
+  TimerIntEnable(TIMER1_BASE, TIMER_TIMA_TIMEOUT);
+  
+  TimerEnable(TIMER1_BASE, TIMER_A);
 }
 
 void pwm_init(void)

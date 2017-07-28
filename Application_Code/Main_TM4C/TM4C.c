@@ -342,6 +342,10 @@ static void FlightAPPInit(CPU_INT08U set)
   
   tim1_init(PIT_IRQHandler);
 
+/* Only for test purpose whenever time-consuming mesurment is needed              */
+  
+  testpurpose_tim0_init();
+
   Camera_init();
   
   IntPriorityGroupingSet(3);  

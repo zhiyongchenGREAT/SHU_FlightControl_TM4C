@@ -20,7 +20,7 @@
 
 "--jlink_initial_speed=1000" 
 
-"--jlink_reset_strategy=0,0" 
+"--jlink_reset_strategy=0,8" 
 
 "--drv_interface=SWD" 
 
