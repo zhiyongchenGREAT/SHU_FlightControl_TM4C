@@ -890,7 +890,7 @@
             <IarPane-34099>
                 <expressions>
                     <item>OSStatTaskCPUUsage</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
@@ -1074,7 +1074,7 @@
             <IarPane-34111>
                 <expressions>
                     <item>CPUUsage</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
