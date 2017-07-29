@@ -109,7 +109,6 @@ void flight_routine_task(void *p_arg)
   while(DEF_TRUE)
   {    
 //    CPU_CRITICAL_ENTER();
-    t_tim0_cnt = TimerValueGet(TIMER0_BASE, TIMER_A);
     
     OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
 
@@ -179,6 +178,8 @@ void flight_routine_task(void *p_arg)
     mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);
 //    CPU_CRITICAL_EXIT();
 //    OSTimeDlyHMSM(0,0,0,1,OS_OPT_TIME_HMSM_STRICT,&err);
+
+    t_tim0_cnt = TimerValueGet(TIMER0_BASE, TIMER_A);
   }
 }
 

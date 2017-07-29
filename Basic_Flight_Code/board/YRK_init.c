@@ -42,6 +42,8 @@ void tim1_init(void (*pfnHandler)(void))
   IntEnable(INT_TIMER1A);
   TimerIntEnable(TIMER1_BASE, TIMER_TIMA_TIMEOUT);
   
+  TimerControlStall(TIMER1_BASE, TIMER_BOTH, true);
+  
   TimerEnable(TIMER1_BASE, TIMER_A);
 }
 
