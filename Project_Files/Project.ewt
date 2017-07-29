@@ -2346,67 +2346,67 @@
                 <group>
                     <name>Data</name>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\acceldesired.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\acceldesired.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\accels.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\accels.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\accessorydesired.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\accessorydesired.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\actuatorcommand.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\actuatorcommand.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\actuatordesired.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\actuatordesired.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\attitudeactual.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\attitudeactual.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\attitudesensor.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\attitudesensor.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\flightbatterystate.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\flightbatterystate.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\flightstatus.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\flightstatus.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\gyros.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\gyros.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\gyrosbias.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\gyrosbias.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\manualcontrolcommand.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\manualcontrolcommand.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\mixerstatus.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\mixerstatus.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\nrf_data.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\nrf_data.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\ratedesired.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\ratedesired.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\relaytuning.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\relaytuning.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\stabilizationdesired.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\stabilizationdesired.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\state_struct.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\state_struct.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\timestamp.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\timestamp.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\trimangles.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\trimangles.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\uart_data.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Data\uart_data.h</name>
                     </file>
                 </group>
                 <group>
@@ -2510,7 +2510,7 @@
                 <name>$PROJ_DIR$\..\Basic_Flight_Code\board\core_uartstdio.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\Basic_Flight_Code\board\include.h</name>
+                <name>$PROJ_DIR$\..\Basic_Flight_Code\board\device_includes.h</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\..\Basic_Flight_Code\board\KS103.c</name>

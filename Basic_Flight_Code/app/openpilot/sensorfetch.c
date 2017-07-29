@@ -28,7 +28,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
 #include "sensorfetch.h"
-#include "include.h"
+#include <device_includes.h>
 
 
 #include "physical_constants.h"

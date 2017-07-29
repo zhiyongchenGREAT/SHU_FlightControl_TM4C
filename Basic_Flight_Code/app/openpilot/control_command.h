@@ -3,7 +3,7 @@
 #include <core_common.h>
 #include "data_common.h"
 #include "param_common.h"
-#include "include.h"
+#include <device_includes.h>
 //void AttitudeInitialize();
 void command_handler();
 

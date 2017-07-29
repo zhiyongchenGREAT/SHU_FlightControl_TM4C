@@ -34,6 +34,8 @@
 
 #include <board_includes.h>
 #include <OS_includes.h>
+#include <core_common.h>
+#include <device_includes.h>
 
 #include "data_common.h"
 #include "param_common.h"
@@ -45,8 +47,7 @@
 #include "PX4Flow.h"
 #include "KS103.h"
 
-#include <core_common.h>
-#include "include.h"
+
 #include "flight_routine.h"
 
 #include "core_uart.h"

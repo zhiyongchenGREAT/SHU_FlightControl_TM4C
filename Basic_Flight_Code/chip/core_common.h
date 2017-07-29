@@ -5,7 +5,7 @@
 *                                              
 * File    : core_common.h
 * By      : Bicbrv
-* Note    : APP level dec & hard delay
+* Note    : APP level declr & hard delay
 *
 * TERMS OF USE:
 * ---------------

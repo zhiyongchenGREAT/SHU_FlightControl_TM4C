@@ -1,5 +1,5 @@
 #include "mixer.h"
-#include "include.h"
+#include <device_includes.h>
 #include "motor_control.h"
 extern float cos_lookup_deg(float angle);
 void mixing(_Bool armed)

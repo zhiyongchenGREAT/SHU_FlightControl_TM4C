@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.11.1.13263/W32 for ARM                29/Jul/2017  19:41:39
+# IAR ELF Linker V8.11.1.13263/W32 for ARM                29/Jul/2017  21:52:17
 # Copyright 2007-2017 IAR Systems AB.
 #
 #    Output file  =  
@@ -8,17 +8,10 @@
 #    Map file     =  
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\List\Project.map
 #    Command line =  
-#        -f C:\Users\victo\AppData\Local\Temp\EW9AA6.tmp
-#        (C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\acceldesired.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\accels.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\accessorydesired.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\actuatorcommand.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\actuatordesired.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\actuatorsettings.o
+#        -f C:\Users\victo\AppData\Local\Temp\EW343F.tmp
+#        (C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\actuatorsettings.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\adc.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\atmospheric_math.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\attitudeactual.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\attitudesensor.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\attitudesettings.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\attitudesolving.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\bsp.o
@@ -45,12 +38,8 @@
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\eepromqsj.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\flash.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\flight_routine.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\flightbatterystate.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\flightstatus.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\fpu.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\gpio.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\gyros.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\gyrosbias.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\hibernate.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\hold.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\i2c.o
@@ -61,16 +50,13 @@
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\lib_mem.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\lib_mem_a.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\lib_str.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\manualcontrolcommand.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\manualcontrolsettings.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\misc_math.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\mixer.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\mixersettings.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\mixerstatus.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\motor_control.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\motorsettings.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\mpu.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\nrf_data.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_app_hooks.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_cfg_app.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_core.o
@@ -98,30 +84,23 @@
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\pwm.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\PX4Flow.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\qei.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\ratedesired.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\relay_tuning.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\relaytuning.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\relaytuningsettings.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sensorfetch.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sensorsettings.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sin_lookup.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\ssi.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\stabilization.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\stabilizationdesired.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\stabilizationsettings.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\startup_ewarm.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\state_struct.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sw_crc.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sysctl.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sysexc.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\systemsettings.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\systick.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\timer.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\timestamp.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\TM4C.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\trimangles.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\uart.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\uart_data.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\udma.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\usb.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\virtualflybar.o
