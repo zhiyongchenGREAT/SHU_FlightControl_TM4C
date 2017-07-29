@@ -1,6 +1,6 @@
 #ifndef MANUALCONTROLSETTINGS_H
 #define MANUALCONTROLSETTINGS_H
-#include "common.h"
+#include <core_common.h>
     enum ChannelGroups
     {
       MANUALCONTROLSETTINGS_CHANNELGROUPS_THROTTLE, 

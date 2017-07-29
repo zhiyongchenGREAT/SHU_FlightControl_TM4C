@@ -890,7 +890,7 @@
             <IarPane-34099>
                 <expressions>
                     <item>t_tim0_cnt</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

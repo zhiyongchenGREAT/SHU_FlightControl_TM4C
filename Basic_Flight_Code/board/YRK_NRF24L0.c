@@ -14,7 +14,7 @@
 * @date       2014-01-04
 */
 
-#include "common.h"
+#include <core_common.h>
 //#include "MKL_port.h"
 //#include "MKL_gpio.h"
 //#include "MKL_spi.h"

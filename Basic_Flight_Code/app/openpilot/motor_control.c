@@ -1,5 +1,5 @@
 #include "motor_control.h"
-#include "common.h"
+#include <core_common.h>
 //#include "MKL_TPM.h"
 #include "inc/hw_gpio.h"
 #include "inc/hw_memmap.h"

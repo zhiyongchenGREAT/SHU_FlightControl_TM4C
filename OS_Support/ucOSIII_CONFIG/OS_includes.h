@@ -19,9 +19,9 @@
 *                                       IAR Development Kits
 *                                              on the
 *
-*                                    STM32F429II-SK KICKSTART KIT
+*                                    
 *
-* Filename      : includes.h
+* Filename      : OS_includes.h
 * Version       : V1.00
 * Programmer(s) : FT
 *********************************************************************************************************

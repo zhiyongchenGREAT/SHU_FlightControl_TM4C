@@ -1,6 +1,6 @@
 #ifndef ATTITUDE_SENSOR_H
 #define ATTITUDE_SENSOR_H
-#include "common.h"
+#include <core_common.h>
 struct AttitudeSensorData
 {
     float G_X;

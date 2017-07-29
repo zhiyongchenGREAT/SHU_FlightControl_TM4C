@@ -1,4 +1,4 @@
-#include "common.h"
+#include <core_common.h>
 //#include "MKL_gpio.h"
 //#include "MKL_i2c.h"
 #include "YRK_LED.h"

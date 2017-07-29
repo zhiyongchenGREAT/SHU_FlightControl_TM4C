@@ -1,7 +1,7 @@
 #ifndef _KS103_H
 #define _KS103_H
 
-#include "common.h"
+#include <core_common.h>
 
 //#define PI 3.1416
 #define     KS103_SOFT_DEVICE          I2C3        //定义ks103 所用的接口 为 I2C3

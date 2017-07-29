@@ -1,4 +1,4 @@
-#include "common.h"
+#include <core_common.h>
 #include "include.h"
 #include "uart_data.h"
 //struct ManualControl manualControl;

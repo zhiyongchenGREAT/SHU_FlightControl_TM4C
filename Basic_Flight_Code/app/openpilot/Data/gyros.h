@@ -1,6 +1,6 @@
 #ifndef GYROS_H
 #define GYROS_H
-#include "common.h"
+#include <core_common.h>
 struct GyrosData
 {
     float x;

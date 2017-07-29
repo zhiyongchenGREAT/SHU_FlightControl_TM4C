@@ -1,10 +1,10 @@
 #ifndef __CORE_UART_H__
 #define __CORE_UART_H__
 
-#include "common.h"
-#include "chiplevel_includes.h"
+#include <core_common.h>
+#include <board_includes.h>
 #include "TM4C.h"
-#include <includes.h>
+#include <OS_includes.h>
 #include <core_uartstdio.h>
 
 #define UART1_REC_LEN  			200

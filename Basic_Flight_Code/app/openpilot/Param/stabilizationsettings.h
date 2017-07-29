@@ -1,6 +1,6 @@
 #ifndef STABILIZATIONSETTINGS_H
 #define STABILIZATIONSETTINGS_H
-#include "common.h"
+#include <core_common.h>
 
 struct StabilizationSettingsData
 {

@@ -1,6 +1,6 @@
 #ifndef SYSTEMSETTINGS_H
 #define SYSTEMSETTINGS_H
-#include "common.h"
+#include <core_common.h>
 struct SystemSettingsData
 {
     enum AirframeType

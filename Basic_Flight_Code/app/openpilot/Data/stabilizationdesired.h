@@ -1,6 +1,6 @@
 #ifndef STABILIZATIONDESIRED_H
 #define STABILIZATIONDESIRED_H
-#include "common.h"
+#include <core_common.h>
 struct StabilizationDesiredData
 {
     float Roll;

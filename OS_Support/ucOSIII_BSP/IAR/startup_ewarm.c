@@ -24,8 +24,7 @@
 //*****************************************************************************
 
 #include <stdint.h>
-#include <includes.h>
-#include "chiplevel_includes.h"
+#include <OS_includes.h>
 #include "inc/hw_nvic.h"
 #include "inc/hw_types.h"
 

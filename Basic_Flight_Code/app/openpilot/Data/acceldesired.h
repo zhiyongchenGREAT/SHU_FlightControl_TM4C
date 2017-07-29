@@ -1,6 +1,6 @@
 #ifndef ACCELDESIRED_H
 #define ACCELDESIRED_H
-#include "common.h"
+#include <core_common.h>
 struct AccelDesiredData
 {
     float North;

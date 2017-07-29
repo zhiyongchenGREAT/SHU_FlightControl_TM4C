@@ -1,6 +1,6 @@
 #ifndef SENSORSETTINGS_H
 #define SENSORSETTINGS_H
-#include "common.h"
+#include <core_common.h>
 #define SENSORSETTINGS_GYROSCALE_X 0
 #define SENSORSETTINGS_GYROSCALE_Y 1
 #define SENSORSETTINGS_GYROSCALE_Z 2

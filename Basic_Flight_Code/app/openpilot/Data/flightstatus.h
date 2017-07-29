@@ -1,6 +1,6 @@
 #ifndef FLIGHTSTATUS_H
 #define FLIGHTSTATUS_H
-#include "common.h"
+#include <core_common.h>
 struct FlightStatusData
 {
     enum Armed

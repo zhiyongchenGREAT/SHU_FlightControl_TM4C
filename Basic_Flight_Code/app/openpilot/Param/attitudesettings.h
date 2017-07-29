@@ -1,6 +1,6 @@
 #ifndef ATTITUDESETTINGS_H
 #define ATTITUDESETTINGS_H
-#include "common.h"
+#include <core_common.h>
 struct AttitudeSettingsData
 {
     int16 BoardRotation[3];

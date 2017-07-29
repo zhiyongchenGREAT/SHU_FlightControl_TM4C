@@ -32,7 +32,7 @@
 #ifndef VIRTUALFLYBAR_H
 #define VIRTUALFLYBAR_H
 
-#include "common.h"
+#include <core_common.h>
 #include "data_common.h"
 #include "param_common.h"
 #include "pid.h"

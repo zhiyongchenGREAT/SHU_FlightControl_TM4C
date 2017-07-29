@@ -32,7 +32,7 @@
 #ifndef RELAY_TUNING_H
 #define RELAY_TUNING_H
 
-#include "common.h"
+#include <core_common.h>
 #include "data_common.h"
 #include "param_common.h"
 

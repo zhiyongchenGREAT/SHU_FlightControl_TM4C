@@ -1,4 +1,4 @@
-#include "common.h"
+#include <core_common.h>
 #include "include.h"
 //#include "IRQ_handler.h"
 #include "flight_routine.h"
@@ -18,7 +18,7 @@
 #include "KS103.h"
 #include "TM4C.h"
 
-#include "includes.h"
+
 /*!
 *  @brief      PIT0中断服务函数
 *  @since      v5.0

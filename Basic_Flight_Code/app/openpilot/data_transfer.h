@@ -1,6 +1,6 @@
 #ifndef DATA_TRANSFER_H
 #define DATA_TRANSFER_H
-#include "common.h"
+#include <core_common.h>
 
 #include "data_common.h"
 #include "param_common.h"

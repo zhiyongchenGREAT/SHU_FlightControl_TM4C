@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.11.1.13263/W32 for ARM                29/Jul/2017  13:37:00
+# IAR ELF Linker V8.11.1.13263/W32 for ARM                29/Jul/2017  19:41:39
 # Copyright 2007-2017 IAR Systems AB.
 #
 #    Output file  =  
@@ -8,7 +8,7 @@
 #    Map file     =  
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\List\Project.map
 #    Command line =  
-#        -f C:\Users\victo\AppData\Local\Temp\EWC523.tmp
+#        -f C:\Users\victo\AppData\Local\Temp\EW9AA6.tmp
 #        (C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\acceldesired.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\accels.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\accessorydesired.o
@@ -25,12 +25,12 @@
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\bsp_int.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\bsp_sys.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\can.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\common.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\comp.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\control_command.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\coordinate_conversions.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_autopilot.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_camera.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_common.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_t_timer.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_uart.o
 #        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_uartstdio.o
@@ -243,7 +243,7 @@ initialize by copy { rw };
   .rodata            const    0x00008c1a     0x2  os_dbg.o [1]
   .text              ro code  0x00008c1c    0x68  DblToFlt.o [4]
   .text              ro code  0x00008c84   0x21c  gpio.o [1]
-  .text              ro code  0x00008ea0    0x1a  common.o [1]
+  .text              ro code  0x00008ea0    0x1a  core_common.o [1]
   .rodata            const    0x00008eba     0x2  os_dbg.o [1]
   .text              ro code  0x00008ebc   0x1a0  sysctl.o [1]
   .text              ro code  0x0000905c   0xdda  xprintffull_nomb.o [3]
@@ -749,11 +749,11 @@ C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj: 
     bsp.o                          12
     bsp_int.o                      68               448
     bsp_sys.o                      36
-    common.o                       26
     control_command.o           1 000                10
     coordinate_conversions.o    1 252
     core_autopilot.o              584        4        8
     core_camera.o                 480       40        8
+    core_common.o                  26
     core_t_timer.o                 60                 4
     core_uart.o                   828       54      226
     core_uartstdio.o              124       64        4
@@ -1353,7 +1353,7 @@ SumY                    0x200075c4     0x4  Data  Gb  PX4Flow.o [1]
 SumY_amend              0x200075d4     0x4  Data  Gb  PX4Flow.o [1]
 SysCtlClockGet          0x00008f35    0xf0  Code  Gb  sysctl.o [1]
 SysCtlDelay             0x00008f2d     0x8  Code  Gb  sysctl.o [1]
-SysCtlDelay_MS          0x00008ea1    0x1a  Code  Gb  common.o [1]
+SysCtlDelay_MS          0x00008ea1    0x1a  Code  Gb  core_common.o [1]
 SysCtlPWMClockSet       0x00009025    0x10  Code  Gb  sysctl.o [1]
 SysCtlPeripheralEnable  0x00008f0d    0x1e  Code  Gb  sysctl.o [1]
 SysCtlPeripheralReset   0x00008ebd    0x50  Code  Gb  sysctl.o [1]

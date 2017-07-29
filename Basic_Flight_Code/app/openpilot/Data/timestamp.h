@@ -1,6 +1,6 @@
 #ifndef TIMESTAMP_H
 #define TIMESTAMP_H
-#include "common.h"
+#include <core_common.h>
 struct TimerData
 {
     uint16 us;

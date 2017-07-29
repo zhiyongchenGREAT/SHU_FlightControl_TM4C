@@ -1,6 +1,6 @@
 #ifndef ACTUATORCOMMAND_H
 #define ACTUATORCOMMAND_H
-#include "common.h"
+#include <core_common.h>
 #define ACTUATORCOMMAND_CHANNEL_NUMELEM 10
 struct ActuatorCommandData
 {

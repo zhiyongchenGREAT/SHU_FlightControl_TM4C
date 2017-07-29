@@ -32,8 +32,8 @@
 #ifndef __CORE_MAIN_H
 #define __CORE_MAIN_H
 
-#include <chiplevel_includes.h>
-#include <includes.h>
+#include <board_includes.h>
+#include <OS_includes.h>
 
 #include "data_common.h"
 #include "param_common.h"
@@ -45,7 +45,7 @@
 #include "PX4Flow.h"
 #include "KS103.h"
 
-#include "common.h"
+#include <core_common.h>
 #include "include.h"
 #include "flight_routine.h"
 

@@ -324,7 +324,6 @@ static void flight_init_task(void *p_arg)
 
 static void FlightAPPInit(CPU_INT08U set)
 {
-  
   IntMasterDisable();
   
   led_init();

@@ -2266,10 +2266,13 @@
         <group>
             <name>chip</name>
             <file>
-                <name>$PROJ_DIR$\..\Basic_Flight_Code\chip\chiplevel_includes.h</name>
+                <name>$PROJ_DIR$\..\Basic_Flight_Code\chip\board_includes.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\Basic_Flight_Code\chip\common.c</name>
+                <name>$PROJ_DIR$\..\Basic_Flight_Code\chip\core_common.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Basic_Flight_Code\chip\core_common.h</name>
             </file>
         </group>
         <file>
@@ -2458,9 +2461,6 @@
                 <name>$PROJ_DIR$\..\OS_Support\ucOSIII_CONFIG\cpu_cfg.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\OS_Support\ucOSIII_CONFIG\includes.h</name>
-            </file>
-            <file>
                 <name>$PROJ_DIR$\..\OS_Support\ucOSIII_CONFIG\lib_cfg.h</name>
             </file>
             <file>
@@ -2474,6 +2474,9 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\..\OS_Support\ucOSIII_CONFIG\os_cfg_app.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\OS_Support\ucOSIII_CONFIG\OS_includes.h</name>
             </file>
         </group>
         <group>

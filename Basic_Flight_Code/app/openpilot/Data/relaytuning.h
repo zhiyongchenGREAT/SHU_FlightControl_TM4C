@@ -1,6 +1,6 @@
 #ifndef RELAYTUNING_H
 #define RELAYTUNING_H
-#include "common.h"
+#include <core_common.h>
 struct RelayTuningData
 {
     float Period[3];

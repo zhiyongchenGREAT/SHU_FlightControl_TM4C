@@ -1,4 +1,4 @@
-#include "common.h"
+#include <core_common.h>
  
 #include "YRK_AK8975_SOFT.h"
 

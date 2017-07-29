@@ -1,6 +1,6 @@
 #ifndef TRIMANGLES_H
 #define TRIMANGLES_H
-#include "common.h"
+#include <core_common.h>
 struct TrimAnglesData
 {
     float Roll;

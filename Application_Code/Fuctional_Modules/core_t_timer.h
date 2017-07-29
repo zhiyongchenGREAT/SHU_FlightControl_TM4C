@@ -22,9 +22,9 @@
 #ifndef __CORE_T_TIMER_H__
 #define __CORE_T_TIMER_H__
 
-#include "common.h"
-#include "chiplevel_includes.h"
-#include <includes.h>
+#include <core_common.h>
+#include <board_includes.h>
+#include <OS_includes.h>
 
 void testpurpose_tim0_init(void);
 

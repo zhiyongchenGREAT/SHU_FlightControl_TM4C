@@ -1,6 +1,6 @@
 #ifndef ACTUATORDESIRED_H
 #define ACTUATORDESIRED_H
-#include "common.h"
+#include <core_common.h>
 struct ActuatorDesiredData
 {
     float Roll;

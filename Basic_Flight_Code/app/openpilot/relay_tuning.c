@@ -35,7 +35,7 @@
 #include "relaytuningsettings.h"
 #include "sin_lookup.h"
 
-#include "includes.h"
+#include <OS_includes.h>
 
 //! Private variables
 //static const int SIN_RESOLUTION = 180;
