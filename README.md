@@ -1,6 +1,10 @@
 # SHU_FlightControl_TM4C
 Flight control firmware development based on TI TM4C MCU
 
+rev0.4 2017/7/30:
+1. Add several inc.h to make the code "include" more perspicuous.
+2. Attach these inc.h to all the execuable files and bulid successfully.
+
 rev0.3 2017/7/28:
 1. Add test tim0 so that code execution time measurement can be feasible
 2. The tir0/tmr1 init has also been optimized for JLINK DBG
