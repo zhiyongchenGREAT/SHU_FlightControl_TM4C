@@ -3,9 +3,9 @@
 *                                                TI-TM4C Flight Control
 *                                               SCIE/Shanghai University
 *                                              
-* File    : device_includes.h
+* File    : app_includes.h
 * By      : Bicbrv
-* Note    : Flight devices includes
+* Note    : App level includes
 *
 * TERMS OF USE:
 * ---------------
@@ -19,16 +19,16 @@
 ************************************************************************************************************************
 */
 
-#ifndef __INCLUDE_H__
-#define __INCLUDE_H__
+#ifndef __APP_INCLUDES_H__
+#define __APP_INCLUDES_H__
 
-#include "KS103.h"
-#include "PX4Flow.h"
-#include "YRK_AK8975_SOFT.h"
-#include "YRK_init.h"
-#include "YRK_LED.h"
-#include "YRK_MPU6050_SOFT.h"
-#include "YRK_NRF24L0.h"
-#include "YRK_SONAR.h"
+#include "TM4C.h"
+#include "core_autopilot.h"
+#include "core_camera.h"
+#include "core_t_timer.h"
+#include "core_uart.h"
+#include "eepromqsj.h"
+#include "flight_routine.h"
 
-#endif //__INCLUDE_H__
+
+#endif //__BASICFLIGHT_INCLUDES_H__

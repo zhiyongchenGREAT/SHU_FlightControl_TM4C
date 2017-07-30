@@ -2044,6 +2044,9 @@
         <group>
             <name>Functional_Modules</name>
             <file>
+                <name>$PROJ_DIR$\..\Application_Code\Fuctional_Modules\app_includes.h</name>
+            </file>
+            <file>
                 <name>$PROJ_DIR$\..\Application_Code\Fuctional_Modules\core_autopilot.c</name>
             </file>
             <file>
@@ -2054,6 +2057,12 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\..\Application_Code\Fuctional_Modules\core_uart.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Application_Code\Fuctional_Modules\eepromqsj.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Application_Code\Fuctional_Modules\flight_routine.c</name>
             </file>
         </group>
         <group>
@@ -2144,6 +2153,9 @@
                         <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\math\coordinate_conversions.c</name>
                     </file>
                     <file>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\math\math_includes.h</name>
+                    </file>
+                    <file>
                         <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\math\misc_math.c</name>
                     </file>
                     <file>
@@ -2159,38 +2171,38 @@
                 <group>
                     <name>Param</name>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\actuatorsettings.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\actuatorsettings.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\attitudesettings.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\attitudesettings.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\eepromqsj.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\manualcontrolsettings.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\manualcontrolsettings.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\mixersettings.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\mixersettings.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\motorsettings.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\motorsettings.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\relaytuningsettings.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\relaytuningsettings.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\sensorsettings.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\sensorsettings.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\stabilizationsettings.h</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\stabilizationsettings.c</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\systemsettings.c</name>
+                        <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\Param\systemsettings.h</name>
                     </file>
                 </group>
                 <file>
                     <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\attitudesolving.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\basicflight_includes.h</name>
                 </file>
                 <file>
                     <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\control_command.c</name>
@@ -2233,9 +2245,6 @@
         <group>
             <name>board</name>
             <file>
-                <name>$PROJ_DIR$\..\Basic_Flight_Code\board\core_uartstdio.c</name>
-            </file>
-            <file>
                 <name>$PROJ_DIR$\..\Basic_Flight_Code\board\device_includes.h</name>
             </file>
             <file>
@@ -2275,9 +2284,6 @@
                 <name>$PROJ_DIR$\..\Basic_Flight_Code\chip\core_common.h</name>
             </file>
         </group>
-        <file>
-            <name>$PROJ_DIR$\..\Basic_Flight_Code\app\flight_routine.c</name>
-        </file>
     </group>
     <group>
         <name>Board_Support</name>
@@ -2354,6 +2360,12 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\..\Board_Support\driverlib\watchdog.c</name>
+            </file>
+        </group>
+        <group>
+            <name>utils</name>
+            <file>
+                <name>$PROJ_DIR$\..\Board_Support\utils\uartstdio.c</name>
             </file>
         </group>
     </group>

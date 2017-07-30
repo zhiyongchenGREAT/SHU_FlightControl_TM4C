@@ -1,11 +1,5 @@
 #include "attitudesolving.h"
-#include "sensorfetch.h"
-//#include "attitudedrift.h"
-#include "coordinate_conversions.h"
-#include <device_includes.h>
-#include "driverlib/pwm.h"
 
-#include <OS_includes.h>
 
 // Private constants
 #define STACK_SIZE_BYTES 580

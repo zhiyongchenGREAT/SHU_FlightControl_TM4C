@@ -1,6 +1,14 @@
 #ifndef __YRK_AK8975_SOFT_H__
 #define __YRK_AK8975_SOFT_H__
 
+#include <core_common.h>
+#include <board_includes.h>
+#include <device_includes.h>
+#include <math_includes.h>
+#include <basicflight_includes.h>
+#include <app_includes.h>
+#include <OS_includes.h>
+
 #define     AK8975_SOFT_DEVICE          I2C0        //定义AK8975_SOFT 所用的接口 为 I2C0
 
 #define     AK8975_SOFT_ADRESS          (0x18)      /*AK8975_SOFT_Device Address*/

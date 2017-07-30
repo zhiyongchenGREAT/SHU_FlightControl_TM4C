@@ -1,21 +1,9 @@
-#include <stdbool.h>
-#include <stdint.h>
-#include "inc/hw_memmap.h"
-#include "driverlib/adc.h"
-#include "driverlib/gpio.h"
-#include "driverlib/pin_map.h"
-#include "driverlib/sysctl.h"
-#include "driverlib/interrupt.h"
-#include "inc/hw_ints.h"
-#include "coordinate_conversions.h"
-#include "YRK_SONAR.h"
-#include "data_common.h"
+/*
+************************************************************************************************************************
+*                                               UART should eliminated using uartstdio.h
+************************************************************************************************************************
+*/
 #include "PX4Flow.h"
-#include "driverlib/uart.h"
-#include "YRK_init.h"
-#include "flight_routine.h"
-#include "data_transfer.h"
-#include "KS103.h"
 
 float x1,y1;
 float px4_sumx=0,px4_sumy=0;

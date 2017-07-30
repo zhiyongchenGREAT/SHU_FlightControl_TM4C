@@ -1,22 +1,7 @@
-#include <core_common.h>
-#include <device_includes.h>
-//#include "IRQ_handler.h"
+
 #include "flight_routine.h"
 
-#include "attitudesolving.h"
-#include "stabilization.h"
-#include "sensorfetch.h"
-#include "motor_control.h"
-#include "control_command.h"
-#include "mixer.h"
-#include "data_transfer.h"
-#include "data_common.h"
-#include "param_common.h"
-#include "Postion_Hold.h"
-#include "inc/hw_memmap.h"
-#include "PX4Flow.h"
-#include "KS103.h"
-#include "TM4C.h"
+
 
 
 /*!

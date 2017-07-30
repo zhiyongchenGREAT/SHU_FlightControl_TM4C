@@ -3,9 +3,11 @@
 
 #include <core_common.h>
 #include <board_includes.h>
-#include "TM4C.h"
+#include <device_includes.h>
+#include <math_includes.h>
+#include <basicflight_includes.h>
+#include <app_includes.h>
 #include <OS_includes.h>
-#include <core_uartstdio.h>
 
 extern float auto_throttle, error_throttle;
 

@@ -1,32 +1,4 @@
-
 #include "YRK_SONAR.h"
-
-#include <stdint.h>
-#include <stdbool.h>
-#include <math.h>
-#include "stdlib.h"
-#include "inc/hw_ints.h"
-#include "inc/hw_memmap.h"
-#include "inc/hw_timer.h"
-//#include "inc/hw_uart.h"
-#include "inc/hw_gpio.h"
-#include "inc/hw_pwm.h"
-#include "inc/hw_types.h"
-#include "driverlib/pin_map.h"
-
-#include "driverlib/timer.h"
-#include "driverlib/gpio.h"
-#include "driverlib/interrupt.h"
-#include "driverlib/rom.h"
-#include "driverlib/rom_map.h"
-#include "driverlib/sysctl.h"
-//#include "driverlib/uart.h"
-//#include "driverlib/udma.h"
-//#include "driverlib/pwm.h"
-//#include "driverlib/ssi.h"
-#include "driverlib/systick.h"
-#include "data_common.h"
-
 
 //#include "utils/uartstdio.c"
 #include <string.h>
