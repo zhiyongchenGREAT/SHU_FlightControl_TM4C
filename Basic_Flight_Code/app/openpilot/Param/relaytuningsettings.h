@@ -1,6 +1,6 @@
 #ifndef RELAYTUNINGSETTINGS_H
 #define RELAYTUNINGSETTINGS_H
-#include "common.h"
+#include <core_common.h>
 struct RelayTuningSettingsData
 {
     float RateGain;

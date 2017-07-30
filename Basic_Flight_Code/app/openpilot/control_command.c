@@ -1,10 +1,4 @@
 #include "control_command.h"
-#include "common.h"
-#include "data_transfer.h"
-#include "flight_routine.h"
-#include "Postion_Hold.h"
-#include "core_autopilot.h"
-//#include "MKL_TPM.h"
 
 uint16 arming=0;
 float Yaw_con_before=0;

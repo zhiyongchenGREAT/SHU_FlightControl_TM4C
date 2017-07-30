@@ -1,7 +1,12 @@
 #ifndef _IRQ_HANDLER_H_
 #define _IRQ_HANDLER_H_
-#include "common.h"
-#include <includes.h>
+#include <core_common.h>
+#include <board_includes.h>
+#include <device_includes.h>
+#include <math_includes.h>
+#include <basicflight_includes.h>
+#include <app_includes.h>
+#include <OS_includes.h>
 
 extern bool jp_flag;
 

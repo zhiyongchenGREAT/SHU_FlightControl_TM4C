@@ -1,6 +1,6 @@
 #ifndef GYROSBIAS_H
 #define GYROSBIAS_H
-#include "common.h"
+#include <core_common.h>
 struct GyrosBiasData
 {
     float x;

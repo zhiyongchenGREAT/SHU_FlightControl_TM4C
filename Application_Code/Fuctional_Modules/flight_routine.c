@@ -1,24 +1,9 @@
-#include "common.h"
-#include "include.h"
-//#include "IRQ_handler.h"
+
 #include "flight_routine.h"
 
-#include "attitudesolving.h"
-#include "stabilization.h"
-#include "sensorfetch.h"
-#include "motor_control.h"
-#include "control_command.h"
-#include "mixer.h"
-#include "data_transfer.h"
-#include "data_common.h"
-#include "param_common.h"
-#include "Postion_Hold.h"
-#include "inc/hw_memmap.h"
-#include "PX4Flow.h"
-#include "KS103.h"
-#include "TM4C.h"
 
-#include "includes.h"
+
+
 /*!
 *  @brief      PIT0中断服务函数
 *  @since      v5.0
@@ -33,7 +18,6 @@ uint16 IMU_ext_flag=0;
 uint16 ddd;
 uint32 autostart_count=0;
 uint8 Uart6Date;
-
 
 /******************************************************************************/
 OS_MUTEX FLOW_MUTEX;
@@ -101,7 +85,8 @@ void PIT_IRQHandler(void)
 */ 
 void flight_routine_task(void *p_arg)
 {
-  OS_ERR err; 
+  OS_ERR err;
+
   p_arg = p_arg;
   CPU_TS ts;
   CPU_SR_ALLOC();
@@ -109,9 +94,10 @@ void flight_routine_task(void *p_arg)
   while(DEF_TRUE)
   {    
 //    CPU_CRITICAL_ENTER();
-
-    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
     
+    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
+
+    t_tim0_cnt = TimerValueGet(TIMER0_BASE, TIMER_A);
 //    OSSchedLock(&err);
 //    mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);
     
@@ -177,6 +163,8 @@ void flight_routine_task(void *p_arg)
     mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);
 //    CPU_CRITICAL_EXIT();
 //    OSTimeDlyHMSM(0,0,0,1,OS_OPT_TIME_HMSM_STRICT,&err);
+
+    t_tim0_cnt = TimerValueGet(TIMER0_BASE, TIMER_A);
   }
 }
 

@@ -1,6 +1,6 @@
 #ifndef FLIGHTBATTERYSTATE_H
 #define FLIGHTBATTERYSTATE_H
-#include "common.h"
+#include <core_common.h>
 struct FlightBatteryStateData
 {
     float Voltage;

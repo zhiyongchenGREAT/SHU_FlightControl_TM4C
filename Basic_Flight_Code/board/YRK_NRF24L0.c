@@ -1,40 +1,5 @@
-/*!
-*     COPYRIGHT NOTICE
-*     Copyright (c) 2013,野火科技
-*     All rights reserved.
-*     技术讨论：野火初学论坛 http://www.chuxue123.com
-*
-*     除注明出处外，以下所有内容版权均属野火科技所有，未经允许，不得用于商业用途，
-*     修改内容时必须保留野火科技的版权声明。
-*
-* @file       FIRE_NRF24L0.c
-* @brief      无线调试  函数
-* @author     野火科技
-* @version    v5.0
-* @date       2014-01-04
-*/
-
-#include "common.h"
-//#include "MKL_port.h"
-//#include "MKL_gpio.h"
-//#include "MKL_spi.h"
-
 #include "YRK_NRF24L0.h"
 
-
-#include "inc/hw_types.h"
-#include "inc/hw_sysctl.h"
-#include "inc/hw_ints.h"
-#include "inc/hw_nvic.h"
-#include "inc/hw_memmap.h"
-#include "inc/hw_gpio.h"
-#include "driverlib/sysctl.h"
-#include "driverlib/rom.h"
-#include "driverlib/pin_map.h"
-#include "driverlib/ssi.h"
-#include "driverlib/rom_map.h"
-#include "driverlib/gpio.h"
-#include "driverlib/interrupt.h"
 
 
 

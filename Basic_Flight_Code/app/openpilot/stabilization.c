@@ -39,18 +39,6 @@
 //#include "openpilot.h"
 #include "stabilization.h"
 
-#include "accels.h"
-//#include "actuatordesired.h"
-#include "attitudeactual.h"
-//#include "cameradesired.h"
-#include "flightstatus.h"
-#include "gyros.h"
-//#include "ratedesired.h"
-//#include "stabilizationdesired.h"
-//#include "stabilizationstabilizationSettings.h"
-//#include "trimangles.h"
-//#include "trimanglesstabilizationSettings.h"
-
 // Math libraries
 #include "coordinate_conversions.h"
 #include "pid.h"

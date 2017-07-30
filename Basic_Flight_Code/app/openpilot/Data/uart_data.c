@@ -1,5 +1,5 @@
-#include "common.h"
-#include "include.h"
+#include <core_common.h>
+#include <device_includes.h>
 #include "uart_data.h"
 //struct ManualControl manualControl;
 //union NrfBuff Nrf_Buf_In;

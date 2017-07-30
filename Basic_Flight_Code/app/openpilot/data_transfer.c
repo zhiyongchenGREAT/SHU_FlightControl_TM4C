@@ -1,17 +1,4 @@
 #include "data_transfer.h"
-#include "common.h"
-#include "utils/uartstdio.h"
-#include "inc/hw_memmap.h"
-#include "YRK_SONAR.h"
-
-#include "include.h"
-
-
-
-#include "Postion_Hold.h"
-#include "PX4Flow.h"   //  PX4FLOW
-#include "KS103.h"
-//#include "MKL_TPM.h"
 
 
 uint16 nrf_flag;

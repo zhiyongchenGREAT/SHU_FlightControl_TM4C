@@ -1,6 +1,6 @@
 #ifndef MANUALCONTROLCOMMAND_H
 #define MANUALCONTROLCOMMAND_H
-#include "common.h"
+#include <core_common.h>
 struct ManualControlCommandData
 {
     enum Connected

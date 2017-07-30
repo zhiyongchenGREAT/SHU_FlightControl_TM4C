@@ -1,15 +1,5 @@
-#include "common.h"
- 
 #include "YRK_AK8975_SOFT.h"
 
-#include "inc/hw_gpio.h"
-#include "inc/hw_memmap.h"
-#include "inc/hw_types.h"
-
-#include "driverlib/gpio.h"
-#include "driverlib/sysctl.h"
-#include "driverlib/rom.h"
-#include "driverlib/rom_map.h"
 
 
 #define    AK8975_SDA                  GPIO_PIN_7

@@ -1,6 +1,4 @@
 #include "hold.h"
-#include "include.h"
-#include "KS103.h"
 
 
 bool lowthrottle=false;

@@ -1,6 +1,6 @@
 #ifndef MOTORSETTINGS_H
 #define MOTORSETTINGS_H
-#include "common.h"
+#include <core_common.h>
 enum 
 {
   MOTORSETTINGS_EDP_L,

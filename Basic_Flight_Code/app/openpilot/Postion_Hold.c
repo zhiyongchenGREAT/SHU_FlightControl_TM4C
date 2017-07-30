@@ -1,12 +1,4 @@
 #include "Postion_Hold.h"
-#include "common.h"
-#include "data_common.h"
-#include "flight_routine.h"
-#include "YRK_SONAR.h"
-#include "eepromqsj.h"
-#include "data_transfer.h"
-#include "PX4Flow.h"
-#include "ks103.h"
 
 #include "core_uart.h"
 

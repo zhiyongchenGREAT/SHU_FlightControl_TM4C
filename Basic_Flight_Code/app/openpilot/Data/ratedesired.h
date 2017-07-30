@@ -1,6 +1,6 @@
 #ifndef RATEDESIRED_H
 #define RATEDESIRED_H
-#include "common.h"
+#include <core_common.h>
 struct RateDesiredData
 {
     float Roll;

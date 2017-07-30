@@ -30,9 +30,14 @@
 #ifndef SENSORFETCH_H
 #define SENSORFETCH_H
 
-//#include "openpilot.h"
-#include "data_common.h"
-#include "param_common.h"
+#include <core_common.h>
+#include <board_includes.h>
+#include <device_includes.h>
+#include <math_includes.h>
+#include <basicflight_includes.h>
+#include <app_includes.h>
+#include <OS_includes.h>
+
 //int8 getSensorsCC(float * prelim_accels, float * prelim_gyros, xQueueHandle *gyro_queue, GlobalAttitudeVariables *glblAtt, GyrosBiasData *gyrosBias, InertialSensorSettingsData *inertialSensorSettings);
 int8 senfetch(float * prelim_accels, float * prelim_gyros, GlobalAttitudeVariables *glblAtt, GyrosBiasData *gyrosBias, SensorSettingsData *inertialSensorSettings);
 void getattdata();

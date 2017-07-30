@@ -1,26 +1,39 @@
+/*
+************************************************************************************************************************
+*                                               need optimization
+************************************************************************************************************************
+*/
+
 #ifndef _PX4Flow_H
 #define _PX4Flow_H
 
+#include <core_common.h>
+#include <board_includes.h>
+#include <device_includes.h>
+#include <math_includes.h>
+#include <basicflight_includes.h>
+#include <app_includes.h>
+#include <OS_includes.h>
 
 typedef struct
- {
-         float average;//Flow in m in x-sensor direction, angular-speed compensated
-         float originf;
-         int16_t origin;
- }FLOW_DATA;
+{
+  float average;//Flow in m in x-sensor direction, angular-speed compensated
+  float originf;
+  int16_t origin;
+}FLOW_DATA;
 
 
-   typedef struct
- {
-         uint64_t  time_sec;
-         uint8   id;
-         FLOW_DATA flow_x;
-         FLOW_DATA flow_y;
-         FLOW_DATA flow_comp_x;//Flow in m in x-sensor direction, angular-speed compensated
-         FLOW_DATA flow_comp_y;
-         uint8 quality; //Optical flow quality / confidence. 0: bad, 255: maximum quality
-         FLOW_DATA hight;//ground_distance        float        Ground distance in m. Positive value: distance known. Negative value: Unknown distance               
- }FLOW;
+typedef struct
+{
+  uint64_t  time_sec;
+  uint8   id;
+  FLOW_DATA flow_x;
+  FLOW_DATA flow_y;
+  FLOW_DATA flow_comp_x;//Flow in m in x-sensor direction, angular-speed compensated
+  FLOW_DATA flow_comp_y;
+  uint8 quality; //Optical flow quality / confidence. 0: bad, 255: maximum quality
+  FLOW_DATA hight;//ground_distance        float        Ground distance in m. Positive value: distance known. Negative value: Unknown distance               
+}FLOW;
 
 typedef struct
 {

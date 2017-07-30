@@ -1,11 +1,12 @@
 #ifndef DATA_TRANSFER_H
 #define DATA_TRANSFER_H
-#include "common.h"
-
-#include "data_common.h"
-#include "param_common.h"
-
-#include "YRK_NRF24L0.h"
+#include <core_common.h>
+#include <board_includes.h>
+#include <device_includes.h>
+#include <math_includes.h>
+#include <basicflight_includes.h>
+#include <app_includes.h>
+#include <OS_includes.h>
 //void AttitudeInitialize();
 
 

@@ -1,6 +1,6 @@
 #ifndef MIXERSTATUS_H
 #define MIXERSTATUS_H
-#include "common.h"
+#include <core_common.h>
 struct MixerStatusData
 {
     float Mixer1;

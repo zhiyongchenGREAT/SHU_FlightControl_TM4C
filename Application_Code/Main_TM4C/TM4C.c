@@ -324,7 +324,6 @@ static void flight_init_task(void *p_arg)
 
 static void FlightAPPInit(CPU_INT08U set)
 {
-  
   IntMasterDisable();
   
   led_init();
@@ -341,6 +340,10 @@ static void FlightAPPInit(CPU_INT08U set)
   GPIO_PINB7init();                                                             
   
   tim1_init(PIT_IRQHandler);
+
+/* Only for test purpose whenever time-consuming mesurment is needed              */
+  
+  testpurpose_tim0_init();
 
   Camera_init();
   

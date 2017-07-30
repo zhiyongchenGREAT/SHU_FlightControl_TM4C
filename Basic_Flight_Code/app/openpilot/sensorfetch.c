@@ -28,14 +28,6 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
 #include "sensorfetch.h"
-#include "include.h"
-
-
-#include "physical_constants.h"
-//#include "state.h"
-#include "coordinate_conversions.h"
-
-//#include <pios_board_info.h>
 
 // Private constants
 #define SENSOR_PERIOD     4

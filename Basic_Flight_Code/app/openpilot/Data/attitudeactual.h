@@ -1,6 +1,6 @@
 #ifndef ATTITUDEACTUAL_H
 #define ATTITUDEACTUAL_H
-#include "common.h"
+#include <core_common.h>
 struct AttitudeActualData                                                       //::note::What's the definition of the member of this struct? What's the usage of the struct?
 {
     float q1;

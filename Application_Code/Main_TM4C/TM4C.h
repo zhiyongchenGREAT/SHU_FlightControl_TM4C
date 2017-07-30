@@ -32,27 +32,13 @@
 #ifndef __CORE_MAIN_H
 #define __CORE_MAIN_H
 
-#include <chiplevel_includes.h>
-#include <includes.h>
-
-#include "data_common.h"
-#include "param_common.h"
-#include "driverlib/eeprom.h"
-#include "attitudesolving.h"
-#include "stabilization.h"
-#include "motor_control.h"
-#include "sensorfetch.h"
-#include "PX4Flow.h"
-#include "KS103.h"
-
-#include "common.h"
-#include "include.h"
-#include "flight_routine.h"
-
-#include "core_uart.h"
-#include "core_camera.h"
-#include "core_autopilot.h"
-
+#include <core_common.h>
+#include <board_includes.h>
+#include <device_includes.h>
+#include <math_includes.h>
+#include <basicflight_includes.h>
+#include <app_includes.h>
+#include <OS_includes.h>
 /*
 ************************************************************************************************************************
 *                                               Start task

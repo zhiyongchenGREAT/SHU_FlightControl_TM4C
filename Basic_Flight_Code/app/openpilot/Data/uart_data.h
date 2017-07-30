@@ -1,6 +1,4 @@
-
 #ifndef UART_DATA_H
-
 #define UART_DATA_H
 
 #define UART_DATA_PACKET_INT             15

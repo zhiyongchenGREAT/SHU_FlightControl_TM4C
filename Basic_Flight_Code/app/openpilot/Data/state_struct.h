@@ -30,7 +30,7 @@
  */
 #ifndef STATE_STRUCT_H
 #define STATE_STRUCT_H
-#include "common.h"
+#include <core_common.h>
 //#include "openpilot.h"
 //#include "attitudesettings.h"
 //#include "sensorsettings.h"
