@@ -33,8 +33,12 @@
 #define RELAY_TUNING_H
 
 #include <core_common.h>
-#include "data_common.h"
-#include "param_common.h"
+#include <board_includes.h>
+#include <device_includes.h>
+#include <math_includes.h>
+#include <basicflight_includes.h>
+#include <app_includes.h>
+#include <OS_includes.h>
 
 int stabilization_relay_rate(float err, float *output, int axis, _Bool reinit);
 

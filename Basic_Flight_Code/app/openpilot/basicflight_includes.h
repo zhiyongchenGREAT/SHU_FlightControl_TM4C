@@ -3,9 +3,9 @@
 *                                                TI-TM4C Flight Control
 *                                               SCIE/Shanghai University
 *                                              
-* File    : device_includes.h
+* File    : basicflight_includes.h
 * By      : Bicbrv
-* Note    : Flight devices includes
+* Note    : Basic flight level includes
 *
 * TERMS OF USE:
 * ---------------
@@ -19,16 +19,22 @@
 ************************************************************************************************************************
 */
 
-#ifndef __INCLUDE_H__
-#define __INCLUDE_H__
+#ifndef __BASICFLIGHT_INCLUDES_H__
+#define __BASICFLIGHT_INCLUDES_H__
 
-#include "KS103.h"
-#include "PX4Flow.h"
-#include "YRK_AK8975_SOFT.h"
-#include "YRK_init.h"
-#include "YRK_LED.h"
-#include "YRK_MPU6050_SOFT.h"
-#include "YRK_NRF24L0.h"
-#include "YRK_SONAR.h"
+#include "attitudesolving.h"
+#include "control_command.h"
+#include "data_common.h"
+#include "data_transfer.h"
+#include "hold.h"
+#include "mixer.h"
+#include "motor_control.h"
+#include "param_common.h"
+#include "Postion_Hold.h"
+#include "relay_tuning.h"
+#include "sensorfetch.h"
+#include "stabilization.h"
+#include "virtualflybar.h"
 
-#endif //__INCLUDE_H__
+
+#endif //__BASICFLIGHT_INCLUDES_H__

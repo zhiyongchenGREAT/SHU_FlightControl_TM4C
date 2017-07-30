@@ -31,10 +31,7 @@
 
 //#include "openpilot.h"
 #include "virtualflybar.h"
-#include "physical_constants.h"
-#include "pid.h"
-#include "stabilization.h"
-#include "stabilizationsettings.h"
+
 
 //! Private variables
 static float vbar_integral[MAX_AXES];

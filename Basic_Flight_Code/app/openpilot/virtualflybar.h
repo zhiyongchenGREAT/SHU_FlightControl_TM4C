@@ -33,9 +33,12 @@
 #define VIRTUALFLYBAR_H
 
 #include <core_common.h>
-#include "data_common.h"
-#include "param_common.h"
-#include "pid.h"
+#include <board_includes.h>
+#include <device_includes.h>
+#include <math_includes.h>
+#include <basicflight_includes.h>
+#include <app_includes.h>
+#include <OS_includes.h>
 int stabilization_virtual_flybar(float gyro, float command, float *output, float dT, _Bool reinit, uint32_t axis, struct pid *pid, StabilizationSettingsData *settings);
 int stabilization_virtual_flybar_pirocomp(float z_gyro, float dT);
 

@@ -28,7 +28,8 @@
 #include "inc/hw_memmap.h"
 #include "inc/hw_types.h"
 #include "inc/hw_ints.h"   
-#include "inc/hw_gpio.h" 
+#include "inc/hw_gpio.h"
+#include "inc/hw_timer.h"
 
 #include "driverlib/adc.h"
 #include "driverlib/can.h"

@@ -1,6 +1,3 @@
-#ifndef YRK_SONAR_H
-#define YRK_SONAR_H
-
 #include <core_common.h>
 #include <board_includes.h>
 #include <device_includes.h>
@@ -9,8 +6,6 @@
 #include <app_includes.h>
 #include <OS_includes.h>
 
-extern float sonar_distance[3],sonar_speed,sonar_acc;
-
-void sonar_init();
-void sonar_triger();
-#endif // YRK_SONAR_H
+void eeprom_read(int select);
+void eeprom_write(int select);
+extern int16 eeprom_readdate[9];

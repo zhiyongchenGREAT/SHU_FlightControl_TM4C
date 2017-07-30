@@ -2,6 +2,12 @@
 #define _KS103_H
 
 #include <core_common.h>
+#include <board_includes.h>
+#include <device_includes.h>
+#include <math_includes.h>
+#include <basicflight_includes.h>
+#include <app_includes.h>
+#include <OS_includes.h>
 
 //#define PI 3.1416
 #define     KS103_SOFT_DEVICE          I2C3        //定义ks103 所用的接口 为 I2C3

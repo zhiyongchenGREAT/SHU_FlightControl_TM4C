@@ -1,17 +1,4 @@
-#include <core_common.h>
-
 #include "YRK_MPU6050_SOFT.h"
-
-
-#include "inc/hw_gpio.h"
-#include "inc/hw_memmap.h"
-#include "inc/hw_types.h"
-
-#include "driverlib/gpio.h"
-#include "driverlib/sysctl.h"
-#include "driverlib/rom.h"
-#include "driverlib/rom_map.h"
-
 
 #define    MPU6050_SDA                  GPIO_PIN_7
 #define    MPU6050_SCL                  GPIO_PIN_6

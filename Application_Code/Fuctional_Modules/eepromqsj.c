@@ -1,14 +1,5 @@
-#include <stdint.h>
-#include <eepromqsj.h>
-#include <stdbool.h>
-#include "inc/hw_types.h"
-#include "inc/hw_memmap.h"
-#include "driverlib/sysctl.h"
-#include "driverlib/pin_map.h"
-#include "driverlib/debug.h"
-#include "driverlib/gpio.h"
-#include "driverlib/flash.h"
-#include "driverlib/eeprom.h"
+#include "eepromqsj.h"
+
 int16 eeprom_readdate[9];
 void eeprom_read(int select)                                                    //::note::eeprom_read(1) read from the address 0 of the eeprom; eeprom_read(2) read from address sizeof(pui32Read)+1
 {                                                                               //seems only two eeprom address can be visited in this source file

@@ -31,11 +31,6 @@
 
 //#include "openpilot.h"
 #include "relay_tuning.h"
-#include "relaytuning.h"
-#include "relaytuningsettings.h"
-#include "sin_lookup.h"
-
-#include <OS_includes.h>
 
 //! Private variables
 //static const int SIN_RESOLUTION = 180;
