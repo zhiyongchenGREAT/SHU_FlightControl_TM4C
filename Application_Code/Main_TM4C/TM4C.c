@@ -351,10 +351,17 @@ static void FlightAPPInit(CPU_INT08U set)
 
 /* IntPrio set: Sonar>Flow>Timer>Tele              */
 
-  IntPrioritySet(INT_GPIOC, 0x00);
-  IntPrioritySet(INT_UART6, 0x01<<5);
+//  IntPrioritySet(INT_GPIOC, 0x00);
+//  IntPrioritySet(INT_UART6, 0x01<<5);
+
+  IntPrioritySet(INT_UART6, 0x00);  
+  IntPrioritySet(INT_GPIOC, 0x01<<5);
   IntPrioritySet(INT_TIMER1A, 0x01<<6);
   IntPrioritySet(INT_UART1, 0x01<<7);
+
+//  IntPrioritySet(INT_GPIOC, 0x00);                                              //PX4flow init	
+//  IntPrioritySet(INT_UART6, 0x01<<5);
+//  IntPrioritySet(INT_UART1, 0x02<<6);
   
   data_common_init();                                                           
   param_common_init();                                                          

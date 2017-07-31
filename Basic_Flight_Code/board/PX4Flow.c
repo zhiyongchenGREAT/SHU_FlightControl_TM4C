@@ -58,6 +58,19 @@ void PX4Flow_uart_init(uint32 band,void (*pfnHandler)(void))
   UARTIntEnable(UART6_BASE, UART_INT_RX); //only enable RX and TX interrupts
   UARTClockSourceSet(UART6_BASE, UART_CLOCK_SYSTEM);
   UARTStdioConfig(6, band, ROM_SysCtlClockGet());
+
+//  UARTConfigSetExpClk(UART6_BASE,
+//                      SysCtlClockGet(),
+//                      band,
+//                      (UART_CONFIG_PAR_NONE | UART_CONFIG_STOP_ONE |
+//                       UART_CONFIG_WLEN_8));
+//
+//  IntRegister(INT_UART6,pfnHandler);
+//  
+//  UARTFIFODisable(UART6_BASE);  
+//  
+//  IntEnable(INT_UART6);                                                       //enable the UART interrupt
+//  UARTIntEnable(UART6_BASE, UART_INT_RX);  
 }
 
 void FLOW_MAVLINK(unsigned char data)

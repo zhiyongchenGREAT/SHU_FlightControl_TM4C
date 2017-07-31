@@ -29,6 +29,7 @@
 #include "core_uart.h"
 #include "eepromqsj.h"
 #include "flight_routine.h"
+#include "core_uartstdio.h"
 
 
 #endif //__BASICFLIGHT_INCLUDES_H__
