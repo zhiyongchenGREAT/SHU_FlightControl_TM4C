@@ -25,7 +25,7 @@ OS_MUTEX FLOW_MUTEX;
 OS_MUTEX KS103_MUTEX;
 /******************************************************************************/
 //NRFÖÐ¶Ï
-void PORTC_IRQHandler()
+void PORTC_IRQHandler(void)
 {
   OSIntEnter();
   
@@ -43,7 +43,7 @@ void PORTC_IRQHandler()
 
 
 
-void UART6_IRQHandler()
+void UART6_IRQHandler(void)
 {
   OSIntEnter();
 //  CPU_SR_ALLOC();

@@ -1,4 +1,4 @@
-"C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Basic_Flight_Code\board\core_uartstdio.c"
+"C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Application_Code\Fuctional_Modules\core_uartstdio.c"
 -std=c11
 -ferror-limit=100
 -I

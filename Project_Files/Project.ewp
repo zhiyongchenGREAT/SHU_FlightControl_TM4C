@@ -2059,6 +2059,9 @@
                 <name>$PROJ_DIR$\..\Application_Code\Fuctional_Modules\core_uart.c</name>
             </file>
             <file>
+                <name>$PROJ_DIR$\..\Application_Code\Fuctional_Modules\core_uartstdio.c</name>
+            </file>
+            <file>
                 <name>$PROJ_DIR$\..\Application_Code\Fuctional_Modules\eepromqsj.c</name>
             </file>
             <file>
@@ -2364,9 +2367,6 @@
         </group>
         <group>
             <name>utils</name>
-            <file>
-                <name>$PROJ_DIR$\..\Board_Support\utils\uartstdio.c</name>
-            </file>
         </group>
     </group>
     <group>
