@@ -1,6 +1,9 @@
 # SHU_FlightControl_TM4C
 Flight control firmware development based on TI TM4C MCU
 
+rev0.5 2017/7/31:
+Add back core_uartstdio.h to retrive the normal state of flow
+
 rev0.4 2017/7/30:
 1. Add several inc.h to make the code "include" more perspicuous.
 2. Attach these inc.h to all the execuable files and bulid successfully.
