@@ -33,19 +33,19 @@ void auto_test_flight_task(void *p_arg)
           break;
           
         case 'L':
-          SumY-=2;
+          SumY_amend-=2;
           break;
           
         case 'R':
-          SumY+=2;
+          SumY_amend+=2;
           break;
           
         case 'F':
-          SumX+=2;
+          SumX_amend+=2;
           break;
           
         case 'B':
-          SumX-=2;
+          SumX_amend-=2;
           break;          
           
         default:

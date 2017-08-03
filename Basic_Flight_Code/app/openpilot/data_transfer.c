@@ -98,8 +98,10 @@ void nrf_sendstate()
 {
   // {
   Nrf_Buf_Out.Data_int[0]=(int16)(attitudeActual.Pitch*100);                    //::note:: final data transmitted to ground terminal
-  Nrf_Buf_Out.Data_int[1]=(int16)(attitudeActual.Roll*100);
-  Nrf_Buf_Out.Data_int[2]=(int16)(attitudeActual.Yaw*100);
+//  Nrf_Buf_Out.Data_int[1]=(int16)(attitudeActual.Roll*100);
+//  Nrf_Buf_Out.Data_int[2]=(int16)(attitudeActual.Yaw*100);
+  Nrf_Buf_Out.Data_int[1]=(int16)(Xmm_Send);
+  Nrf_Buf_Out.Data_int[2]=(int16)(Ymm_Send);
   Nrf_Buf_Out.Data_int[3]=(int16)ks103_distance/10;
   
   Nrf_Buf_Out.Data_int[4]=(int16)(SumX_amend);                       
@@ -214,6 +216,8 @@ void uart_sendstate()
   UART_Buff_Out.Data_int[2]=(int16)(attitudeActual.Roll*100);
   UART_Buff_Out.Data_int[3]=(int16)(attitudeActual.Pitch*100);
   UART_Buff_Out.Data_int[4]=(int16)(attitudeActual.Yaw*100);
+
+
   //  UART_Buff_Out.Data_int[3]=servoData[1].pos;
   //  UART_Buff_Out.Data_int[4]=servoData[2].pos;
   //  UART_Buff_Out.Data_int[5]=servoData[3].pos;

@@ -1,6 +1,14 @@
 # SHU_FlightControl_TM4C
 Flight control firmware development based on TI TM4C MCU
 
+rev0.6 2017/8/3:
+optical flow para ameliorate
+1. Optical flow para ameliorate, compatible with old verision flow senosr
+2. Code structure improvment: attitude solving, flow
+
+rev0.5 2017/7/31:
+Add back core_uartstdio.h to retrive the normal state of flow
+
 rev0.4 2017/7/30:
 1. Add several inc.h to make the code "include" more perspicuous.
 2. Attach these inc.h to all the execuable files and bulid successfully.

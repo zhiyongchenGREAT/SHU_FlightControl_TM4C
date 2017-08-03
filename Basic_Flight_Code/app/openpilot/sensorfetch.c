@@ -34,75 +34,7 @@
 #define LOOP_RATE_MS      25.0f
 #define GYRO_NEUTRAL_BIAS 1665
 #define ACCEL_SCALE  (GRAVITY * 0.004f)
-/* 0.004f is gravity / LSB */
 
-// Private types
-
-// Private variables
-
-// Private functions
-
-/**
- * Get an update from the sensors
- * @param[in] attitudeRaw Populate the UAVO instead of saving right here
- * @return 0 if successfull, -1 if not
- */
-/*int8 getSensorsCC(float *prelim_accels, float *prelim_gyros, xQueueHandle * gyro_queue, GlobalAttitudeVariables *glblAtt, GyrosBiasData *gyrosBias, SensorSettingsData *inertialSensorSettings)
-{
-	struct pios_adxl345_data accel_data;
-	float gyro[4];
-
-	// Only wait the time for two nominal updates before setting an alarm
-	if (xQueueReceive(*gyro_queue, (void *const)gyro, LOOP_RATE_MS * 2) ==
-	    errQUEUE_EMPTY) {
-		AlarmsSet(SYSTEMALARMS_ALARM_ATTITUDE,
-			  SYSTEMALARMS_ALARM_ERROR);
-		return -1;
-	}
-	// Do not read raw sensor data in simulation mode
-	if (GyrosReadOnly() || AccelsReadOnly())
-		return 0;
-
-	// No accel data available
-	if (PIOS_ADXL345_FifoElements() == 0)
-		return -1;
-
-	// Scale ADC data into deg/s. First sample is temperature, so ignore.
-	// Rotate data from internal gryoscope sensor frame into board sensor frame
-	prelim_gyros[0] = -(gyro[1] - GYRO_NEUTRAL_BIAS) * 0.42f * inertialSensorSettings->GyroScale[SENSORSETTINGS_GYROSCALE_X];
-	prelim_gyros[1] =  (gyro[2] - GYRO_NEUTRAL_BIAS) * 0.42f * inertialSensorSettings->GyroScale[SENSORSETTINGS_GYROSCALE_Y];
-	prelim_gyros[2] = -(gyro[3] - GYRO_NEUTRAL_BIAS) * 0.42f * inertialSensorSettings->GyroScale[SENSORSETTINGS_GYROSCALE_Z];
-
-	// When this is enabled remove estimate of bias
-	if (glblAtt->bias_correct_gyro) {
-		prelim_gyros[0] -= gyrosBias->x;
-		prelim_gyros[1] -= gyrosBias->y;
-		prelim_gyros[2] -= gyrosBias->z;
-	}
-
-	// Process accelerometer sensor data. In this case, average the data
-	int32_t x = 0;
-	int32_t y = 0;
-	int32_t z = 0;
-	uint8_t i = 0;
-	uint8_t samples_remaining;
-	do {
-		i++;
-		samples_remaining = PIOS_ADXL345_Read(&accel_data);
-
-		//Assign data, rotating from internal accelerometer frame into board sensor frame
-		x +=  accel_data.x;
-		y += -accel_data.y;
-		z += -accel_data.z;
-	} while ((i < 32) && (samples_remaining > 0));	//<-- i=32 being hardcoded means that if the accelerometer ADC sample rate is increased, we could wind up never being able to empty the buffer
-
-	// Apply scaling and bias correction in sensor frame
-	prelim_accels[0] = (float)x / i * ACCEL_SCALE * inertialSensorSettings->AccelScale[0] - inertialSensorSettings->AccelBias[0];
-	prelim_accels[1] = (float)y / i * ACCEL_SCALE * inertialSensorSettings->AccelScale[1] - inertialSensorSettings->AccelBias[1];
-	prelim_accels[2] = (float)z / i * ACCEL_SCALE * inertialSensorSettings->AccelScale[2] - inertialSensorSettings->AccelBias[2];
-
-	return 0;
-}*/
 void getattdata()
 {
       sensorData.M_X=ak8975_soft_getdata(AK8975_SOFT_X); 

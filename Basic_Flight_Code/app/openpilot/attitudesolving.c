@@ -1,6 +1,5 @@
 #include "attitudesolving.h"
 
-
 // Private constants
 #define STACK_SIZE_BYTES 580
 #define TASK_PRIORITY (tskIDLE_PRIORITY+3)
@@ -213,66 +212,21 @@ void AttitudeInitialize(void)
 * Module thread, should not return.
 */
 void attsolving()
-{
-///////////timer//////////////////  
+{  
   OS_ERR err;
-//////////////////////////////////
-
-  //AlarmsClear(SYSTEMALARMS_ALARM_ATTITUDE);
-  
-  // Set critical error and wait until the accel is producing data
-  //while(PIOS_ADXL345_FifoElements() == 0) {
-  //		AlarmsSet(SYSTEMALARMS_ALARM_ATTITUDE, SYSTEMALARMS_ALARM_CRITICAL);
-  //		PIOS_WDG_UpdateFlag(PIOS_WDG_ATTITUDE);
-  //	}
-  
-  //	const struct pios_board_info * bdinfo = &pios_board_info_blob;
-  //	
-  //	bool cc3d = bdinfo->board_rev == 0x02;
-  
-  //	if (!cc3d) {
-  //#if defined(PIOS_INCLUDE_ADC)
-  // Create queue for passing gyro data, allow 2 back samples in case
-  //		gyro_queue = xQueueCreate(1, sizeof(float) * 4);
-  //		PIOS_Assert(gyro_queue != NULL);
-  //		PIOS_ADC_SetQueue(PIOS_INTERNAL_ADC,gyro_queue);
-  //
-  //		PIOS_SENSORS_SetMaxGyro(500);
-  //#endif
-  //	}
-  
-  // Force settings update to make sure rotation loaded
-  //	settingsUpdatedCb(AttitudeSettingsHandle());
-  
-  
 #if 1
   uint32_t arming_count = 0;
   
-  // Main task loop
-  //while (1) {
-  
-  //FlightStatusData flightStatus;
-  //FlightStatusGet(&flightStatus);
-  
   if (complimentary_filter_status == CF_POWERON) 
   {
-    ///////////////////timer/////////////////////////////
-    //    complimentary_filter_status = (timestampget(&timer)-timer.stamp0 > 1000) ?
-    //  CF_INITIALIZING : CF_POWERON;
-
-    complimentary_filter_status = (OSTimeGet(&err)-timer.stamp0 > 1000) ?
+/*         complimentary_filter_status = (timestampget(&timer)-timer.stamp0 > 1000) ? CF_INITIALIZING : CF_POWERON;              */
+    complimentary_filter_status = (OSTimeGet(&err)-timer.stamp0 > 1000) ? 
   CF_INITIALIZING : CF_POWERON;
-  /////////////////////////////////////////////////////
   } 
-/////////////////////////////////////////////////////
-//  else if(complimentary_filter_status == CF_INITIALIZING &&
-//          (timestampget(&timer)-timer.stamp0 < 3000) && 
-//            (timestampget(&timer)-timer.stamp0 > 1000))
-  
+/*   else if(complimentary_filter_status == CF_INITIALIZING && (timestampget(&timer)-timer.stamp0 < 3000) && (timestampget(&timer)-timer.stamp0 > 1000))              */
   else if(complimentary_filter_status == CF_INITIALIZING &&
           (OSTimeGet(&err)-timer.stamp0 < 3000) && 
             (OSTimeGet(&err)-timer.stamp0 > 1000))    
-/////////////////////////////////////////////////////
   {
     
     // For first 7 seconds use accels to get gyro bias

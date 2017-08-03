@@ -2202,7 +2202,7 @@
                     </file>
                 </group>
                 <file>
-                    <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\attitudesolving.c</name>
+                    <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\attitudesolving_B.c</name>
                 </file>
                 <file>
                     <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\basicflight_includes.h</name>
@@ -2238,7 +2238,7 @@
                     <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\sensorfetch.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\stabilization.c</name>
+                    <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\stabilization_B.c</name>
                 </file>
                 <file>
                     <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\virtualflybar.c</name>
@@ -2251,10 +2251,10 @@
                 <name>$PROJ_DIR$\..\Basic_Flight_Code\board\device_includes.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\Basic_Flight_Code\board\KS103.c</name>
+                <name>$PROJ_DIR$\..\Basic_Flight_Code\board\Flow_B.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\Basic_Flight_Code\board\PX4Flow.c</name>
+                <name>$PROJ_DIR$\..\Basic_Flight_Code\board\KS103.c</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\..\Basic_Flight_Code\board\YRK_AK8975_SOFT.c</name>

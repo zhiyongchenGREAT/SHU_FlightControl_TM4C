@@ -29,7 +29,8 @@ float SumX_amend=0;
 float SumY_amend=0;
 
 //float radians_to_pixels_x = 2.5435f,radians_to_pixels_y = 2.5435f;
-float radians_to_pixels_x = 15.6,radians_to_pixels_y = 15.6;
+//float radians_to_pixels_x = 15.6,radians_to_pixels_y = 15.6;
+float radians_to_pixels_x = 20,radians_to_pixels_y = 20;
 float conv_factor =  0.0010f; 
 
 
@@ -81,40 +82,76 @@ void FLOW_MAVLINK(unsigned char data)
   char floattobyte[4];
   switch(s_flow)
   {
-  case 0: if(data==0xFE)
-    s_flow=1;
+  case 0: 
+    if(data==0xFE)
+      s_flow=1;
     break;
-  case 1: if(data==0x1A||data==0x2C)
-  { s_flow=2;}
-  else
-    s_flow=0;
+    
+  case 1: 
+    if(data==0x1A||data==0x2C)
+      s_flow=2;
+    else
+      s_flow=0;
     break;
+    
   case 2:
     if(data_cnt<4)
-    {s_flow=2; FLOW_STATE[data_cnt++]=data;}
+    {
+      s_flow=2; 
+      FLOW_STATE[data_cnt++]=data;
+    }
     else
-    {data_cnt=0;s_flow=3;flow_buf[data_cnt++]=data;}
+    {
+      data_cnt=0;
+      s_flow=3;
+      flow_buf[data_cnt++]=data;
+    }
     break;
+    
   case 3:
     if(FLOW_STATE[3]==100)
     {
       if(data_cnt<26)
-      {s_flow=3; flow_buf[data_cnt++]=data;}
+      {
+        s_flow=3; 
+        flow_buf[data_cnt++]=data;
+      }
       else
-      {data_cnt=0;s_flow=4;}
+      {
+        data_cnt=0;
+        s_flow=4;
+      }
     }
     else if(FLOW_STATE[3]==106)
     {
       if(data_cnt<44)
-      {s_flow=3; flow_buf_rad[data_cnt++]=data;}
+      {
+        s_flow=3; 
+        flow_buf_rad[data_cnt++]=data;
+      }
       else
-      {data_cnt=0;s_flow=4;}
+      {
+        data_cnt=0;
+        s_flow=4;
+      }
     }
     else
-    {data_cnt=0;s_flow=0;}
+    {
+      data_cnt=0;
+      s_flow=0;
+    }
     break;
-  case 4:get_one_fame=1;s_flow=0;data_cnt=0;break;
-  default:s_flow=0;data_cnt=0;break;
+    
+  case 4:
+    get_one_fame=1;
+    s_flow=0;
+    data_cnt=0;
+    break;
+    
+  default:
+    s_flow=0;
+    data_cnt=0;
+    break;
   }//--end of  switch
   
   if(get_one_fame)
@@ -192,8 +229,8 @@ void px4_data_fix(void)
   //unsigned char move=0;
   //move=ADNS3080_Data_Buffer[0];
   
-  y_mm =(float)px4_sumy- (diff_roll * radians_to_pixels_y);   //单位是像素      //float radians_to_pixels_x = 15.6; radians_to_pixels_y = 15.6;
-  x_mm =(float)px4_sumx- (diff_pitch * radians_to_pixels_x);                    //float px4_sumx=0,px4_sumy=0;
+  y_mm =(float)px4_sumy - (diff_roll * radians_to_pixels_y);   //单位是像素      //float radians_to_pixels_x = 15.6; radians_to_pixels_y = 15.6;
+  x_mm =(float)px4_sumx - (diff_pitch * radians_to_pixels_x);                    //float px4_sumx=0,px4_sumy=0;
   High_Now = ks103_distance;   //单位是毫米
   if(High_Now-High_Now_before>1000 || High_Now_before-High_Now<-1000)           //::note::large delta height
   {
@@ -204,8 +241,8 @@ void px4_data_fix(void)
     High_Now=0; 
   }
   
-  y_mm=y_mm*High_Now * conv_factor;   //单位是mm  //最佳高度是50-60cm           //float conv_factor =  0.0010f init
-  x_mm=x_mm*High_Now * conv_factor;
+  y_mm=y_mm*High_Now * conv_factor;// * 6;   //单位是mm  //最佳高度是50-60cm           //float conv_factor =  0.0010f init
+  x_mm=x_mm*High_Now * conv_factor;// * 6;
   
 ////光流输出给PID调节的值
 //float SumX=0;

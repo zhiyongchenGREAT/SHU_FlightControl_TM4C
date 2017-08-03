@@ -1,7 +1,7 @@
 ﻿C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\Project.pbd
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\adc.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\atmospheric_math.pbi
-C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\attitudesolving.pbi
+C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\attitudesolving_B.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\bsp.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\bsp_int.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\bsp_sys.pbi
@@ -25,6 +25,7 @@ C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\e
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\eepromqsj.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\flash.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\flight_routine.pbi
+C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\Flow_B.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\fpu.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\gpio.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\hibernate.pbi
@@ -64,13 +65,12 @@ C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\p
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\pid.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\Postion_Hold.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\pwm.pbi
-C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\PX4Flow.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\qei.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\relay_tuning.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sensorfetch.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sin_lookup.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\ssi.pbi
-C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\stabilization.pbi
+C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\stabilization_B.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\startup_ewarm.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sw_crc.pbi
 C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sysctl.pbi

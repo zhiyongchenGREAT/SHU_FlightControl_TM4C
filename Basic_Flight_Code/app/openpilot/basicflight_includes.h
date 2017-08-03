@@ -22,7 +22,8 @@
 #ifndef __BASICFLIGHT_INCLUDES_H__
 #define __BASICFLIGHT_INCLUDES_H__
 
-#include "attitudesolving.h"
+//#include "attitudesolving.h"
+#include "attitudesolving_B.h"
 #include "control_command.h"
 #include "data_common.h"
 #include "data_transfer.h"

@@ -1,0 +1,105 @@
+################################################################################
+##
+## This is an example file for defining your own code templates.
+##
+## The syntax for defining a code template is:
+## #TEMPLATE <template name>,<field>[=default value], <field>...
+##
+## The template name, the fields and their default values should be defined 
+## within quotes if they contain non-alphanumeric characters.
+## Use "&" in front of a letter in the template name to make the letter become 
+## a shortcut, which means that you can use ALT+<letter> to select the template 
+## or jump to the field in the dialog box.
+## Use ">" in the template to organize the template names in submenus.
+##
+################################################################################
+#TEMPLATE "&Statement>&if"
+if( %c )
+{
+  
+}
+#TEMPLATE &Statement>&for,"&End Value"=10,&Variable=i
+for(int %2 = 0; %2 < %1; ++%2)
+{
+  %c
+}
+#TEMPLATE &Corporate>&class,"Class &name",&Description=--,&Created="$DATE$, by $USER_NAME$"
+//******************
+// CLASS: %1
+//
+// DESCRIPTION:
+//  %2
+//
+// CREATED: %3
+//
+// FILE: $FILE_FNAME$
+//
+class %1
+{
+public:
+  %1();
+  ~%1();
+  %c
+};
+#TEMPLATE &MyDefinition>&Head,&Creator="Bicbrv",&Note
+/*
+************************************************************************************************************************
+*                                                TI-TM4C Flight Control
+*                                               SCIE/Shanghai University
+*                                              
+* File    : $FILE_FNAME$
+* By      : %1
+* Note    : %2
+*
+* TERMS OF USE:
+* ---------------
+*           We provide ALL the source code for your convenience and to help you 
+*           keep developing our flight control firmware.  
+*
+*           Please help us continue to provide our project with the finest software available.
+*           Your dedicated work is greatly appreciated. Feel free to ameliorate any 
+*           part of our code without any restriction to pursue maximum performance.
+*
+************************************************************************************************************************
+*/
+#TEMPLATE &MyDefinition>&HeadComment,&Header
+/*
+************************************************************************************************************************
+*                                               %1%c
+************************************************************************************************************************
+*/
+#TEMPLATE &MyDefinition>&Comment,&Comment
+/* %1%c              */
+#TEMPLATE &MyDefinition>&Function_Prototypes
+/*
+========================================================================================================================
+*                                               Function Prototypes
+========================================================================================================================
+*/%c
+#TEMPLATE &MyDefinition>&Defines
+/*
+========================================================================================================================
+*                                               Defines
+========================================================================================================================
+*/%c
+#TEMPLATE &MyDefinition>&Data_types
+/*
+========================================================================================================================
+*                                               Data Types
+========================================================================================================================
+*/%c
+#TEMPLATE &MyDefinition>&Functions
+/*
+========================================================================================================================
+*                                               Functions Entrance
+========================================================================================================================
+*/%c
+#TEMPLATE &MyDefinition>&Tasks_fuction
+/*
+************************************************************************************************************************
+*                                           %1
+* Notes: %2
+*        %3
+*        %4
+************************************************************************************************************************
+*/%c
