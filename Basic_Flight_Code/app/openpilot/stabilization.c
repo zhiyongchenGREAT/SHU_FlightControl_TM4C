@@ -85,11 +85,7 @@ enum {
 };
 
 
-// Private variables
-//xTaskHandle taskHandle;
-//stabilizationSettingsData settings;
-//TrimAnglesData trimAngles;
-//xQueueHandle queue;
+
 float gyro_filtered[3];
 // A flag to track which stabilization mode each axis is in
 uint8 previous_mode[MAX_AXES] = {255,255,255};
