@@ -1,13 +1,5 @@
-
 #include "flight_routine.h"
 
-
-
-
-/*!
-*  @brief      PIT0中断服务函数
-*  @since      v5.0
-*/
 
 void receive_date_check(void);
 
@@ -19,11 +11,7 @@ uint16 ddd;
 uint32 autostart_count=0;
 uint8 Uart6Date;
 
-/******************************************************************************/
-OS_MUTEX FLOW_MUTEX;
 
-OS_MUTEX KS103_MUTEX;
-/******************************************************************************/
 //NRF中断
 void PORTC_IRQHandler(void)
 {
@@ -78,11 +66,13 @@ void PIT_IRQHandler(void)
   
   OSIntExit();  
 }
+
 /*
-**********************************************************************************************************
-                                          UCOS TASK
-**********************************************************************************************************
-*/ 
+========================================================================================================================
+*                                               uc/OS Task
+========================================================================================================================
+*/
+
 void flight_routine_task(void *p_arg)
 {
   OS_ERR err;
@@ -102,13 +92,24 @@ void flight_routine_task(void *p_arg)
 //    mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);
     
 //    CPU_CRITICAL_ENTER();
+    
+//    OSMutexPend(&PID_adjust_MUTEX,
+//                0,
+//                OS_OPT_PEND_BLOCKING,
+//                &ts,
+//                &err);
+    
     CPU_CRITICAL_ENTER();
 
-    attsolving();                                                                 //姿态解算 
+    attsolving(); 
     
-    stabilize();                                                                  //PID控制
+    stabilize();
     
     CPU_CRITICAL_EXIT();
+    
+//    OSMutexPost(&PID_adjust_MUTEX,
+//                OS_OPT_POST_NONE,
+//                &err);    
     
     OSMutexPend(&KS103_MUTEX,
                 0,
@@ -116,7 +117,7 @@ void flight_routine_task(void *p_arg)
                 &ts,
                 &err);
    
-    hold();                                                                       //定高    
+    hold(); 
     
     OSMutexPost(&KS103_MUTEX,
                 OS_OPT_POST_NONE,
@@ -184,18 +185,22 @@ void flight_routine_control_task(void *p_arg)
               OS_OPT_PEND_BLOCKING,
               &ts,
               &err);
-              
+             
 //    CPU_CRITICAL_ENTER();
     
 //    OSSchedLock(&err);
     
     px4_data_fix();
     
+   
     Control();
+    
+    
     
 //    OSSchedUnlock(&err);    
     
 //    CPU_CRITICAL_EXIT();
+ 
     
     OSMutexPost(&FLOW_MUTEX,
                 OS_OPT_POST_NONE,

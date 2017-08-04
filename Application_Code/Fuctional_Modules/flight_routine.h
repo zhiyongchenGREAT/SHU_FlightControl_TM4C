@@ -19,8 +19,5 @@ extern void UART6_IRQHandler();
 extern uint16 IMU_ext_flag;
 extern uint16 count0;
 extern uint8 ADNS3080_Data_Buffer[7];
-/******************************************************************************/
-extern OS_MUTEX FLOW_MUTEX;
-extern OS_MUTEX KS103_MUTEX;
-/******************************************************************************/
+
 #endif

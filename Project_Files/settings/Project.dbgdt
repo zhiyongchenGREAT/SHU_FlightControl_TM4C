@@ -892,7 +892,7 @@
                     <item>t_tim0_cnt</item>
                     <item>flow_buf</item>
                     <item>FLOW_STATE</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

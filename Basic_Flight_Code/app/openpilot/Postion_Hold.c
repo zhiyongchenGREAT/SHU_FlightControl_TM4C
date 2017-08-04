@@ -17,8 +17,17 @@ float delta_sumx,delta_sumy;
 
 void Control()
 {
-  tot_x_cm=SumX_amend;                                                          //SumX/Y as px4_data_fix() output
-  tot_y_cm=SumY_amend;
+  OS_ERR err;  
+  CPU_TS ts;
+  
+//  OSMutexPend(&PID_adjust_MUTEX,
+//              0,
+//              OS_OPT_PEND_BLOCKING,
+//              &ts,
+//              &err);
+  
+  tot_x_cm = SumX_amend;                                                          //SumX/Y as px4_data_fix() output
+  tot_y_cm = SumY_amend;
   pos_x_i += SumX_amend;
   pos_y_i += SumY_amend;
   
@@ -46,9 +55,9 @@ void Control()
 //  PID_POS_YOUT  = 0.045*( tot_y_cm + 0.0035 * pos_y_i + 37.6 * (tot_y_cm - last_tot_y_cm));
 
 ////////////////////////////////////////////////////////////////////////////////
-  PID_POS_XOUT  = PID.paraXA * ( tot_x_cm + PID.paraXB * pos_x_i + PID.paraXC * (tot_x_cm - last_tot_x_cm));
+  PID_POS_XOUT  = UART_PIDadjust.FLOW_XP * ( tot_x_cm + UART_PIDadjust.FLOW_XI * pos_x_i + UART_PIDadjust.FLOW_XD * (tot_x_cm - last_tot_x_cm));
 
-  PID_POS_YOUT  = PID.paraYA * ( tot_y_cm + PID.paraYB * pos_y_i + PID.paraYC * (tot_y_cm - last_tot_y_cm));
+  PID_POS_YOUT  = UART_PIDadjust.FLOW_YP * ( tot_y_cm + UART_PIDadjust.FLOW_YI * pos_y_i + UART_PIDadjust.FLOW_YD * (tot_y_cm - last_tot_y_cm));
 ////////////////////////////////////////////////////////////////////////////////  
 
   //PID_POS_YOUT  = (eeprom_readdate[6]/1000.0) * (tot_y_cm + (eeprom_readdate[7]/100000.0) * pos_y_i + (eeprom_readdate[8]/100.0) * (tot_y_cm - last_tot_y_cm));
@@ -77,4 +86,8 @@ void Control()
     angle_y_out = -angel_out_max;
   last_tot_x_cm = tot_x_cm;
   last_tot_y_cm = tot_y_cm;
+  
+//  OSMutexPost(&KS103_MUTEX,
+//              OS_OPT_POST_NONE,
+//              &err);
 }

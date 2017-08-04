@@ -70,19 +70,8 @@
 //! Set the stick position that maximally transitions to rate
 #define HORIZON_MODE_MAX_BLEND               0.85f
 
-enum {
-  PID_RATE_ROLL,   // Rate controller settings
-  PID_RATE_PITCH,
-  PID_RATE_YAW,
-  PID_ATT_ROLL,    // Attitude controller settings
-  PID_ATT_PITCH,
-  PID_ATT_YAW,
-  PID_VBAR_ROLL,   // Virtual flybar settings
-  PID_VBAR_PITCH,
-  PID_VBAR_YAW,
-  PID_COORDINATED_FLIGHT_YAW,
-  PID_MAX
-};
+
+
 
 float gyro_filtered[3];
 // A flag to track which stabilization mode each axis is in
@@ -95,6 +84,7 @@ float weak_leveling_kp = 0;
 uint8_t weak_leveling_max = 0;
 _Bool lowThrottleZeroIntegral;
 float vbar_decay = 0.991f;
+
 struct pid pids[PID_MAX];
 
 // Private functions

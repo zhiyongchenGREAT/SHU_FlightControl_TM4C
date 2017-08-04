@@ -151,7 +151,14 @@ void auto_takeoff_task(void *p_arg);
 extern OS_TCB	AUTOlanding;
 extern CPU_STK	AUTO_LANDIND_TASK_STK[AUTO_LANDIND_TASK_SIZE];
 void auto_landing_task(void *p_arg);
-
+/*
+========================================================================================================================
+*                                               OS_Mutex
+========================================================================================================================
+*/
+extern OS_MUTEX FLOW_MUTEX;
+extern OS_MUTEX KS103_MUTEX;
+extern OS_MUTEX PID_adjust_MUTEX;
 /*
 ========================================================================================================================
 *                                               Defines

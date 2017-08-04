@@ -42,9 +42,24 @@
 #include <OS_includes.h>
    
 enum {ROLL,PITCH,YAW,MAX_AXES};
+enum {
+  PID_RATE_ROLL,   // Rate controller settings
+  PID_RATE_PITCH,
+  PID_RATE_YAW,
+  PID_ATT_ROLL,    // Attitude controller settings
+  PID_ATT_PITCH,
+  PID_ATT_YAW,
+  PID_VBAR_ROLL,   // Virtual flybar settings
+  PID_VBAR_PITCH,
+  PID_VBAR_YAW,
+  PID_COORDINATED_FLIGHT_YAW,
+  PID_MAX
+};
 
-void StabilizationInitialize();
-void stabilize();
+extern struct pid pids[PID_MAX];
+
+extern void StabilizationInitialize();
+extern void stabilize();
 #endif /* STABILIZATION_H */
 
 /**

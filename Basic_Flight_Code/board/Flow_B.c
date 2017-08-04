@@ -63,10 +63,10 @@ void PX4Flow_uart_init(uint32 band,void (*pfnHandler)(void))
   SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
   SysCtlPeripheralEnable(SYSCTL_PERIPH_UART6);
   
-  GPIOPinConfigure(GPIO_PD4_U6RX);                    //配置输出引脚    PB1=usb1Rx
+  GPIOPinConfigure(GPIO_PD4_U6RX);                   
   GPIOPinTypeUART(GPIO_PORTD_BASE, GPIO_PIN_4);
   
-  GPIOPinConfigure(GPIO_PD5_U6TX);                     //配置输出引脚    PB1=usb1Rx ,PB2=usb1TX
+  GPIOPinConfigure(GPIO_PD5_U6TX);                     
   GPIOPinTypeUART(GPIO_PORTD_BASE, GPIO_PIN_5);
   
   IntRegister(INT_UART6,pfnHandler);  

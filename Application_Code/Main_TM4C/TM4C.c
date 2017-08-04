@@ -97,6 +97,15 @@ CPU_STK	AUTO_TAKEOFF_TASK_STK[AUTO_TAKEOFF_TASK_SIZE];
 */
 OS_TCB	AUTOlanding;
 CPU_STK	AUTO_LANDIND_TASK_STK[AUTO_LANDIND_TASK_SIZE];
+
+/*
+========================================================================================================================
+*                                               OS_Mutex
+========================================================================================================================
+*/
+OS_MUTEX FLOW_MUTEX;
+OS_MUTEX KS103_MUTEX;
+OS_MUTEX PID_adjust_MUTEX;
 /*
 ========================================================================================================================
 *                                               Functions Entrance
@@ -227,19 +236,19 @@ static void flight_init_task(void *p_arg)
                (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
                (OS_ERR 	* )&err); 
   
-  OSTaskCreate((OS_TCB 	* )&CameraTCB,		
-               (CPU_CHAR	* )"camera task", 		
-               (OS_TASK_PTR  )camera_task, 			
-               (void	* )0,					
-               (OS_PRIO	  )CAMERA_TASK_PRIO,     
-               (CPU_STK    * )&CAMERA_TASK_STK[0],	
-               (CPU_STK_SIZE )CAMERA_STK_SIZE/10,	
-               (CPU_STK_SIZE )CAMERA_STK_SIZE,		
-               (OS_MSG_QTY   )0,					
-               (OS_TICK	  )0,					
-               (void   	* )0,					
-               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
-               (OS_ERR 	* )&err);
+//  OSTaskCreate((OS_TCB 	* )&CameraTCB,		
+//               (CPU_CHAR	* )"camera task", 		
+//               (OS_TASK_PTR  )camera_task, 			
+//               (void	* )0,					
+//               (OS_PRIO	  )CAMERA_TASK_PRIO,     
+//               (CPU_STK    * )&CAMERA_TASK_STK[0],	
+//               (CPU_STK_SIZE )CAMERA_STK_SIZE/10,	
+//               (CPU_STK_SIZE )CAMERA_STK_SIZE,		
+//               (OS_MSG_QTY   )0,					
+//               (OS_TICK	  )0,					
+//               (void   	* )0,					
+//               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
+//               (OS_ERR 	* )&err);
   
 //  OSTaskCreate((OS_TCB 	* )&UARTReportTCB,		
 //               (CPU_CHAR	* )"uart report task", 		
@@ -269,47 +278,47 @@ static void flight_init_task(void *p_arg)
                (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
                (OS_ERR 	* )&err);
   
-  OSTaskCreate((OS_TCB 	* )&AUTOtestflight,		
-               (CPU_CHAR	* )"auto test flight", 		
-               (OS_TASK_PTR  )auto_test_flight_task, 			
-               (void	* )0,					
-               (OS_PRIO	  )AUTO_TEST_FLIGHT_TASK_PRIO,     
-               (CPU_STK    * )&AUTO_TEST_FLIGHT_TASK_STK[0],	
-               (CPU_STK_SIZE )AUTO_TEST_FLIGHT_TASK_SIZE/10,	
-               (CPU_STK_SIZE )AUTO_TEST_FLIGHT_TASK_SIZE,		
-               (OS_MSG_QTY   )0,					
-               (OS_TICK	  )0,					
-               (void   	* )0,					
-               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
-               (OS_ERR 	* )&err);
+//  OSTaskCreate((OS_TCB 	* )&AUTOtestflight,		
+//               (CPU_CHAR	* )"auto test flight", 		
+//               (OS_TASK_PTR  )auto_test_flight_task, 			
+//               (void	* )0,					
+//               (OS_PRIO	  )AUTO_TEST_FLIGHT_TASK_PRIO,     
+//               (CPU_STK    * )&AUTO_TEST_FLIGHT_TASK_STK[0],	
+//               (CPU_STK_SIZE )AUTO_TEST_FLIGHT_TASK_SIZE/10,	
+//               (CPU_STK_SIZE )AUTO_TEST_FLIGHT_TASK_SIZE,		
+//               (OS_MSG_QTY   )0,					
+//               (OS_TICK	  )0,					
+//               (void   	* )0,					
+//               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
+//               (OS_ERR 	* )&err);
   
-  OSTaskCreate((OS_TCB 	* )&AUTOtakeoff,		
-               (CPU_CHAR	* )"auto takeoff", 		
-               (OS_TASK_PTR  )auto_takeoff_task, 			
-               (void	* )0,					
-               (OS_PRIO	  )AUTO_TAKEOFF_TASK_PRIO,     
-               (CPU_STK    * )&AUTO_TAKEOFF_TASK_STK[0],	
-               (CPU_STK_SIZE )AUTO_TAKEOFF_TASK_SIZE/10,	
-               (CPU_STK_SIZE )AUTO_TAKEOFF_TASK_SIZE,		
-               (OS_MSG_QTY   )0,					
-               (OS_TICK	  )0,					
-               (void   	* )0,					
-               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
-               (OS_ERR 	* )&err);
+//  OSTaskCreate((OS_TCB 	* )&AUTOtakeoff,		
+//               (CPU_CHAR	* )"auto takeoff", 		
+//               (OS_TASK_PTR  )auto_takeoff_task, 			
+//               (void	* )0,					
+//               (OS_PRIO	  )AUTO_TAKEOFF_TASK_PRIO,     
+//               (CPU_STK    * )&AUTO_TAKEOFF_TASK_STK[0],	
+//               (CPU_STK_SIZE )AUTO_TAKEOFF_TASK_SIZE/10,	
+//               (CPU_STK_SIZE )AUTO_TAKEOFF_TASK_SIZE,		
+//               (OS_MSG_QTY   )0,					
+//               (OS_TICK	  )0,					
+//               (void   	* )0,					
+//               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
+//               (OS_ERR 	* )&err);
   
-  OSTaskCreate((OS_TCB 	* )&AUTOlanding,		
-               (CPU_CHAR	* )"auto landing", 		
-               (OS_TASK_PTR  )auto_landing_task, 			
-               (void	* )0,					
-               (OS_PRIO	  )AUTO_LANDING_TASK_PRIO,     
-               (CPU_STK    * )&AUTO_LANDIND_TASK_STK[0],	
-               (CPU_STK_SIZE )AUTO_LANDIND_TASK_SIZE/10,	
-               (CPU_STK_SIZE )AUTO_LANDIND_TASK_SIZE,		
-               (OS_MSG_QTY   )0,					
-               (OS_TICK	  )0,					
-               (void   	* )0,					
-               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
-               (OS_ERR 	* )&err);
+//  OSTaskCreate((OS_TCB 	* )&AUTOlanding,		
+//               (CPU_CHAR	* )"auto landing", 		
+//               (OS_TASK_PTR  )auto_landing_task, 			
+//               (void	* )0,					
+//               (OS_PRIO	  )AUTO_LANDING_TASK_PRIO,     
+//               (CPU_STK    * )&AUTO_LANDIND_TASK_STK[0],	
+//               (CPU_STK_SIZE )AUTO_LANDIND_TASK_SIZE/10,	
+//               (CPU_STK_SIZE )AUTO_LANDIND_TASK_SIZE,		
+//               (OS_MSG_QTY   )0,					
+//               (OS_TICK	  )0,					
+//               (void   	* )0,					
+//               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
+//               (OS_ERR 	* )&err);
   
   OSMutexCreate(&FLOW_MUTEX,
                 "flow mutex",
@@ -317,6 +326,10 @@ static void flight_init_task(void *p_arg)
   
   OSMutexCreate(&KS103_MUTEX,
                 "ks103 mutex",
+                &err);
+  
+  OSMutexCreate(&PID_adjust_MUTEX,
+                "PID adjust mutex",
                 &err);
   
   OSTaskDel(&FlightINITTCB, &err);

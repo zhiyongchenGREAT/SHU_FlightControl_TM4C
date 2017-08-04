@@ -6,14 +6,22 @@ float lasts=0;//上次面积
 
 void hold()
 {
+  OS_ERR err;  
+  CPU_TS ts;
+  
+//  OSMutexPend(&PID_adjust_MUTEX,
+//              0,
+//              OS_OPT_PEND_BLOCKING,
+//              &ts,
+//              &err);
+//  
   float temp;
   eeprom_read(1);
-//defined in data_common.c/data_common.h:
-//struct ActuatorDesiredData actuatorDesired;
-//struct StabilizationDesiredData stabDesired;
+
   
   if(abs((int)ks103_delta_distance) < 200)
-      temp = ks103_distance / 1000.0 * 20 + ks103_delta_distance / 1000.0 * 90;     //PD para of height
+    temp = ks103_distance / 1000.0 * UART_PIDadjust.Height_P 
+      + ks103_delta_distance / 1000.0 * UART_PIDadjust.Height_D;
   else
     temp = lasts;
   
@@ -33,4 +41,8 @@ void hold()
     actuatorDesired.Throttle=0; 
   
   lasts = temp;
+  
+//  OSMutexPost(&KS103_MUTEX,
+//              OS_OPT_POST_NONE,
+//              &err);  
 }
