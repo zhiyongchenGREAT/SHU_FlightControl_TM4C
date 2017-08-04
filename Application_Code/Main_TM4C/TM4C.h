@@ -152,6 +152,16 @@ extern OS_TCB	AUTOlanding;
 extern CPU_STK	AUTO_LANDIND_TASK_STK[AUTO_LANDIND_TASK_SIZE];
 void auto_landing_task(void *p_arg);
 /*
+************************************************************************************************************************
+*                                               Remote controller
+************************************************************************************************************************
+*/
+#define REMOTE_CONTROLLER_TASK_PRIO        2
+#define REMOTE_CONTROLLER_TASK_SIZE       128
+extern OS_TCB	RemoteCtrlTCB;
+extern CPU_STK	REMOTE_CONTROLLER_TASK_STK[REMOTE_CONTROLLER_TASK_SIZE];
+void remote_controller_task(void *p_arg);
+/*
 ========================================================================================================================
 *                                               OS_Mutex
 ========================================================================================================================

@@ -97,6 +97,13 @@ CPU_STK	AUTO_TAKEOFF_TASK_STK[AUTO_TAKEOFF_TASK_SIZE];
 */
 OS_TCB	AUTOlanding;
 CPU_STK	AUTO_LANDIND_TASK_STK[AUTO_LANDIND_TASK_SIZE];
+/*
+************************************************************************************************************************
+*                                               Remote controller
+************************************************************************************************************************
+*/
+OS_TCB	RemoteCtrlTCB;
+CPU_STK	REMOTE_CONTROLLER_TASK_STK[REMOTE_CONTROLLER_TASK_SIZE];
 
 /*
 ========================================================================================================================
@@ -278,6 +285,20 @@ static void flight_init_task(void *p_arg)
                (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
                (OS_ERR 	* )&err);
   
+  OSTaskCreate((OS_TCB 	* )&RemoteCtrlTCB,		
+               (CPU_CHAR	* )"remote controller task", 		
+               (OS_TASK_PTR  )remote_controller_task, 			
+               (void	* )0,					
+               (OS_PRIO	  )REMOTE_CONTROLLER_TASK_PRIO,     
+               (CPU_STK    * )&REMOTE_CONTROLLER_TASK_STK[0],	
+               (CPU_STK_SIZE )REMOTE_CONTROLLER_TASK_SIZE/10,	
+               (CPU_STK_SIZE )REMOTE_CONTROLLER_TASK_SIZE,		
+               (OS_MSG_QTY   )0,					
+               (OS_TICK	  )0,					
+               (void   	* )0,					
+               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
+               (OS_ERR 	* )&err);  
+  
 //  OSTaskCreate((OS_TCB 	* )&AUTOtestflight,		
 //               (CPU_CHAR	* )"auto test flight", 		
 //               (OS_TASK_PTR  )auto_test_flight_task, 			
@@ -357,6 +378,8 @@ static void FlightAPPInit(CPU_INT08U set)
 /* Only for test purpose whenever time-consuming mesurment is needed              */
   
   testpurpose_tim0_init();
+  
+  PPM_init(PPM_CAP_Int_Handler);
 
   Camera_init();
   
@@ -364,17 +387,17 @@ static void FlightAPPInit(CPU_INT08U set)
 
 /* IntPrio set: Sonar>Flow>Timer>Tele              */
 
-//  IntPrioritySet(INT_GPIOC, 0x00);
-//  IntPrioritySet(INT_UART6, 0x01<<5);
 
-  IntPrioritySet(INT_UART6, 0x00);  
-  IntPrioritySet(INT_GPIOC, 0x01<<5);
-  IntPrioritySet(INT_TIMER1A, 0x01<<6);
-  IntPrioritySet(INT_UART1, 0x01<<7);
+//  IntPrioritySet(INT_UART6, 0x00); 
+//  IntPrioritySet(INT_GPIOC, 0x01<<5);
+//  IntPrioritySet(INT_TIMER1A, 0x01<<6);
+//  IntPrioritySet(INT_UART1, 0x01<<7);
 
-//  IntPrioritySet(INT_GPIOC, 0x00);                                              //PX4flow init	
-//  IntPrioritySet(INT_UART6, 0x01<<5);
-//  IntPrioritySet(INT_UART1, 0x02<<6);
+  IntPrioritySet(INT_UART6, 0x01<<5);
+  IntPrioritySet(INT_WTIMER1A, 0x00); 
+  IntPrioritySet(INT_GPIOC, 0x02<<5);  
+  IntPrioritySet(INT_TIMER1A, 0x03<<5);
+  IntPrioritySet(INT_UART1, 0x04<<5);  
   
   data_common_init();                                                           
   param_common_init();                                                          

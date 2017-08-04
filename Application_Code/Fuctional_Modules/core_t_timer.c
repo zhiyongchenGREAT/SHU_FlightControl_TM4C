@@ -27,7 +27,7 @@ void testpurpose_tim0_init(void)
   SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
   TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC_UP);
   
-  TimerLoadSet(TIMER0_BASE, TIMER_A, 0xffffffff);
+  TimerLoadSet(TIMER0_BASE, TIMER_A, 0x00000000);
   
   TimerControlStall(TIMER0_BASE, TIMER_BOTH, true);
   

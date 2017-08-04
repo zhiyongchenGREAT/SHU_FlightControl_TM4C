@@ -2327,6 +2327,9 @@
                 <name>$PROJ_DIR$\..\Application_Code\Fuctional_Modules\core_camera.c</name>
             </file>
             <file>
+                <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\core_ppm.c</name>
+            </file>
+            <file>
                 <name>$PROJ_DIR$\..\Application_Code\Fuctional_Modules\core_t_timer.c</name>
             </file>
             <file>

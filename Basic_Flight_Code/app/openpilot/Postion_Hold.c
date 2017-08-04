@@ -17,8 +17,8 @@ float delta_sumx,delta_sumy;
 
 void Control()
 {
-  OS_ERR err;  
-  CPU_TS ts;
+//  OS_ERR err;  
+//  CPU_TS ts;
   
 //  OSMutexPend(&PID_adjust_MUTEX,
 //              0,

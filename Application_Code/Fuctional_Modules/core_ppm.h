@@ -3,9 +3,9 @@
 *                                                TI-TM4C Flight Control
 *                                               SCIE/Shanghai University
 *                                              
-* File    : app_includes.h
+* File    : core_ppm.h
 * By      : Bicbrv
-* Note    : App level includes
+* Note    : Remote controller
 *
 * TERMS OF USE:
 * ---------------
@@ -18,19 +18,21 @@
 *
 ************************************************************************************************************************
 */
+#ifndef __CORE_PPM_H
+#define __CORE_PPM_H
 
-#ifndef __APP_INCLUDES_H__
-#define __APP_INCLUDES_H__
+#include <core_common.h>
+#include <board_includes.h>
+#include <device_includes.h>
+#include <math_includes.h>
+#include <basicflight_includes.h>
+#include <app_includes.h>
+#include <OS_includes.h>
 
-#include "TM4C.h"
-#include "core_autopilot.h"
-#include "core_camera.h"
-#include "core_t_timer.h"
-#include "core_uart.h"
-#include "eepromqsj.h"
-#include "flight_routine.h"
-#include "core_uartstdio.h"
-#include "core_ppm.h"
+extern volatile uint32 CAP_count;
+extern void PPM_init(void (*pfnHandler)(void));
+extern void PPM_CAP_Int_Handler(void);
 
+extern void remote_controller_task(void *p_arg);
 
-#endif //__BASICFLIGHT_INCLUDES_H__
+#endif  //__MAIN_H__

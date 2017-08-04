@@ -6,8 +6,8 @@ float lasts=0;//上次面积
 
 void hold()
 {
-  OS_ERR err;  
-  CPU_TS ts;
+//  OS_ERR err;  
+//  CPU_TS ts;
   
 //  OSMutexPend(&PID_adjust_MUTEX,
 //              0,
