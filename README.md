@@ -1,6 +1,9 @@
 # SHU_FlightControl_TM4C
 Flight control firmware development based on TI TM4C MCU
 
+rev0.7 2017/8/4:
+Add UART pid adjustment, telemetory para sending is feasible now.
+
 rev0.6 2017/8/3:
 optical flow para ameliorate
 1. Optical flow para ameliorate, compatible with old verision flow senosr
