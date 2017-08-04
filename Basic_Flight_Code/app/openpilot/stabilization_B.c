@@ -40,14 +40,14 @@
 #include "stabilization.h"
 
 // Math libraries
-#include "coordinate_conversions.h"
-#include "pid.h"
-#include "sin_lookup.h"
-#include "misc_math.h"
+//#include "coordinate_conversions.h"
+//#include "pid.h"
+//#include "sin_lookup.h"
+//#include "misc_math.h"
 
 // Includes for various stabilization algorithms
-#include "relay_tuning.h"
-#include "virtualflybar.h"
+//#include "relay_tuning.h"
+//#include "virtualflybar.h"
 
 #define sMAX( x, y ) ( ((x) > (y)) ? (x) : (y) )
 #define sMIN( x, y ) ( ((x) < (y)) ? (x) : (y) )

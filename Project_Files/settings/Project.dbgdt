@@ -890,7 +890,7 @@
             <IarPane-34099>
                 <expressions>
                     <item>CAP_value</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
@@ -1075,7 +1075,7 @@
                 <expressions>
                     <item>CPUUsage</item>
                     <item>CAP_value</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
