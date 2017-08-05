@@ -36,6 +36,8 @@ extern float SumX_amend,SumY_amend;
 extern void PX4Flow_uart_init(uint32 band,void (*pfnHandler)(void));
 extern void FLOW_MAVLINK(unsigned char data);
 extern void px4_data_fix(void);
+
+extern float flow_distance, flow_delta_distance;
 /* test              */
 extern float Xmm_Send;
 extern float Ymm_Send;

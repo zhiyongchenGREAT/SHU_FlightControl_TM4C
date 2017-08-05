@@ -63,7 +63,7 @@ void Control()
   //PID_POS_YOUT  = (eeprom_readdate[6]/1000.0) * (tot_y_cm + (eeprom_readdate[7]/100000.0) * pos_y_i + (eeprom_readdate[8]/100.0) * (tot_y_cm - last_tot_y_cm));
   
   
-  if(ks103_distance<=200)
+  if(flow_distance<=200)
   {
     tot_y_cm=0;
     pos_y_i=0;

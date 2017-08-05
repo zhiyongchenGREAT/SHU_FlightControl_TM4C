@@ -36,13 +36,14 @@ static float SumY=0;
 float SumX_amend=0;
 float SumY_amend=0;
 
+float flow_distance=0, flow_delta_distance=0, flow_last_distance=0;
 /* test              */
 float Xmm_Send=0;
 float Ymm_Send=0;
 static float last_roll=0;
 static float last_pitch=0;
 //const float radians_to_pixels_x = 10.9, radians_to_pixels_y = 10.9;
-const float radians_to_pixels_x = 6.95, radians_to_pixels_y = 6.95;
+static const float radians_to_pixels_x = 6.95, radians_to_pixels_y = 6.95;
 /* test              */
 
 //static const float conv_factor =  0.0010f;
@@ -230,7 +231,11 @@ void FLOW_MAVLINK(unsigned char data)
       flow_rad.quality=(flow_buf_rad[43]);
       
       px4_sumx+=flow_rad.integrated_x*1000;
-      px4_sumy+=flow_rad.integrated_y*1000; 
+      px4_sumy+=flow_rad.integrated_y*1000;
+      
+      flow_distance = flow_rad.distance * 1000;
+      flow_delta_distance = flow_distance - flow_last_distance;
+      flow_last_distance = flow_distance;
 //      px4_sumx += (flow_rad.integrated_x - flow_rad.integrated_xgyro) * 1000;
 //      px4_sumy += (flow_rad.integrated_y - flow_rad.integrated_ygyro) * 1000; 
     }
@@ -249,9 +254,7 @@ void px4_data_fix(void)
   static float High_Now_before=0;
   
   //float sum_x,sum_y;
-  float High_Now;
-  //unsigned char move=0;
-  //move=ADNS3080_Data_Buffer[0];
+  float High_Now;;
   
   y_mm =(float)px4_sumy - (diff_roll * radians_to_pixels_y);
   x_mm =(float)px4_sumx - (diff_pitch * radians_to_pixels_x);
@@ -262,7 +265,7 @@ void px4_data_fix(void)
 //  y_mm =(float)px4_sumy;
 //  x_mm =(float)px4_sumx;
   
-  High_Now = ks103_distance;   //单位是毫米
+  High_Now = flow_distance;   //单位是毫米
   if(High_Now-High_Now_before>1000 || High_Now_before-High_Now<-1000)
   {
     High_Now=High_Now_before;

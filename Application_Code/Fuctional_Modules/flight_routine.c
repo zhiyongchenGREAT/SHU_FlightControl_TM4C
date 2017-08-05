@@ -1,10 +1,5 @@
 #include "flight_routine.h"
 
-
-void receive_date_check(void);
-
-uint16 count0=0;
-uint16 count1=0;
 uint8 ADNS3080_Data_Buffer[7];
 uint16 IMU_ext_flag=0;
 uint16 ddd;
@@ -122,6 +117,7 @@ void flight_routine_task(void *p_arg)
     OSMutexPost(&KS103_MUTEX,
                 OS_OPT_POST_NONE,
                 &err);
+
 //    CPU_CRITICAL_EXIT();
     
 //    OSSchedUnlock(&err);
@@ -133,7 +129,7 @@ void flight_routine_task(void *p_arg)
    if(nrf_getcmd())
     {
       receive_date_check();
-      nrf_sendstate();                                                              //用nrf发送数据,我们可以在发送上加上高度,Data_int[8]数组长度是8
+      nrf_sendstate();
     }
    
     OSTaskSemPost(&UARTReportTCB, OS_OPT_POST_NONE, &err);
@@ -162,6 +158,7 @@ void flight_routine_task(void *p_arg)
       LED0_ON();
     
     mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);
+
 //    CPU_CRITICAL_EXIT();
 //    OSTimeDlyHMSM(0,0,0,1,OS_OPT_TIME_HMSM_STRICT,&err);
 
@@ -250,8 +247,5 @@ void flight_routine_ks103_task(void *p_arg)
     OSTimeDlyHMSM(0,0,0,7,OS_OPT_TIME_HMSM_STRICT,&err);  
   }
 }
-/*
-**********************************************************************************************************
-**********************************************************************************************************
-*/ 
+
 

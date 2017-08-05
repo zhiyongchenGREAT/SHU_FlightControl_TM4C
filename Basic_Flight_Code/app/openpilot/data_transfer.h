@@ -27,5 +27,6 @@ extern int16 Nrf_in_switch[16];
 uint8 uart_getcmd();
 void uart_sendstate();
 void uart6_sendheight();
+extern void receive_date_check(void);
 
 #endif // DATA_TRANSFER_H

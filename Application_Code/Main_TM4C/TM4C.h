@@ -168,12 +168,14 @@ void remote_controller_task(void *p_arg);
 */
 extern OS_MUTEX FLOW_MUTEX;
 extern OS_MUTEX KS103_MUTEX;
-extern OS_MUTEX PID_adjust_MUTEX;
+//extern OS_MUTEX PID_adjust_MUTEX;
 /*
 ========================================================================================================================
 *                                               Defines
 ========================================================================================================================
 */
+/* Caution!!! Don't set wings on your drone when committing change here!              */
+
 #define MOTORRESET       0u << 0u
 #define NRF              1u << 1u
 /*

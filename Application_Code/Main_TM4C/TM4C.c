@@ -112,7 +112,7 @@ CPU_STK	REMOTE_CONTROLLER_TASK_STK[REMOTE_CONTROLLER_TASK_SIZE];
 */
 OS_MUTEX FLOW_MUTEX;
 OS_MUTEX KS103_MUTEX;
-OS_MUTEX PID_adjust_MUTEX;
+//OS_MUTEX PID_adjust_MUTEX;
 /*
 ========================================================================================================================
 *                                               Functions Entrance
@@ -229,19 +229,19 @@ static void flight_init_task(void *p_arg)
                (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
                (OS_ERR 	* )&err);
   
-  OSTaskCreate((OS_TCB 	* )&FlightRoutineKS103TCB,		
-               (CPU_CHAR	* )"flight routine ks103 task", 		
-               (OS_TASK_PTR  )flight_routine_ks103_task, 			
-               (void	* )0,					
-               (OS_PRIO	  )FLIGHT_ROUTINE_KS103_TASK_PRIO,     
-               (CPU_STK    * )&FLIGHT_ROUTINE_KS103_TASK_STK[0],	
-               (CPU_STK_SIZE )FLIGHT_ROUTINE_KS103_STK_SIZE/10,	
-               (CPU_STK_SIZE )FLIGHT_ROUTINE_KS103_STK_SIZE,		
-               (OS_MSG_QTY   )0,					
-               (OS_TICK	  )0,					
-               (void   	* )0,					
-               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
-               (OS_ERR 	* )&err); 
+//  OSTaskCreate((OS_TCB 	* )&FlightRoutineKS103TCB,		
+//               (CPU_CHAR	* )"flight routine ks103 task", 		
+//               (OS_TASK_PTR  )flight_routine_ks103_task, 			
+//               (void	* )0,					
+//               (OS_PRIO	  )FLIGHT_ROUTINE_KS103_TASK_PRIO,     
+//               (CPU_STK    * )&FLIGHT_ROUTINE_KS103_TASK_STK[0],	
+//               (CPU_STK_SIZE )FLIGHT_ROUTINE_KS103_STK_SIZE/10,	
+//               (CPU_STK_SIZE )FLIGHT_ROUTINE_KS103_STK_SIZE,		
+//               (OS_MSG_QTY   )0,					
+//               (OS_TICK	  )0,					
+//               (void   	* )0,					
+//               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
+//               (OS_ERR 	* )&err); 
   
 //  OSTaskCreate((OS_TCB 	* )&CameraTCB,		
 //               (CPU_CHAR	* )"camera task", 		
@@ -257,19 +257,19 @@ static void flight_init_task(void *p_arg)
 //               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
 //               (OS_ERR 	* )&err);
   
-//  OSTaskCreate((OS_TCB 	* )&UARTReportTCB,		
-//               (CPU_CHAR	* )"uart report task", 		
-//               (OS_TASK_PTR  )uart_report_task, 			
-//               (void	* )0,					
-//               (OS_PRIO	  )UART_REPORT_TASK_PRIO,     
-//               (CPU_STK    * )&UART_REPORT_TASK_STK[0],	
-//               (CPU_STK_SIZE )UART_REPORT_TASK_SIZE/10,	
-//               (CPU_STK_SIZE )UART_REPORT_TASK_SIZE,		
-//               (OS_MSG_QTY   )0,					
-//               (OS_TICK	  )0,					
-//               (void   	* )0,					
-//               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
-//               (OS_ERR 	* )&err);
+  OSTaskCreate((OS_TCB 	* )&UARTReportTCB,		
+               (CPU_CHAR	* )"uart report task", 		
+               (OS_TASK_PTR  )uart_report_task, 			
+               (void	* )0,					
+               (OS_PRIO	  )UART_REPORT_TASK_PRIO,     
+               (CPU_STK    * )&UART_REPORT_TASK_STK[0],	
+               (CPU_STK_SIZE )UART_REPORT_TASK_SIZE/10,	
+               (CPU_STK_SIZE )UART_REPORT_TASK_SIZE,		
+               (OS_MSG_QTY   )0,					
+               (OS_TICK	  )0,					
+               (void   	* )0,					
+               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
+               (OS_ERR 	* )&err);
   
   OSTaskCreate((OS_TCB 	* )&UARTAdjustTCB,		
                (CPU_CHAR	* )"uart adjust task", 		
@@ -312,7 +312,7 @@ static void flight_init_task(void *p_arg)
 //               (void   	* )0,					
 //               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
 //               (OS_ERR 	* )&err);
-  
+//  
 //  OSTaskCreate((OS_TCB 	* )&AUTOtakeoff,		
 //               (CPU_CHAR	* )"auto takeoff", 		
 //               (OS_TASK_PTR  )auto_takeoff_task, 			
@@ -326,7 +326,7 @@ static void flight_init_task(void *p_arg)
 //               (void   	* )0,					
 //               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
 //               (OS_ERR 	* )&err);
-  
+//  
 //  OSTaskCreate((OS_TCB 	* )&AUTOlanding,		
 //               (CPU_CHAR	* )"auto landing", 		
 //               (OS_TASK_PTR  )auto_landing_task, 			
@@ -349,9 +349,9 @@ static void flight_init_task(void *p_arg)
                 "ks103 mutex",
                 &err);
   
-  OSMutexCreate(&PID_adjust_MUTEX,
-                "PID adjust mutex",
-                &err);
+//  OSMutexCreate(&PID_adjust_MUTEX,
+//                "PID adjust mutex",
+//                &err);
   
   OSTaskDel(&FlightINITTCB, &err);
 }

@@ -101,7 +101,7 @@ void auto_landing_task(void *p_arg)
     {
       OSTimeDlyHMSM(0,0,1,0,OS_OPT_TIME_HMSM_STRICT,&err);       
       auto_throttle-=2;
-      if(ks103_distance<150)
+      if(flow_distance<150)
       {
         auto_throttle=0;
       }      

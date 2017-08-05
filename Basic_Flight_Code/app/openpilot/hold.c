@@ -19,9 +19,9 @@ void hold()
   eeprom_read(1);
 
   
-  if(abs((int)ks103_delta_distance) < 200)
-    temp = ks103_distance / 1000.0 * UART_PIDadjust.Height_P 
-      + ks103_delta_distance / 1000.0 * UART_PIDadjust.Height_D;
+  if(abs((int)flow_delta_distance) < 200)
+    temp = flow_distance / 1000.0 * UART_PIDadjust.Height_P 
+      + flow_distance / 1000.0 * UART_PIDadjust.Height_D;
   else
     temp = lasts;
   
