@@ -184,14 +184,13 @@ void uart_report_task(void *p_arg)
     
     OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
     
-    sprintf((char*)dtbuf,"P>%d R>%d Y>%d H>%d FX>%d FY>%d LT>%d\r\n", 
+    sprintf((char*)dtbuf,"P>%d R>%d Y>%d H>%d FX>%d FY>%d\r\n", 
             (int16)(attitudeActual.Pitch*100),
             (int16)(attitudeActual.Roll*100),
             (int16)(attitudeActual.Yaw*100),
             (int16)flow_distance/10,
             (int16)(SumX_amend),
-            (int16)(SumY_amend),
-            lowthrottle);
+            (int16)(SumY_amend));
 
     UART1SendString(dtbuf);
   }

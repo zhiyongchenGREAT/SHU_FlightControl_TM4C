@@ -1,3 +1,24 @@
+/*
+************************************************************************************************************************
+*                                                TI-TM4C Flight Control
+*                                               SCIE/Shanghai University
+*                                              
+* File    : attitudesolving_B.c
+* By      : Bicbrv
+* Note    : attitude solving functions
+*
+* TERMS OF USE:
+* ---------------
+*           We provide ALL the source code for your convenience and to help you 
+*           keep developing our flight control firmware.  
+*
+*           Please help us continue to provide our project with the finest software available.
+*           Your dedicated work is greatly appreciated. Feel free to ameliorate any 
+*           part of our code without any restriction to pursue maximum performance.
+*
+************************************************************************************************************************
+*/
+
 #include "attitudesolving_B.h"
 
 // Private constants
@@ -23,7 +44,7 @@ static float accel_alpha = 0;
 static _Bool accel_filter_enabled = false;
 static float yawBiasRate = 0;
 static float q[4] = {1,0,0,0};
-static float Rsb[3][3];                                                                // Rotation matrix which transforms from the body frame to the sensor board frame
+static float Rsb[3][3];
 static int8 rotate = 1;
 static _Bool zero_during_arming = false;
 static _Bool bias_correct_gyro = true;
@@ -199,7 +220,7 @@ void attsolving()
   
   if (complimentary_filter_status == CF_POWERON) 
   {
-/*         complimentary_filter_status = (timestampget(&timer)-timer.stamp0 > 1000) ? CF_INITIALIZING : CF_POWERON;              */
+/*  complimentary_filter_status = (timestampget(&timer)-timer.stamp0 > 1000) ? CF_INITIALIZING : CF_POWERON;              */
     complimentary_filter_status = (OSTimeGet(&err)-timer.stamp0 > 1000) ? 
   CF_INITIALIZING : CF_POWERON;
   } 
@@ -481,7 +502,7 @@ static void updateAttitude(AccelsData * accelsData, GyrosData * gyrosData)
   float accels_filtered[3] = {0,0,0};
   float grot_filtered[3] = {0,0,0};
   
-  dT =CTL_RATE*1e-6f;
+  dT = CTL_RATE * 1e-6f;
   
 // Bad practice to assume structure order, but saves memory
   float * gyros = &gyrosData->x;
@@ -571,8 +592,10 @@ static void updateAttitude(AccelsData * accelsData, GyrosData * gyrosData)
   }
   
   quat_copy(q, &attitudeActual.q1);
+
+/* update attitudeActual, address visit with writing "float rpy[3]"              */
   
-  Quaternion2RPY(&attitudeActual.q1,&attitudeActual.Roll);
+  Quaternion2RPY(&attitudeActual.q1, &attitudeActual.Roll);
 }
 
 /**

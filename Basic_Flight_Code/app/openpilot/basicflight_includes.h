@@ -24,7 +24,8 @@
 
 //#include "attitudesolving.h"
 #include "attitudesolving_B.h"
-#include "control_command.h"
+//#include "control_command.h"
+#include "control_command_B.h"
 #include "data_common.h"
 #include "data_transfer.h"
 #include "hold.h"
@@ -34,7 +35,8 @@
 #include "Postion_Hold.h"
 #include "relay_tuning.h"
 #include "sensorfetch.h"
-#include "stabilization.h"
+//#include "stabilization.h"
+#include "stabilization_B.h"
 #include "virtualflybar.h"
 
 

@@ -7,8 +7,7 @@
 #include <basicflight_includes.h>
 #include <app_includes.h>
 #include <OS_includes.h>
-//void AttitudeInitialize();
-void mixer_init();
+
 void mixing(_Bool armed);
 
 

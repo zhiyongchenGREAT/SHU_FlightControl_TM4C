@@ -104,7 +104,20 @@ CPU_STK	AUTO_LANDIND_TASK_STK[AUTO_LANDIND_TASK_SIZE];
 */
 OS_TCB	RemoteCtrlTCB;
 CPU_STK	REMOTE_CONTROLLER_TASK_STK[REMOTE_CONTROLLER_TASK_SIZE];
-
+/*
+************************************************************************************************************************
+*                                               nrf task
+************************************************************************************************************************
+*/
+OS_TCB	nrfTCB;
+CPU_STK	NRF_TASK_STK[NRF_STK_SIZE];
+/*
+************************************************************************************************************************
+*                                               attitude solving task
+************************************************************************************************************************
+*/
+OS_TCB	AttitudesolvingTCB;
+CPU_STK	ATTITUDE_SOLVING_TASK_STK[ATTITUDE_SOLVING_STK_SIZE];
 /*
 ========================================================================================================================
 *                                               OS_Mutex
@@ -147,6 +160,7 @@ int main(void)
 
   while(1);
 }
+
 /* Start task              */
 static void start_task(void *p_arg)
 {
@@ -215,19 +229,47 @@ static void flight_init_task(void *p_arg)
                (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
                (OS_ERR 	* )&err);
   
-  OSTaskCreate((OS_TCB 	* )&FlightRoutineControlTCB,		
-               (CPU_CHAR	* )"flight routine control task", 		
-               (OS_TASK_PTR  )flight_routine_control_task, 			
+//  OSTaskCreate((OS_TCB 	* )&FlightRoutineControlTCB,		
+//               (CPU_CHAR	* )"flight routine control task", 		
+//               (OS_TASK_PTR  )flight_routine_control_task, 			
+//               (void	* )0,					
+//               (OS_PRIO	  )FLIGHT_ROUTINE_CONTROL_TASK_PRIO,     
+//               (CPU_STK    * )&FLIGHT_ROUTINE_CONTROL_TASK_STK[0],	
+//               (CPU_STK_SIZE )FLIGHT_ROUTINE_CONTROL_STK_SIZE/10,	
+//               (CPU_STK_SIZE )FLIGHT_ROUTINE_CONTROL_STK_SIZE,		
+//               (OS_MSG_QTY   )0,					
+//               (OS_TICK	  )0,					
+//               (void   	* )0,					
+//               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
+//               (OS_ERR 	* )&err);
+//  
+  OSTaskCreate((OS_TCB 	* )&nrfTCB,		
+               (CPU_CHAR	* )"nrf task", 		
+               (OS_TASK_PTR  )nrf_task, 			
                (void	* )0,					
-               (OS_PRIO	  )FLIGHT_ROUTINE_CONTROL_TASK_PRIO,     
-               (CPU_STK    * )&FLIGHT_ROUTINE_CONTROL_TASK_STK[0],	
-               (CPU_STK_SIZE )FLIGHT_ROUTINE_CONTROL_STK_SIZE/10,	
-               (CPU_STK_SIZE )FLIGHT_ROUTINE_CONTROL_STK_SIZE,		
+               (OS_PRIO	  )NRF_TASK_PRIO,     
+               (CPU_STK    * )&NRF_TASK_STK[0],	
+               (CPU_STK_SIZE )NRF_STK_SIZE/10,	
+               (CPU_STK_SIZE )NRF_STK_SIZE,		
                (OS_MSG_QTY   )0,					
                (OS_TICK	  )0,					
                (void   	* )0,					
                (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
                (OS_ERR 	* )&err);
+
+  OSTaskCreate((OS_TCB 	* )&AttitudesolvingTCB,		
+               (CPU_CHAR	* )"attitude solving task", 		
+               (OS_TASK_PTR  )attitude_solving_task, 			
+               (void	* )0,					
+               (OS_PRIO	  )ATTITUDE_SOLVING_PRIO,     
+               (CPU_STK    * )&ATTITUDE_SOLVING_TASK_STK[0],	
+               (CPU_STK_SIZE )ATTITUDE_SOLVING_STK_SIZE/10,	
+               (CPU_STK_SIZE )ATTITUDE_SOLVING_STK_SIZE,		
+               (OS_MSG_QTY   )0,					
+               (OS_TICK	  )0,					
+               (void   	* )0,					
+               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
+               (OS_ERR 	* )&err);   
   
 //  OSTaskCreate((OS_TCB 	* )&FlightRoutineKS103TCB,		
 //               (CPU_CHAR	* )"flight routine ks103 task", 		
@@ -257,19 +299,19 @@ static void flight_init_task(void *p_arg)
 //               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
 //               (OS_ERR 	* )&err);
   
-  OSTaskCreate((OS_TCB 	* )&UARTReportTCB,		
-               (CPU_CHAR	* )"uart report task", 		
-               (OS_TASK_PTR  )uart_report_task, 			
-               (void	* )0,					
-               (OS_PRIO	  )UART_REPORT_TASK_PRIO,     
-               (CPU_STK    * )&UART_REPORT_TASK_STK[0],	
-               (CPU_STK_SIZE )UART_REPORT_TASK_SIZE/10,	
-               (CPU_STK_SIZE )UART_REPORT_TASK_SIZE,		
-               (OS_MSG_QTY   )0,					
-               (OS_TICK	  )0,					
-               (void   	* )0,					
-               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
-               (OS_ERR 	* )&err);
+//  OSTaskCreate((OS_TCB 	* )&UARTReportTCB,		
+//               (CPU_CHAR	* )"uart report task", 		
+//               (OS_TASK_PTR  )uart_report_task, 			
+//               (void	* )0,					
+//               (OS_PRIO	  )UART_REPORT_TASK_PRIO,     
+//               (CPU_STK    * )&UART_REPORT_TASK_STK[0],	
+//               (CPU_STK_SIZE )UART_REPORT_TASK_SIZE/10,	
+//               (CPU_STK_SIZE )UART_REPORT_TASK_SIZE,		
+//               (OS_MSG_QTY   )0,					
+//               (OS_TICK	  )0,					
+//               (void   	* )0,					
+//               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
+//               (OS_ERR 	* )&err);
   
   OSTaskCreate((OS_TCB 	* )&UARTAdjustTCB,		
                (CPU_CHAR	* )"uart adjust task", 		
@@ -374,7 +416,7 @@ static void FlightAPPInit(CPU_INT08U set)
   GPIO_PINB7init();                                                             
   
   tim1_init(PIT_IRQHandler);
-
+  tim3_init(ATT_SOLVINGHandler);
 /* Only for test purpose whenever time-consuming mesurment is needed              */
   
   testpurpose_tim0_init();
@@ -392,9 +434,9 @@ static void FlightAPPInit(CPU_INT08U set)
 //  IntPrioritySet(INT_GPIOC, 0x01<<5);
 //  IntPrioritySet(INT_TIMER1A, 0x01<<6);
 //  IntPrioritySet(INT_UART1, 0x01<<7);
-
-  IntPrioritySet(INT_UART6, 0x01<<5);
-  IntPrioritySet(INT_WTIMER1A, 0x00); 
+  
+  IntPrioritySet(INT_WTIMER1A, 0x01<<5);
+  IntPrioritySet(INT_UART6, 0x00<<5);
   IntPrioritySet(INT_GPIOC, 0x02<<5);  
   IntPrioritySet(INT_TIMER1A, 0x03<<5);
   IntPrioritySet(INT_UART1, 0x04<<5);  
@@ -407,7 +449,7 @@ static void FlightAPPInit(CPU_INT08U set)
   if((set&(1u<<0u)) != 0u)
     motor_reset();                                                                            
   
-  DELAY_MS(1000);
+  DELAY_MS(5000);
   
   AttitudeInitialize();
   StabilizationInitialize();

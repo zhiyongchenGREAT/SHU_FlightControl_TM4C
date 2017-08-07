@@ -1,4 +1,4 @@
-"C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Basic_Flight_Code\app\openpilot\core_ppm.c"
+"C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Application_Code\Fuctional_Modules\core_ppm.c"
 -std=c11
 -ferror-limit=100
 -I

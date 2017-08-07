@@ -156,11 +156,31 @@ void auto_landing_task(void *p_arg);
 *                                               Remote controller
 ************************************************************************************************************************
 */
-#define REMOTE_CONTROLLER_TASK_PRIO        2
+#define REMOTE_CONTROLLER_TASK_PRIO        5
 #define REMOTE_CONTROLLER_TASK_SIZE       128
 extern OS_TCB	RemoteCtrlTCB;
 extern CPU_STK	REMOTE_CONTROLLER_TASK_STK[REMOTE_CONTROLLER_TASK_SIZE];
 void remote_controller_task(void *p_arg);
+/*
+************************************************************************************************************************
+*                                               nrf task
+************************************************************************************************************************
+*/
+#define NRF_TASK_PRIO        6
+#define NRF_STK_SIZE       128
+extern OS_TCB	nrfTCB;
+extern CPU_STK	NRF_TASK_STK[NRF_STK_SIZE];
+void nrf_task(void *p_arg);
+/*
+************************************************************************************************************************
+*                                               attitude task
+************************************************************************************************************************
+*/
+#define ATTITUDE_SOLVING_PRIO        4
+#define ATTITUDE_SOLVING_STK_SIZE       128
+extern OS_TCB	AttitudesolvingTCB;
+extern CPU_STK	ATTITUDE_SOLVING_TASK_STK[ATTITUDE_SOLVING_STK_SIZE];
+void attitude_solving_task(void *p_arg);
 /*
 ========================================================================================================================
 *                                               OS_Mutex
@@ -176,8 +196,8 @@ extern OS_MUTEX KS103_MUTEX;
 */
 /* Caution!!! Don't set wings on your drone when committing change here!              */
 
-#define MOTORRESET       0u << 0u
-#define NRF              1u << 1u
+#define MOTORRESET       false << 0u
+#define NRF              true << 1u
 /*
 ========================================================================================================================
 *                                               Function Prototypes

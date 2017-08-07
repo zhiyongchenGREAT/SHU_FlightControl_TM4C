@@ -714,7 +714,6 @@ void nrf_handler(void)
   
   if(state & TX_FULL) //TX FIFO Âú
   {
-    //printf("\nTX_FULL");
     
   }
 }

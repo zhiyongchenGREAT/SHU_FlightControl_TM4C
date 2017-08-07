@@ -103,8 +103,7 @@ void motorspeed_set(uint8 chn,_Bool armed,float rate)
 
     PWMPulseWidthSet(PWM1_BASE, 
                      pwmout, 
-                     (uint32)(motorSettings.Motor[chn][MOTORSETTINGS_EDP_L]
-                              *5));    
+                     (uint32)(motorSettings.Motor[chn][MOTORSETTINGS_EDP_L]*5));    
   }
   else
   {

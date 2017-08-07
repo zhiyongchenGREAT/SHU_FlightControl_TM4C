@@ -19,9 +19,10 @@
 ************************************************************************************************************************
 */
 #include "core_ppm.h"
-volatile int32 CAP_count = 0;
+volatile uint32 CAP_count = 0;
+uint32 CAP_value[9] = {0};
 
-void testpurpose_tim0_init(void)
+void PPM_init(void (*pfnHandler)(void))
 {
   
   SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
@@ -30,28 +31,50 @@ void testpurpose_tim0_init(void)
   GPIOPinConfigure(GPIO_PC6_WT1CCP0); 
   GPIOPinTypeTimer(GPIO_PORTC_BASE, GPIO_PIN_6);
   
-  TimerConfigure(WTIMER1_BASE, TIMER_CFG_SPLIT_PAIR|TIMER_CFG_A_CAP_TIME_UP);
+  TimerConfigure(WTIMER1_BASE, TIMER_CFG_SPLIT_PAIR|TIMER_CFG_A_CAP_TIME);
   TimerControlEvent(WTIMER1_BASE, TIMER_A, TIMER_EVENT_POS_EDGE);  
   
-  IntEnable(WTIMER1_BASE);
-  IntRegister(INT_WTIMER1A, CAP_Int_Handler);  
+  TimerLoadSet(WTIMER1_BASE, TIMER_A, 0xffffffff);
+  
+  IntRegister(INT_WTIMER1A, pfnHandler); 
+
+  IntEnable(INT_WTIMER1A); 
   TimerIntEnable(WTIMER1_BASE, TIMER_CAPA_EVENT);  
+
   TimerEnable(WTIMER1_BASE, TIMER_A);
 
   
-//  TimerControlStall(WTIMER1_BASE, TIMER_BOTH, true);
+  TimerControlStall(WTIMER1_BASE, TIMER_BOTH, true);
+
+//  SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
+//  SysCtlPeripheralEnable(SYSCTL_PERIPH_WTIMER1);
+//  
+//  GPIOPinConfigure(GPIO_PC7_WT1CCP1); 
+//  GPIOPinTypeTimer(GPIO_PORTC_BASE, GPIO_PIN_7);
+//  
+//  TimerConfigure(WTIMER1_BASE, TIMER_CFG_SPLIT_PAIR|TIMER_CFG_A_CAP_TIME_UP);
+//  TimerControlEvent(WTIMER1_BASE, TIMER_A, TIMER_EVENT_POS_EDGE);  
+//  
+//  IntRegister(INT_WTIMER1A, pfnHandler); 
+//
+//  IntEnable(INT_WTIMER1A); 
+//  TimerIntEnable(WTIMER1_BASE, TIMER_CAPA_EVENT);  
+//
+//  TimerEnable(WTIMER1_BASE, TIMER_A);
 
 }
 
-void CAP_Int_Handler(void)
+void PPM_CAP_Int_Handler(void)
 {
   OSIntEnter();
   
   OS_ERR err;  
   
   TimerIntClear(WTIMER1_BASE, TIMER_CAPA_EVENT);
-  CAP_count = TimerValueGet(WTIMER1_BASE, TIMER_A)
-  TimerLoadSet(WTIMER1_BASE, TIMER_A, 0x00000000);
+  
+  CAP_count = 0xffffffff - TimerValueGet(WTIMER1_BASE, TIMER_A);
+
+  TimerLoadSet(WTIMER1_BASE, TIMER_A, 0xffffffff);
   
   OSTaskSemPost(&RemoteCtrlTCB, OS_OPT_POST_NONE, &err);
   
@@ -60,10 +83,21 @@ void CAP_Int_Handler(void)
 
 /*
 ========================================================================================================================
-*                                               ucOS Task
+*                                               uc/OS Task
 ========================================================================================================================
 */
 void remote_controller_task(void *p_arg)
 {
+  OS_ERR err;
+  p_arg = p_arg;
+  uint8 count = 0;
   
+  
+  while(DEF_TRUE)
+  {
+    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
+    CAP_value[count++] = CAP_count;
+    if(count >= 9)
+      count = 0;
+  }
 }

@@ -43,7 +43,11 @@ float Ymm_Send=0;
 static float last_roll=0;
 static float last_pitch=0;
 //const float radians_to_pixels_x = 10.9, radians_to_pixels_y = 10.9;
-static const float radians_to_pixels_x = 6.95, radians_to_pixels_y = 6.95;
+
+/* stable para: 6.95 6.95              */
+
+//static const float radians_to_pixels_x = 6.95, radians_to_pixels_y = 6.95;
+static const float radians_to_pixels_x = 4.63, radians_to_pixels_y = 4.63;
 /* test              */
 
 //static const float conv_factor =  0.0010f;

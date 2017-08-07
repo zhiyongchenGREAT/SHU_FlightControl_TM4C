@@ -2053,7 +2053,7 @@
                 <name>$PROJ_DIR$\..\Application_Code\Fuctional_Modules\core_camera.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\core_ppm.c</name>
+                <name>$PROJ_DIR$\..\Application_Code\Fuctional_Modules\core_ppm.c</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\..\Application_Code\Fuctional_Modules\core_t_timer.c</name>
@@ -2211,7 +2211,7 @@
                     <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\basicflight_includes.h</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\control_command.c</name>
+                    <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\control_command_B.c</name>
                 </file>
                 <file>
                     <name>$PROJ_DIR$\..\Basic_Flight_Code\app\openpilot\data_common.c</name>

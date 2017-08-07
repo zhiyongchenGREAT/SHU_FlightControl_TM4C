@@ -27,9 +27,28 @@ void testpurpose_tim0_init(void)
   SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
   TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC_UP);
   
-  TimerLoadSet(TIMER0_BASE, TIMER_A, 0x00000000);
+  TimerLoadSet(TIMER0_BASE, TIMER_A, 0xffffffff);
   
   TimerControlStall(TIMER0_BASE, TIMER_BOTH, true);
   
   TimerEnable(TIMER0_BASE, TIMER_A);
+}
+
+void tim3_init(void (*pfnHandler)(void))
+{
+    
+  uint32_t ui32Period=0; 
+  SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER3);
+  TimerConfigure(TIMER3_BASE, TIMER_CFG_PERIODIC);
+  
+  ui32Period = ROM_SysCtlClockGet()/400;                   //400hz
+  TimerLoadSet(TIMER3_BASE, TIMER_A, ui32Period -1);
+  
+  IntRegister(INT_TIMER3A, pfnHandler);
+  IntEnable(INT_TIMER3A);
+  TimerIntEnable(TIMER3_BASE, TIMER_TIMA_TIMEOUT);
+  
+  TimerControlStall(TIMER3_BASE, TIMER_BOTH, true);
+  
+  TimerEnable(TIMER3_BASE, TIMER_A);
 }

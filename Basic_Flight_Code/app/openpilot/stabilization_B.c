@@ -35,23 +35,10 @@
 * with this program; if not, write to the Free Software Foundation, Inc.,
 * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 */
-
-//#include "openpilot.h"
-#include "stabilization.h"
-
-// Math libraries
-//#include "coordinate_conversions.h"
-//#include "pid.h"
-//#include "sin_lookup.h"
-//#include "misc_math.h"
-
-// Includes for various stabilization algorithms
-//#include "relay_tuning.h"
-//#include "virtualflybar.h"
+#include "stabilization_B.h"
 
 #define sMAX( x, y ) ( ((x) > (y)) ? (x) : (y) )
 #define sMIN( x, y ) ( ((x) < (y)) ? (x) : (y) )
-
 
 // Private constants
 #define MAX_QUEUE_SIZE 1
@@ -70,32 +57,25 @@
 //! Set the stick position that maximally transitions to rate
 #define HORIZON_MODE_MAX_BLEND               0.85f
 
-
-
-
-float gyro_filtered[3];
-// A flag to track which stabilization mode each axis is in
-uint8 previous_mode[MAX_AXES] = {255,255,255};
-float gyro_alpha = 0;
-float axis_lock_accum[3] = {0,0,0};
-uint8_t max_axis_lock = 0;
-uint8_t max_axislock_rate = 0;
-float weak_leveling_kp = 0;
-uint8_t weak_leveling_max = 0;
-_Bool lowThrottleZeroIntegral;
-float vbar_decay = 0.991f;
-
 struct pid pids[PID_MAX];
 
-// Private functions
-//void stabilizationTask(void* parameters);
-void ZeroPids(void);
-//void SettingsUpdatedCb(UAVObjEvent * ev);
+static float gyro_filtered[3];
+// A flag to track which stabilization mode each axis is in
+static uint8 previous_mode[MAX_AXES] = {255,255,255};
+static float gyro_alpha = 0;
+static float axis_lock_accum[3] = {0,0,0};
+static uint8_t max_axis_lock = 0;
+static uint8_t max_axislock_rate = 0;
+static float weak_leveling_kp = 0;
+static uint8_t weak_leveling_max = 0;
+static _Bool lowThrottleZeroIntegral;
 
-float *stabDesiredAxis = &stabDesired.Roll;
-float *actuatorDesiredAxis = &actuatorDesired.Roll;
-float *rateDesiredAxis = &rateDesired.Roll;
-float horizonRateFraction = 0.0f;
+// Private functions
+static void ZeroPids(void);
+static float *stabDesiredAxis = &stabDesired.Roll;
+static float *actuatorDesiredAxis = &actuatorDesired.Roll;
+static float *rateDesiredAxis = &rateDesired.Roll;
+static float horizonRateFraction = 0.0f;
 
 /**
 * Module initialization
@@ -202,7 +182,7 @@ void StabilizationInitialize()
     gyro_alpha = expf(-fakeDt  / stabilizationSettings.GyroTau);
   
   // Compute time constant for vbar decay term based on a tau
-  vbar_decay = expf(-fakeDt / stabilizationSettings.VbarTau);
+  //vbar_decay = expf(-fakeDt / stabilizationSettings.VbarTau);
   
 }
 
@@ -215,6 +195,8 @@ void stabilize()
   float dT;
   
   dT = CTL_RATE * 1.0e-6f;
+//  dT = CTL_RATE_STABILIZATION * 1.0e-6f;
+
 #if defined(RATEDESIRED_DIAGNOSTICS)
   RateDesiredGet(&rateDesired);
 #endif
@@ -554,7 +536,6 @@ void stabilize()
   
   // Save dT
   actuatorDesired.UpdateTime = dT * 1000;
-  //actuatorDesired.Throttle = stabDesired.Throttle;
   
   if(flightStatus.FlightMode != FLIGHTSTATUS_FLIGHTMODE_MANUAL) {
     //ActuatorDesiredSet(&actuatorDesired);//!!@@!!
