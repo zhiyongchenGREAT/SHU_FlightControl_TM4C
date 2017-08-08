@@ -158,6 +158,7 @@ void auto_landing_task(void *p_arg);
 */
 #define REMOTE_CONTROLLER_TASK_PRIO        5
 #define REMOTE_CONTROLLER_TASK_SIZE       128
+#define REMOTE_CONTROLLER_TASK_MSG      10
 extern OS_TCB	RemoteCtrlTCB;
 extern CPU_STK	REMOTE_CONTROLLER_TASK_STK[REMOTE_CONTROLLER_TASK_SIZE];
 void remote_controller_task(void *p_arg);
@@ -176,8 +177,9 @@ void nrf_task(void *p_arg);
 *                                               attitude task
 ************************************************************************************************************************
 */
-#define ATTITUDE_SOLVING_PRIO        5
+#define ATTITUDE_SOLVING_PRIO        3
 #define ATTITUDE_SOLVING_STK_SIZE       128
+#define ATTITUDE_SOLVING_TASK_MSG       10 
 extern OS_TCB	AttitudesolvingTCB;
 extern CPU_STK	ATTITUDE_SOLVING_TASK_STK[ATTITUDE_SOLVING_STK_SIZE];
 void attitude_solving_task(void *p_arg);

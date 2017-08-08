@@ -192,10 +192,11 @@ void FLOW_MAVLINK(unsigned char data)
                                               |((uint64_t)flow_buf_rad[2]<<16)
                                                 |((uint64_t)flow_buf_rad[1]<<8)
                                                   |((uint64_t)flow_buf_rad[0]));
-      flow_rad.integration_time_us=(uint32_t)((flow_buf_rad[11]<<24)
-                                              |(flow_buf_rad[10]<<16)
-                                                |(flow_buf_rad[9]<<8)
-                                                  |(flow_buf_rad[8]));
+      
+      flow_rad.integration_time_us = (uint32_t)((flow_buf_rad[11]<<24)
+                                                |(flow_buf_rad[10]<<16)
+                                                  |(flow_buf_rad[9]<<8)
+                                                    |(flow_buf_rad[8]));
       floattobyte[0]=flow_buf_rad[12];
       floattobyte[1]=flow_buf_rad[13];
       floattobyte[2]=flow_buf_rad[14];
@@ -221,6 +222,7 @@ void FLOW_MAVLINK(unsigned char data)
       floattobyte[2]=flow_buf_rad[30];
       floattobyte[3]=flow_buf_rad[31];
       flow_rad.integrated_zgyro=ByteToFloat(floattobyte);
+      
       flow_rad.time_delta_distance_us=(uint32_t)((flow_buf_rad[35]<<24)
                                                  |(flow_buf_rad[34]<<16)
                                                    |(flow_buf_rad[33]<<8)
@@ -240,6 +242,7 @@ void FLOW_MAVLINK(unsigned char data)
       flow_distance = flow_rad.distance * 1000;
       flow_delta_distance = flow_distance - flow_last_distance;
       flow_last_distance = flow_distance;
+
 //      px4_sumx += (flow_rad.integrated_x - flow_rad.integrated_xgyro) * 1000;
 //      px4_sumy += (flow_rad.integrated_y - flow_rad.integrated_ygyro) * 1000; 
     }

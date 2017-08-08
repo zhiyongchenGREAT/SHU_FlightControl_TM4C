@@ -76,7 +76,13 @@ void PPM_CAP_Int_Handler(void)
 
   TimerLoadSet(WTIMER1_BASE, TIMER_A, 0xffffffff);
   
-  OSTaskSemPost(&RemoteCtrlTCB, OS_OPT_POST_NONE, &err);
+//  OSTaskSemPost(&RemoteCtrlTCB, OS_OPT_POST_NONE, &err);
+  
+  OSTaskQPost ((OS_TCB       *)&RemoteCtrlTCB,
+               (void         *)CAP_count,
+               (OS_MSG_SIZE   )sizeof(CAP_count),
+               (OS_OPT        )OS_OPT_POST_FIFO,
+               (OS_ERR       *)&err);  
   
   OSIntExit();  
 }
@@ -89,14 +95,25 @@ void PPM_CAP_Int_Handler(void)
 void remote_controller_task(void *p_arg)
 {
   OS_ERR err;
+  OS_MSG_SIZE size;
+  CPU_TS ts;  
+  
   p_arg = p_arg;
   uint8 count = 0;
+  
+//  uint32 a =0;
   
   
   while(DEF_TRUE)
   {
-    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
-    CAP_value[count++] = CAP_count;
+//    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
+    CAP_value[count++] = (CPU_INT32U)OSTaskQPend ((OS_TICK       )0,
+                                                  (OS_OPT        )OS_OPT_PEND_BLOCKING,
+                                                  (OS_MSG_SIZE  *)&size,
+                                                  (CPU_TS       *)&ts,
+                                                  (OS_ERR       *)&err); 
+    
+//    CAP_value[count++] = CAP_count;
     if(count >= 9)
       count = 0;
   }

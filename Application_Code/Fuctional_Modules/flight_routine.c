@@ -30,6 +30,8 @@ void UART6_IRQHandler(void)
 {
   OSIntEnter();
   
+//  OS_ERR err;
+  
   unsigned char Uart6Date; 
   uint32_t ui32Status;
   ui32Status = ROM_UARTIntStatus(UART6_BASE, true);
@@ -38,6 +40,12 @@ void UART6_IRQHandler(void)
   while(ROM_UARTCharsAvail(UART6_BASE))
   {  
     Uart6Date = ROM_UARTCharGet(UART6_BASE);
+//    OSTaskQPost ((OS_TCB       *)&AttitudesolvingTCB,
+//                 (void         *)Uart6Date,
+//                 (OS_MSG_SIZE   )sizeof(Uart6Date),
+//                 (OS_OPT        )OS_OPT_POST_FIFO,
+//                 (OS_ERR       *)&err);
+//    OSTaskSemPost(&AttitudesolvingTCB, OS_OPT_POST_NONE, &err);    
     FLOW_MAVLINK(Uart6Date);
   }
     
@@ -117,13 +125,11 @@ void flight_routine_task(void *p_arg)
     stabilize();
     
     CPU_CRITICAL_EXIT();     
-//    CPU_CRITICAL_EXIT();    
     
     hold(); 
 
     if(program_counter%10==3)
       px4_data_fix();		
-    
     
     mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);
 
@@ -131,14 +137,10 @@ void flight_routine_task(void *p_arg)
       Control();    
     
     if(program_counter%50==2)
-    {
       KS103_get_distance();
-    }
    
     if(program_counter%50==49)
-    {
       ks103_handler();
-    }
 
     if(nrf_getcmd())
     {
@@ -246,11 +248,19 @@ void flight_routine_task(void *p_arg)
 //void attitude_solving_task(void *p_arg)
 //{
 //  OS_ERR err;
-//  p_arg = p_arg; 
+//  OS_MSG_SIZE size;
+//  CPU_TS ts;
+//  
+//  p_arg = p_arg;
+//  unsigned char *Uart6Date;
 //  while(DEF_TRUE)
 //  {
-//    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);   
-//    
-//    FLOW_MAVLINK(Uart6Date);
+////    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);   
+//    Uart6Date = (CPU_INT08U*)OSTaskQPend ((OS_TICK       )0,
+//                                        (OS_OPT        )OS_OPT_PEND_BLOCKING,
+//                                        (OS_MSG_SIZE  *)&size,
+//                                        (CPU_TS       *)&ts,
+//                                        (OS_ERR       *)&err);    
+//    FLOW_MAVLINK(*Uart6Date);
 //  }
 //}
