@@ -61,8 +61,8 @@ void command_handler()
       break;
     case FLIGHTSTATUS_ARMED_ARMING:
       arming++;
-//      if(arming>50)
-    if(arming>5)
+      if(arming>50)
+//    if(arming>5)
         flightStatus.Armed=FLIGHTSTATUS_ARMED_ARMED; 
       break;
     case FLIGHTSTATUS_ARMED_ARMED:
@@ -93,8 +93,8 @@ void command_handler()
         stabDesired.StabilizationMode[2]=STABILIZATIONDESIRED_STABILIZATIONMODE_RATE;
         stabDesired.StabilizationMode[3]=STABILIZATIONDESIRED_STABILIZATIONMODE_RATE;
       }
-//      arming=51;
-      arming=6;
+      arming=51;
+//      arming=6;
       break;
     }
     
@@ -113,8 +113,8 @@ void command_handler()
       break;
     case FLIGHTSTATUS_ARMED_ARMED:
       arming--;
-//      if(arming<10)
-      if(arming<2)   
+      if(arming<10)
+//      if(arming<2)   
         flightStatus.Armed=FLIGHTSTATUS_ARMED_DISARMED;
       break;
     }

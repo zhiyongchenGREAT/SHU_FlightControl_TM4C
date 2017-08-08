@@ -1,6 +1,6 @@
 #include "flight_routine.h"
 
-uint16 IMU_ext_flag=0;
+uint16 IMU_ext_flag=0; 
 
 
 /* NRF_Interrupt              */
@@ -57,7 +57,20 @@ void PIT_IRQHandler(void)
   OSIntExit();  
 }
 
-void ATT_SOLVINGHandler(void)
+//void ATT_SOLVINGHandler(void)
+//{
+//  OSIntEnter();
+//  
+//  OS_ERR err;
+//  
+//  TimerIntClear(TIMER3_BASE, TIMER_TIMA_TIMEOUT);  
+//  
+//  OSTaskSemPost(&AttitudesolvingTCB, OS_OPT_POST_NONE, &err);  
+//  
+//  OSIntExit();    
+//}
+
+void Telemetry_handler(void)
 {
   OSIntEnter();
   
@@ -65,9 +78,9 @@ void ATT_SOLVINGHandler(void)
   
   TimerIntClear(TIMER3_BASE, TIMER_TIMA_TIMEOUT);  
   
-  OSTaskSemPost(&AttitudesolvingTCB, OS_OPT_POST_NONE, &err);  
+  OSTaskSemPost(&UARTReportTCB, OS_OPT_POST_NONE, &err);  
   
-  OSIntExit();    
+  OSIntExit();   
 }
 /*
 ========================================================================================================================
@@ -79,52 +92,62 @@ void flight_routine_task(void *p_arg)
 {
   OS_ERR err;
 
+  CPU_SR_ALLOC();
+  
   p_arg = p_arg;
-//  CPU_SR_ALLOC();
 
+  CPU_INT16U program_counter = 0;
+  
   while(DEF_TRUE)
   {    
     
     OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
 
+/* for test purpose              */
+
     t_tim0_cnt = TimerValueGet(TIMER0_BASE, TIMER_A);
     
-//    CPU_CRITICAL_ENTER();
 
-//    attsolving(); 
-    
-//    stabilize();
-    
-//    CPU_CRITICAL_EXIT();
+    CPU_CRITICAL_ENTER();    
    
+    attsolving(); 
+    
+    program_counter++;
+    
+    stabilize();
+    
+    CPU_CRITICAL_EXIT();     
+//    CPU_CRITICAL_EXIT();    
+    
     hold(); 
-    
-    px4_data_fix();    
 
-//    mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);
+    if(program_counter%10==3)
+      px4_data_fix();		
     
-    Control();    
     
-//   if(nrf_getcmd())
-//    {
-//      receive_date_check();
-//      nrf_sendstate();
-//    }
+    mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);
+
+    if(program_counter%10==3)    
+      Control();    
+    
+    if(program_counter%50==2)
+    {
+      KS103_get_distance();
+    }
    
-/* OSTaskSemPost(&UARTReportTCB, OS_OPT_POST_NONE, &err);              */
+    if(program_counter%50==49)
+    {
+      ks103_handler();
+    }
 
-    
-//    OSMutexPend(&FLOW_MUTEX,
-//              0,
-//              OS_OPT_PEND_BLOCKING,
-//              &ts,
-//              &err);
+    if(nrf_getcmd())
+    {
+      receive_date_check();
+      nrf_sendstate();
+    }
     
     command_handler();
-    
-//    OSMutexPost(&FLOW_MUTEX,
-//                OS_OPT_POST_NONE,
-//                &err);
+
         
     if(fabs(attitudeActual.Pitch)>40 || fabs(attitudeActual.Roll)>40)
       IMU_ext_flag=1;
@@ -140,98 +163,94 @@ void flight_routine_task(void *p_arg)
     else 
       LED0_ON();
     
-//    mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);
+    mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);
 
     t_tim0_cnt = TimerValueGet(TIMER0_BASE, TIMER_A);
   }
 }
 
-void flight_routine_control_task(void *p_arg)
-{
-  OS_ERR err;
-  CPU_TS ts;
-  p_arg = p_arg;
-  
-  while(DEF_TRUE)
-  {
-    OSTimeDlyHMSM(0,0,0,25,OS_OPT_TIME_HMSM_STRICT,&err); 
+//void flight_routine_control_task(void *p_arg)
+//{
+//  OS_ERR err;
+//  CPU_TS ts;
+//  p_arg = p_arg;
+//  
+//  while(DEF_TRUE)
+//  {
+//    OSTimeDlyHMSM(0,0,0,25,OS_OPT_TIME_HMSM_STRICT,&err); 
+//
+//    OSMutexPend(&FLOW_MUTEX,
+//                0,
+//                OS_OPT_PEND_BLOCKING,
+//                &ts,
+//                &err);
+//             
+//    px4_data_fix();
+//    
+//    Control();
+//    
+//    OSMutexPost(&FLOW_MUTEX,
+//                OS_OPT_POST_NONE,
+//                &err);    
+//
+//  }
+//}
+//
+//void flight_routine_ks103_task(void *p_arg)
+//{
+//  OS_ERR err;
+//  CPU_TS ts;  
+//  p_arg = p_arg;  
+//  
+//  while(DEF_TRUE)
+//  {
+//    KS103_get_distance();
+//
+//    
+//    OSTimeDlyHMSM(0,0,0,113,OS_OPT_TIME_HMSM_STRICT,&err);  
+//    
+//
+//    OSMutexPend(&KS103_MUTEX,
+//              0,
+//              OS_OPT_PEND_BLOCKING,
+//              &ts,
+//              &err);
+//   
+//    ks103_handler();
+//    
+//    
+//    OSMutexPost(&KS103_MUTEX,
+//                OS_OPT_POST_NONE,
+//                &err);      
+//    
+//    OSTimeDlyHMSM(0,0,0,7,OS_OPT_TIME_HMSM_STRICT,&err);  
+//  }
+//}
 
-    OSMutexPend(&FLOW_MUTEX,
-                0,
-                OS_OPT_PEND_BLOCKING,
-                &ts,
-                &err);
-             
-    px4_data_fix();
-    
-    Control();
-    
-    OSMutexPost(&FLOW_MUTEX,
-                OS_OPT_POST_NONE,
-                &err);    
-
-  }
-}
-
-void flight_routine_ks103_task(void *p_arg)
-{
-  OS_ERR err;
-  CPU_TS ts;  
-  p_arg = p_arg;  
-  
-  while(DEF_TRUE)
-  {
-    KS103_get_distance();
-
-    
-    OSTimeDlyHMSM(0,0,0,113,OS_OPT_TIME_HMSM_STRICT,&err);  
-    
-
-    OSMutexPend(&KS103_MUTEX,
-              0,
-              OS_OPT_PEND_BLOCKING,
-              &ts,
-              &err);
-   
-    ks103_handler();
-    
-    
-    OSMutexPost(&KS103_MUTEX,
-                OS_OPT_POST_NONE,
-                &err);      
-    
-    OSTimeDlyHMSM(0,0,0,7,OS_OPT_TIME_HMSM_STRICT,&err);  
-  }
-}
-
-void nrf_task(void *p_arg)
-{
-  OS_ERR err;
-  p_arg = p_arg;  
-  while(DEF_TRUE)
-  {  
-//    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
-   OSTimeDlyHMSM(0,0,0,25,OS_OPT_TIME_HMSM_STRICT,&err);
-   if(nrf_getcmd())
-    {
-      receive_date_check();
-      nrf_sendstate();
-    }    
-  }
-}
-
-void attitude_solving_task(void *p_arg)
-{
-  OS_ERR err;
-  p_arg = p_arg; 
-  while(DEF_TRUE)
-  {
-    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);   
-    
-    attsolving();
-    
-    stabilize();  
-    
-    mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);    
-  }
-}
+//void nrf_task(void *p_arg)
+//{
+//  OS_ERR err;
+//  p_arg = p_arg;  
+//  while(DEF_TRUE)
+//  {  
+////    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
+//   OSTimeDlyHMSM(0,0,0,25,OS_OPT_TIME_HMSM_STRICT,&err);
+//   if(nrf_getcmd())
+//    {
+//      receive_date_check();
+//      nrf_sendstate();
+//    }    
+//  }
+//}
+//
+//void attitude_solving_task(void *p_arg)
+//{
+//  OS_ERR err;
+//  p_arg = p_arg; 
+//  while(DEF_TRUE)
+//  {
+//    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);   
+//    
+//    FLOW_MAVLINK(Uart6Date);
+//  }
+//}

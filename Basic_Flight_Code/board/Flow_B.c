@@ -46,15 +46,15 @@ static float last_pitch=0;
 
 /* stable para: 6.95 6.95              */
 
-//static const float radians_to_pixels_x = 6.95, radians_to_pixels_y = 6.95;
-static const float radians_to_pixels_x = 4.63, radians_to_pixels_y = 4.63;
+static const float radians_to_pixels_x = 6.95*1.2, radians_to_pixels_y = 6.95*1.2;
+//static const float radians_to_pixels_x = 4.63*0.75, radians_to_pixels_y = 4.63*0.75;
 /* test              */
 
 //static const float conv_factor =  0.0010f;
 //static const float conv_factor =  0.00085f;
 //static const float conv_factor =  0.00085f;
 //static const float conv_factor =  0.001275f;
-static const float conv_factor =  0.00153;
+static const float conv_factor =  0.00153*0.85;
 
 
 static float ByteToFloat(char *byteArry)
@@ -269,7 +269,7 @@ void px4_data_fix(void)
 //  y_mm =(float)px4_sumy;
 //  x_mm =(float)px4_sumx;
   
-  High_Now = flow_distance;   //单位是毫米
+  High_Now = ks103_distance;   //单位是毫米
   if(High_Now-High_Now_before>1000 || High_Now_before-High_Now<-1000)
   {
     High_Now=High_Now_before;

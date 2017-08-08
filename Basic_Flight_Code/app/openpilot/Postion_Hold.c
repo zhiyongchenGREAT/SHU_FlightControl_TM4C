@@ -39,7 +39,7 @@ void Control()
   PID_POS_YOUT  = UART_PIDadjust.FLOW_YP 
     * ( tot_y_cm + UART_PIDadjust.FLOW_YI * pos_y_i + UART_PIDadjust.FLOW_YD * (tot_y_cm - last_tot_y_cm));
   
-  if(flow_distance<=200)
+  if(ks103_distance<=220)
   {
     tot_y_cm=0;
     pos_y_i=0;

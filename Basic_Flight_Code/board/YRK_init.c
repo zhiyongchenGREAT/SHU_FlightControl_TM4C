@@ -36,8 +36,10 @@ void tim1_init(void (*pfnHandler)(void))
   uint32_t ui32Period=0; 
   SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);
   TimerConfigure(TIMER1_BASE, TIMER_CFG_PERIODIC);
+
+/* TIM1: 400Mhz              */
   
-  ui32Period = ROM_SysCtlClockGet()/20;                   //400hz
+  ui32Period = ROM_SysCtlClockGet()/400;
   TimerLoadSet(TIMER1_BASE, TIMER_A, ui32Period -1);
   
   IntRegister(INT_TIMER1A, pfnHandler);

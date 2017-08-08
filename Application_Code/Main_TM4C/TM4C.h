@@ -176,7 +176,7 @@ void nrf_task(void *p_arg);
 *                                               attitude task
 ************************************************************************************************************************
 */
-#define ATTITUDE_SOLVING_PRIO        4
+#define ATTITUDE_SOLVING_PRIO        5
 #define ATTITUDE_SOLVING_STK_SIZE       128
 extern OS_TCB	AttitudesolvingTCB;
 extern CPU_STK	ATTITUDE_SOLVING_TASK_STK[ATTITUDE_SOLVING_STK_SIZE];

@@ -118,7 +118,7 @@ void nrf_sendstate()
   Nrf_Buf_Out.Data_int[2]=(int16)(attitudeActual.Yaw*100);
 //  Nrf_Buf_Out.Data_int[1]=(int16)(Xmm_Send);
 //  Nrf_Buf_Out.Data_int[2]=(int16)(Ymm_Send);
-  Nrf_Buf_Out.Data_int[3]=(int16)flow_distance/10;
+  Nrf_Buf_Out.Data_int[3]=(int16)ks103_distance/10;
   
   Nrf_Buf_Out.Data_int[4]=(int16)(SumX_amend);                       
   Nrf_Buf_Out.Data_int[5]=(int16)(SumY_amend); 		 

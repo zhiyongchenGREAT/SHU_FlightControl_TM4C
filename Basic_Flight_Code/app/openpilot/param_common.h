@@ -30,7 +30,7 @@
 #include "stabilizationsettings.h"
 
 #define CTL_RATE 2500
-#define CTL_RATE_STABILIZATION 50000
+//#define CTL_RATE_STABILIZATION 50000
 
 extern struct SensorSettingsData sensorSettings;
 extern struct AttitudeSettingsData attitudeSettings;

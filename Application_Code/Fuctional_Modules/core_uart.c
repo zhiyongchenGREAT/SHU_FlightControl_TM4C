@@ -188,7 +188,7 @@ void uart_report_task(void *p_arg)
             (int16)(attitudeActual.Pitch*100),
             (int16)(attitudeActual.Roll*100),
             (int16)(attitudeActual.Yaw*100),
-            (int16)flow_distance/10,
+            (int16)ks103_distance/10,
             (int16)(SumX_amend),
             (int16)(SumY_amend));
 

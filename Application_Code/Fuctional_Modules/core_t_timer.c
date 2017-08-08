@@ -40,8 +40,10 @@ void tim3_init(void (*pfnHandler)(void))
   uint32_t ui32Period=0; 
   SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER3);
   TimerConfigure(TIMER3_BASE, TIMER_CFG_PERIODIC);
+
+/* TIM3: 40Mhz              */
   
-  ui32Period = ROM_SysCtlClockGet()/400;                   //400hz
+  ui32Period = ROM_SysCtlClockGet()/40;
   TimerLoadSet(TIMER3_BASE, TIMER_A, ui32Period -1);
   
   IntRegister(INT_TIMER3A, pfnHandler);
