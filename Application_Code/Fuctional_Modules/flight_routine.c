@@ -105,6 +105,7 @@ void flight_routine_task(void *p_arg)
   p_arg = p_arg;
 
   CPU_INT16U program_counter = 0;
+  CPU_INT16U task_count = 0;
   
   while(DEF_TRUE)
   {    
@@ -141,6 +142,15 @@ void flight_routine_task(void *p_arg)
    
     if(program_counter%50==49)
       ks103_handler();
+
+//    if(task_flag == 1)
+//    {
+//      task_count++;
+//      if(task_count%2000==1)
+//          OSTaskSemPost(&AUTOlanding, OS_OPT_POST_NONE, &err); 
+//      
+//    }
+     
 
     if(nrf_getcmd())
     {

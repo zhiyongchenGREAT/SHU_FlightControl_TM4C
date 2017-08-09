@@ -27,6 +27,7 @@ static float Yaw_fixed=0;
 
 void command_handler()                                                          
 {
+  OS_ERR err;
   
   stabDesired.Mode=(Nrf_in_switch[4]/30.0);
   
@@ -63,8 +64,11 @@ void command_handler()
     case FLIGHTSTATUS_ARMED_ARMING:
       arming++;
       if(arming>50)
+      {  
 //    if(arming>5)
         flightStatus.Armed=FLIGHTSTATUS_ARMED_ARMED; 
+        OSTaskSemPost(&AUTOtakeoff, OS_OPT_POST_NONE, &err);      
+      }
       break;
     case FLIGHTSTATUS_ARMED_ARMED:
       if(stabDesired.Mode<50)
