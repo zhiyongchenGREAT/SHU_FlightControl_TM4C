@@ -35,9 +35,10 @@ void command_handler()
   
 /* approximately 2~105; seems these value are all mannually bound within 0~100                */
 
-  stabDesired.Throttle=(Nrf_in_switch[2])/30.0 + auto_throttle;
-  stabDesired.Pitch=Nrf_in_switch[0]/30.0 + angle_x_out;
-  stabDesired.Roll=Nrf_in_switch[1]/30.0 + angle_y_out;
+  stabDesired.Throttle=-(Nrf_in_switch[2])/30.0 + auto_throttle;
+  stabDesired.Throttle=stabDesired.Throttle<0?0:stabDesired.Throttle;  
+  stabDesired.Pitch=Nrf_in_switch[0]/30.0+ control_x_out; //+ angle_x_out ;
+  stabDesired.Roll=Nrf_in_switch[1]/30.0 + control_y_out; //+ angle_y_out ;
   if(fabs(Nrf_in_switch[3]/30.0)>5)
     stabDesired.Yaw=Nrf_in_switch[3]/30.0;
   else

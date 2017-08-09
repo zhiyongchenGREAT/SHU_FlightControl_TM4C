@@ -10,5 +10,5 @@
 #include <OS_includes.h>
 
 extern float auto_throttle, error_throttle;
-
+extern float control_y_out, control_x_out;
 #endif

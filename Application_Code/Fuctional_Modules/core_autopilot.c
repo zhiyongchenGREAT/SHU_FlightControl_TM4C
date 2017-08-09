@@ -2,7 +2,7 @@
 
 float auto_throttle=0, error_throttle=0;
 uint32 auto_throttle_max=68;
-
+float control_y_out, control_x_out;
 void auto_test_flight_task(void *p_arg)
 {
   OS_ERR err;	
@@ -33,24 +33,25 @@ void auto_test_flight_task(void *p_arg)
           break;
           
         case 'L':
-          SumY_amend-=2;
+          control_y_out-=2;
           break;
           
         case 'R':
-          SumY_amend+=2;
+          control_y_out+=2;
           break;
           
         case 'F':
-          SumX_amend+=2;
+          control_x_out+=2;
           break;
           
         case 'B':
-          SumX_amend-=2;
+          control_x_out-=2;
           break;          
           
         default:
           break;
         }
+        UART1SendString("ok!\r\n");
       }
       
       if(UART1_RX_BUF[0] == '@')
@@ -78,6 +79,7 @@ void auto_takeoff_task(void *p_arg)
   while(DEF_TRUE)
   {
     OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
+    UART1SendString("ok!\r\n");
     set_throttle = atoi((char*)&UART1_RX_BUF[1]);
     while(auto_throttle < set_throttle)
     {
@@ -97,13 +99,15 @@ void auto_landing_task(void *p_arg)
   while(DEF_TRUE)
   {
     OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
+    UART1SendString("ok!\r\n");
     while(auto_throttle > 0)
     {
       OSTimeDlyHMSM(0,0,1,0,OS_OPT_TIME_HMSM_STRICT,&err);       
       auto_throttle-=2;
-      if(ks103_distance<220)
+      if(ks103_distance<150)
       {
         auto_throttle=0;
+        IMU_ext_flag=1;        
       }      
     }    
   }

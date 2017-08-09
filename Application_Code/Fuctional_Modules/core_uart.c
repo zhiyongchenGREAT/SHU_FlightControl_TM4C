@@ -21,7 +21,7 @@ UART_PIDadjust_Struct UART_PIDadjust =
   0.0035, 
   0.0035, 
   0.0,
-  20,
+  10,
   0,
   90
 };
@@ -99,8 +99,10 @@ void UART1_IRQHandler()
         {  
           UART1_RX_STA|=0x8000; 
           OSTaskSemPost(&CameraTCB, OS_OPT_POST_NONE, &err);
-          OSTaskSemPost(&UARTAdjustTCB, OS_OPT_POST_NONE, &err);
-          OSTaskSemPost(&AUTOtestflight, OS_OPT_POST_NONE, &err);
+          if(UART1_RX_BUF[0] == '~')
+            OSTaskSemPost(&UARTAdjustTCB, OS_OPT_POST_NONE, &err);
+          else if(UART1_RX_BUF[0] != '~')            
+            OSTaskSemPost(&AUTOtestflight, OS_OPT_POST_NONE, &err);
         }
       }
       else
