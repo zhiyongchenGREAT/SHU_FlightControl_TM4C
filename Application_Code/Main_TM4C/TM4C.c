@@ -453,14 +453,14 @@ static void FlightAPPInit(CPU_INT08U set)
   KS103_init();
   mpu6050_soft_init();  
   
-  UART2_STInit(9600);
+  UART6_STInit(9600);
   UART1_STInit(9600);
 
   
   GPIO_PINB7init();                                                             
   
   tim1_init(PIT_IRQHandler);
-  tim3_init(Telemetry_handler);
+//  tim3_init(Telemetry_handler);
 /* Only for test purpose whenever time-consuming mesurment is needed              */
   
   testpurpose_tim0_init();
@@ -485,7 +485,7 @@ static void FlightAPPInit(CPU_INT08U set)
   IntPrioritySet(INT_GPIOC, 0x02<<5);  
   IntPrioritySet(INT_TIMER1A, 0x03<<5);
   IntPrioritySet(INT_UART1, 0x04<<5);
-  IntPrioritySet(INT_UART2, 0x00<<5);   
+//  IntPrioritySet(INT_UART2, 0x00<<5);   
   
   data_common_init();                                                           
   param_common_init();                                                          

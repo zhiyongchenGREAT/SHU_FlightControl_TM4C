@@ -199,7 +199,7 @@ void auto_goto_task(void *p_arg);
 *                                               Renesas task
 ************************************************************************************************************************
 */
-#define RENESAS_TASK_PRIO        7
+#define RENESAS_TASK_PRIO        3
 #define RENESAS_TASK_SIZE       128
 extern OS_TCB	RenesasTCB;
 extern CPU_STK	RENESAS_TASK_STK[RENESAS_TASK_SIZE];

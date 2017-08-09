@@ -10,7 +10,7 @@
 
 extern void PIT_IRQHandler();
 extern void PORTC_IRQHandler();
-extern void UART6_IRQHandler();
+//extern void UART6_IRQHandler();
 extern void ATT_SOLVINGHandler(void);
 extern void Telemetry_handler(void);
 
