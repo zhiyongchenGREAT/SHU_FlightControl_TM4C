@@ -105,7 +105,7 @@ void flight_routine_task(void *p_arg)
   p_arg = p_arg;
 
   CPU_INT16U program_counter = 0;
-  CPU_INT16U task_count = 0;
+//  CPU_INT16U task_count = 0;
   
   while(DEF_TRUE)
   {    

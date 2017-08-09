@@ -76,7 +76,7 @@ void auto_takeoff_task(void *p_arg)
 //  CPU_SR_ALLOC();
   p_arg = p_arg;
   
-  uint32 set_throttle = 36;
+  uint32 set_throttle = 40;
   
 //  OSTimeDlyHMSM(0,0,10,0,OS_OPT_TIME_HMSM_STRICT,&err);  
   while(DEF_TRUE)
@@ -85,16 +85,18 @@ void auto_takeoff_task(void *p_arg)
     UART1SendString("ok!\r\n");
 //    set_throttle = atoi((char*)&UART1_RX_BUF[1]);
     OSTimeDlyHMSM(0,0,10,0,OS_OPT_TIME_HMSM_STRICT,&err);
-    while(auto_throttle < set_throttle && (flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED) )
+    while(auto_throttle < set_throttle && (flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED))
     {
-      OSTimeDlyHMSM(0,0,1,0,OS_OPT_TIME_HMSM_STRICT,&err);       
-      auto_throttle+=4;
+      OSTimeDlyHMSM(0,0,0,50,OS_OPT_TIME_HMSM_STRICT,&err);       
+      auto_throttle+=0.5;
     }
     if(auto_throttle >= set_throttle)
     {  
-      task_flag = 1;
-      OSTaskSuspend (&AUTOtakeoff,
-                     &err);
+//      task_flag = 1;
+      OSTimeDlyHMSM(0,0,10,0,OS_OPT_TIME_HMSM_STRICT,&err);      
+//      OSTaskSemPost(&AUTOgoto, OS_OPT_POST_NO_SCHED, &err);
+      OSTaskSemPost(&AUTOlanding, OS_OPT_POST_NO_SCHED, &err);
+      OSTaskSuspend (&AUTOtakeoff, &err);
     }
 //    OSTimeDlyHMSM(0,0,1,0,OS_OPT_TIME_HMSM_STRICT,&err);     
    
@@ -112,13 +114,36 @@ void auto_landing_task(void *p_arg)
     UART1SendString("ok!\r\n");
     while(auto_throttle > 0)
     {
-      OSTimeDlyHMSM(0,0,1,0,OS_OPT_TIME_HMSM_STRICT,&err);       
-      auto_throttle-=2;
+      OSTimeDlyHMSM(0,0,0,50,OS_OPT_TIME_HMSM_STRICT,&err);       
+      auto_throttle-=0.5;
       if(ks103_distance<150)
       {
         auto_throttle=0;
         IMU_ext_flag=1;        
       }      
     }    
+  }
+}
+
+void auto_goto_task(void *p_arg)
+{
+  OS_ERR err;	
+//  CPU_SR_ALLOC();
+  p_arg = p_arg;
+  uint16 goto_count = 0;
+  while(DEF_TRUE)
+  {
+    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
+    UART1SendString("auto goto!\r\n");
+    while(goto_count<4)
+    {
+      control_x_out+=1;
+      OSTimeDlyHMSM(0,0,1,0,OS_OPT_TIME_HMSM_STRICT,&err);
+      control_x_out-=1;
+      OSTimeDlyHMSM(0,0,1,500,OS_OPT_TIME_HMSM_STRICT,&err); 
+      goto_count++;
+    }
+    OSTaskSemPost(&AUTOlanding, OS_OPT_POST_NO_SCHED, &err); 
+    OSTaskSuspend (&AUTOgoto, &err);      
   }
 }

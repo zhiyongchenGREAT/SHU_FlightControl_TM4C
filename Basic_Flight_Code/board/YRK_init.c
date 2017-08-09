@@ -109,3 +109,15 @@ void pwm_init(void)
   PWMGenEnable(PWM1_BASE, PWM_GEN_2);
   PWMGenEnable(PWM1_BASE, PWM_GEN_3);
 }
+
+void GPIO_KEYinit(void)
+{
+  SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD); 
+  
+  ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
+  ROM_GPIOPinTypeGPIOOutputOD(GPIO_PORTD_BASE, GPIO_PIN_3);
+  ROM_GPIOPinTypeGPIOOutputOD(GPIO_PORTD_BASE, GPIO_PIN_2);
+  
+  GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_3,  1);
+  GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_2,  1);  
+}

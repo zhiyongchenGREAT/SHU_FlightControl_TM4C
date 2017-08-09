@@ -1,5 +1,6 @@
 #include "core_uart.h"
 
+
 uint16 UART1_RX_STA = 0;
 uint8 UART1_RX_BUF[UART1_REC_LEN];
 
@@ -89,7 +90,7 @@ void UART1_IRQHandler()
   {
     
     Res = UARTCharGetNonBlocking(UART1_BASE);
-//    UARTCharPut(UART1_BASE, Res);                                               //Test Uart receive(echo)
+    UARTCharPut(UART1_BASE, Res);                                               //Test Uart receive(echo)
     if((UART1_RX_STA&0x8000)==0)
     {
       if(UART1_RX_STA&0x4000)

@@ -11,7 +11,6 @@
 
 #define UART1_REC_LEN  			200
 
-
 struct UART_PIDadjust_Struct
 {
     float FLOW_XP;

@@ -2344,6 +2344,9 @@
             <file>
                 <name>$PROJ_DIR$\..\Application_Code\Fuctional_Modules\flight_routine.c</name>
             </file>
+            <file>
+                <name>$PROJ_DIR$\..\Application_Code\Fuctional_Modules\renesas_interface.c</name>
+            </file>
         </group>
         <group>
             <name>Main_TM4C</name>

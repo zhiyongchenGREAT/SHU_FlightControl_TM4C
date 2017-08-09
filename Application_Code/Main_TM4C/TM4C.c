@@ -119,6 +119,20 @@ CPU_STK	NRF_TASK_STK[NRF_STK_SIZE];
 OS_TCB	AttitudesolvingTCB;
 CPU_STK	ATTITUDE_SOLVING_TASK_STK[ATTITUDE_SOLVING_STK_SIZE];
 /*
+************************************************************************************************************************
+*                                               auto goto task
+************************************************************************************************************************
+*/
+OS_TCB	AUTOgoto;
+CPU_STK	AUTO_GOTO_TASK_STK[AUTO_GOTO_TASK_SIZE];
+/*
+************************************************************************************************************************
+*                                               renesas task
+************************************************************************************************************************
+*/
+OS_TCB	RenesasTCB;
+CPU_STK	RENESAS_TASK_STK[RENESAS_TASK_SIZE];
+/*
 ========================================================================================================================
 *                                               OS_Mutex
 ========================================================================================================================
@@ -369,6 +383,20 @@ static void flight_init_task(void *p_arg)
                (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
                (OS_ERR 	* )&err);
   
+  OSTaskCreate((OS_TCB 	* )&AUTOgoto,		
+               (CPU_CHAR	* )"auto goto", 		
+               (OS_TASK_PTR  )auto_goto_task, 			
+               (void	* )0,					
+               (OS_PRIO	  )AUTO_GOTO_TASK_PRIO,     
+               (CPU_STK    * )&AUTO_GOTO_TASK_STK[0],	
+               (CPU_STK_SIZE )AUTO_GOTO_TASK_SIZE/10,	
+               (CPU_STK_SIZE )AUTO_GOTO_TASK_SIZE,		
+               (OS_MSG_QTY   )AUTO_GOTO_TASK_MSG,					
+               (OS_TICK	  )0,					
+               (void   	* )0,					
+               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
+               (OS_ERR 	* )&err);
+  
   OSTaskCreate((OS_TCB 	* )&AUTOlanding,		
                (CPU_CHAR	* )"auto landing", 		
                (OS_TASK_PTR  )auto_landing_task, 			
@@ -377,6 +405,20 @@ static void flight_init_task(void *p_arg)
                (CPU_STK    * )&AUTO_LANDIND_TASK_STK[0],	
                (CPU_STK_SIZE )AUTO_LANDIND_TASK_SIZE/10,	
                (CPU_STK_SIZE )AUTO_LANDIND_TASK_SIZE,		
+               (OS_MSG_QTY   )0,					
+               (OS_TICK	  )0,					
+               (void   	* )0,					
+               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
+               (OS_ERR 	* )&err);
+  
+  OSTaskCreate((OS_TCB 	* )&RenesasTCB,		
+               (CPU_CHAR	* )"renesas interface task", 		
+               (OS_TASK_PTR  )renesas_interface, 			
+               (void	* )0,					
+               (OS_PRIO	  )RENESAS_TASK_PRIO,     
+               (CPU_STK    * )&RENESAS_TASK_STK[0],	
+               (CPU_STK_SIZE )RENESAS_TASK_SIZE/10,	
+               (CPU_STK_SIZE )RENESAS_TASK_SIZE,		
                (OS_MSG_QTY   )0,					
                (OS_TICK	  )0,					
                (void   	* )0,					
@@ -403,7 +445,7 @@ static void FlightAPPInit(CPU_INT08U set)
   IntMasterDisable();
   
   led_init();
-  PX4Flow_uart_init(115200,UART6_IRQHandler);
+  //PX4Flow_uart_init(115200,UART6_IRQHandler);
   
   SysCtlPeripheralEnable(SYSCTL_PERIPH_EEPROM0);
   EEPROMInit();
@@ -411,7 +453,9 @@ static void FlightAPPInit(CPU_INT08U set)
   KS103_init();
   mpu6050_soft_init();  
   
+  UART2_STInit(9600);
   UART1_STInit(9600);
+
   
   GPIO_PINB7init();                                                             
   
@@ -423,7 +467,7 @@ static void FlightAPPInit(CPU_INT08U set)
   
 //  PPM_init(PPM_CAP_Int_Handler);
 
-  Camera_init();
+  //Camera_init();
   
   IntPriorityGroupingSet(3);  
 
@@ -440,7 +484,8 @@ static void FlightAPPInit(CPU_INT08U set)
   IntPrioritySet(INT_WTIMER1A, 0x01<<5);
   IntPrioritySet(INT_GPIOC, 0x02<<5);  
   IntPrioritySet(INT_TIMER1A, 0x03<<5);
-  IntPrioritySet(INT_UART1, 0x04<<5);  
+  IntPrioritySet(INT_UART1, 0x04<<5);
+  IntPrioritySet(INT_UART2, 0x00<<5);   
   
   data_common_init();                                                           
   param_common_init();                                                          

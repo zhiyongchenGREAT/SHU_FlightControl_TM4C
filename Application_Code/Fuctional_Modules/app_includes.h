@@ -31,6 +31,7 @@
 #include "flight_routine.h"
 #include "core_uartstdio.h"
 #include "core_ppm.h"
+#include "renesas_interface.h"
 
 
 #endif //__BASICFLIGHT_INCLUDES_H__

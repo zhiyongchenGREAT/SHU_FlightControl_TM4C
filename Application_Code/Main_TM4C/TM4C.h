@@ -184,6 +184,28 @@ extern OS_TCB	AttitudesolvingTCB;
 extern CPU_STK	ATTITUDE_SOLVING_TASK_STK[ATTITUDE_SOLVING_STK_SIZE];
 void attitude_solving_task(void *p_arg);
 /*
+************************************************************************************************************************
+*                                               auto goto task
+************************************************************************************************************************
+*/
+#define AUTO_GOTO_TASK_PRIO        7
+#define AUTO_GOTO_TASK_SIZE       128
+#define AUTO_GOTO_TASK_MSG       10 
+extern OS_TCB	AUTOgoto;
+extern CPU_STK	AUTO_GOTO_TASK_STK[AUTO_GOTO_TASK_SIZE];
+void auto_goto_task(void *p_arg);
+/*
+************************************************************************************************************************
+*                                               Renesas task
+************************************************************************************************************************
+*/
+#define RENESAS_TASK_PRIO        7
+#define RENESAS_TASK_SIZE       128
+extern OS_TCB	RenesasTCB;
+extern CPU_STK	RENESAS_TASK_STK[RENESAS_TASK_SIZE];
+void renesas_interface(void *p_arg);
+
+/*
 ========================================================================================================================
 *                                               OS_Mutex
 ========================================================================================================================
