@@ -349,9 +349,10 @@ void uart_adjust_task(void *p_arg)
       
       UART1SendString(dtbuf);        
       
-      UART1_RX_STA = 0;
+//      UART1_RX_STA = 0;
     }	
-
+    
+    UART1_RX_STA = 0;
   }  
   
 }

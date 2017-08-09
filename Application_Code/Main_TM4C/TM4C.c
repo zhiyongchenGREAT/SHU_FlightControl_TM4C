@@ -453,11 +453,15 @@ static void FlightAPPInit(CPU_INT08U set)
   KS103_init();
   mpu6050_soft_init();  
   
-  UART6_STInit(9600);
+  UART2_STInit(9600);
   UART1_STInit(9600);
 
   
-  GPIO_PINB7init();                                                             
+  GPIO_PINB7init();
+
+/* mode key              */
+  
+  GPIO_KEYinit();
   
   tim1_init(PIT_IRQHandler);
 //  tim3_init(Telemetry_handler);

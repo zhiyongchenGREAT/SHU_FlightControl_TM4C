@@ -9,11 +9,11 @@
 #include <app_includes.h>
 #include <OS_includes.h>
 
-#define UART6_REC_LEN  			200
+#define UART2_REC_LEN  			200
 
-extern void UART6_STInit(uint32 Baud_rate);
-extern void UART6_IRQHandler();
-extern void UART6SendString(uint8* send);
+extern void UART2_STInit(uint32 Baud_rate);
+extern void UART2_IRQHandler();
+extern void UART2SendString(uint8* send);
 
 struct RENESAS_Struct
 {

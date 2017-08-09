@@ -22,76 +22,76 @@
 #include "renesas_interface.h"
 
 
-uint16 UART6_RX_STA = 0;
-uint8 UART6_RX_BUF[UART6_REC_LEN];
+uint16 UART2_RX_STA = 0;
+uint8 UART2_RX_BUF[UART2_REC_LEN];
 RENESAS_Struct RENESAS=
 {
   0,
   0
 };
 
-void UART6_STInit(uint32 Baud_rate)
+void UART2_STInit(uint32 Baud_rate)
 {
   
   SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
-  SysCtlPeripheralEnable(SYSCTL_PERIPH_UART6);
+  SysCtlPeripheralEnable(SYSCTL_PERIPH_UART2);
   
-  GPIOPinConfigure(GPIO_PD4_U6RX);
-  GPIOPinTypeUART(GPIO_PORTD_BASE, GPIO_PIN_4);
+  GPIOPinConfigure(GPIO_PD6_U2RX);
+  GPIOPinTypeUART(GPIO_PORTD_BASE, GPIO_PIN_6);
   
-  GPIOPinConfigure(GPIO_PD5_U6TX);                     
-  GPIOPinTypeUART(GPIO_PORTD_BASE, GPIO_PIN_5);
+  GPIOPinConfigure(GPIO_PD7_U2TX);                     
+  GPIOPinTypeUART(GPIO_PORTD_BASE, GPIO_PIN_7);
   
-  UARTConfigSetExpClk(UART6_BASE,
+  UARTConfigSetExpClk(UART2_BASE,
                       SysCtlClockGet(),
                       Baud_rate,
                       (UART_CONFIG_PAR_NONE | UART_CONFIG_STOP_ONE |
                        UART_CONFIG_WLEN_8));
-  IntRegister(INT_UART6,UART6_IRQHandler);     
+  IntRegister(INT_UART2,UART2_IRQHandler);     
 
-  UARTFIFODisable(UART6_BASE);  
+  UARTFIFODisable(UART2_BASE);  
   
-  IntEnable(INT_UART6);
-  UARTIntEnable(UART6_BASE, UART_INT_RX);
+  IntEnable(INT_UART2);
+  UARTIntEnable(UART2_BASE, UART_INT_RX);
   
 }
 
-void UART6_IRQHandler()
+void UART2_IRQHandler()
 {
   OSIntEnter(); 
   
   OS_ERR err;
   uint8 Res;
   
-  UARTIntClear(UART6_BASE, UART_INT_RX);                                        
-  while(!UARTCharsAvail(UART6_BASE));
-  if(UARTCharsAvail(UART6_BASE))                                                //handle uart rx interrupt
+  UARTIntClear(UART2_BASE, UART_INT_RX);                                        
+  while(!UARTCharsAvail(UART2_BASE));
+  if(UARTCharsAvail(UART2_BASE))                                                //handle uart rx interrupt
   {
     
-    Res = UARTCharGetNonBlocking(UART6_BASE);
-//    UARTCharPut(UART6_BASE, Res);                                               //Test Uart receive(echo)
-    if((UART6_RX_STA&0x8000)==0)
+    Res = UARTCharGetNonBlocking(UART2_BASE);
+//    UARTCharPut(UART2_BASE, Res);                                               //Test Uart receive(echo)
+    if((UART2_RX_STA&0x8000)==0)
     {
-      if(UART6_RX_STA&0x4000)
+      if(UART2_RX_STA&0x4000)
       {
         if(Res!=0x0a)
-          UART6_RX_STA=0;
+          UART2_RX_STA=0;
         else 
         {  
-          UART6_RX_STA|=0x8000; 
-//          if(UART6_RX_BUF[0] == '$')
+          UART2_RX_STA|=0x8000; 
+//          if(UART2_RX_BUF[0] == '$')
           OSTaskSemPost(&RenesasTCB, OS_OPT_POST_NONE, &err);
         }
       }
       else
       {	
         if(Res==0x0d)
-          UART6_RX_STA|=0x4000;
+          UART2_RX_STA|=0x4000;
         else
         {
-          UART6_RX_BUF[UART6_RX_STA&0X3FFF]=Res ;
-          UART6_RX_STA++;
-          if(UART6_RX_STA>(UART6_REC_LEN-1))UART6_RX_STA=0;  
+          UART2_RX_BUF[UART2_RX_STA&0X3FFF]=Res ;
+          UART2_RX_STA++;
+          if(UART2_RX_STA>(UART2_REC_LEN-1))UART2_RX_STA=0;  
         }		 
       }
     }   		 
@@ -102,11 +102,11 @@ void UART6_IRQHandler()
   
 }
 
-void UART6SendString(uint8* send)
+void UART2SendString(uint8* send)
 {
   while(*send != NULL)
   {	
-    UARTCharPut(UART6_BASE, *send++);
+    UARTCharPut(UART2_BASE, *send++);
   }
 }
 
@@ -130,18 +130,18 @@ void renesas_interface(void *p_arg)
   {
     OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
     
-    if(UART6_RX_STA&0X8000 && UART6_RX_BUF[0] == '$')
+    if(UART2_RX_STA&0X8000 && UART2_RX_BUF[0] == '$')
     {
-      rxlen = UART6_RX_STA&0X3FFF;
-      UART6_RX_BUF[rxlen] = NULL;
+      rxlen = UART2_RX_STA&0X3FFF;
+      UART2_RX_BUF[rxlen] = NULL;
 
-//      sprintf((char*)dtbuf,"%s\r\n", UART6_RX_BUF);              
-//      UART6SendString(dtbuf);
-      token = strtok((char*)&UART6_RX_BUF[1], seps);       
+//      sprintf((char*)dtbuf,"%s\r\n", UART2_RX_BUF);              
+//      UART2SendString(dtbuf);
+      token = strtok((char*)&UART2_RX_BUF[1], seps);       
       RENESAS.FLOW_X = atof(token);
       token = strtok(NULL, seps);
       RENESAS.FLOW_Y = atof(token);
     }
-    UART6_RX_STA = 0;
+    UART2_RX_STA = 0;
   }  
 }

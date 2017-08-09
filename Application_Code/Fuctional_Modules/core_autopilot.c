@@ -65,8 +65,9 @@ void auto_test_flight_task(void *p_arg)
       else if(auto_throttle>auto_throttle_max)
         auto_throttle-=2;
       
-      UART1_RX_STA = 0;
+//      UART1_RX_STA = 0;
     }	
+    UART1_RX_STA = 0;  
   }
 }
 

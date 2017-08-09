@@ -8,9 +8,10 @@
 #include <app_includes.h>
 #include <OS_includes.h>
 
-void lowlevel_init();
-void uart_init(uint32 band,void (*pfnHandler)(void));
-void tim1_init(void (*pfnHandler)(void));
-void tim2_init();
-void pwm_init(void);
+extern void lowlevel_init();
+extern void uart_init(uint32 band,void (*pfnHandler)(void));
+extern void tim1_init(void (*pfnHandler)(void));
+extern void tim2_init();
+extern void pwm_init(void);
+extern void GPIO_KEYinit(void);
 #endif // YRK_INIT_H

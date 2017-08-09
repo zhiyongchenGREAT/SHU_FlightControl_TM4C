@@ -26,31 +26,31 @@ void PORTC_IRQHandler(void)
   OSIntExit();  
 }
 
-//void UART6_IRQHandler(void)
-//{
-//  OSIntEnter();
-//  
-////  OS_ERR err;
-//  
-//  unsigned char Uart6Date; 
-//  uint32_t ui32Status;
-//  ui32Status = ROM_UARTIntStatus(UART6_BASE, true);
-//  ROM_UARTIntClear(UART6_BASE, ui32Status);
-//  
-//  while(ROM_UARTCharsAvail(UART6_BASE))
-//  {  
-//    Uart6Date = ROM_UARTCharGet(UART6_BASE);
-////    OSTaskQPost ((OS_TCB       *)&AttitudesolvingTCB,
-////                 (void         *)Uart6Date,
-////                 (OS_MSG_SIZE   )sizeof(Uart6Date),
-////                 (OS_OPT        )OS_OPT_POST_FIFO,
-////                 (OS_ERR       *)&err);
-////    OSTaskSemPost(&AttitudesolvingTCB, OS_OPT_POST_NONE, &err);    
-//    FLOW_MAVLINK(Uart6Date);
-//  }
-//    
-//  OSIntExit(); 
-//}
+void UART6_IRQHandler(void)
+{
+  OSIntEnter();
+  
+//  OS_ERR err;
+  
+  unsigned char Uart6Date; 
+  uint32_t ui32Status;
+  ui32Status = ROM_UARTIntStatus(UART6_BASE, true);
+  ROM_UARTIntClear(UART6_BASE, ui32Status);
+  
+  while(ROM_UARTCharsAvail(UART6_BASE))
+  {  
+    Uart6Date = ROM_UARTCharGet(UART6_BASE);
+//    OSTaskQPost ((OS_TCB       *)&AttitudesolvingTCB,
+//                 (void         *)Uart6Date,
+//                 (OS_MSG_SIZE   )sizeof(Uart6Date),
+//                 (OS_OPT        )OS_OPT_POST_FIFO,
+//                 (OS_ERR       *)&err);
+//    OSTaskSemPost(&AttitudesolvingTCB, OS_OPT_POST_NONE, &err);    
+    FLOW_MAVLINK(Uart6Date);
+  }
+    
+  OSIntExit(); 
+}
 
 void PIT_IRQHandler(void)
 {
