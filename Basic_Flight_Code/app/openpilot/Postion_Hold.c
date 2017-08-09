@@ -4,22 +4,23 @@
 #define angel_out_max 6.5f
 
 float angle_x_out,angle_y_out;
+float delta_sumx,delta_sumy;
 
 static float tot_x_cm,tot_y_cm;
 static float last_tot_x_cm,last_tot_y_cm;	
 static float pos_x_i=0,pos_y_i=0;
 static float PID_POS_XOUT,PID_POS_YOUT;
-static volatile float delta_sumx,delta_sumy;
+
 
 void Control()
 {
   
-  tot_x_cm = SumX_amend;                                                          //SumX/Y as px4_data_fix() output
+  tot_x_cm = SumX_amend;
   tot_y_cm = SumY_amend;
   pos_x_i += SumX_amend;
   pos_y_i += SumY_amend;
   
-  if(pos_x_i > pos_x_i_max)                                                     //pos_x_i_max 50000 is defined
+  if(pos_x_i > pos_x_i_max)
     pos_x_i = pos_x_i_max;
   if(pos_x_i < -pos_x_i_max)
     pos_x_i = -pos_x_i_max;

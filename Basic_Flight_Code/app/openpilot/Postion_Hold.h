@@ -11,6 +11,6 @@
 extern void Control();
 
 extern float angle_x_out,angle_y_out;
-
+extern float delta_sumx,delta_sumy;
 
 #endif // ACCELS_H

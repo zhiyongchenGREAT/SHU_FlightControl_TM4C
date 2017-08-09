@@ -8,7 +8,6 @@ struct RelayTuningSettingsData relaySettings;
 struct ActuatorSettingsData actuatorSettings;
 struct MixerSettingsData mixerSettings;
 struct MotorSettingsData motorSettings;
-//struct ManualControlSettingsData manualControlSettings;
 
 void param_common_init()
 {
