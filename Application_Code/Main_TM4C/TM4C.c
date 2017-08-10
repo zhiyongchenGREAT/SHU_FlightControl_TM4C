@@ -355,19 +355,19 @@ static void flight_init_task(void *p_arg)
 //               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
 //               (OS_ERR 	* )&err);  
   
-  OSTaskCreate((OS_TCB 	* )&AUTOtestflight,		
-               (CPU_CHAR	* )"auto test flight", 		
-               (OS_TASK_PTR  )auto_test_flight_task, 			
-               (void	* )0,					
-               (OS_PRIO	  )AUTO_TEST_FLIGHT_TASK_PRIO,     
-               (CPU_STK    * )&AUTO_TEST_FLIGHT_TASK_STK[0],	
-               (CPU_STK_SIZE )AUTO_TEST_FLIGHT_TASK_SIZE/10,	
-               (CPU_STK_SIZE )AUTO_TEST_FLIGHT_TASK_SIZE,		
-               (OS_MSG_QTY   )0,					
-               (OS_TICK	  )0,					
-               (void   	* )0,					
-               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
-               (OS_ERR 	* )&err);
+//  OSTaskCreate((OS_TCB 	* )&AUTOtestflight,		
+//               (CPU_CHAR	* )"auto test flight", 		
+//               (OS_TASK_PTR  )auto_test_flight_task, 			
+//               (void	* )0,					
+//               (OS_PRIO	  )AUTO_TEST_FLIGHT_TASK_PRIO,     
+//               (CPU_STK    * )&AUTO_TEST_FLIGHT_TASK_STK[0],	
+//               (CPU_STK_SIZE )AUTO_TEST_FLIGHT_TASK_SIZE/10,	
+//               (CPU_STK_SIZE )AUTO_TEST_FLIGHT_TASK_SIZE,		
+//               (OS_MSG_QTY   )0,					
+//               (OS_TICK	  )0,					
+//               (void   	* )0,					
+//               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
+//               (OS_ERR 	* )&err);
   
 //  OSTaskCreate((OS_TCB 	* )&AUTOtakeoff,		
 //               (CPU_CHAR	* )"auto takeoff", 		
@@ -461,7 +461,7 @@ static void FlightAPPInit(CPU_INT08U set)
 
 /* mode key              */
   
-  GPIO_KEYinit();
+//  GPIO_KEYinit();
   
   tim1_init(PIT_IRQHandler);
 //  tim3_init(Telemetry_handler);
@@ -483,29 +483,25 @@ static void FlightAPPInit(CPU_INT08U set)
 //  IntPrioritySet(INT_TIMER1A, 0x01<<6);
 //  IntPrioritySet(INT_UART1, 0x01<<7);
   
-
   IntPrioritySet(INT_UART6, 0x00<<5);  
-//  IntPrioritySet(INT_UART2, 0x00<<5); 
+  IntPrioritySet(INT_UART2, 0x00<<5); 
   IntPrioritySet(INT_WTIMER1A, 0x01<<5);
   IntPrioritySet(INT_GPIOC, 0x02<<5);  
   IntPrioritySet(INT_TIMER1A, 0x03<<5);
   IntPrioritySet(INT_UART1, 0x04<<5);
   
-  
   data_common_init();                                                           
   param_common_init();                                                          
   motorcontrol_init();
  
-  
   if((set&(1u<<0u)) != 0u)
     motor_reset();                                                                            
   
   DELAY_MS(5000);
-  
+    
   AttitudeInitialize();
   StabilizationInitialize();
   
-
   if((set&(1u<<1u)) != 0u)
     while(!nrf_init(PORTC_IRQHandler));
 

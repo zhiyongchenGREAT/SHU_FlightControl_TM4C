@@ -49,6 +49,14 @@ void PIC_Control()
   if(pic_y_i < -Pic_x_i_max)
     pic_y_i = -Pic_x_i_max;
   
+   if(ks103_distance<=1000)
+  {
+    pic_y_cm=0;
+    pic_y_i=0;
+    pic_x_cm=0;
+    pic_x_i=0;
+  }
+  
   delta_picx=pic_x_cm - last_pic_x_cm;
   delta_picy=pic_y_cm - last_pic_y_cm;
   
@@ -60,18 +68,8 @@ void PIC_Control()
   PID_PIC_YOUT  = UART_PIDadjust.FLOW_YP 
     * ( pic_y_cm + UART_PIDadjust.FLOW_YI * pic_y_i + UART_PIDadjust.FLOW_YD * (pic_y_cm - last_pic_y_cm));
   
-  if(ks103_distance<=220)
-  {
-    pic_y_cm=0;
-    pic_y_i=0;
-    pic_x_cm=0;
-    pic_x_i=0;
-  }
-  
   Pic_x_out = PID_PIC_XOUT ;	
   Pic_y_out = PID_PIC_YOUT ;
-  
-  
   
   if(Pic_x_out > Pic_out_max)
     Pic_x_out = Pic_out_max;

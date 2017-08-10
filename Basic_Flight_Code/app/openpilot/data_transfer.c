@@ -122,8 +122,8 @@ void nrf_sendstate()
   
 //  Nrf_Buf_Out.Data_int[4]=(int16)(SumX_amend);                       
 //  Nrf_Buf_Out.Data_int[5]=(int16)(SumY_amend);
-  Nrf_Buf_Out.Data_int[4]=(int16)(stabDesired.Pitch*100);                       
-  Nrf_Buf_Out.Data_int[5]=(int16)(stabDesired.Roll*100);  		 
+  Nrf_Buf_Out.Data_int[4]=(int16)(pic_x_cm);                       
+  Nrf_Buf_Out.Data_int[5]=(int16)(pic_y_cm);  		 
 //  Nrf_Buf_Out.Data_int[6]=lowthrottle;     
 /* 16: indicate a normal data transfer              */
 
