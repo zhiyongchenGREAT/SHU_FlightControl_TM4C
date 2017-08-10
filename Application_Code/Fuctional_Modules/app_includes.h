@@ -32,6 +32,7 @@
 #include "core_uartstdio.h"
 #include "core_ppm.h"
 #include "renesas_interface.h"
+#include "Pic_hold.h"
 
 
 #endif //__BASICFLIGHT_INCLUDES_H__

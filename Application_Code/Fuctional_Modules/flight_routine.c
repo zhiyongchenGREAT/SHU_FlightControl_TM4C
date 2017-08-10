@@ -129,27 +129,19 @@ void flight_routine_task(void *p_arg)
     
     hold(); 
 
-    if(program_counter%10==3)
-      px4_data_fix();		
+//    if(program_counter%10==3)
+//      px4_data_fix();		
     
     mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);
 
     if(program_counter%10==3)    
-      Control();    
+      PIC_Control();    
     
     if(program_counter%50==2)
       KS103_get_distance();
    
     if(program_counter%50==49)
       ks103_handler();
-
-//    if(task_flag == 1)
-//    {
-//      task_count++;
-//      if(task_count%2000==1)
-//          OSTaskSemPost(&AUTOlanding, OS_OPT_POST_NONE, &err); 
-//      
-//    }
      
 
     if(nrf_getcmd())
@@ -160,7 +152,9 @@ void flight_routine_task(void *p_arg)
     
     command_handler();
 
-        
+    if(flightStatus.Armed != FLIGHTSTATUS_ARMED_ARMED)
+      OSTaskDel(&AUTOtakeoff, &err);    
+    
     if(fabs(attitudeActual.Pitch)>40 || fabs(attitudeActual.Roll)>40)
       IMU_ext_flag=1;
     

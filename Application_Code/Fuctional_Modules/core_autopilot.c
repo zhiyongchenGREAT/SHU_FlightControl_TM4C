@@ -86,15 +86,18 @@ void auto_takeoff_task(void *p_arg)
     UART1SendString("ok_take_off!\r\n");
 //    set_throttle = atoi((char*)&UART1_RX_BUF[1]);
     OSTimeDlyHMSM(0,0,10,0,OS_OPT_TIME_HMSM_STRICT,&err);
+//    if(flightStatus.Armed != FLIGHTSTATUS_ARMED_ARMED)
+//      OSTaskDel(&AUTOtakeoff, &err);
     while(auto_throttle < set_throttle && (flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED))
     {
+
       OSTimeDlyHMSM(0,0,0,50,OS_OPT_TIME_HMSM_STRICT,&err);       
       auto_throttle+=0.5;
     }
     if(auto_throttle >= set_throttle)
     {  
 //      task_flag = 1;
-      OSTimeDlyHMSM(0,0,10,0,OS_OPT_TIME_HMSM_STRICT,&err);      
+      OSTimeDlyHMSM(0,0,20,0,OS_OPT_TIME_HMSM_STRICT,&err);      
 //      OSTaskSemPost(&AUTOgoto, OS_OPT_POST_NO_SCHED, &err);
       OSTaskSemPost(&AUTOlanding, OS_OPT_POST_NO_SCHED, &err);
 //      OSTaskSuspend (&AUTOtakeoff, &err);
