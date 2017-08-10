@@ -12,4 +12,6 @@
 extern float auto_throttle, error_throttle;
 extern float control_y_out, control_x_out;
 extern uint8 task_flag;
-#endif
+extern uint16 goto_count;
+
+#endif //__CORE_AUTOPILOT_H__

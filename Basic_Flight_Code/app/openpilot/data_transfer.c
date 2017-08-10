@@ -113,11 +113,14 @@ void nrf_sendstate()
 
 /* final data transmitted to ground terminal using nrf             */
 
-  Nrf_Buf_Out.Data_int[0]=(int16)(attitudeActual.Pitch*100);
-  Nrf_Buf_Out.Data_int[1]=(int16)(pic_x_i);
-  Nrf_Buf_Out.Data_int[2]=(int16)(pic_y_i);
+//  Nrf_Buf_Out.Data_int[0]=(int16)(attitudeActual.Pitch*100);
+//  Nrf_Buf_Out.Data_int[1]=(int16)(pic_x_i);
+//  Nrf_Buf_Out.Data_int[2]=(int16)(pic_y_i);
 //  Nrf_Buf_Out.Data_int[1]=(int16)(Xmm_Send);
 //  Nrf_Buf_Out.Data_int[2]=(int16)(Ymm_Send);
+  Nrf_Buf_Out.Data_int[0]=0;
+  Nrf_Buf_Out.Data_int[1]=0;
+  Nrf_Buf_Out.Data_int[2]=(int16)(goto_count);
   Nrf_Buf_Out.Data_int[3]=(int16)ks103_distance/10;
   
 //  Nrf_Buf_Out.Data_int[4]=(int16)(SumX_amend);                       

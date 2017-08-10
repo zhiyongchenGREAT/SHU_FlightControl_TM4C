@@ -4,6 +4,8 @@ float auto_throttle=0, error_throttle=0;
 uint32 auto_throttle_max=68;
 float control_y_out, control_x_out;
 uint8 task_flag = 0;
+uint16 goto_count = 0;
+
 void auto_test_flight_task(void *p_arg)
 {
   OS_ERR err;	
@@ -77,7 +79,7 @@ void auto_takeoff_task(void *p_arg)
 //  CPU_SR_ALLOC();
   p_arg = p_arg;
   
-  uint32 set_throttle = 40;
+  uint32 set_throttle = 46;
   
 //  OSTimeDlyHMSM(0,0,10,0,OS_OPT_TIME_HMSM_STRICT,&err);  
   while(DEF_TRUE)
@@ -92,7 +94,7 @@ void auto_takeoff_task(void *p_arg)
     {
 
       OSTimeDlyHMSM(0,0,0,50,OS_OPT_TIME_HMSM_STRICT,&err);       
-      auto_throttle+=0.5;
+      auto_throttle+=0.6;
     }
     if(auto_throttle >= set_throttle)
     {  
@@ -135,7 +137,7 @@ void auto_goto_task(void *p_arg)
   OS_ERR err;	
 //  CPU_SR_ALLOC();
   p_arg = p_arg;
-  uint16 goto_count = 0;
+//  uint16 goto_count = 0;
   while(DEF_TRUE)
   {
     OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
@@ -153,7 +155,7 @@ void auto_goto_task(void *p_arg)
     while(goto_count<50)
     {
       OSTimeDlyHMSM(0,0,0,100,OS_OPT_TIME_HMSM_STRICT,&err);
-      if((fabs(pic_x_cm)<90)&&(fabs(pic_y_cm)<90))  
+      if(((fabs(pic_x_cm)<90) && (fabs(pic_x_cm)>0)) && (fabs(pic_y_cm)<90 && (fabs(pic_y_cm)>0)))  
         goto_count++;
       else
         goto_count = 0;

@@ -49,7 +49,7 @@ void PIC_Control()
   if(pic_y_i < -Pic_x_i_max)
     pic_y_i = -Pic_x_i_max;
   
-   if(ks103_distance<=1000)
+   if(ks103_distance<=600)
   {
     pic_y_cm=0;
     pic_y_i=0;
