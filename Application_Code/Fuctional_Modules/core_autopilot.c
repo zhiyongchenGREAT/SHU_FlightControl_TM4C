@@ -97,9 +97,9 @@ void auto_takeoff_task(void *p_arg)
     if(auto_throttle >= set_throttle)
     {  
 //      task_flag = 1;
-      OSTimeDlyHMSM(0,0,20,0,OS_OPT_TIME_HMSM_STRICT,&err);      
-//      OSTaskSemPost(&AUTOgoto, OS_OPT_POST_NO_SCHED, &err);
-      OSTaskSemPost(&AUTOlanding, OS_OPT_POST_NO_SCHED, &err);
+//      OSTimeDlyHMSM(0,0,20,0,OS_OPT_TIME_HMSM_STRICT,&err);      
+      OSTaskSemPost(&AUTOgoto, OS_OPT_POST_NO_SCHED, &err);
+//      OSTaskSemPost(&AUTOlanding, OS_OPT_POST_NO_SCHED, &err);
 //      OSTaskSuspend (&AUTOtakeoff, &err);
       OSTaskDel(&AUTOtakeoff, &err);
     }
@@ -140,15 +140,25 @@ void auto_goto_task(void *p_arg)
   {
     OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
     UART1SendString("auto goto!\r\n");
-    while(goto_count<4)
+//    while(goto_count<4)
+//    {
+//      control_x_out+=1;
+//      OSTimeDlyHMSM(0,0,1,0,OS_OPT_TIME_HMSM_STRICT,&err);
+//      control_x_out-=1;
+//      OSTimeDlyHMSM(0,0,1,500,OS_OPT_TIME_HMSM_STRICT,&err); 
+//      goto_count++;
+//    }
+//    OSTaskSemPost(&AUTOlanding, OS_OPT_POST_NO_SCHED, &err); 
+//    OSTaskSuspend (&AUTOgoto, &err);      
+    while(goto_count<50)
     {
-      control_x_out+=1;
-      OSTimeDlyHMSM(0,0,1,0,OS_OPT_TIME_HMSM_STRICT,&err);
-      control_x_out-=1;
-      OSTimeDlyHMSM(0,0,1,500,OS_OPT_TIME_HMSM_STRICT,&err); 
-      goto_count++;
+      OSTimeDlyHMSM(0,0,0,100,OS_OPT_TIME_HMSM_STRICT,&err);
+      if((fabs(pic_x_cm)<90)&&(fabs(pic_y_cm)<90))  
+        goto_count++;
+      else
+        goto_count = 0;
     }
-    OSTaskSemPost(&AUTOlanding, OS_OPT_POST_NO_SCHED, &err); 
-    OSTaskSuspend (&AUTOgoto, &err);      
+    OSTaskSemPost(&AUTOlanding, OS_OPT_POST_NO_SCHED, &err);
+    OSTaskDel(&AUTOgoto, &err);    
   }
 }
