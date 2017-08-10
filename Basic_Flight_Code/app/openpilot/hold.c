@@ -10,7 +10,7 @@ void hold()
 //  temp = ks103_distance / 1000.0 * UART_PIDadjust.Height_P 
 //  + ks103_delta_distance / 1000.0 * UART_PIDadjust.Height_D;
 
-  if(abs((int)ks103_delta_distance) < 200)
+  if((abs((int)ks103_delta_distance) < 200) && (ks103_distance < 2000))
     temp = ks103_distance / 1000.0 * UART_PIDadjust.Height_P 
       + ks103_delta_distance / 1000.0 * UART_PIDadjust.Height_D;
   else
