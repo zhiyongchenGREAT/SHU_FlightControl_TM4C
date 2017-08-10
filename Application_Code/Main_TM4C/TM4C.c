@@ -483,10 +483,10 @@ static void FlightAPPInit(CPU_INT08U set)
 //  IntPrioritySet(INT_TIMER1A, 0x01<<6);
 //  IntPrioritySet(INT_UART1, 0x01<<7);
   
-  IntPrioritySet(INT_UART6, 0x00<<5);  
-  IntPrioritySet(INT_UART2, 0x00<<5); 
-  IntPrioritySet(INT_WTIMER1A, 0x01<<5);
-  IntPrioritySet(INT_GPIOC, 0x02<<5);  
+  IntPrioritySet(INT_GPIOC, 0x00<<5);  
+  IntPrioritySet(INT_UART2, 0x01<<5);   
+  IntPrioritySet(INT_UART6, 0x02<<5);  
+//  IntPrioritySet(INT_WTIMER1A, 0x01<<5);
   IntPrioritySet(INT_TIMER1A, 0x03<<5);
   IntPrioritySet(INT_UART1, 0x04<<5);
   

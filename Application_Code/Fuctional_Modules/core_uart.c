@@ -27,12 +27,12 @@ uint8 UART1_RX_BUF[UART1_REC_LEN];
 //};
 UART_PIDadjust_Struct UART_PIDadjust = 
 {
-  0.025, 
-  0.0, 
-  20.88, 
-  0.025, 
-  0.0, 
-  20.88,
+  0.010, 
+  0.0001, 
+  40.88, 
+  0.010, 
+  0.0001, 
+  40.88,
   0.0017, 
   0.0, 
   0.000072,
@@ -110,7 +110,7 @@ void UART1_IRQHandler()
   {
     
     Res = UARTCharGetNonBlocking(UART1_BASE);
-    UARTCharPut(UART1_BASE, Res);                                               //Test Uart receive(echo)
+//    UARTCharPut(UART1_BASE, Res);                                               //Test Uart receive(echo)
     if((UART1_RX_STA&0x8000)==0)
     {
       if(UART1_RX_STA&0x4000)

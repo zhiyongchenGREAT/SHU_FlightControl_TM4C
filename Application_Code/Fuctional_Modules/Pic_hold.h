@@ -14,6 +14,6 @@ void PIC_Control();
 
 extern float Pic_x_out,Pic_y_out;
 extern float pic_x_cm,pic_y_cm;
-
+extern float pic_x_i ,pic_y_i;
 
 #endif //__PIC_HOLD_H

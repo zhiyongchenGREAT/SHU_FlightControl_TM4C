@@ -7,7 +7,7 @@ float Pic_x_out,Pic_y_out;
 
 float pic_x_cm,pic_y_cm;
 static float last_pic_x_cm=0,last_pic_y_cm=0;	
-static float pic_x_i=0,pic_y_i=0;
+float pic_x_i=0,pic_y_i=0;
 static float PID_PIC_XOUT=0,PID_PIC_YOUT=0;
 static volatile float delta_picx,delta_picy;
 
@@ -16,22 +16,22 @@ static volatile float delta_picx,delta_picy;
 void PIC_Control()
 {
  
-  if(RENESAS.FLOW_X<=-80)
+  if(RENESAS.FLOW_X<=-100)
   {
-    RENESAS.FLOW_X = -80;
+    RENESAS.FLOW_X = -100;
   }
-  else if(RENESAS.FLOW_X >= 80)
+  else if(RENESAS.FLOW_X >= 100)
   {
-    RENESAS.FLOW_X =  80;
+    RENESAS.FLOW_X =  100;
   }
   
-   if(RENESAS.FLOW_Y<=-80)
+   if(RENESAS.FLOW_Y<=-100)
   {
-    RENESAS.FLOW_Y = -80;
+    RENESAS.FLOW_Y = -100;
   }
-  else if(RENESAS.FLOW_Y >= 80)
+  else if(RENESAS.FLOW_Y >= 100)
   {
-    RENESAS.FLOW_Y =  80;
+    RENESAS.FLOW_Y =  100;
   }
   
  
