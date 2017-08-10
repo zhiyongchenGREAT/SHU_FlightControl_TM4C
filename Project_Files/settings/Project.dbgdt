@@ -904,7 +904,7 @@
                     <item>RENESAS</item>
                     <item>UART6_RX_BUF</item>
                     <item>RENESAS</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

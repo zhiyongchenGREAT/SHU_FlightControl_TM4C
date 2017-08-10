@@ -369,19 +369,19 @@ static void flight_init_task(void *p_arg)
                (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
                (OS_ERR 	* )&err);
   
-  OSTaskCreate((OS_TCB 	* )&AUTOtakeoff,		
-               (CPU_CHAR	* )"auto takeoff", 		
-               (OS_TASK_PTR  )auto_takeoff_task, 			
-               (void	* )0,					
-               (OS_PRIO	  )AUTO_TAKEOFF_TASK_PRIO,     
-               (CPU_STK    * )&AUTO_TAKEOFF_TASK_STK[0],	
-               (CPU_STK_SIZE )AUTO_TAKEOFF_TASK_SIZE/10,	
-               (CPU_STK_SIZE )AUTO_TAKEOFF_TASK_SIZE,		
-               (OS_MSG_QTY   )0,					
-               (OS_TICK	  )0,					
-               (void   	* )0,					
-               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
-               (OS_ERR 	* )&err);
+//  OSTaskCreate((OS_TCB 	* )&AUTOtakeoff,		
+//               (CPU_CHAR	* )"auto takeoff", 		
+//               (OS_TASK_PTR  )auto_takeoff_task, 			
+//               (void	* )0,					
+//               (OS_PRIO	  )AUTO_TAKEOFF_TASK_PRIO,     
+//               (CPU_STK    * )&AUTO_TAKEOFF_TASK_STK[0],	
+//               (CPU_STK_SIZE )AUTO_TAKEOFF_TASK_SIZE/10,	
+//               (CPU_STK_SIZE )AUTO_TAKEOFF_TASK_SIZE,		
+//               (OS_MSG_QTY   )0,					
+//               (OS_TICK	  )0,					
+//               (void   	* )0,					
+//               (OS_OPT       )OS_OPT_TASK_STK_CHK|OS_OPT_TASK_STK_CLR,
+//               (OS_ERR 	* )&err);
   
   OSTaskCreate((OS_TCB 	* )&AUTOgoto,		
                (CPU_CHAR	* )"auto goto", 		
