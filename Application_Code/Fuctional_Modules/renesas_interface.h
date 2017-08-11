@@ -17,8 +17,10 @@ extern void UART2SendString(uint8* send);
 
 struct RENESAS_Struct
 {
-    float FLOW_X;
-    float FLOW_Y;
+//    float FLOW_X;
+//    float FLOW_Y;
+  int16 FLOW_X;
+  int16 FLOW_Y;
 };
 
 typedef struct RENESAS_Struct RENESAS_Struct;

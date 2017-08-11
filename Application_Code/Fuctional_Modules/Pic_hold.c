@@ -3,6 +3,8 @@
 #define Pic_x_i_max 50000
 #define Pic_out_max 6.5f
 
+#define Pic_factor 1.5
+
 float Pic_x_out,Pic_y_out;
 
 float pic_x_cm,pic_y_cm;
@@ -11,7 +13,9 @@ float pic_x_i=0,pic_y_i=0;
 static float PID_PIC_XOUT=0,PID_PIC_YOUT=0;
 static volatile float delta_picx,delta_picy;
 
+float Pic_cotrol_xout=0,Pic_cotrol_yout=0;
 
+int control_flag=0;
 
 void PIC_Control()
 {
@@ -100,5 +104,34 @@ void PIC_Control()
     last_pic_x_cm = pic_x_cm;
     last_pic_y_cm = pic_y_cm;
   
+  
+}
+
+void fix_cotrol()
+{
+  if(pic_x_cm>50 && ks103_distance > 600 ){
+    
+    Pic_cotrol_yout=PID_PIC_YOUT + Pic_factor*(pic_y_cm/pic_x_cm);
+    Pic_cotrol_xout=PID_PIC_XOUT+Pic_factor;
+    control_flag=5;
+  }
+  else if(pic_x_cm<-50  && ks103_distance > 600 ){
+    Pic_cotrol_yout=PID_PIC_YOUT - Pic_factor*(pic_y_cm/pic_x_cm);
+    Pic_cotrol_xout=PID_PIC_XOUT-Pic_factor;
+    control_flag=5;
+  }
+  
+  if(pic_y_cm>50  && ks103_distance > 600 ){
+    
+    Pic_cotrol_xout=PID_PIC_XOUT + Pic_factor*(pic_x_cm/pic_y_cm);
+    Pic_cotrol_yout=PID_PIC_YOUT+Pic_factor;
+    control_flag=5;
+  }
+  else if(pic_y_cm<-50  && ks103_distance > 600 ){
+    
+    Pic_cotrol_xout=PID_PIC_XOUT - Pic_factor*(pic_x_cm/pic_y_cm);
+    Pic_cotrol_yout=PID_PIC_YOUT-Pic_factor;
+    control_flag=5;
+  }
   
 }

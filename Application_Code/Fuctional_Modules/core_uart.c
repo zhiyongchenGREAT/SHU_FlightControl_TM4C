@@ -230,6 +230,8 @@ void uart_adjust_task(void *p_arg)
   uint16 rxlen = 0;
   int8 seps[2] = "|";
   int8 *token;
+  uint8 UARTADJUST_RX_BUF[60];
+  
   while(DEF_TRUE)
   {
     OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
@@ -238,19 +240,19 @@ void uart_adjust_task(void *p_arg)
     {
       rxlen = UART1_RX_STA&0X3FFF;
       UART1_RX_BUF[rxlen] = NULL;
-
-//      sprintf((char*)dtbuf,"%s\r\n", UART1_RX_BUF);              
-//      UART1SendString(dtbuf);
+      strcpy((char*)UARTADJUST_RX_BUF, (char*)UART1_RX_BUF);      
+      //      sprintf((char*)dtbuf,"%s\r\n", UART1_RX_BUF);              
+      //      UART1SendString(dtbuf);
       
-/* UARTadjust pend signal              */  
-//      OSMutexPend(&PID_adjust_MUTEX,
-//                0,
-//                OS_OPT_PEND_BLOCKING,
-//                &ts,
-//                &err);
-    OSSchedLock(&err);
-/* UARTadjust receive decode&settings              */
-      token = strtok((char*)&UART1_RX_BUF[1], seps);
+      /* UARTadjust pend signal              */  
+      //      OSMutexPend(&PID_adjust_MUTEX,
+      //                0,
+      //                OS_OPT_PEND_BLOCKING,
+      //                &ts,
+      //                &err);
+      OSSchedLock(&err);
+      /* UARTadjust receive decode&settings              */
+      token = strtok((char*)&UARTADJUST_RX_BUF[1], seps);
       UART_PIDadjust.FLOW_XP = atof(token);
       token = strtok(NULL, seps);
       UART_PIDadjust.FLOW_XI = atof(token);
@@ -291,7 +293,7 @@ void uart_adjust_task(void *p_arg)
       UART_PIDadjust.Height_I = atof(token);
       token = strtok(NULL, seps);
       UART_PIDadjust.Height_D = atof(token);
-
+      
       
       stabilizationSettings.PitchRatePID[0] = UART_PIDadjust.Pitch_P;
       stabilizationSettings.PitchRatePID[1] = UART_PIDadjust.Pitch_I;
@@ -300,7 +302,7 @@ void uart_adjust_task(void *p_arg)
       stabilizationSettings.RollRatePID[0] = UART_PIDadjust.Roll_P;
       stabilizationSettings.RollRatePID[1] = UART_PIDadjust.Roll_I;
       stabilizationSettings.RollRatePID[2] = UART_PIDadjust.Roll_D;
-
+      
       stabilizationSettings.YawRatePID[0] = UART_PIDadjust.Yaw_P;
       stabilizationSettings.YawRatePID[1] = UART_PIDadjust.Yaw_I;
       stabilizationSettings.YawRatePID[2] = UART_PIDadjust.Yaw_D;      
@@ -323,14 +325,14 @@ void uart_adjust_task(void *p_arg)
                     stabilizationSettings.YawRatePID[2],
                     stabilizationSettings.YawRatePID[3]);      
       
-   
-
-/* UARTadjust post signal              */      
-//      OSMutexPost(&PID_adjust_MUTEX,
-//                  OS_OPT_POST_NONE,
-//                  &err);
-    OSSchedUnlock(&err);      
-
+      
+      
+      /* UARTadjust post signal              */      
+      //      OSMutexPost(&PID_adjust_MUTEX,
+      //                  OS_OPT_POST_NONE,
+      //                  &err);
+      OSSchedUnlock(&err);      
+      
       sprintf((char*)dtbuf,"FLOW>>\r\n%f %f %f %f %f %f\r\n", 
               UART_PIDadjust.FLOW_XP, 
               UART_PIDadjust.FLOW_XI, 
@@ -347,21 +349,21 @@ void uart_adjust_task(void *p_arg)
               UART_PIDadjust.Pitch_D);
       
       UART1SendString(dtbuf);  
-
+      
       sprintf((char*)dtbuf,"ROLL>>\r\n%f %f %f\r\n", 
               UART_PIDadjust.Roll_P, 
               UART_PIDadjust.Roll_I, 
               UART_PIDadjust.Roll_D);
       
       UART1SendString(dtbuf);  
-
+      
       sprintf((char*)dtbuf,"YAW>>\r\n%f %f %f\r\n", 
               UART_PIDadjust.Yaw_P, 
               UART_PIDadjust.Yaw_I, 
               UART_PIDadjust.Yaw_D);
       
       UART1SendString(dtbuf);  
-
+      
       sprintf((char*)dtbuf,"HEIGHT>>\r\n%f %f %f\r\n", 
               UART_PIDadjust.Height_P, 
               UART_PIDadjust.Height_I, 
@@ -369,10 +371,11 @@ void uart_adjust_task(void *p_arg)
       
       UART1SendString(dtbuf);        
       
-//      UART1_RX_STA = 0;
+      //      UART1_RX_STA = 0;
     }	
     
     UART1_RX_STA = 0;
+    memset(UART1_RX_BUF, 0, sizeof(UART1_RX_BUF));  
   }  
   
 }

@@ -134,6 +134,12 @@ void flight_routine_task(void *p_arg)
     
     mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);
 
+    if(program_counter%10==3)
+    {
+      PIC_Control();
+      fix_cotrol();
+    }
+    
     if(program_counter%10==3)    
       PIC_Control();    
     

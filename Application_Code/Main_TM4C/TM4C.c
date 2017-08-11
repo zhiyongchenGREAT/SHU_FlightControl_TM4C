@@ -460,7 +460,7 @@ static void FlightAPPInit(CPU_INT08U set)
 
 /* mode key              */
   
-  GPIO_KEYinit();
+//  GPIO_KEYinit();
   
   tim1_init(PIT_IRQHandler);
 //  tim3_init(Telemetry_handler);
