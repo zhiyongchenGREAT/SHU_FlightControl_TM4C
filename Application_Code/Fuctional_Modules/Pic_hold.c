@@ -25,7 +25,7 @@ void PIC_Control()
     RENESAS.FLOW_X =  100;
   }
   
-   if(RENESAS.FLOW_Y<=-100)
+  if(RENESAS.FLOW_Y<=-100)
   {
     RENESAS.FLOW_Y = -100;
   }
