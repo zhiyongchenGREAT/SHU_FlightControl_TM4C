@@ -459,9 +459,7 @@ static void FlightAPPInit(CPU_INT08U set)
   
   GPIO_PINB7init();
 
-/* mode key              */
-  
-  GPIO_KEYinit();
+
   
   tim1_init(PIT_IRQHandler);
 //  tim3_init(Telemetry_handler);
@@ -498,7 +496,11 @@ static void FlightAPPInit(CPU_INT08U set)
     motor_reset();                                                                            
   
   DELAY_MS(5000);
-    
+
+/* mode key              */
+  
+  GPIO_KEYinit();  
+  
   AttitudeInitialize();
   StabilizationInitialize();
   

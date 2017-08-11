@@ -3,7 +3,8 @@
 #define Pic_x_i_max 50000
 #define Pic_out_max 6.5f
 
-#define Pic_factor 1.5
+//#define Pic_factor 1.5
+#define Pic_factor 1.3f
 
 float Pic_x_out,Pic_y_out;
 

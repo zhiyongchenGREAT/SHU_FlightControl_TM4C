@@ -102,7 +102,7 @@ void auto_takeoff_task(void *p_arg)
     }
 //    OSTimeDlyHMSM(0,0,2,0,OS_OPT_TIME_HMSM_STRICT,&err);    
     control_x_out = -2;
-    OSTimeDlyHMSM(0,0,0,800,OS_OPT_TIME_HMSM_STRICT,&err);     
+    OSTimeDlyHMSM(0,0,0,500,OS_OPT_TIME_HMSM_STRICT,&err);     
     control_x_out = 0;
     stablization_mode = 1;
     
