@@ -453,9 +453,8 @@ static void FlightAPPInit(CPU_INT08U set)
   KS103_init();
   mpu6050_soft_init();  
   
-  UART2_STInit(9600);
   UART1_STInit(9600);
-
+  UART2_STInit(9600);
   
   GPIO_PINB7init();
 

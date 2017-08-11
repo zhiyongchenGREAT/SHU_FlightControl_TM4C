@@ -64,23 +64,26 @@ void PIC_Control()
 /* PID_PIC_YOUT  = 0.045*( pic_y_cm + 0.0035 * pic_y_i + 37.6* (pic_y_cm - last_pic_y_cm));              */
 
   
-  if(pic_x_cm<=90 && pic_y_cm<=90){
-    PID_PIC_XOUT  = UART_PIDadjust.FLOW_XP 
+//  if(pic_x_cm<=90 && pic_y_cm<=90){
+//    PID_PIC_XOUT  = UART_PIDadjust.FLOW_XP 
+//      * ( pic_x_cm + UART_PIDadjust.FLOW_XI * pic_x_i + UART_PIDadjust.FLOW_XD * (pic_x_cm - last_pic_x_cm));
+//    PID_PIC_YOUT  = UART_PIDadjust.FLOW_YP 
+//      * ( pic_y_cm + UART_PIDadjust.FLOW_YI * pic_y_i + UART_PIDadjust.FLOW_YD * (pic_y_cm - last_pic_y_cm));
+//  }
+//  if(pic_x_cm>90 ){
+//    PID_PIC_XOUT  = 0.055 * ( pic_x_cm + UART_PIDadjust.FLOW_XD * (pic_x_cm - last_pic_x_cm));
+//    
+//  }
+//  if(pic_y_cm>90 ){
+//
+//    PID_PIC_YOUT  = 0.055 *( pic_y_cm +  UART_PIDadjust.FLOW_YD * (pic_y_cm - last_pic_y_cm));
+//  }
+  
+  
+  PID_PIC_XOUT  = UART_PIDadjust.FLOW_XP 
       * ( pic_x_cm + UART_PIDadjust.FLOW_XI * pic_x_i + UART_PIDadjust.FLOW_XD * (pic_x_cm - last_pic_x_cm));
-    PID_PIC_YOUT  = UART_PIDadjust.FLOW_YP 
+   PID_PIC_YOUT  = UART_PIDadjust.FLOW_YP 
       * ( pic_y_cm + UART_PIDadjust.FLOW_YI * pic_y_i + UART_PIDadjust.FLOW_YD * (pic_y_cm - last_pic_y_cm));
-  }
-  if(pic_x_cm>90 ){
-    PID_PIC_XOUT  = 0.055 * ( pic_x_cm + UART_PIDadjust.FLOW_XD * (pic_x_cm - last_pic_x_cm));
-    
-  }
-  if(pic_y_cm>90 ){
-
-    PID_PIC_YOUT  = 0.055 *( pic_y_cm +  UART_PIDadjust.FLOW_YD * (pic_y_cm - last_pic_y_cm));
-  }
-  
-  
-  
   
   Pic_x_out = PID_PIC_XOUT ;	
   Pic_y_out = PID_PIC_YOUT ;

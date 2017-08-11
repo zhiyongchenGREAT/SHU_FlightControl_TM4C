@@ -1,7 +1,10 @@
 #include "YRK_init.h"
-#if defined ( __ICCARM__ )      // IAR 
-#pragma optimize=none 
-#endif 
+//#if defined ( __ICCARM__ )      // IAR 
+//#pragma optimize=none 
+//#endif
+
+enum COMPETITON_FLIGHT_MODE COMPETITON_FLIGHT_MODE = COM_TASK_0;
+
 void lowlevel_init()
 {
   ROM_FPUEnable();
@@ -110,15 +113,39 @@ void pwm_init(void)
   PWMGenEnable(PWM1_BASE, PWM_GEN_3);
 }
 
+/*
+************************************************************************************************************************
+*                                               按键1	按键2	读数值（PIN）
+*                                               OFF	ON	8
+*                                               ON	ON	0
+*                                               OFF	OFF	12
+*                                               ON	OFF	4
+************************************************************************************************************************
+*/
+
 void GPIO_KEYinit(void)
 {
 //  int32_t PIN;
   SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD); 
   
+  while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOD))
+  {
+  }
+  
   GPIOPinTypeGPIOInput(GPIO_PORTD_BASE, GPIO_PIN_2|GPIO_PIN_3);
   GPIOPadConfigSet(GPIO_PORTD_BASE, GPIO_PIN_2|GPIO_PIN_3, GPIO_STRENGTH_4MA, GPIO_PIN_TYPE_STD_WPU);
 
-//  DELAY_MS(1000);
+  DELAY_MS(1000);
   
-//  PIN = GPIOPinRead(GPIO_PORTD_BASE, GPIO_PIN_2|GPIO_PIN_3);
+  if(GPIOPinRead(GPIO_PORTD_BASE, GPIO_PIN_2|GPIO_PIN_3) == 12)
+    COMPETITON_FLIGHT_MODE = COM_TASK_0;
+  else if(GPIOPinRead(GPIO_PORTD_BASE, GPIO_PIN_2|GPIO_PIN_3) == 4)
+    COMPETITON_FLIGHT_MODE = COM_TASK_1;
+  else if(GPIOPinRead(GPIO_PORTD_BASE, GPIO_PIN_2|GPIO_PIN_3) == 8)
+    COMPETITON_FLIGHT_MODE = COM_TASK_2;
+  else if(GPIOPinRead(GPIO_PORTD_BASE, GPIO_PIN_2|GPIO_PIN_3) == 0)
+    COMPETITON_FLIGHT_MODE = COM_TASK_3;
+  else
+    COMPETITON_FLIGHT_MODE = COM_TASK_0;    
+  
 }
