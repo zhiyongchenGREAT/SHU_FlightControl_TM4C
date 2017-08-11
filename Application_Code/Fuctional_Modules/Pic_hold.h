@@ -16,9 +16,7 @@ void fix_cotrol();
 extern float Pic_x_out,Pic_y_out;
 extern float pic_x_cm,pic_y_cm;
 extern float pic_x_i ,pic_y_i;
-
-extern float Pic_cotrol_xout,Pic_cotrol_yout;
-
 extern int control_flag;
+extern float Pic_cotrol_xout,Pic_cotrol_yout;
 
 #endif //__PIC_HOLD_H

@@ -191,6 +191,8 @@ void UART2SendString(uint8* send)
 *                                               uc/OS Task
 ========================================================================================================================
 */
+int recive_sua_flag=0;
+
 void renesas_interface(void *p_arg)
 {
   OS_ERR err;
@@ -202,26 +204,21 @@ void renesas_interface(void *p_arg)
   uint16 rxlen = 0;
 //  int8 seps[2] = "|";
 //  int8 *token;
-  uint8 RENESAS_RX_BUF[30];  
-  
   while(DEF_TRUE)
   {
     OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
     
-    if((UART2_RX_STA&0X8000) && (UART2_RX_BUF[0] == 0x55) && (UART2_RX_BUF[1] == 0xaa))
+    if(UART2_RX_STA&0X8000 && UART2_RX_BUF[0] == '$')
     {
       rxlen = UART2_RX_STA&0X3FFF;
       UART2_RX_BUF[rxlen] = NULL;
-      strcpy((char*)RENESAS_RX_BUF, (char*)UART2_RX_BUF);
 
-//      token = strtok((char*)&RENESAS_RX_BUF[2], seps);       
+//      token = strtok((char*)&UART2_RX_BUF[1], seps);       
 //      RENESAS.FLOW_X = atof(token);
 //      token = strtok(NULL, seps);
 //      RENESAS.FLOW_Y = atof(token);
-//      RENESAS.FLOW_X = (float)(RENESAS_RX_BUF[2]|(RENESAS_RX_BUF[3]<<8));
-//      RENESAS.FLOW_Y = (float)(RENESAS_RX_BUF[5]|(RENESAS_RX_BUF[6]<<8));      
+//      recive_sua_flag=1;
     }
     UART2_RX_STA = 0;
-    memset(UART2_RX_BUF, 0, sizeof(UART2_RX_BUF));
   }  
 }

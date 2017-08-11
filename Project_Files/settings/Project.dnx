@@ -31,7 +31,7 @@
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </JLinkDriver>
     <DebugChecksum>
-        <Checksum>914510730</Checksum>
+        <Checksum>1202085738</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -65,9 +65,6 @@
         <ITMportsLogFile>0</ITMportsLogFile>
         <ITMlogFile>$PROJ_DIR$\ITM.log</ITMlogFile>
     </SWOTraceHWSettings>
-    <watch_formats>
-        <Fmt0>{W}42:RENESAS	0	9</Fmt0>
-    </watch_formats>
     <Trace1>
         <Enabled>0</Enabled>
         <ShowSource>1</ShowSource>

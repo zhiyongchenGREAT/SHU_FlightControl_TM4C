@@ -140,15 +140,17 @@ void flight_routine_task(void *p_arg)
       fix_cotrol();
     }
     
-    if(program_counter%10==3)    
-      PIC_Control();    
-    
     if(program_counter%50==2)
       KS103_get_distance();
    
     if(program_counter%50==49)
       ks103_handler();
      
+//    if(recive_sua_flag==1)
+//    {
+//      recive_sua_flag=0;
+//      fix_cotrol();
+//    }
 
     if(nrf_getcmd())
     {

@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\settings\Project.Debug.general.xcl" --backend -f "C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\settings\Project.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\victo\Desktop\veryimportant\SHU_FlightControl_TM4C-rev0.9.1\SHU_FlightControl_TM4C-rev0.9.1\Project_Files\settings\Project.Debug.general.xcl" --backend -f "C:\Users\victo\Desktop\veryimportant\SHU_FlightControl_TM4C-rev0.9.1\SHU_FlightControl_TM4C-rev0.9.1\Project_Files\settings\Project.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\settings\Project.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\settings\Project.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\victo\Desktop\veryimportant\SHU_FlightControl_TM4C-rev0.9.1\SHU_FlightControl_TM4C-rev0.9.1\Project_Files\settings\Project.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\victo\Desktop\veryimportant\SHU_FlightControl_TM4C-rev0.9.1\SHU_FlightControl_TM4C-rev0.9.1\Project_Files\settings\Project.Debug.driver.xcl" 
 
 @echo off 
 :end

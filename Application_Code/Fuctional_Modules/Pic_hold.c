@@ -17,6 +17,7 @@ float Pic_cotrol_xout=0,Pic_cotrol_yout=0;
 
 int control_flag=0;
 
+
 void PIC_Control()
 {
  
@@ -29,7 +30,7 @@ void PIC_Control()
     RENESAS.FLOW_X =  100;
   }
   
-  if(RENESAS.FLOW_Y<=-100)
+   if(RENESAS.FLOW_Y<=-100)
   {
     RENESAS.FLOW_Y = -100;
   }
@@ -84,11 +85,12 @@ void PIC_Control()
 //  }
   
   
-  PID_PIC_XOUT  = UART_PIDadjust.FLOW_XP 
+   PID_PIC_XOUT  = UART_PIDadjust.FLOW_XP 
       * ( pic_x_cm + UART_PIDadjust.FLOW_XI * pic_x_i + UART_PIDadjust.FLOW_XD * (pic_x_cm - last_pic_x_cm));
    PID_PIC_YOUT  = UART_PIDadjust.FLOW_YP 
       * ( pic_y_cm + UART_PIDadjust.FLOW_YI * pic_y_i + UART_PIDadjust.FLOW_YD * (pic_y_cm - last_pic_y_cm));
   
+ 
   Pic_x_out = PID_PIC_XOUT ;	
   Pic_y_out = PID_PIC_YOUT ;
   
@@ -106,6 +108,7 @@ void PIC_Control()
   
   
 }
+
 
 void fix_cotrol()
 {

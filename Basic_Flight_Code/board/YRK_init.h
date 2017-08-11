@@ -8,15 +8,6 @@
 #include <app_includes.h>
 #include <OS_includes.h>
 
-enum COMPETITON_FLIGHT_MODE{
-  COM_TASK_0,
-  COM_TASK_1,
-  COM_TASK_2,
-  COM_TASK_3,
-};
-
-extern enum COMPETITON_FLIGHT_MODE COMPETITON_FLIGHT_MODE;
-
 extern void lowlevel_init();
 extern void uart_init(uint32 band,void (*pfnHandler)(void));
 extern void tim1_init(void (*pfnHandler)(void));

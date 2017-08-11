@@ -19,11 +19,12 @@ struct RENESAS_Struct
 {
 //    float FLOW_X;
 //    float FLOW_Y;
-  int16 FLOW_X;
-  int16 FLOW_Y;
+    int16 FLOW_X;
+    int16 FLOW_Y;
 };
 
 typedef struct RENESAS_Struct RENESAS_Struct;
 
 extern RENESAS_Struct RENESAS;
+extern int recive_sua_flag;
 #endif //__RENESAS_INTERFACE_H

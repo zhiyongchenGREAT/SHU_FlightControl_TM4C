@@ -38,23 +38,29 @@ void command_handler()
 
   stabDesired.Throttle=-(Nrf_in_switch[2])/30.0 + auto_throttle;
 //  stabDesired.Throttle=(Nrf_in_switch[2])/30.0 + auto_throttle;
-  stabDesired.Throttle=stabDesired.Throttle<0?0:stabDesired.Throttle;  
-  
-  if(control_flag>0)
+  stabDesired.Throttle=stabDesired.Throttle<0?0:stabDesired.Throttle;
+  if(stablization_mode)
   {
-     stabDesired.Pitch=Nrf_in_switch[0]/30.0 - Pic_cotrol_xout;//control_x_out; //+ angle_x_out ;
-     stabDesired.Roll=Nrf_in_switch[1]/30.0 + Pic_cotrol_yout;//control_y_out; //+ angle_y_out ;
-     control_flag--;
+    if(control_flag>0)
+    {
+      stabDesired.Pitch=Nrf_in_switch[0]/30.0 - Pic_cotrol_xout;//control_x_out; //+ angle_x_out ;
+      stabDesired.Roll=Nrf_in_switch[1]/30.0 + Pic_cotrol_yout;//control_y_out; //+ angle_y_out ;
+      control_flag--;
+    }
+    else if(control_flag==0)
+    {
+      stabDesired.Pitch=Nrf_in_switch[0]/30.0 - Pic_x_out;//control_x_out; //+ angle_x_out ;
+      stabDesired.Roll=Nrf_in_switch[1]/30.0 + Pic_y_out;//control_y_out; //+ angle_y_out ;
+      
+    }
   }
-  else if(control_flag==0)
+  else if(!stablization_mode)
   {
-     stabDesired.Pitch=Nrf_in_switch[0]/30.0 - Pic_x_out;//control_x_out; //+ angle_x_out ;
-     stabDesired.Roll=Nrf_in_switch[1]/30.0 + Pic_y_out;//control_y_out; //+ angle_y_out ;
-    
-  }  
+    stabDesired.Pitch=Nrf_in_switch[0]/30.0 + control_x_out; //+ angle_x_out ;
+    stabDesired.Roll=Nrf_in_switch[1]/30.0 + control_y_out; //+ angle_y_out ;
+  }
   
-//  stabDesired.Pitch=Nrf_in_switch[0]/30.0 - Pic_x_out;//control_x_out; //+ angle_x_out ;
-//  stabDesired.Roll=Nrf_in_switch[1]/30.0 + Pic_y_out;//control_y_out; //+ angle_y_out ;
+ 
   if(fabs(Nrf_in_switch[3]/30.0)>5)
     stabDesired.Yaw=Nrf_in_switch[3]/30.0;
   else
