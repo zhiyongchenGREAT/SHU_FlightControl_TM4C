@@ -160,23 +160,23 @@ void STARTUP_KEY(void)
   GPIOPinTypeGPIOInput(GPIO_PORTF_BASE, GPIO_PIN_4);
   GPIOPadConfigSet(GPIO_PORTF_BASE, GPIO_PIN_4, GPIO_STRENGTH_4MA, GPIO_PIN_TYPE_STD_WPU);
 
-  DELAY_MS(1000);
-  
-  while(DEF_TRUE)
-  {
-    if(!(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4) & GPIO_PIN_4))
-      break;
-    DELAY_MS(500);    
-    LED1_OFF();
-    if(!(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4) & GPIO_PIN_4))
-      break;
-    DELAY_MS(500);    
-    LED1_ON();    
-  }
-  
-  LED0_ON();  
-  LED1_ON(); 
-  DELAY_MS(5000);
-  LED0_OFF();  
-  LED1_OFF();   
+//  DELAY_MS(1000);
+//  
+//  while(DEF_TRUE)
+//  {
+//    if(!(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4) & GPIO_PIN_4))
+//      break;
+//    DELAY_MS(500);    
+//    LED1_OFF();
+//    if(!(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4) & GPIO_PIN_4))
+//      break;
+//    DELAY_MS(500);    
+//    LED1_ON();    
+//  }
+//  
+//  LED0_ON();  
+//  LED1_ON(); 
+//  DELAY_MS(5000);
+//  LED0_OFF();  
+//  LED1_OFF();   
 }

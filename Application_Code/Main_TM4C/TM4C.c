@@ -149,7 +149,8 @@ static void FlightAPPInit(CPU_INT08U set)
   IntMasterDisable();
   
   led_init();
-  //PX4Flow_uart_init(115200,UART6_IRQHandler);
+  
+//PX4Flow_uart_init(115200,UART6_IRQHandler);
   
   SysCtlPeripheralEnable(SYSCTL_PERIPH_EEPROM0);
   EEPROMInit();
@@ -197,8 +198,9 @@ static void FlightAPPInit(CPU_INT08U set)
   
   GPIO_KEYinit();  
 
-/* one key startup              */
+///* one key startup              */
   STARTUP_KEY();  
+
   
   AttitudeInitialize();
   StabilizationInitialize();
@@ -206,7 +208,5 @@ static void FlightAPPInit(CPU_INT08U set)
   if((set&(1u<<1u)) != 0u)
     while(!nrf_init(PORTC_IRQHandler));
 
-  
-  
-  IntMasterEnable();    
+ IntMasterEnable();    
 }

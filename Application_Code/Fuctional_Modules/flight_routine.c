@@ -1,6 +1,7 @@
 #include "flight_routine.h"
 
 uint16 IMU_ext_flag=0; 
+static uint16 key_flag = 0;
 
 
 /* NRF_Interrupt              */
@@ -158,7 +159,20 @@ void flight_routine_task(void *p_arg)
       nrf_sendstate();
     }
     
-    command_handler();    
+/* add one key start              */
+
+    if(key_flag >= 3000)
+      command_handler();
+    else if(key_flag > 200 && key_flag < 3000)
+    {
+      key_flag++;
+    }     
+    else if(key_flag <= 200)
+    {
+      if(!(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4) & GPIO_PIN_4))
+        key_flag++;
+    }
+   
     
     if(fabs(attitudeActual.Pitch)>40 || fabs(attitudeActual.Roll)>40)
       IMU_ext_flag=1;
