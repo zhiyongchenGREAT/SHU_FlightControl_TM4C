@@ -21,9 +21,13 @@
 
 #include "control_command_B.h"
 
+#define fix_pitch 0.57f
+#define fix_roll  0.4f
+
 static uint16 arming=0;
 static float Yaw_con_before=0;
 static float Yaw_fixed=0;
+
 
 void command_handler()                                                          
 {
@@ -33,6 +37,10 @@ void command_handler()
   
   if(IMU_ext_flag==1)
     stabDesired.Mode=0;
+  else if(IMU_ext_flag==2)
+     stabDesired.Mode=0;
+   else if(IMU_ext_flag==3)
+     stabDesired.Mode=118;
   
 /* approximately 2~105; seems these value are all mannually bound within 0~100                */
 
@@ -43,21 +51,21 @@ void command_handler()
   {
     if(control_flag>0)
     {
-      stabDesired.Pitch=Nrf_in_switch[0]/30.0 - Pic_cotrol_xout;//control_x_out; //+ angle_x_out ;
-      stabDesired.Roll=Nrf_in_switch[1]/30.0 + Pic_cotrol_yout;//control_y_out; //+ angle_y_out ;
+      stabDesired.Pitch=(Nrf_in_switch[0])/30.0 - Pic_cotrol_xout+fix_pitch;//control_x_out; //+ angle_x_out ;
+      stabDesired.Roll=(Nrf_in_switch[1])/30.0 + Pic_cotrol_yout-fix_roll;//control_y_out; //+ angle_y_out ;
       control_flag--;
     }
     else if(control_flag==0)
     {
-      stabDesired.Pitch=Nrf_in_switch[0]/30.0 - Pic_x_out;//control_x_out; //+ angle_x_out ;
-      stabDesired.Roll=Nrf_in_switch[1]/30.0 + Pic_y_out;//control_y_out; //+ angle_y_out ;
+      stabDesired.Pitch=(Nrf_in_switch[0])/30.0 - Pic_x_out+fix_pitch;//control_x_out; //+ angle_x_out ;
+      stabDesired.Roll=(Nrf_in_switch[1])/30.0 + Pic_y_out-fix_roll;//control_y_out; //+ angle_y_out ;
       
     }
   }
   else if(!stablization_mode)
   {
-    stabDesired.Pitch=Nrf_in_switch[0]/30.0 + control_x_out; //+ angle_x_out ;
-    stabDesired.Roll=Nrf_in_switch[1]/30.0 + control_y_out; //+ angle_y_out ;
+    stabDesired.Pitch=(Nrf_in_switch[0])/30.0 + control_x_out+fix_pitch; //+ angle_x_out ;
+    stabDesired.Roll=(Nrf_in_switch[1])/30.0 + control_y_out+fix_roll; //+ angle_y_out ;
   }
   
  
