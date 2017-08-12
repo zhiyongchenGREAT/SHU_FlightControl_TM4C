@@ -53,7 +53,11 @@ void receive_date_check()
     Nrf_in_switch[10]=Nrf_Buf_In.Data_int[10];
     if( Nrf_in_switch[4]<=2000)
     {
-      IMU_ext_flag=2;
+      IMU_ext_flag = 2;
+    }
+    else if(Nrf_in_switch[4]>=2000)
+    {
+      IMU_ext_flag = 3;
     }
     break;
   case 14:

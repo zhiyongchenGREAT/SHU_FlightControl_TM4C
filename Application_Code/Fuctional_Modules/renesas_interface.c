@@ -202,7 +202,7 @@ void UART2SendString(uint8* send)
 *                                               uc/OS Task
 ========================================================================================================================
 */
-int recive_sua_flag=0;
+//int recive_sua_flag=0;
 
 void renesas_interface(void *p_arg)
 {

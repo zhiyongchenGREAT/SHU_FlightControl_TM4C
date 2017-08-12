@@ -26,5 +26,5 @@ struct RENESAS_Struct
 typedef struct RENESAS_Struct RENESAS_Struct;
 
 extern RENESAS_Struct RENESAS;
-extern int recive_sua_flag;
+//extern int recive_sua_flag;
 #endif //__RENESAS_INTERFACE_H
