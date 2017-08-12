@@ -122,8 +122,8 @@ void fix_cotrol()
   else if(pic_x_cm<-50  && ks103_distance > 600 ){
     if(COMPETITON_FLIGHT_MODE==COM_TASK_2 )
     {
-      Pic_cotrol_yout=PID_PIC_YOUT - 10*(pic_y_cm/pic_x_cm);
-      Pic_cotrol_xout=PID_PIC_XOUT-10;
+      Pic_cotrol_yout=PID_PIC_YOUT - 9*(pic_y_cm/pic_x_cm);
+      Pic_cotrol_xout=PID_PIC_XOUT-9;
       control_flag=5;
     }
     if(COMPETITON_FLIGHT_MODE==COM_TASK_1 )

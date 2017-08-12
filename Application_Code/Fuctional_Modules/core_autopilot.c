@@ -447,7 +447,7 @@ void auto_takeoff_t3_task(void *p_arg)
     OSTimeDlyHMSM(0,0,5,0,OS_OPT_TIME_HMSM_STRICT,&err);
 
     stablization_mode = 0;
-    control_x_out = 2;
+    control_x_out = 5;
     
     
     while(auto_throttle < set_throttle && (flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED))
@@ -458,7 +458,7 @@ void auto_takeoff_t3_task(void *p_arg)
 
     }
     
-    control_x_out = -2;
+    control_x_out = -5;
     OSTimeDlyHMSM(0,0,0,500,OS_OPT_TIME_HMSM_STRICT,&err);     
     control_x_out = 0;
     stablization_mode = 1;
