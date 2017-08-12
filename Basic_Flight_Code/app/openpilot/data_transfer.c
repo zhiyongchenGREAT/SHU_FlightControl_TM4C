@@ -54,7 +54,7 @@ void receive_date_check()
     if( Nrf_in_switch[4]<=2000)
     {
       IMU_ext_flag=2;
-    }    
+    }
     break;
   case 14:
     eeprom_write(1);break;                                                      

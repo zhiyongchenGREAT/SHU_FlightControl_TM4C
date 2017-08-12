@@ -100,26 +100,26 @@ void Telemetry_handler(void)
 void flight_routine_task(void *p_arg)
 {
   OS_ERR err;
-
+  
   CPU_SR_ALLOC();
   
   p_arg = p_arg;
-
+  
   CPU_INT16U program_counter = 0;
-//  CPU_INT16U task_count = 0;
+  //  CPU_INT16U task_count = 0;
   
   while(DEF_TRUE)
   {    
     
     OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
-
-/* for test purpose              */
-
+    
+    /* for test purpose              */
+    
     t_tim0_cnt = TimerValueGet(TIMER0_BASE, TIMER_A);
     
-
+    
     CPU_CRITICAL_ENTER();    
-   
+    
     attsolving(); 
     
     program_counter++;
@@ -129,12 +129,12 @@ void flight_routine_task(void *p_arg)
     CPU_CRITICAL_EXIT();     
     
     hold(); 
-
-//    if(program_counter%10==3)
-//      px4_data_fix();		
+    
+    //    if(program_counter%10==3)
+    //      px4_data_fix();		
     
     mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);
-
+    
     if(program_counter%10==3)
     {
       PIC_Control();
@@ -143,24 +143,24 @@ void flight_routine_task(void *p_arg)
     
     if(program_counter%50==2)
       KS103_get_distance();
-   
+    
     if(program_counter%50==49)
       ks103_handler();
-     
-//    if(recive_sua_flag==1)
-//    {
-//      recive_sua_flag=0;
-//      fix_cotrol();
-//    }
-
+    
+    //    if(recive_sua_flag==1)
+    //    {
+    //      recive_sua_flag=0;
+    //      fix_cotrol();
+    //    }
+    
     if(nrf_getcmd())
     {
       receive_date_check();
       nrf_sendstate();
     }
     
-/* add one key start              */
-
+    /* add one key start              */
+    
     if(key_flag >= 3000)
       command_handler();
     else if(key_flag > 200 && key_flag < 3000)
@@ -169,31 +169,32 @@ void flight_routine_task(void *p_arg)
       if(key_flag==2980)
       {
         IMU_ext_flag=3;
-      }      
+      }
+      
     }     
     else if(key_flag <= 200)
     {
       if(!(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4) & GPIO_PIN_4))
         key_flag++;
     }
-   
+    
     
     if(fabs(attitudeActual.Pitch)>40 || fabs(attitudeActual.Roll)>40)
       IMU_ext_flag=1;
     
-/* if nrf is conneted & nrf data recieving process work, nrf_flag is always 400              */
-
-//    if(nrf_flag<=1)
-//      flightStatus.Armed=FLIGHTSTATUS_ARMED_DISARMED; 
+    /* if nrf is conneted & nrf data recieving process work, nrf_flag is always 400              */
     
-/* DS2 turned on when nrf signal is well enough, 5*timestamp(maybe 12.5ms) unrecieved nrf signal may turn off DS2              */
+    // if(nrf_flag<=1)
+    //   flightStatus.Armed=FLIGHTSTATUS_ARMED_DISARMED; 
+    
+    /* DS2 turned on when nrf signal is well enough, 5*timestamp(maybe 12.5ms) unrecieved nrf signal may turn off DS2              */
     if(nrf_flag<=395) 
       LED0_OFF();                                                                 
     else 
       LED0_ON();
     
     mixing(flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED);
-
+    
     t_tim0_cnt = TimerValueGet(TIMER0_BASE, TIMER_A);
   }
 }

@@ -36,6 +36,7 @@
 #include "CORE_TASK.h"
 #include "CORE_TASK1.h"
 #include "CORE_TASK2.h"
+#include "CORE_TASK3.h"
 
 
 #endif //__BASICFLIGHT_INCLUDES_H__

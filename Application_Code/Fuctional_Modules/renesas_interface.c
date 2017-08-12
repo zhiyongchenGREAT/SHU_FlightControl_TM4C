@@ -152,20 +152,31 @@ void UART2_IRQHandler()
       uart2_count = 7;
       break;
     case 7:
-      if(Res == 0x0d)
+      if(Res == '|')
         uart2_count = 8;
       else
         uart2_count = 0;
       break;
     case 8:
-      if(Res == 0x0a)
-        uart2_count = 9;
+      UART2_RX_BUF[4] = Res;
+      uart2_count = 9;
+      break;      
+    case 9:
+      if(Res == 0x0d)
+        uart2_count = 10;
       else
         uart2_count = 0;
       break;
-    case 9:
+    case 10:
+      if(Res == 0x0a)
+        uart2_count = 11;
+      else
+        uart2_count = 0;
+      break;
+    case 11:
       RENESAS.FLOW_X = (int16)(UART2_RX_BUF[0]|(UART2_RX_BUF[1]<<8));
       RENESAS.FLOW_Y = (int16)(UART2_RX_BUF[2]|(UART2_RX_BUF[3]<<8));
+      land_flag = (uint8)(UART2_RX_BUF[4]);
       uart2_count = 0;
     default:
       uart2_count = 0;

@@ -125,7 +125,7 @@ static void flight_init_task(void *p_arg)
   switch(COMPETITON_FLIGHT_MODE)
   {
   case COM_TASK_0:
-    TASK0_create();
+//    TASK0_create();
     break;
   case COM_TASK_1:
     TASK1_create();
@@ -134,7 +134,7 @@ static void flight_init_task(void *p_arg)
     TASK2_create();
     break;
   case COM_TASK_3:
-//    TASK3_create();
+    TASK3_create();
     break;
   default:
     while(DEF_TRUE);
