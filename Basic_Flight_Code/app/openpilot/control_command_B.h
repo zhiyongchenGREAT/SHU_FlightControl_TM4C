@@ -29,6 +29,7 @@
 #include <app_includes.h>
 #include <OS_includes.h>
 //void AttitudeInitialize();
-extern void command_handler();
+extern void command_handler(void);
+extern void command_handler_normal(void);
 
 #endif // CONTROL_COMMAND_B_H

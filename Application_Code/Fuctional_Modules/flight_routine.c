@@ -160,23 +160,29 @@ void flight_routine_task(void *p_arg)
     }
     
     /* add one key start              */
-    
-    if(key_flag >= 3000)
-      command_handler();
-    else if(key_flag > 200 && key_flag < 3000)
+    if(((*(CPU_INT08U*)p_arg) == COM_TASK_1) 
+       || ((*(CPU_INT08U*)p_arg) == COM_TASK_2) 
+         || ((*(CPU_INT08U*)p_arg) == COM_TASK_3 ))
     {
-      key_flag++;
-      if(key_flag==2980)
+      if(key_flag >= 3000)
+        command_handler();
+      else if(key_flag > 200 && key_flag < 3000)
       {
-        IMU_ext_flag=3;
-      }
-      
-    }     
-    else if(key_flag <= 200)
-    {
-      if(!(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4) & GPIO_PIN_4))
         key_flag++;
+        if(key_flag==2980)
+        {
+          IMU_ext_flag=3;
+        }
+        
+      }     
+      else if(key_flag <= 200)
+      {
+        if(!(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4) & GPIO_PIN_4))
+          key_flag++;
+      }
     }
+    else if((*(CPU_INT08U*)p_arg) == COM_TASK_0)
+      command_handler_normal();
     
     
     if(fabs(attitudeActual.Pitch)>40 || fabs(attitudeActual.Roll)>40)

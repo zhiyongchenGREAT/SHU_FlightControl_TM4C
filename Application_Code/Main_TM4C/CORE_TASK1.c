@@ -52,7 +52,7 @@ void TASK1_create(void)
   OSTaskCreate((OS_TCB 	* )&FlightRoutineTCB,		
                (CPU_CHAR	* )"flight routine task", 		
                (OS_TASK_PTR  )flight_routine_task, 			
-               (void	* )0,					
+               (void	* )&COMPETITON_FLIGHT_MODE,					
                (OS_PRIO	  )FLIGHT_INIT_TASK_PRIO,     
                (CPU_STK    * )&FLIGHT_ROUTINE_TASK_STK[0],	
                (CPU_STK_SIZE )FLIGHT_ROUTINE_STK_SIZE/10,	
