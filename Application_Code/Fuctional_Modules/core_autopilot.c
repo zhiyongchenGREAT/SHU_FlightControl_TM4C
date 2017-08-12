@@ -6,6 +6,7 @@ float control_y_out, control_x_out;
 uint8 land_flag = 0;
 
 int16 goto_count = 0;
+uint16 bias_time_count = 0;
 uint8 stablization_mode = 0;
 
 void auto_test_flight_task(void *p_arg)
@@ -476,7 +477,7 @@ void auto_goto_t3_task(void *p_arg)
   OS_ERR err;	
   p_arg = p_arg;
   
-  uint16 bias_time_count = 0;
+//  uint16 bias_time_count = 0;
   uint16 total_time_count = 0;
 
   while(DEF_TRUE)
@@ -508,7 +509,7 @@ void auto_goto_t3_task(void *p_arg)
       }
       else if(land_flag)
       {
-        OSTimeDlyHMSM(0,0,5,0,OS_OPT_TIME_HMSM_STRICT,&err);
+        OSTimeDlyHMSM(0,0,1,0,OS_OPT_TIME_HMSM_STRICT,&err);
         break;
       }
       

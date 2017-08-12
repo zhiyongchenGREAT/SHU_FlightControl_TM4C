@@ -15,5 +15,6 @@ extern float control_y_out, control_x_out;
 extern int16 goto_count;
 extern uint8 stablization_mode;
 extern uint8 land_flag;
+extern uint16 bias_time_count;
 
 #endif //__CORE_AUTOPILOT_H__
