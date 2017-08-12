@@ -403,6 +403,8 @@ void auto_landing_t2_task(void *p_arg)
   {
     OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
     UART1SendString("landing!\r\n");
+    pic_y_cm += 80;
+    OSTimeDlyHMSM(0,0,2,0,OS_OPT_TIME_HMSM_STRICT,&err);    
     while(auto_throttle > 0)
     {
       OSTimeDlyHMSM(0,0,0,50,OS_OPT_TIME_HMSM_STRICT,&err);       
