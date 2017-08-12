@@ -51,6 +51,10 @@ void receive_date_check()
     Nrf_in_switch[8]=Nrf_Buf_In.Data_int[8];
     Nrf_in_switch[9]=Nrf_Buf_In.Data_int[9];
     Nrf_in_switch[10]=Nrf_Buf_In.Data_int[10];
+    if( Nrf_in_switch[4]<=2000)
+    {
+      IMU_ext_flag=2;
+    }    
     break;
   case 14:
     eeprom_write(1);break;                                                      

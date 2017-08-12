@@ -141,7 +141,6 @@ void fix_cotrol()
     control_flag=5;
   }
   else if(pic_y_cm<-50  && ks103_distance > 600 ){
-    
     Pic_cotrol_xout=PID_PIC_XOUT - Pic_factor*(pic_x_cm/pic_y_cm);
     Pic_cotrol_yout=PID_PIC_YOUT-Pic_factor;
     control_flag=5;

@@ -166,6 +166,10 @@ void flight_routine_task(void *p_arg)
     else if(key_flag > 200 && key_flag < 3000)
     {
       key_flag++;
+      if(key_flag==2980)
+      {
+        IMU_ext_flag=3;
+      }      
     }     
     else if(key_flag <= 200)
     {
@@ -179,8 +183,8 @@ void flight_routine_task(void *p_arg)
     
 /* if nrf is conneted & nrf data recieving process work, nrf_flag is always 400              */
 
-    if(nrf_flag<=1)
-      flightStatus.Armed=FLIGHTSTATUS_ARMED_DISARMED; 
+//    if(nrf_flag<=1)
+//      flightStatus.Armed=FLIGHTSTATUS_ARMED_DISARMED; 
     
 /* DS2 turned on when nrf signal is well enough, 5*timestamp(maybe 12.5ms) unrecieved nrf signal may turn off DS2              */
     if(nrf_flag<=395) 
