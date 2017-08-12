@@ -120,13 +120,13 @@ void fix_cotrol()
     control_flag=5;
   }
   else if(pic_x_cm<-50  && ks103_distance > 600 ){
-    if(COMPETITON_FLIGHT_MODE==COM_TASK_2 )
+    if(COMPETITON_FLIGHT_MODE == COM_TASK_2 )
     {
       Pic_cotrol_yout=PID_PIC_YOUT - 9*(pic_y_cm/pic_x_cm);
       Pic_cotrol_xout=PID_PIC_XOUT-9;
       control_flag=5;
     }
-    if(COMPETITON_FLIGHT_MODE==COM_TASK_1 )
+    if((COMPETITON_FLIGHT_MODE == COM_TASK_1) || (COMPETITON_FLIGHT_MODE == COM_TASK_3))
     {
       Pic_cotrol_yout=PID_PIC_YOUT - Pic_factor*(pic_y_cm/pic_x_cm);
       Pic_cotrol_xout=PID_PIC_XOUT-Pic_factor;

@@ -21,8 +21,8 @@
 
 #include "control_command_B.h"
 
-#define fix_pitch 0.57f
-#define fix_roll  0.4f
+#define fix_pitch 0.0f
+#define fix_roll  0.0f
 
 //#define fix_pitch 3.4f
 //#define fix_roll  1.5f
