@@ -211,12 +211,12 @@ void auto_takeoff_t1_task(void *p_arg)
             &ts,
             &err);
   
-  OSTimeDlyHMSM(0,0,5,0,OS_OPT_TIME_HMSM_STRICT,&err);  
+  
   while(DEF_TRUE)
   {
     UART1SendString("takeoff!\r\n");
 
-    OSTimeDlyHMSM(0,0,10,0,OS_OPT_TIME_HMSM_STRICT,&err);
+    OSTimeDlyHMSM(0,0,5,0,OS_OPT_TIME_HMSM_STRICT,&err);
 
     while(auto_throttle < set_throttle && (flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED))
     {
@@ -319,12 +319,12 @@ void auto_takeoff_t2_task(void *p_arg)
             &ts,
             &err);
   
-  OSTimeDlyHMSM(0,0,5,0,OS_OPT_TIME_HMSM_STRICT,&err);  
+  
   while(DEF_TRUE)
   {
     UART1SendString("takeoff!\r\n");
 
-    OSTimeDlyHMSM(0,0,10,0,OS_OPT_TIME_HMSM_STRICT,&err);
+    OSTimeDlyHMSM(0,0,5,0,OS_OPT_TIME_HMSM_STRICT,&err);
 
     stablization_mode = 0;
     control_x_out = 2;

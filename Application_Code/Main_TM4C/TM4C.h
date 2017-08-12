@@ -67,7 +67,7 @@ static void flight_init_task(void *p_arg);
 */
 /* Caution!!! Don't set wings on your drone when committing change here!              */
 
-#define MOTORRESET       false << 0u
+#define MOTORRESET       true << 0u
 #define NRF              true << 1u
 /*
 ========================================================================================================================

@@ -120,9 +120,18 @@ void fix_cotrol()
     control_flag=5;
   }
   else if(pic_x_cm<-50  && ks103_distance > 600 ){
-    Pic_cotrol_yout=PID_PIC_YOUT - Pic_factor*(pic_y_cm/pic_x_cm);
-    Pic_cotrol_xout=PID_PIC_XOUT-Pic_factor;
-    control_flag=5;
+    if(COMPETITON_FLIGHT_MODE==COM_TASK_2 )
+    {
+      Pic_cotrol_yout=PID_PIC_YOUT - 10*(pic_y_cm/pic_x_cm);
+      Pic_cotrol_xout=PID_PIC_XOUT-10;
+      control_flag=5;
+    }
+    if(COMPETITON_FLIGHT_MODE==COM_TASK_1 )
+    {
+      Pic_cotrol_yout=PID_PIC_YOUT - Pic_factor*(pic_y_cm/pic_x_cm);
+      Pic_cotrol_xout=PID_PIC_XOUT-Pic_factor;
+      control_flag=5;
+    }
   }
   
   if(pic_y_cm>50  && ks103_distance > 600 ){
@@ -137,5 +146,6 @@ void fix_cotrol()
     Pic_cotrol_yout=PID_PIC_YOUT-Pic_factor;
     control_flag=5;
   }
+  
   
 }
