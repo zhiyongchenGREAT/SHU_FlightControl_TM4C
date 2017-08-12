@@ -146,6 +146,4 @@ void fix_cotrol()
     Pic_cotrol_yout=PID_PIC_YOUT-Pic_factor;
     control_flag=5;
   }
-  
-  
 }
