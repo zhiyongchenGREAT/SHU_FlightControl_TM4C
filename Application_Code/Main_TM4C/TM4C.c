@@ -196,6 +196,9 @@ static void FlightAPPInit(CPU_INT08U set)
 /* mode key              */
   
   GPIO_KEYinit();  
+
+/* one key startup              */
+  STARTUP_KEY();  
   
   AttitudeInitialize();
   StabilizationInitialize();
@@ -203,5 +206,7 @@ static void FlightAPPInit(CPU_INT08U set)
   if((set&(1u<<1u)) != 0u)
     while(!nrf_init(PORTC_IRQHandler));
 
+  
+  
   IntMasterEnable();    
 }
