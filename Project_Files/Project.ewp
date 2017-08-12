@@ -2080,6 +2080,15 @@
         <group>
             <name>Main_TM4C</name>
             <file>
+                <name>$PROJ_DIR$\..\Application_Code\Main_TM4C\CORE_TASK.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Application_Code\Main_TM4C\CORE_TASK1.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Application_Code\Main_TM4C\CORE_TASK2.c</name>
+            </file>
+            <file>
                 <name>$PROJ_DIR$\..\Application_Code\Main_TM4C\TM4C.c</name>
             </file>
         </group>

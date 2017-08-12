@@ -158,10 +158,7 @@ void flight_routine_task(void *p_arg)
       nrf_sendstate();
     }
     
-    command_handler();
-
-    if(flightStatus.Armed != FLIGHTSTATUS_ARMED_ARMED)
-      OSTaskDel(&AUTOtakeoff, &err);    
+    command_handler();    
     
     if(fabs(attitudeActual.Pitch)>40 || fabs(attitudeActual.Roll)>40)
       IMU_ext_flag=1;

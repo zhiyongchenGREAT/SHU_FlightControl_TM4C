@@ -3,7 +3,7 @@
 float auto_throttle=0, error_throttle=0;
 uint32 auto_throttle_max=68;
 float control_y_out, control_x_out;
-uint8 task_flag = 0;
+
 int16 goto_count = 0;
 uint8 stablization_mode = 0;
 
@@ -189,5 +189,230 @@ void auto_goto_task(void *p_arg)
     }
     OSTaskSemPost(&AUTOlanding, OS_OPT_POST_NO_SCHED, &err);
     OSTaskDel(&AUTOgoto, &err);    
+  }
+}
+          
+/*
+========================================================================================================================
+*                                               TASK 1
+========================================================================================================================
+*/
+void auto_takeoff_t1_task(void *p_arg)
+{
+  OS_ERR err;
+  CPU_TS ts;
+  p_arg = p_arg;
+  
+  uint32 set_throttle = 46;
+ 
+  OSSemPend(&TAKEOFF_SIG,
+            0,
+            OS_OPT_PEND_BLOCKING,
+            &ts,
+            &err);
+  
+  OSTimeDlyHMSM(0,0,5,0,OS_OPT_TIME_HMSM_STRICT,&err);  
+  while(DEF_TRUE)
+  {
+    UART1SendString("takeoff!\r\n");
+
+    OSTimeDlyHMSM(0,0,10,0,OS_OPT_TIME_HMSM_STRICT,&err);
+
+    while(auto_throttle < set_throttle && (flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED))
+    {
+
+      OSTimeDlyHMSM(0,0,0,50,OS_OPT_TIME_HMSM_STRICT,&err);       
+      auto_throttle+=0.6;
+
+    }
+
+    if(auto_throttle >= set_throttle)
+    {  
+      OSTaskSemPost(&AUTOgoto_T1, OS_OPT_POST_NO_SCHED, &err);
+      OSTaskDel(&AUTOtakeoff_T1, &err);
+    }   
+  }
+}
+
+void auto_goto_t1_task(void *p_arg)
+{
+  OS_ERR err;	
+  p_arg = p_arg;
+  
+  uint16 bias_time_count = 0;
+  uint16 total_time_count = 0;
+
+  while(DEF_TRUE)
+  {
+    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
+    UART1SendString("auto goto!\r\n");
+
+    goto_count = 0;
+    stablization_mode = 1; 
+    
+    while(DEF_TRUE)
+    {
+      OSTimeDlyHMSM(0,0,0,100,OS_OPT_TIME_HMSM_STRICT,&err);
+      if(((fabs(pic_x_cm)<90) && (fabs(pic_x_cm)>0)) && (fabs(pic_y_cm)<90 && (fabs(pic_y_cm)>0)))  
+      {  
+        goto_count++;
+        bias_time_count=0;
+      }
+      else
+      {
+        goto_count-=0.5;
+        bias_time_count++;
+      }
+      
+      if(goto_count <= 0)
+        goto_count = 0;
+      
+      total_time_count++;
+      
+      if(goto_count>50 || bias_time_count>50 || total_time_count>300)
+        break;
+      
+    }
+    OSTaskSemPost(&AUTOlanding_T1, OS_OPT_POST_NO_SCHED, &err);
+    OSTaskDel(&AUTOgoto_T1, &err);    
+  }
+}
+
+void auto_landing_t1_task(void *p_arg)
+{
+  OS_ERR err;	
+  p_arg = p_arg;
+  while(DEF_TRUE)
+  {
+    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
+    UART1SendString("landing!\r\n");
+    while(auto_throttle > 0)
+    {
+      OSTimeDlyHMSM(0,0,0,50,OS_OPT_TIME_HMSM_STRICT,&err);       
+      auto_throttle-=0.5;
+      if(ks103_distance<150)
+      {
+        auto_throttle=0;
+        IMU_ext_flag=1;
+        OSTaskDel(&AUTOlanding_T1, &err);        
+      }      
+    }    
+  }
+}
+
+/*
+========================================================================================================================
+*                                               TASK 2
+========================================================================================================================
+*/
+void auto_takeoff_t2_task(void *p_arg)
+{
+  OS_ERR err;
+  CPU_TS ts;
+  p_arg = p_arg;
+  
+  uint32 set_throttle = 46;
+ 
+  OSSemPend(&TAKEOFF_SIG,
+            0,
+            OS_OPT_PEND_BLOCKING,
+            &ts,
+            &err);
+  
+  OSTimeDlyHMSM(0,0,5,0,OS_OPT_TIME_HMSM_STRICT,&err);  
+  while(DEF_TRUE)
+  {
+    UART1SendString("takeoff!\r\n");
+
+    OSTimeDlyHMSM(0,0,10,0,OS_OPT_TIME_HMSM_STRICT,&err);
+
+    stablization_mode = 0;
+    control_x_out = 2;
+    
+    
+    while(auto_throttle < set_throttle && (flightStatus.Armed == FLIGHTSTATUS_ARMED_ARMED))
+    {
+
+      OSTimeDlyHMSM(0,0,0,50,OS_OPT_TIME_HMSM_STRICT,&err);       
+      auto_throttle+=0.6;
+
+    }
+    
+    control_x_out = -2;
+    OSTimeDlyHMSM(0,0,0,500,OS_OPT_TIME_HMSM_STRICT,&err);     
+    control_x_out = 0;
+    stablization_mode = 1;
+    
+    if(auto_throttle >= set_throttle)
+    {  
+      OSTaskSemPost(&AUTOgoto_T2, OS_OPT_POST_NO_SCHED, &err);
+      OSTaskDel(&AUTOtakeoff_T2, &err);
+    }   
+  }
+}
+
+void auto_goto_t2_task(void *p_arg)
+{
+  OS_ERR err;	
+  p_arg = p_arg;
+  
+  uint16 bias_time_count = 0;
+  uint16 total_time_count = 0;
+
+  while(DEF_TRUE)
+  {
+    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
+    UART1SendString("auto goto!\r\n");
+
+    goto_count = 0;
+    stablization_mode = 1; 
+    
+    while(DEF_TRUE)
+    {
+      OSTimeDlyHMSM(0,0,0,100,OS_OPT_TIME_HMSM_STRICT,&err);
+      if(((fabs(pic_x_cm)<90) && (fabs(pic_x_cm)>0)) && (fabs(pic_y_cm)<90 && (fabs(pic_y_cm)>0)))  
+      {  
+        goto_count++;
+        bias_time_count=0;
+      }
+      else
+      {
+        goto_count-=0.5;
+        bias_time_count++;
+      }
+      
+      if(goto_count <= 0)
+        goto_count = 0;
+      
+      total_time_count++;
+      
+      if(goto_count>50 || bias_time_count>50 || total_time_count>300)
+        break;
+      
+    }
+    OSTaskSemPost(&AUTOlanding_T2, OS_OPT_POST_NO_SCHED, &err);
+    OSTaskDel(&AUTOgoto_T2, &err);    
+  }
+}
+
+void auto_landing_t2_task(void *p_arg)
+{
+  OS_ERR err;	
+  p_arg = p_arg;
+  while(DEF_TRUE)
+  {
+    OSTaskSemPend(0,OS_OPT_PEND_BLOCKING,0,&err);
+    UART1SendString("landing!\r\n");
+    while(auto_throttle > 0)
+    {
+      OSTimeDlyHMSM(0,0,0,50,OS_OPT_TIME_HMSM_STRICT,&err);       
+      auto_throttle-=0.5;
+      if(ks103_distance<150)
+      {
+        auto_throttle=0;
+        IMU_ext_flag=1;
+        OSTaskDel(&AUTOlanding_T2, &err);        
+      }      
+    }    
   }
 }

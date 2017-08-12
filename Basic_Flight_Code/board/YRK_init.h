@@ -22,4 +22,6 @@ extern void tim1_init(void (*pfnHandler)(void));
 extern void tim2_init();
 extern void pwm_init(void);
 extern void GPIO_KEYinit(void);
+
+extern enum COMPETITON_FLIGHT_MODE COMPETITON_FLIGHT_MODE;
 #endif // YRK_INIT_H

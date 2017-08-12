@@ -11,7 +11,7 @@
 
 extern float auto_throttle, error_throttle;
 extern float control_y_out, control_x_out;
-extern uint8 task_flag;
+
 extern int16 goto_count;
 extern uint8 stablization_mode;
 
