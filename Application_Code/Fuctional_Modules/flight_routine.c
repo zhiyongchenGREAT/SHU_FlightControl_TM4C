@@ -40,13 +40,7 @@ void UART6_IRQHandler(void)
   
   while(ROM_UARTCharsAvail(UART6_BASE))
   {  
-    Uart6Date = ROM_UARTCharGet(UART6_BASE);
-//    OSTaskQPost ((OS_TCB       *)&AttitudesolvingTCB,
-//                 (void         *)Uart6Date,
-//                 (OS_MSG_SIZE   )sizeof(Uart6Date),
-//                 (OS_OPT        )OS_OPT_POST_FIFO,
-//                 (OS_ERR       *)&err);
-//    OSTaskSemPost(&AttitudesolvingTCB, OS_OPT_POST_NONE, &err);    
+    Uart6Date = ROM_UARTCharGet(UART6_BASE);    
     FLOW_MAVLINK(Uart6Date);
   }
     

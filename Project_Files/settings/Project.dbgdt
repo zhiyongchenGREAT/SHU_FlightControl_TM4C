@@ -908,7 +908,7 @@
                     <item>control_y_out</item>
                     <item>key_flag</item>
                     <item>flightStatus.Armed</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

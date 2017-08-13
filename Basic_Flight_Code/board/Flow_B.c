@@ -75,23 +75,10 @@ void PX4Flow_uart_init(uint32 band,void (*pfnHandler)(void))
   GPIOPinTypeUART(GPIO_PORTD_BASE, GPIO_PIN_5);
   
   IntRegister(INT_UART6,pfnHandler);  
-  IntEnable(INT_UART6); //enable the UART interrupt
-  UARTIntEnable(UART6_BASE, UART_INT_RX); //only enable RX and TX interrupts
+  IntEnable(INT_UART6); 
+  UARTIntEnable(UART6_BASE, UART_INT_RX);
   UARTClockSourceSet(UART6_BASE, UART_CLOCK_SYSTEM);
   UARTStdioConfig(6, band, ROM_SysCtlClockGet());
-
-//  UARTConfigSetExpClk(UART6_BASE,
-//                      SysCtlClockGet(),
-//                      band,
-//                      (UART_CONFIG_PAR_NONE | UART_CONFIG_STOP_ONE |
-//                       UART_CONFIG_WLEN_8));
-//
-//  IntRegister(INT_UART6,pfnHandler);
-//  
-//  UARTFIFODisable(UART6_BASE);  
-//  
-//  IntEnable(INT_UART6);                                                       //enable the UART interrupt
-//  UARTIntEnable(UART6_BASE, UART_INT_RX);  
 }
 
 void FLOW_MAVLINK(unsigned char data)
@@ -272,7 +259,7 @@ void px4_data_fix(void)
 //  y_mm =(float)px4_sumy;
 //  x_mm =(float)px4_sumx;
   
-  High_Now = ks103_distance;   //单位是毫米
+  High_Now = ks103_distance;
   if(High_Now-High_Now_before>1000 || High_Now_before-High_Now<-1000)
   {
     High_Now=High_Now_before;
@@ -302,7 +289,7 @@ void px4_data_fix(void)
   SumX_amend=SumX/10;
   SumY_amend=SumY/10;
   
-  px4_sumx=0;                                                                   //::note::usage of px4_sumx/y, and why clear here?   
+  px4_sumx=0;  
   px4_sumy=0;
   High_Now_before=High_Now;
   

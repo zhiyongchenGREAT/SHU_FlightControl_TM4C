@@ -198,7 +198,7 @@ static void FlightAPPInit(CPU_INT08U set)
   
   GPIO_KEYinit();  
 
-///* one key startup              */
+/* one key startup              */
   STARTUP_KEY();  
 
   

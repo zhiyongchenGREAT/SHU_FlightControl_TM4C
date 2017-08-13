@@ -1,119 +1,119 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.11.1.13263/W32 for ARM                13/Aug/2017  04:26:20
+# IAR ELF Linker V8.11.1.13263/W32 for ARM                13/Aug/2017  22:10:35
 # Copyright 2007-2017 IAR Systems AB.
 #
 #    Output file  =  
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Exe\Project.out
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Exe\Project.out
 #    Map file     =  
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\List\Project.map
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\List\Project.map
 #    Command line =  
-#        -f C:\Users\victo\AppData\Local\Temp\EWD3C0.tmp
-#        (C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\adc.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\atmospheric_math.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\attitudesolving_B.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\bsp.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\bsp_int.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\bsp_sys.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\can.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\comp.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\control_command_B.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\coordinate_conversions.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_autopilot.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_camera.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_common.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_ppm.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_t_timer.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\CORE_TASK.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\CORE_TASK1.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\CORE_TASK2.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\CORE_TASK3.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_uart.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_uartstdio.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\cpu.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\cpu_a.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\cpu_bsp.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\cpu_c.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\cpu_core.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\data_common.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\data_transfer.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\eeprom.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\eepromqsj.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\flash.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\flight_routine.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\Flow_B.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\fpu.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\gpio.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\hibernate.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\hold.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\i2c.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\interrupt.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\KS103.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\lib_ascii.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\lib_math.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\lib_mem.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\lib_mem_a.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\lib_str.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\misc_math.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\mixer.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\motor_control.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\mpu.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_app_hooks.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_cfg_app.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_core.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_cpu_a.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_cpu_c.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_dbg.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_flag.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_int.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_mem.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_msg.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_mutex.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_pend_multi.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_prio.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_q.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_sem.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_stat.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_task.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_tick.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_time.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_tmr.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_var.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\param_common.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\Pic_hold.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\pid.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\Postion_Hold.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\pwm.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\qei.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\relay_tuning.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\renesas_interface.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sensorfetch.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sin_lookup.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\ssi.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\stabilization_B.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\startup_ewarm.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sw_crc.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sysctl.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sysexc.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\systick.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\timer.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\TM4C.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\uart.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\udma.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\usb.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\virtualflybar.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\watchdog.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\YRK_AK8975_SOFT.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\YRK_init.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\YRK_LED.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\YRK_MPU6050_SOFT.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\YRK_NRF24L0.o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\YRK_SONAR.o
+#        -f C:\Users\victo\AppData\Local\Temp\EW2741.tmp
+#        (C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\adc.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\atmospheric_math.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\attitudesolving_B.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\bsp.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\bsp_int.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\bsp_sys.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\can.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\comp.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\control_command_B.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\coordinate_conversions.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_autopilot.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_camera.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_common.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_ppm.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_t_timer.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\CORE_TASK.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\CORE_TASK1.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\CORE_TASK2.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\CORE_TASK3.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_uart.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\core_uartstdio.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\cpu.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\cpu_a.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\cpu_bsp.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\cpu_c.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\cpu_core.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\data_common.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\data_transfer.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\eeprom.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\eepromqsj.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\flash.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\flight_routine.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\Flow_B.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\fpu.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\gpio.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\hibernate.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\hold.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\i2c.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\interrupt.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\KS103.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\lib_ascii.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\lib_math.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\lib_mem.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\lib_mem_a.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\lib_str.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\misc_math.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\mixer.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\motor_control.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\mpu.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_app_hooks.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_cfg_app.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_core.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_cpu_a.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_cpu_c.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_dbg.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_flag.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_int.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_mem.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_msg.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_mutex.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_pend_multi.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_prio.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_q.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_sem.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_stat.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_task.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_tick.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_time.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_tmr.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\os_var.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\param_common.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\Pic_hold.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\pid.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\Postion_Hold.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\pwm.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\qei.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\relay_tuning.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\renesas_interface.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sensorfetch.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sin_lookup.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\ssi.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\stabilization_B.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\startup_ewarm.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sw_crc.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sysctl.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\sysexc.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\systick.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\timer.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\TM4C.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\uart.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\udma.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\usb.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\virtualflybar.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\watchdog.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\YRK_AK8975_SOFT.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\YRK_init.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\YRK_LED.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\YRK_MPU6050_SOFT.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\YRK_NRF24L0.o
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj\YRK_SONAR.o
 #        -o
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Exe\Project.out
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Exe\Project.out
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
 #        --map
-#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\List\Project.map
+#        C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\List\Project.map
 #        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
 #        8.0\arm\config\linker\TexasInstruments\TM4C123GH6.icf" --semihosting
 #        --entry __iar_program_start --vfe --text_out locale)
@@ -155,7 +155,7 @@ initialize by copy { rw };
   .intvec            const    0x00000000    0x26c  startup_ewarm.o [1]
                             - 0x0000026c    0x26c
 
-"P1":                                     0x100a1
+"P1":                                     0x100f1
   .text              ro code  0x0000026c   0x1268  stabilization_B.o [1]
   .text              ro code  0x000014d4     0x4c  sin_lookup.o [1]
   .text              ro code  0x00001520    0x216  pid.o [1]
@@ -268,127 +268,107 @@ initialize by copy { rw };
   .rodata            const    0x0000c272      0x2  os_dbg.o [1]
   .text              ro code  0x0000c274    0x1c4  iar_Stoflt.o [3]
   .text              ro code  0x0000c438    0x234  iar_Stoxflt.o [3]
-  .text              ro code  0x0000c66c    0x784  control_command_B.o [1]
-  .text              ro code  0x0000cdf0    0x740  YRK_NRF24L0.o [1]
-  .text              ro code  0x0000d530    0x540  Pic_hold.o [1]
-  .text              ro code  0x0000da70    0x2fc  param_common.o [1]
-  .text              ro code  0x0000dd6c    0x2d4  motor_control.o [1]
-  .text              ro code  0x0000e040     0xc8  pwm.o [1]
-  .rodata            const    0x0000e108    0x2d0  sin_lookup.o [1]
-  .text              ro code  0x0000e3d8    0x2bc  KS103.o [1]
-  .text              ro code  0x0000e694    0x24c  data_transfer.o [1]
-  .text              ro code  0x0000e8e0     0xd8  eepromqsj.o [1]
-  .text              ro code  0x0000e9b8    0x1e8  eeprom.o [1]
-  .text              ro code  0x0000eba0    0x21c  flight_routine.o [1]
-  .text              ro code  0x0000edbc     0xba  timer.o [1]
-  .rodata            const    0x0000ee76      0x2  os_dbg.o [1]
-  .text              ro code  0x0000ee78    0x114  hold.o [1]
-  .text              ro code  0x0000ef8c     0xd8  mixer.o [1]
-  .text              ro code  0x0000f064      0x8  abs.o [3]
-  .text              ro code  0x0000f06c    0x1f8  TM4C.o [1]
-  .text              ro code  0x0000f264      0xc  bsp.o [1]
-  .text              ro code  0x0000f270     0x50  CORE_TASK.o [1]
-  .text              ro code  0x0000f2c0    0x164  CORE_TASK1.o [1]
-  .text              ro code  0x0000f424    0x164  CORE_TASK2.o [1]
-  .text              ro code  0x0000f588    0x164  CORE_TASK3.o [1]
-  .text              ro code  0x0000f6ec     0x38  YRK_LED.o [1]
-  .text              ro code  0x0000f724    0x1d0  renesas_interface.o [1]
-  .text              ro code  0x0000f8f4    0x12c  YRK_init.o [1]
-  .text              ro code  0x0000fa20     0x3c  core_t_timer.o [1]
-  .text              ro code  0x0000fa5c     0x34  data_common.o [1]
-  .text              ro code  0x0000fa90     0x44  bsp_int.o [1]
-  .rodata            const    0x0000fad4     0x9c  interrupt.o [1]
-  .rodata            const    0x0000fb70     0x78  gpio.o [1]
-  .rodata            const    0x0000fbe8     0x6c  sysctl.o [1]
-  .text              ro code  0x0000fc54     0x40  zero_init3.o [5]
-  .text              ro code  0x0000fc94     0x38  packbits_init_single.o [5]
-  .text              ro code  0x0000fccc     0x36  startup_ewarm.o [1]
-  .text              ro code  0x0000fd02      0xc  cstartup_M.o [5]
-  .rodata            const    0x0000fd0e      0x2  relay_tuning.o [1]
-  .text              ro code  0x0000fd10     0x22  fpinit_M.o [4]
-  .rodata            const    0x0000fd32      0x1  os_cfg_app.o [1]
-  .rodata            const    0x0000fd33      0x1  os_cfg_app.o [1]
-  .text              ro code  0x0000fd34     0x1a  cmain.o [5]
-  .text              ro code  0x0000fd4e      0x4  low_level_init.o [3]
-  .rodata            const    0x0000fd52      0x1  os_cfg_app.o [1]
-  .rodata            const    0x0000fd53      0x1  os_dbg.o [1]
-  .text              ro code  0x0000fd54     0x28  data_init.o [5]
-  .text              ro code  0x0000fd7c      0x4  exit.o [3]
-  .text              ro code  0x0000fd80      0xa  cexit.o [5]
-  .rodata            const    0x0000fd8a      0x1  os_dbg.o [1]
-  .rodata            const    0x0000fd8b      0x1  os_dbg.o [1]
-  .rodata            const    0x0000fd8c     0x30  os_dbg.o [1]
-  .rodata            const    0x0000fdbc     0x30  os_dbg.o [1]
-  .rodata            const    0x0000fdec     0x2c  os_dbg.o [1]
-  .rodata            const    0x0000fe18     0x28  os_dbg.o [1]
-  .rodata            const    0x0000fe40     0x28  os_dbg.o [1]
-  .rodata            const    0x0000fe68     0x24  TM4C.o [1]
-  .iar.init_table    const    0x0000fe8c     0x20  - Linker created -
-  .rodata            const    0x0000feac     0x20  interrupt.o [1]
-  .rodata            const    0x0000fecc     0x20  os_dbg.o [1]
-  .rodata            const    0x0000feec     0x1c  core_uart.o [1]
-  .rodata            const    0x0000ff08     0x1c  os_int.o [1]
-  .rodata            const    0x0000ff24     0x18  core_uart.o [1]
-  .rodata            const    0x0000ff3c     0x18  os_tmr.o [1]
-  .rodata            const    0x0000ff54     0x14  CORE_TASK.o [1]
-  .rodata            const    0x0000ff68     0x14  CORE_TASK1.o [1]
-  .rodata            const    0x0000ff7c     0x14  CORE_TASK1.o [1]
-  .rodata            const    0x0000ff90     0x14  CORE_TASK1.o [1]
-  .rodata            const    0x0000ffa4     0x14  CORE_TASK1.o [1]
-  .rodata            const    0x0000ffb8     0x14  CORE_TASK2.o [1]
-  .rodata            const    0x0000ffcc     0x14  CORE_TASK2.o [1]
-  .rodata            const    0x0000ffe0     0x14  CORE_TASK2.o [1]
-  .rodata            const    0x0000fff4     0x14  CORE_TASK2.o [1]
-  .rodata            const    0x00010008     0x14  CORE_TASK3.o [1]
-  .rodata            const    0x0001001c     0x14  CORE_TASK3.o [1]
-  .rodata            const    0x00010030     0x14  CORE_TASK3.o [1]
-  .rodata            const    0x00010044     0x14  CORE_TASK3.o [1]
-  .rodata            const    0x00010058     0x14  core_uart.o [1]
-  .rodata            const    0x0001006c     0x14  core_uart.o [1]
-  .rodata            const    0x00010080     0x14  core_uart.o [1]
-  .rodata            const    0x00010094     0x14  interrupt.o [1]
-  .rodata            const    0x000100a8     0x14  os_core.o [1]
-  .rodata            const    0x000100bc     0x14  os_stat.o [1]
-  .rodata            const    0x000100d0     0x14  os_tick.o [1]
-  .rodata            const    0x000100e4     0x10  attitudesolving_B.o [1]
-  .rodata            const    0x000100f4     0x10  attitudesolving_B.o [1]
-  .rodata            const    0x00010104     0x10  core_autopilot.o [1]
-  .rodata            const    0x00010114     0x10  CORE_TASK1.o [1]
-  .rodata            const    0x00010124     0x10  CORE_TASK1.o [1]
-  .rodata            const    0x00010134     0x10  CORE_TASK2.o [1]
-  .rodata            const    0x00010144     0x10  CORE_TASK2.o [1]
-  .rodata            const    0x00010154     0x10  CORE_TASK3.o [1]
-  .rodata            const    0x00010164     0x10  CORE_TASK3.o [1]
-  .rodata            const    0x00010174     0x10  motor_control.o [1]
-  .rodata            const    0x00010184     0x10  os_tmr.o [1]
-  .rodata            const    0x00010194      0xc  core_autopilot.o [1]
-  .rodata            const    0x000101a0      0xc  core_autopilot.o [1]
-  .rodata            const    0x000101ac      0xc  os_core.o [1]
-  .rodata            const    0x000101b8      0xc  TM4C.o [1]
-  .rodata            const    0x000101c4      0x8  os_core.o [1]
-  .rodata            const    0x000101cc      0x8  os_task.o [1]
-  .rodata            const    0x000101d4      0x8  YRK_NRF24L0.o [1]
-  .rodata            const    0x000101dc      0x4  attitudesolving_B.o [1]
-  .rodata            const    0x000101e0      0x4  os_cfg_app.o [1]
-  .rodata            const    0x000101e4      0x4  os_cfg_app.o [1]
-  .rodata            const    0x000101e8      0x4  os_cfg_app.o [1]
-  .rodata            const    0x000101ec      0x4  os_cfg_app.o [1]
-  .rodata            const    0x000101f0      0x4  os_cfg_app.o [1]
-  .rodata            const    0x000101f4      0x4  os_cfg_app.o [1]
-  .rodata            const    0x000101f8      0x4  os_cfg_app.o [1]
-  .rodata            const    0x000101fc      0x4  os_cfg_app.o [1]
-  .rodata            const    0x00010200      0x4  os_cfg_app.o [1]
-  .rodata            const    0x00010204      0x4  os_cfg_app.o [1]
-  .rodata            const    0x00010208      0x4  os_cfg_app.o [1]
-  .rodata            const    0x0001020c      0x4  os_cfg_app.o [1]
-  .rodata            const    0x00010210      0x4  os_cfg_app.o [1]
-  .rodata            const    0x00010214      0x4  os_cfg_app.o [1]
-  .rodata            const    0x00010218      0x4  os_cfg_app.o [1]
-  .rodata            const    0x0001021c      0x4  os_cfg_app.o [1]
-  .rodata            const    0x00010220      0x4  os_cfg_app.o [1]
-  .rodata            const    0x00010224      0x4  os_cfg_app.o [1]
-  .rodata            const    0x00010228      0x4  os_cfg_app.o [1]
-  .rodata            const    0x0001022c      0x4  os_cfg_app.o [1]
+  .text              ro code  0x0000c66c    0x7d4  control_command_B.o [1]
+  .text              ro code  0x0000ce40    0x740  YRK_NRF24L0.o [1]
+  .text              ro code  0x0000d580    0x540  Pic_hold.o [1]
+  .text              ro code  0x0000dac0    0x2fc  param_common.o [1]
+  .text              ro code  0x0000ddbc    0x2d4  motor_control.o [1]
+  .text              ro code  0x0000e090     0xc8  pwm.o [1]
+  .rodata            const    0x0000e158    0x2d0  sin_lookup.o [1]
+  .text              ro code  0x0000e428    0x2bc  KS103.o [1]
+  .text              ro code  0x0000e6e4    0x24c  data_transfer.o [1]
+  .text              ro code  0x0000e930     0xd8  eepromqsj.o [1]
+  .text              ro code  0x0000ea08    0x1e8  eeprom.o [1]
+  .text              ro code  0x0000ebf0    0x21c  flight_routine.o [1]
+  .text              ro code  0x0000ee0c     0xba  timer.o [1]
+  .rodata            const    0x0000eec6      0x2  os_dbg.o [1]
+  .text              ro code  0x0000eec8    0x114  hold.o [1]
+  .text              ro code  0x0000efdc     0xd8  mixer.o [1]
+  .text              ro code  0x0000f0b4      0x8  abs.o [3]
+  .text              ro code  0x0000f0bc    0x1f8  TM4C.o [1]
+  .text              ro code  0x0000f2b4      0xc  bsp.o [1]
+  .text              ro code  0x0000f2c0     0x50  CORE_TASK.o [1]
+  .text              ro code  0x0000f310    0x164  CORE_TASK1.o [1]
+  .text              ro code  0x0000f474    0x164  CORE_TASK2.o [1]
+  .text              ro code  0x0000f5d8    0x164  CORE_TASK3.o [1]
+  .text              ro code  0x0000f73c     0x38  YRK_LED.o [1]
+  .text              ro code  0x0000f774    0x1d0  renesas_interface.o [1]
+  .text              ro code  0x0000f944    0x12c  YRK_init.o [1]
+  .text              ro code  0x0000fa70     0x3c  core_t_timer.o [1]
+  .text              ro code  0x0000faac     0x34  data_common.o [1]
+  .text              ro code  0x0000fae0     0x44  bsp_int.o [1]
+  .rodata            const    0x0000fb24     0x9c  interrupt.o [1]
+  .rodata            const    0x0000fbc0     0x78  gpio.o [1]
+  .rodata            const    0x0000fc38     0x6c  sysctl.o [1]
+  .text              ro code  0x0000fca4     0x40  zero_init3.o [5]
+  .text              ro code  0x0000fce4     0x38  packbits_init_single.o [5]
+  .text              ro code  0x0000fd1c     0x36  startup_ewarm.o [1]
+  .text              ro code  0x0000fd52      0xc  cstartup_M.o [5]
+  .rodata            const    0x0000fd5e      0x2  relay_tuning.o [1]
+  .text              ro code  0x0000fd60     0x22  fpinit_M.o [4]
+  .rodata            const    0x0000fd82      0x1  os_cfg_app.o [1]
+  .rodata            const    0x0000fd83      0x1  os_cfg_app.o [1]
+  .text              ro code  0x0000fd84     0x1a  cmain.o [5]
+  .text              ro code  0x0000fd9e      0x4  low_level_init.o [3]
+  .rodata            const    0x0000fda2      0x1  os_cfg_app.o [1]
+  .rodata            const    0x0000fda3      0x1  os_dbg.o [1]
+  .text              ro code  0x0000fda4     0x28  data_init.o [5]
+  .text              ro code  0x0000fdcc      0x4  exit.o [3]
+  .text              ro code  0x0000fdd0      0xa  cexit.o [5]
+  .rodata            const    0x0000fdda      0x1  os_dbg.o [1]
+  .rodata            const    0x0000fddb      0x1  os_dbg.o [1]
+  .rodata            const    0x0000fddc     0x30  os_dbg.o [1]
+  .rodata            const    0x0000fe0c     0x30  os_dbg.o [1]
+  .rodata            const    0x0000fe3c     0x2c  os_dbg.o [1]
+  .rodata            const    0x0000fe68     0x28  os_dbg.o [1]
+  .rodata            const    0x0000fe90     0x28  os_dbg.o [1]
+  .rodata            const    0x0000feb8     0x24  TM4C.o [1]
+  .iar.init_table    const    0x0000fedc     0x20  - Linker created -
+  .rodata            const    0x0000fefc     0x20  interrupt.o [1]
+  .rodata            const    0x0000ff1c     0x20  os_dbg.o [1]
+  .rodata            const    0x0000ff3c     0x1c  core_uart.o [1]
+  .rodata            const    0x0000ff58     0x1c  os_int.o [1]
+  .rodata            const    0x0000ff74     0x18  core_uart.o [1]
+  .rodata            const    0x0000ff8c     0x18  os_tmr.o [1]
+  .rodata            const    0x0000ffa4     0x14  CORE_TASK.o [1]
+  .rodata            const    0x0000ffb8     0x14  CORE_TASK1.o [1]
+  .rodata            const    0x0000ffcc     0x14  CORE_TASK1.o [1]
+  .rodata            const    0x0000ffe0     0x14  CORE_TASK1.o [1]
+  .rodata            const    0x0000fff4     0x14  CORE_TASK1.o [1]
+  .rodata            const    0x00010008     0x14  CORE_TASK2.o [1]
+  .rodata            const    0x0001001c     0x14  CORE_TASK2.o [1]
+  .rodata            const    0x00010030     0x14  CORE_TASK2.o [1]
+  .rodata            const    0x00010044     0x14  CORE_TASK2.o [1]
+  .rodata            const    0x00010058     0x14  CORE_TASK3.o [1]
+  .rodata            const    0x0001006c     0x14  CORE_TASK3.o [1]
+  .rodata            const    0x00010080     0x14  CORE_TASK3.o [1]
+  .rodata            const    0x00010094     0x14  CORE_TASK3.o [1]
+  .rodata            const    0x000100a8     0x14  core_uart.o [1]
+  .rodata            const    0x000100bc     0x14  core_uart.o [1]
+  .rodata            const    0x000100d0     0x14  core_uart.o [1]
+  .rodata            const    0x000100e4     0x14  interrupt.o [1]
+  .rodata            const    0x000100f8     0x14  os_core.o [1]
+  .rodata            const    0x0001010c     0x14  os_stat.o [1]
+  .rodata            const    0x00010120     0x14  os_tick.o [1]
+  .rodata            const    0x00010134     0x10  attitudesolving_B.o [1]
+  .rodata            const    0x00010144     0x10  attitudesolving_B.o [1]
+  .rodata            const    0x00010154     0x10  core_autopilot.o [1]
+  .rodata            const    0x00010164     0x10  CORE_TASK1.o [1]
+  .rodata            const    0x00010174     0x10  CORE_TASK1.o [1]
+  .rodata            const    0x00010184     0x10  CORE_TASK2.o [1]
+  .rodata            const    0x00010194     0x10  CORE_TASK2.o [1]
+  .rodata            const    0x000101a4     0x10  CORE_TASK3.o [1]
+  .rodata            const    0x000101b4     0x10  CORE_TASK3.o [1]
+  .rodata            const    0x000101c4     0x10  motor_control.o [1]
+  .rodata            const    0x000101d4     0x10  os_tmr.o [1]
+  .rodata            const    0x000101e4      0xc  core_autopilot.o [1]
+  .rodata            const    0x000101f0      0xc  core_autopilot.o [1]
+  .rodata            const    0x000101fc      0xc  os_core.o [1]
+  .rodata            const    0x00010208      0xc  TM4C.o [1]
+  .rodata            const    0x00010214      0x8  os_core.o [1]
+  .rodata            const    0x0001021c      0x8  os_task.o [1]
+  .rodata            const    0x00010224      0x8  YRK_NRF24L0.o [1]
+  .rodata            const    0x0001022c      0x4  attitudesolving_B.o [1]
   .rodata            const    0x00010230      0x4  os_cfg_app.o [1]
   .rodata            const    0x00010234      0x4  os_cfg_app.o [1]
   .rodata            const    0x00010238      0x4  os_cfg_app.o [1]
@@ -401,51 +381,71 @@ initialize by copy { rw };
   .rodata            const    0x00010254      0x4  os_cfg_app.o [1]
   .rodata            const    0x00010258      0x4  os_cfg_app.o [1]
   .rodata            const    0x0001025c      0x4  os_cfg_app.o [1]
-  .rodata            const    0x00010260      0x4  os_dbg.o [1]
-  .rodata            const    0x00010264      0x4  os_dbg.o [1]
-  .rodata            const    0x00010268      0x4  os_dbg.o [1]
-  .rodata            const    0x0001026c      0x4  relay_tuning.o [1]
-  .rodata            const    0x00010270      0x4  relay_tuning.o [1]
-  .rodata            const    0x00010274      0x1  os_dbg.o [1]
-  .rodata            const    0x00010275      0x1  os_dbg.o [1]
-  .rodata            const    0x00010276      0x1  os_dbg.o [1]
-  .rodata            const    0x00010277      0x1  os_dbg.o [1]
-  .rodata            const    0x00010278      0x1  os_dbg.o [1]
-  .rodata            const    0x00010279      0x1  os_dbg.o [1]
-  .rodata            const    0x0001027a      0x1  os_dbg.o [1]
-  .rodata            const    0x0001027b      0x1  os_dbg.o [1]
-  .rodata            const    0x0001027c      0x1  os_dbg.o [1]
-  .rodata            const    0x0001027d      0x1  os_dbg.o [1]
-  .rodata            const    0x0001027e      0x1  os_dbg.o [1]
-  .rodata            const    0x0001027f      0x1  os_dbg.o [1]
-  .rodata            const    0x00010280      0x1  os_dbg.o [1]
-  .rodata            const    0x00010281      0x1  os_dbg.o [1]
-  .rodata            const    0x00010282      0x1  os_dbg.o [1]
-  .rodata            const    0x00010283      0x1  os_dbg.o [1]
-  .rodata            const    0x00010284      0x1  os_dbg.o [1]
-  .rodata            const    0x00010285      0x1  os_dbg.o [1]
-  .rodata            const    0x00010286      0x1  os_dbg.o [1]
-  .rodata            const    0x00010287      0x1  os_dbg.o [1]
-  .rodata            const    0x00010288      0x1  os_dbg.o [1]
-  .rodata            const    0x00010289      0x1  os_dbg.o [1]
-  .rodata            const    0x0001028a      0x1  os_dbg.o [1]
-  .rodata            const    0x0001028b      0x1  os_dbg.o [1]
-  .rodata            const    0x0001028c      0x1  os_dbg.o [1]
-  .rodata            const    0x0001028d      0x1  os_dbg.o [1]
-  .rodata            const    0x0001028e      0x1  os_dbg.o [1]
-  .rodata            const    0x0001028f      0x1  os_dbg.o [1]
-  .rodata            const    0x00010290      0x1  os_dbg.o [1]
-  .rodata            const    0x00010291      0x1  os_dbg.o [1]
-  .rodata            const    0x00010292      0x1  os_dbg.o [1]
-  .rodata            const    0x00010293      0x1  os_dbg.o [1]
-  .rodata            const    0x00010294      0x1  os_dbg.o [1]
-  .rodata            const    0x00010295      0x1  os_dbg.o [1]
-  .rodata            const    0x00010296      0x1  os_dbg.o [1]
-  .rodata            const    0x00010297      0x1  os_dbg.o [1]
-  .rodata            const    0x00010298      0x0  zero_init3.o [5]
-  .rodata            const    0x00010298      0x0  packbits_init_single.o [5]
-  Initializer bytes  const    0x00010298     0x75  <for P2-1>
-                            - 0x0001030d  0x100a1
+  .rodata            const    0x00010260      0x4  os_cfg_app.o [1]
+  .rodata            const    0x00010264      0x4  os_cfg_app.o [1]
+  .rodata            const    0x00010268      0x4  os_cfg_app.o [1]
+  .rodata            const    0x0001026c      0x4  os_cfg_app.o [1]
+  .rodata            const    0x00010270      0x4  os_cfg_app.o [1]
+  .rodata            const    0x00010274      0x4  os_cfg_app.o [1]
+  .rodata            const    0x00010278      0x4  os_cfg_app.o [1]
+  .rodata            const    0x0001027c      0x4  os_cfg_app.o [1]
+  .rodata            const    0x00010280      0x4  os_cfg_app.o [1]
+  .rodata            const    0x00010284      0x4  os_cfg_app.o [1]
+  .rodata            const    0x00010288      0x4  os_cfg_app.o [1]
+  .rodata            const    0x0001028c      0x4  os_cfg_app.o [1]
+  .rodata            const    0x00010290      0x4  os_cfg_app.o [1]
+  .rodata            const    0x00010294      0x4  os_cfg_app.o [1]
+  .rodata            const    0x00010298      0x4  os_cfg_app.o [1]
+  .rodata            const    0x0001029c      0x4  os_cfg_app.o [1]
+  .rodata            const    0x000102a0      0x4  os_cfg_app.o [1]
+  .rodata            const    0x000102a4      0x4  os_cfg_app.o [1]
+  .rodata            const    0x000102a8      0x4  os_cfg_app.o [1]
+  .rodata            const    0x000102ac      0x4  os_cfg_app.o [1]
+  .rodata            const    0x000102b0      0x4  os_dbg.o [1]
+  .rodata            const    0x000102b4      0x4  os_dbg.o [1]
+  .rodata            const    0x000102b8      0x4  os_dbg.o [1]
+  .rodata            const    0x000102bc      0x4  relay_tuning.o [1]
+  .rodata            const    0x000102c0      0x4  relay_tuning.o [1]
+  .rodata            const    0x000102c4      0x1  os_dbg.o [1]
+  .rodata            const    0x000102c5      0x1  os_dbg.o [1]
+  .rodata            const    0x000102c6      0x1  os_dbg.o [1]
+  .rodata            const    0x000102c7      0x1  os_dbg.o [1]
+  .rodata            const    0x000102c8      0x1  os_dbg.o [1]
+  .rodata            const    0x000102c9      0x1  os_dbg.o [1]
+  .rodata            const    0x000102ca      0x1  os_dbg.o [1]
+  .rodata            const    0x000102cb      0x1  os_dbg.o [1]
+  .rodata            const    0x000102cc      0x1  os_dbg.o [1]
+  .rodata            const    0x000102cd      0x1  os_dbg.o [1]
+  .rodata            const    0x000102ce      0x1  os_dbg.o [1]
+  .rodata            const    0x000102cf      0x1  os_dbg.o [1]
+  .rodata            const    0x000102d0      0x1  os_dbg.o [1]
+  .rodata            const    0x000102d1      0x1  os_dbg.o [1]
+  .rodata            const    0x000102d2      0x1  os_dbg.o [1]
+  .rodata            const    0x000102d3      0x1  os_dbg.o [1]
+  .rodata            const    0x000102d4      0x1  os_dbg.o [1]
+  .rodata            const    0x000102d5      0x1  os_dbg.o [1]
+  .rodata            const    0x000102d6      0x1  os_dbg.o [1]
+  .rodata            const    0x000102d7      0x1  os_dbg.o [1]
+  .rodata            const    0x000102d8      0x1  os_dbg.o [1]
+  .rodata            const    0x000102d9      0x1  os_dbg.o [1]
+  .rodata            const    0x000102da      0x1  os_dbg.o [1]
+  .rodata            const    0x000102db      0x1  os_dbg.o [1]
+  .rodata            const    0x000102dc      0x1  os_dbg.o [1]
+  .rodata            const    0x000102dd      0x1  os_dbg.o [1]
+  .rodata            const    0x000102de      0x1  os_dbg.o [1]
+  .rodata            const    0x000102df      0x1  os_dbg.o [1]
+  .rodata            const    0x000102e0      0x1  os_dbg.o [1]
+  .rodata            const    0x000102e1      0x1  os_dbg.o [1]
+  .rodata            const    0x000102e2      0x1  os_dbg.o [1]
+  .rodata            const    0x000102e3      0x1  os_dbg.o [1]
+  .rodata            const    0x000102e4      0x1  os_dbg.o [1]
+  .rodata            const    0x000102e5      0x1  os_dbg.o [1]
+  .rodata            const    0x000102e6      0x1  os_dbg.o [1]
+  .rodata            const    0x000102e7      0x1  os_dbg.o [1]
+  .rodata            const    0x000102e8      0x0  zero_init3.o [5]
+  .rodata            const    0x000102e8      0x0  packbits_init_single.o [5]
+  Initializer bytes  const    0x000102e8     0x75  <for P2-1>
+                            - 0x0001035d  0x100f1
 
 "P2", part 1 of 3:                           0x86
   P2-1                        0x20000000     0x86  <Init block>
@@ -703,7 +703,7 @@ Zero (__iar_zero_init3)
 
 Copy/packbits (__iar_packbits_init_single3)
     1 source range, total size 0x75 (87% of destination):
-          0x00010298    0x75
+          0x000102e8    0x75
     1 destination range, total size 0x86:
           0x20000000    0x86
 
@@ -715,7 +715,7 @@ Copy/packbits (__iar_packbits_init_single3)
 
     Module                    ro code  ro data  rw data
     ------                    -------  -------  -------
-C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj: [1]
+C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj: [1]
     CORE_TASK.o                    80       20    7 432
     CORE_TASK1.o                  356      112    2 088
     CORE_TASK2.o                  356      112    2 088
@@ -732,7 +732,7 @@ C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj: 
     bsp.o                          12
     bsp_int.o                      68               448
     bsp_sys.o                      36
-    control_command_B.o         1 924                10
+    control_command_B.o         2 004                10
     coordinate_conversions.o    1 252
     core_autopilot.o            2 140       40       18
     core_common.o                  26
@@ -787,7 +787,7 @@ C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj: 
     uart.o                        302
     virtualflybar.o               428        4       16
     ---------------------------------------------------
-    Total:                     50 162    3 159   31 312
+    Total:                     50 242    3 159   31 312
 
 command line: [2]
     ---------------------------------------------------
@@ -868,7 +868,7 @@ shb_l.a: [6]
     Gaps                            4
     Linker created                          32
 -------------------------------------------------------
-    Grand Total:               63 126    3 191   31 320
+    Grand Total:               63 206    3 191   31 320
 
 
 *******************************************************************************
@@ -877,10 +877,10 @@ shb_l.a: [6]
 
 Entry                      Address    Size  Type      Object
 -----                      -------    ----  ----      ------
-.iar.init_table$$Base   0x0000fe8c           --   Gb  - Linker created -
-.iar.init_table$$Limit  0x0000feac           --   Gb  - Linker created -
-?main                   0x0000fd35          Code  Gb  cmain.o [5]
-AMPLITUDE_ALPHA         0x0001026c     0x4  Data  Gb  relay_tuning.o [1]
+.iar.init_table$$Base   0x0000fedc           --   Gb  - Linker created -
+.iar.init_table$$Limit  0x0000fefc           --   Gb  - Linker created -
+?main                   0x0000fd85          Code  Gb  cmain.o [5]
+AMPLITUDE_ALPHA         0x000102bc     0x4  Data  Gb  relay_tuning.o [1]
 AUTO_GOTO_T1_TASK_STK   0x20004aac   0x200  Data  Gb  CORE_TASK1.o [1]
 AUTO_GOTO_T2_TASK_STK   0x200050ac   0x200  Data  Gb  CORE_TASK2.o [1]
 AUTO_GOTO_T3_TASK_STK   0x200056ac   0x200  Data  Gb  CORE_TASK3.o [1]
@@ -907,10 +907,10 @@ AUTOtakeoff_T2          0x20006f88    0xb8  Data  Gb  CORE_TASK2.o [1]
 AUTOtakeoff_T3          0x200071b0    0xb8  Data  Gb  CORE_TASK3.o [1]
 AUTOtestflight          0x20006ca8    0xb8  Data  Gb  CORE_TASK.o [1]
 AttitudeInitialize      0x00006e55   0x3e0  Code  Gb  attitudesolving_B.o [1]
-BSP_Init                0x0000f265     0xc  Code  Gb  bsp.o [1]
-BSP_IntHandlerDummy     0x0000facd     0x2  Code  Lc  bsp_int.o [1]
-BSP_IntInit             0x0000fab1    0x1c  Code  Gb  bsp_int.o [1]
-BSP_IntVectSet          0x0000fa91    0x20  Code  Gb  bsp_int.o [1]
+BSP_Init                0x0000f2b5     0xc  Code  Gb  bsp.o [1]
+BSP_IntHandlerDummy     0x0000fb1d     0x2  Code  Lc  bsp_int.o [1]
+BSP_IntInit             0x0000fb01    0x1c  Code  Gb  bsp_int.o [1]
+BSP_IntVectSet          0x0000fae1    0x20  Code  Gb  bsp_int.o [1]
 BSP_IntVectTbl          0x20005aac   0x1c0  Data  Lc  bsp_int.o [1]
 BSP_SysClkFreqGet       0x00006cd3     0xc  Code  Gb  bsp_sys.o [1]
 BSP_SysInit             0x00006cc5     0xe  Code  Gb  bsp_sys.o [1]
@@ -937,16 +937,16 @@ CPUcpsid                0x0000bb69     0x8  Code  Gb  cpu.o [1]
 CPUcpsie                0x0000bb71     0x8  Code  Gb  cpu.o [1]
 CameraTCB               0x20006b38    0xb8  Data  Gb  CORE_TASK.o [1]
 CrossProduct            0x000083eb    0x56  Code  Gb  coordinate_conversions.o [1]
-DEGLITCH_TIME           0x0000fd0e     0x2  Data  Gb  relay_tuning.o [1]
+DEGLITCH_TIME           0x0000fd5e     0x2  Data  Gb  relay_tuning.o [1]
 Dtentox                 0x0000bd75   0x196  Code  Lc  strto64.o [4]
-EEPROMInit              0x0000ea39    0x46  Code  Gb  eeprom.o [1]
-EEPROMProgram           0x0000eabf    0xb4  Code  Gb  eeprom.o [1]
-EEPROMRead              0x0000ea7f    0x40  Code  Gb  eeprom.o [1]
+EEPROMInit              0x0000ea89    0x46  Code  Gb  eeprom.o [1]
+EEPROMProgram           0x0000eb0f    0xb4  Code  Gb  eeprom.o [1]
+EEPROMRead              0x0000eacf    0x40  Code  Gb  eeprom.o [1]
 FLIGHT_INIT_TASK_STK    0x2000326c   0x800  Data  Lc  TM4C.o [1]
 FLIGHT_ROUTINE_TASK_STK
                         0x2000086c  0x1800  Data  Gb  CORE_TASK.o [1]
-FaultISR                0x0000fcff     0x2  Code  Lc  startup_ewarm.o [1]
-FlightAPPInit           0x0000f17d    0xb2  Code  Lc  TM4C.o [1]
+FaultISR                0x0000fd4f     0x2  Code  Lc  startup_ewarm.o [1]
+FlightAPPInit           0x0000f1cd    0xb2  Code  Lc  TM4C.o [1]
 FlightINITTCB           0x20007828    0xb8  Data  Lc  TM4C.o [1]
 FlightRoutineTCB        0x20006a80    0xb8  Data  Gb  CORE_TASK.o [1]
 GPIODirModeSet          0x00008f8d    0x46  Code  Gb  gpio.o [1]
@@ -959,31 +959,31 @@ GPIOPinRead             0x00009127     0xa  Code  Gb  gpio.o [1]
 GPIOPinTypeGPIOInput    0x0000913d    0x22  Code  Gb  gpio.o [1]
 GPIOPinTypeUART         0x0000915f    0x22  Code  Gb  gpio.o [1]
 GPIOPinWrite            0x00009131     0xc  Code  Gb  gpio.o [1]
-GPIO_KEYinit            0x0000f951    0x86  Code  Gb  YRK_init.o [1]
+GPIO_KEYinit            0x0000f9a1    0x86  Code  Gb  YRK_init.o [1]
 GPIO_PINB7init          0x0000b2a9    0x36  Code  Gb  core_uart.o [1]
 IMU_ext_flag            0x20007d9a     0x2  Data  Gb  flight_routine.o [1]
-IntDefaultHandler       0x0000fd01     0x2  Code  Lc  startup_ewarm.o [1]
+IntDefaultHandler       0x0000fd51     0x2  Code  Lc  startup_ewarm.o [1]
 IntEnable               0x0000ba45    0x68  Code  Gb  interrupt.o [1]
 IntMasterDisable        0x0000b9a9    0x14  Code  Gb  interrupt.o [1]
 IntMasterEnable         0x0000b995    0x14  Code  Gb  interrupt.o [1]
 IntPriorityGroupingSet  0x0000b9f7    0x10  Code  Gb  interrupt.o [1]
 IntPrioritySet          0x0000ba07    0x3e  Code  Gb  interrupt.o [1]
 IntRegister             0x0000b9bd    0x3a  Code  Gb  interrupt.o [1]
-KS103_I2C_RecvACK       0x0000e487    0x46  Code  Gb  KS103.o [1]
-KS103_I2C_RecvByte      0x0000e50d    0x60  Code  Gb  KS103.o [1]
-KS103_I2C_SendACK       0x0000e459    0x2e  Code  Gb  KS103.o [1]
-KS103_I2C_SendByte      0x0000e4cd    0x40  Code  Gb  KS103.o [1]
-KS103_I2C_Start         0x0000e417    0x24  Code  Gb  KS103.o [1]
-KS103_I2C_Stop          0x0000e43b    0x1e  Code  Gb  KS103.o [1]
-KS103_get_distance      0x0000e689     0xc  Code  Gb  KS103.o [1]
-KS103_init              0x0000e659    0x30  Code  Gb  KS103.o [1]
-KS103_soft_OPEN         0x0000e3e7    0x30  Code  Gb  KS103.o [1]
-KS103_soft_delay        0x0000e3d9     0xe  Code  Gb  KS103.o [1]
-KS103_soft_read_reg     0x0000e593    0x3e  Code  Gb  KS103.o [1]
-KS103_soft_write_reg    0x0000e56d    0x26  Code  Gb  KS103.o [1]
+KS103_I2C_RecvACK       0x0000e4d7    0x46  Code  Gb  KS103.o [1]
+KS103_I2C_RecvByte      0x0000e55d    0x60  Code  Gb  KS103.o [1]
+KS103_I2C_SendACK       0x0000e4a9    0x2e  Code  Gb  KS103.o [1]
+KS103_I2C_SendByte      0x0000e51d    0x40  Code  Gb  KS103.o [1]
+KS103_I2C_Start         0x0000e467    0x24  Code  Gb  KS103.o [1]
+KS103_I2C_Stop          0x0000e48b    0x1e  Code  Gb  KS103.o [1]
+KS103_get_distance      0x0000e6d9     0xc  Code  Gb  KS103.o [1]
+KS103_init              0x0000e6a9    0x30  Code  Gb  KS103.o [1]
+KS103_soft_OPEN         0x0000e437    0x30  Code  Gb  KS103.o [1]
+KS103_soft_delay        0x0000e429     0xe  Code  Gb  KS103.o [1]
+KS103_soft_read_reg     0x0000e5e3    0x3e  Code  Gb  KS103.o [1]
+KS103_soft_write_reg    0x0000e5bd    0x26  Code  Gb  KS103.o [1]
 LoadInt                 0x0000955b    0x7a  Code  Lc  xprintffull_nomb.o [3]
 MAX_TRIM_FLIGHT_SAMPLES
-                        0x000101dc     0x4  Data  Lc  attitudesolving_B.o [1]
+                        0x0001022c     0x4  Data  Lc  attitudesolving_B.o [1]
 Mem_Clr                 0x00006dc7    0x12  Code  Gb  lib_mem.o [1]
 Mem_Heap                0x200040ac   0x400  Data  Gb  lib_mem.o [1]
 Mem_Init                0x00006d69    0x5e  Code  Gb  lib_mem.o [1]
@@ -991,141 +991,141 @@ Mem_PoolHeap            0x20007950    0x48  Data  Gb  lib_mem.o [1]
 Mem_PoolTbl             0x20007c7c     0x4  Data  Gb  lib_mem.o [1]
 Mem_Set                 0x00006dd9    0x6c  Code  Gb  lib_mem.o [1]
 NRF_ISR_RX_FIFO         0x2000206c   0xa00  Data  Gb  YRK_NRF24L0.o [1]
-NmiSR                   0x0000fcfd     0x2  Code  Lc  startup_ewarm.o [1]
+NmiSR                   0x0000fd4d     0x2  Code  Lc  startup_ewarm.o [1]
 Nrf_Buf_In              0x20007b20    0x18  Data  Gb  data_common.o [1]
 Nrf_Buf_Out             0x20007b38    0x18  Data  Gb  data_common.o [1]
 Nrf_in_switch           0x20007a60    0x20  Data  Gb  data_transfer.o [1]
-OSCfg_DataSizeRAM       0x0001025c     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_DataSizeRAM       0x000102ac     0x4  Data  Gb  os_cfg_app.o [1]
 OSCfg_ISRStk            0x20005dfc   0x190  Data  Gb  os_cfg_app.o [1]
-OSCfg_ISRStkBasePtr     0x00010208     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_ISRStkSize        0x0001020c     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_ISRStkSizeRAM     0x00010210     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_ISRStkBasePtr     0x00010258     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_ISRStkSize        0x0001025c     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_ISRStkSizeRAM     0x00010260     0x4  Data  Gb  os_cfg_app.o [1]
 OSCfg_IdleTaskStk       0x200058ac   0x200  Data  Gb  os_cfg_app.o [1]
 OSCfg_IdleTaskStkBasePtr
-                        0x000101e0     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_IdleTaskStkLimit  0x000101e4     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_IdleTaskStkSize   0x000101e8     0x4  Data  Gb  os_cfg_app.o [1]
+                        0x00010230     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_IdleTaskStkLimit  0x00010234     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_IdleTaskStkSize   0x00010238     0x4  Data  Gb  os_cfg_app.o [1]
 OSCfg_IdleTaskStkSizeRAM
-                        0x000101ec     0x4  Data  Gb  os_cfg_app.o [1]
+                        0x0001023c     0x4  Data  Gb  os_cfg_app.o [1]
 OSCfg_Init              0x00006ad9    0xe0  Code  Gb  os_cfg_app.o [1]
 OSCfg_IntQ              0x200065bc   0x140  Data  Gb  os_cfg_app.o [1]
-OSCfg_IntQBasePtr       0x000101f0     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_IntQBasePtr       0x00010240     0x4  Data  Gb  os_cfg_app.o [1]
 OSCfg_IntQSize          0x00001a8a     0x2  Data  Gb  os_cfg_app.o [1]
-OSCfg_IntQSizeRAM       0x000101f4     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_IntQSizeRAM       0x00010244     0x4  Data  Gb  os_cfg_app.o [1]
 OSCfg_IntQTaskStk       0x20005c6c   0x190  Data  Gb  os_cfg_app.o [1]
 OSCfg_IntQTaskStkBasePtr
-                        0x000101f8     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_IntQTaskStkLimit  0x000101fc     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_IntQTaskStkSize   0x00010200     0x4  Data  Gb  os_cfg_app.o [1]
+                        0x00010248     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_IntQTaskStkLimit  0x0001024c     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_IntQTaskStkSize   0x00010250     0x4  Data  Gb  os_cfg_app.o [1]
 OSCfg_IntQTaskStkSizeRAM
-                        0x00010204     0x4  Data  Gb  os_cfg_app.o [1]
+                        0x00010254     0x4  Data  Gb  os_cfg_app.o [1]
 OSCfg_MsgPool           0x20003a6c   0x640  Data  Gb  os_cfg_app.o [1]
-OSCfg_MsgPoolBasePtr    0x00010218     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_MsgPoolBasePtr    0x00010268     0x4  Data  Gb  os_cfg_app.o [1]
 OSCfg_MsgPoolSize       0x000029be     0x2  Data  Gb  os_cfg_app.o [1]
-OSCfg_MsgPoolSizeRAM    0x00010214     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_StatTaskPrio      0x0000fd32     0x1  Data  Gb  os_cfg_app.o [1]
-OSCfg_StatTaskRate_Hz   0x0001021c     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_MsgPoolSizeRAM    0x00010264     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_StatTaskPrio      0x0000fd82     0x1  Data  Gb  os_cfg_app.o [1]
+OSCfg_StatTaskRate_Hz   0x0001026c     0x4  Data  Gb  os_cfg_app.o [1]
 OSCfg_StatTaskStk       0x20005f8c   0x190  Data  Gb  os_cfg_app.o [1]
 OSCfg_StatTaskStkBasePtr
-                        0x00010220     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_StatTaskStkLimit  0x00010224     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_StatTaskStkSize   0x00010228     0x4  Data  Gb  os_cfg_app.o [1]
+                        0x00010270     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_StatTaskStkLimit  0x00010274     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_StatTaskStkSize   0x00010278     0x4  Data  Gb  os_cfg_app.o [1]
 OSCfg_StatTaskStkSizeRAM
-                        0x0001022c     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_StkSizeMin        0x00010230     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_TickRate_Hz       0x00010234     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_TickTaskPrio      0x0000fd33     0x1  Data  Gb  os_cfg_app.o [1]
+                        0x0001027c     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_StkSizeMin        0x00010280     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_TickRate_Hz       0x00010284     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_TickTaskPrio      0x0000fd83     0x1  Data  Gb  os_cfg_app.o [1]
 OSCfg_TickTaskStk       0x2000611c   0x190  Data  Gb  os_cfg_app.o [1]
 OSCfg_TickTaskStkBasePtr
-                        0x00010238     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_TickTaskStkLimit  0x0001023c     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_TickTaskStkSize   0x00010240     0x4  Data  Gb  os_cfg_app.o [1]
+                        0x00010288     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_TickTaskStkLimit  0x0001028c     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_TickTaskStkSize   0x00010290     0x4  Data  Gb  os_cfg_app.o [1]
 OSCfg_TickTaskStkSizeRAM
-                        0x00010244     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_TmrTaskPrio       0x0000fd52     0x1  Data  Gb  os_cfg_app.o [1]
-OSCfg_TmrTaskRate_Hz    0x00010248     0x4  Data  Gb  os_cfg_app.o [1]
+                        0x00010294     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_TmrTaskPrio       0x0000fda2     0x1  Data  Gb  os_cfg_app.o [1]
+OSCfg_TmrTaskRate_Hz    0x00010298     0x4  Data  Gb  os_cfg_app.o [1]
 OSCfg_TmrTaskStk        0x200062ac   0x190  Data  Gb  os_cfg_app.o [1]
 OSCfg_TmrTaskStkBasePtr
-                        0x0001024c     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_TmrTaskStkLimit   0x00010250     0x4  Data  Gb  os_cfg_app.o [1]
-OSCfg_TmrTaskStkSize    0x00010254     0x4  Data  Gb  os_cfg_app.o [1]
+                        0x0001029c     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_TmrTaskStkLimit   0x000102a0     0x4  Data  Gb  os_cfg_app.o [1]
+OSCfg_TmrTaskStkSize    0x000102a4     0x4  Data  Gb  os_cfg_app.o [1]
 OSCfg_TmrTaskStkSizeRAM
-                        0x00010258     0x4  Data  Gb  os_cfg_app.o [1]
+                        0x000102a8     0x4  Data  Gb  os_cfg_app.o [1]
 OSCtxSw                 0x00006c55          Code  Gb  os_cpu_a.o [1]
-OSDbg_AppHooksEn        0x0000fd8b     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_ArgChkEn          0x0000fd8a     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_AppHooksEn        0x0000fddb     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_ArgChkEn          0x0000fdda     0x1  Data  Gb  os_dbg.o [1]
 OSDbg_CalledFromISRChkEn
-                        0x00010274     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_DataSize          0x00010268     0x4  Data  Gb  os_dbg.o [1]
-OSDbg_DbgEn             0x0000fd53     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_EndiannessTest    0x00010260     0x4  Data  Gb  os_dbg.o [1]
-OSDbg_FlagDelEn         0x00010276     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_FlagEn            0x00010275     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_FlagGrp           0x0000fe18    0x28  Data  Gb  os_dbg.o [1]
+                        0x000102c4     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_DataSize          0x000102b8     0x4  Data  Gb  os_dbg.o [1]
+OSDbg_DbgEn             0x0000fda3     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_EndiannessTest    0x000102b0     0x4  Data  Gb  os_dbg.o [1]
+OSDbg_FlagDelEn         0x000102c6     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_FlagEn            0x000102c5     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_FlagGrp           0x0000fe68    0x28  Data  Gb  os_dbg.o [1]
 OSDbg_FlagGrpSize       0x0000545e     0x2  Data  Gb  os_dbg.o [1]
-OSDbg_FlagModeClrEn     0x00010277     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_FlagPendAbortEn   0x00010278     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_FlagModeClrEn     0x000102c7     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_FlagPendAbortEn   0x000102c8     0x1  Data  Gb  os_dbg.o [1]
 OSDbg_FlagWidth         0x00008066     0x2  Data  Gb  os_dbg.o [1]
 OSDbg_ISRPostDeferredEn
-                        0x00010279     0x1  Data  Gb  os_dbg.o [1]
+                        0x000102c9     0x1  Data  Gb  os_dbg.o [1]
 OSDbg_IntQ              0x000085fe     0x2  Data  Gb  os_dbg.o [1]
-OSDbg_Mem               0x0000fecc    0x20  Data  Gb  os_dbg.o [1]
-OSDbg_MemEn             0x0001027a     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_Mem               0x0000ff1c    0x20  Data  Gb  os_dbg.o [1]
+OSDbg_MemEn             0x000102ca     0x1  Data  Gb  os_dbg.o [1]
 OSDbg_MemSize           0x00008cb6     0x2  Data  Gb  os_dbg.o [1]
-OSDbg_MsgEn             0x0001027b     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_MsgEn             0x000102cb     0x1  Data  Gb  os_dbg.o [1]
 OSDbg_MsgPoolSize       0x00008f22     0x2  Data  Gb  os_dbg.o [1]
 OSDbg_MsgQSize          0x000091ee     0x2  Data  Gb  os_dbg.o [1]
 OSDbg_MsgSize           0x00008cda     0x2  Data  Gb  os_dbg.o [1]
-OSDbg_Mutex             0x0000fdec    0x2c  Data  Gb  os_dbg.o [1]
-OSDbg_MutexDelEn        0x0001027d     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_MutexEn           0x0001027c     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_MutexPendAbortEn  0x0001027e     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_Mutex             0x0000fe3c    0x2c  Data  Gb  os_dbg.o [1]
+OSDbg_MutexDelEn        0x000102cd     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_MutexEn           0x000102cc     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_MutexPendAbortEn  0x000102ce     0x1  Data  Gb  os_dbg.o [1]
 OSDbg_MutexSize         0x0000a196     0x2  Data  Gb  os_dbg.o [1]
-OSDbg_ObjTypeChkEn      0x0001027f     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_ObjTypeChkEn      0x000102cf     0x1  Data  Gb  os_dbg.o [1]
 OSDbg_PendDataSize      0x0000a1ae     0x2  Data  Gb  os_dbg.o [1]
 OSDbg_PendListSize      0x0000a22a     0x2  Data  Gb  os_dbg.o [1]
-OSDbg_PendMultiEn       0x00010280     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_PendMultiEn       0x000102d0     0x1  Data  Gb  os_dbg.o [1]
 OSDbg_PendObjSize       0x0000a372     0x2  Data  Gb  os_dbg.o [1]
 OSDbg_PrioMax           0x0000a506     0x2  Data  Gb  os_dbg.o [1]
 OSDbg_PrioTblSize       0x0000a5a6     0x2  Data  Gb  os_dbg.o [1]
 OSDbg_PtrSize           0x0000a6e2     0x2  Data  Gb  os_dbg.o [1]
-OSDbg_Q                 0x0000fd8c    0x30  Data  Gb  os_dbg.o [1]
-OSDbg_QDelEn            0x00010282     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_QEn               0x00010281     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_QFlushEn          0x00010283     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_QPendAbortEn      0x00010284     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_Q                 0x0000fddc    0x30  Data  Gb  os_dbg.o [1]
+OSDbg_QDelEn            0x000102d2     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_QEn               0x000102d1     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_QFlushEn          0x000102d3     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_QPendAbortEn      0x000102d4     0x1  Data  Gb  os_dbg.o [1]
 OSDbg_QSize             0x0000a71e     0x2  Data  Gb  os_dbg.o [1]
 OSDbg_RdyList           0x0000a832     0x2  Data  Gb  os_dbg.o [1]
-OSDbg_RdyListSize       0x00010264     0x4  Data  Gb  os_dbg.o [1]
+OSDbg_RdyListSize       0x000102b4     0x4  Data  Gb  os_dbg.o [1]
 OSDbg_SchedRoundRobinEn
-                        0x00010285     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_Sem               0x0000fe40    0x28  Data  Gb  os_dbg.o [1]
-OSDbg_SemDelEn          0x00010287     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_SemEn             0x00010286     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_SemPendAbortEn    0x00010288     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_SemSetEn          0x00010289     0x1  Data  Gb  os_dbg.o [1]
+                        0x000102d5     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_Sem               0x0000fe90    0x28  Data  Gb  os_dbg.o [1]
+OSDbg_SemDelEn          0x000102d7     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_SemEn             0x000102d6     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_SemPendAbortEn    0x000102d8     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_SemSetEn          0x000102d9     0x1  Data  Gb  os_dbg.o [1]
 OSDbg_SemSize           0x0000a802     0x2  Data  Gb  os_dbg.o [1]
-OSDbg_StatTaskEn        0x0001028b     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_StatTaskStkChkEn  0x0001028c     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_StkWidth          0x0001028a     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_StatTaskEn        0x000102db     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_StatTaskStkChkEn  0x000102dc     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_StkWidth          0x000102da     0x1  Data  Gb  os_dbg.o [1]
 OSDbg_TCBSize           0x0000b992     0x2  Data  Gb  os_dbg.o [1]
-OSDbg_TaskChangePrioEn  0x0001028d     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_TaskDelEn         0x0001028e     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_TaskProfileEn     0x00010291     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_TaskQEn           0x0001028f     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_TaskQPendAbortEn  0x00010290     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_TaskChangePrioEn  0x000102dd     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_TaskDelEn         0x000102de     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_TaskProfileEn     0x000102e1     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_TaskQEn           0x000102df     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_TaskQPendAbortEn  0x000102e0     0x1  Data  Gb  os_dbg.o [1]
 OSDbg_TaskRegTblSize    0x0000a836     0x2  Data  Gb  os_dbg.o [1]
 OSDbg_TaskSemPendAbortEn
-                        0x00010292     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_TaskSuspendEn     0x00010293     0x1  Data  Gb  os_dbg.o [1]
+                        0x000102e2     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_TaskSuspendEn     0x000102e3     0x1  Data  Gb  os_dbg.o [1]
 OSDbg_TickListSize      0x0000bb26     0x2  Data  Gb  os_dbg.o [1]
-OSDbg_TimeDlyHMSMEn     0x00010294     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_TimeDlyResumeEn   0x00010295     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_Tmr               0x0000fdbc    0x30  Data  Gb  os_dbg.o [1]
-OSDbg_TmrDelEn          0x00010297     0x1  Data  Gb  os_dbg.o [1]
-OSDbg_TmrEn             0x00010296     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_TimeDlyHMSMEn     0x000102e4     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_TimeDlyResumeEn   0x000102e5     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_Tmr               0x0000fe0c    0x30  Data  Gb  os_dbg.o [1]
+OSDbg_TmrDelEn          0x000102e7     0x1  Data  Gb  os_dbg.o [1]
+OSDbg_TmrEn             0x000102e6     0x1  Data  Gb  os_dbg.o [1]
 OSDbg_TmrSize           0x0000c272     0x2  Data  Gb  os_dbg.o [1]
-OSDbg_VersionNbr        0x0000ee76     0x2  Data  Gb  os_dbg.o [1]
+OSDbg_VersionNbr        0x0000eec6     0x2  Data  Gb  os_dbg.o [1]
 OSFlagDbgListPtr        0x20007cb4     0x4  Data  Gb  os_var.o [1]
 OSFlagQty               0x20007da4     0x2  Data  Gb  os_var.o [1]
 OSIdleTaskCtr           0x20007ca4     0x4  Data  Gb  os_var.o [1]
@@ -1312,18 +1312,18 @@ OS_TmrResetPeak         0x00006751     0x2  Code  Gb  os_tmr.o [1]
 OS_TmrTask              0x0000679d    0x9a  Code  Gb  os_tmr.o [1]
 OS_TmrUnlink            0x00006753    0x48  Code  Gb  os_tmr.o [1]
 OS_TmrUnlock            0x0000684d    0x10  Code  Lc  os_tmr.o [1]
-PERIOD_ALPHA            0x00010270     0x4  Data  Gb  relay_tuning.o [1]
-PIC_Control             0x0000d531   0x2c8  Code  Gb  Pic_hold.o [1]
+PERIOD_ALPHA            0x000102c0     0x4  Data  Gb  relay_tuning.o [1]
+PIC_Control             0x0000d581   0x2c8  Code  Gb  Pic_hold.o [1]
 PID_PIC_XOUT            0x20007d34     0x4  Data  Lc  Pic_hold.o [1]
 PID_PIC_YOUT            0x20007d38     0x4  Data  Lc  Pic_hold.o [1]
-PIT_IRQHandler          0x0000ebc9    0x1e  Code  Gb  flight_routine.o [1]
-PORTC_IRQHandler        0x0000eba1    0x28  Code  Gb  flight_routine.o [1]
-PWMGenConfigure         0x0000e041    0x3c  Code  Gb  pwm.o [1]
-PWMGenEnable            0x0000e09f     0xe  Code  Gb  pwm.o [1]
-PWMGenPeriodSet         0x0000e07d    0x22  Code  Gb  pwm.o [1]
-PWMOutputState          0x0000e0df    0x2a  Code  Gb  pwm.o [1]
-PWMPulseWidthSet        0x0000e0ad    0x32  Code  Gb  pwm.o [1]
-PWM_outpin              0x00010174    0x10  Data  Lc  motor_control.o [1]
+PIT_IRQHandler          0x0000ec19    0x1e  Code  Gb  flight_routine.o [1]
+PORTC_IRQHandler        0x0000ebf1    0x28  Code  Gb  flight_routine.o [1]
+PWMGenConfigure         0x0000e091    0x3c  Code  Gb  pwm.o [1]
+PWMGenEnable            0x0000e0ef     0xe  Code  Gb  pwm.o [1]
+PWMGenPeriodSet         0x0000e0cd    0x22  Code  Gb  pwm.o [1]
+PWMOutputState          0x0000e12f    0x2a  Code  Gb  pwm.o [1]
+PWMPulseWidthSet        0x0000e0fd    0x32  Code  Gb  pwm.o [1]
+PWM_outpin              0x000101c4    0x10  Data  Lc  motor_control.o [1]
 Pic_cotrol_xout         0x20007d44     0x4  Data  Gb  Pic_hold.o [1]
 Pic_cotrol_yout         0x20007d48     0x4  Data  Gb  Pic_hold.o [1]
 Pic_x_out               0x20007d14     0x4  Data  Gb  Pic_hold.o [1]
@@ -1333,11 +1333,11 @@ Quaternion2RPY          0x00008069   0x110  Code  Gb  coordinate_conversions.o [
 RENESAS                 0x20007d6c     0x4  Data  Gb  renesas_interface.o [1]
 RPY2Quaternion          0x00008179   0x12e  Code  Gb  coordinate_conversions.o [1]
 RX_ADDRESS              0x2000007c     0x8  Data  Gb  YRK_NRF24L0.o [1]
-Region$$Table$$Base     0x0000fe8c           --   Gb  - Linker created -
-Region$$Table$$Limit    0x0000feac           --   Gb  - Linker created -
-ResetISR                0x0000fccd    0x28  Code  Gb  startup_ewarm.o [1]
+Region$$Table$$Base     0x0000fedc           --   Gb  - Linker created -
+Region$$Table$$Limit    0x0000fefc           --   Gb  - Linker created -
+ResetISR                0x0000fd1d    0x28  Code  Gb  startup_ewarm.o [1]
 Rsb                     0x20007a3c    0x24  Data  Lc  attitudesolving_B.o [1]
-STARTUP_KEY             0x0000f9d7    0x28  Code  Gb  YRK_init.o [1]
+STARTUP_KEY             0x0000fa27    0x28  Code  Gb  YRK_init.o [1]
 START_TASK_STK          0x20002a6c   0x800  Data  Lc  TM4C.o [1]
 StabilizationInitialize
                         0x0000026d   0x1c2  Code  Gb  stabilization_B.o [1]
@@ -1350,26 +1350,26 @@ SysCtlPeripheralEnable  0x00009269    0x1e  Code  Gb  sysctl.o [1]
 SysCtlPeripheralReady   0x000091f1    0x28  Code  Gb  sysctl.o [1]
 SysCtlPeripheralReset   0x00009219    0x50  Code  Gb  sysctl.o [1]
 TAKEOFF_SIG             0x200079c4    0x28  Data  Gb  CORE_TASK.o [1]
-TASK0_create            0x0000f271    0x50  Code  Gb  CORE_TASK.o [1]
-TASK1_create            0x0000f2c1   0x164  Code  Gb  CORE_TASK1.o [1]
-TASK2_create            0x0000f425   0x164  Code  Gb  CORE_TASK2.o [1]
-TASK3_create            0x0000f589   0x164  Code  Gb  CORE_TASK3.o [1]
+TASK0_create            0x0000f2c1    0x50  Code  Gb  CORE_TASK.o [1]
+TASK1_create            0x0000f311   0x164  Code  Gb  CORE_TASK1.o [1]
+TASK2_create            0x0000f475   0x164  Code  Gb  CORE_TASK2.o [1]
+TASK3_create            0x0000f5d9   0x164  Code  Gb  CORE_TASK3.o [1]
 TX_ADDRESS              0x20000074     0x8  Data  Gb  YRK_NRF24L0.o [1]
-TimerConfigure          0x0000edd3    0x32  Code  Gb  timer.o [1]
-TimerControlStall       0x0000ee0d    0x2a  Code  Gb  timer.o [1]
-TimerEnable             0x0000edbd    0x16  Code  Gb  timer.o [1]
-TimerIntClear           0x0000ee6f     0x8  Code  Gb  timer.o [1]
-TimerIntEnable          0x0000ee5f    0x10  Code  Gb  timer.o [1]
-TimerLoadSet            0x0000ee37    0x18  Code  Gb  timer.o [1]
-TimerValueGet           0x0000ee4f    0x10  Code  Gb  timer.o [1]
+TimerConfigure          0x0000ee23    0x32  Code  Gb  timer.o [1]
+TimerControlStall       0x0000ee5d    0x2a  Code  Gb  timer.o [1]
+TimerEnable             0x0000ee0d    0x16  Code  Gb  timer.o [1]
+TimerIntClear           0x0000eebf     0x8  Code  Gb  timer.o [1]
+TimerIntEnable          0x0000eeaf    0x10  Code  Gb  timer.o [1]
+TimerLoadSet            0x0000ee87    0x18  Code  Gb  timer.o [1]
+TimerValueGet           0x0000ee9f    0x10  Code  Gb  timer.o [1]
 UART1SendString         0x0000b28f    0x1a  Code  Gb  core_uart.o [1]
 UART1_IRQHandler        0x0000b2e1    0xf2  Code  Gb  core_uart.o [1]
 UART1_RX_BUF            0x200068f0    0xc8  Data  Gb  core_uart.o [1]
 UART1_RX_STA            0x20007d92     0x2  Data  Gb  core_uart.o [1]
 UART1_STInit            0x0000b221    0x6e  Code  Gb  core_uart.o [1]
-UART2_IRQHandler        0x0000f781   0x14a  Code  Gb  renesas_interface.o [1]
+UART2_IRQHandler        0x0000f7d1   0x14a  Code  Gb  renesas_interface.o [1]
 UART2_RX_BUF            0x200069b8    0xc8  Data  Gb  renesas_interface.o [1]
-UART2_STInit            0x0000f725    0x5c  Code  Gb  renesas_interface.o [1]
+UART2_STInit            0x0000f775    0x5c  Code  Gb  renesas_interface.o [1]
 UARTAdjustTCB           0x20006bf0    0xb8  Data  Gb  CORE_TASK.o [1]
 UARTCharGetNonBlocking  0x0000b955    0x16  Code  Gb  uart.o [1]
 UARTCharPut             0x0000b96b    0x10  Code  Gb  uart.o [1]
@@ -1385,9 +1385,9 @@ UART_PIDadjust          0x20000010    0x48  Data  Gb  core_uart.o [1]
 Yaw_con_before          0x20007c4c     0x4  Data  Lc  control_command_B.o [1]
 Yaw_fixed               0x20007c50     0x4  Data  Lc  control_command_B.o [1]
 ZeroPids                0x00001449    0x32  Code  Lc  stabilization_B.o [1]
-_EEPROMSectorMaskClear  0x0000e9f9    0x34  Code  Lc  eeprom.o [1]
-_EEPROMSectorMaskSet    0x0000e9b9    0x40  Code  Lc  eeprom.o [1]
-_EEPROMWaitForDone      0x0000ea2d     0xc  Code  Lc  eeprom.o [1]
+_EEPROMSectorMaskClear  0x0000ea49    0x34  Code  Lc  eeprom.o [1]
+_EEPROMSectorMaskSet    0x0000ea09    0x40  Code  Lc  eeprom.o [1]
+_EEPROMWaitForDone      0x0000ea7d     0xc  Code  Lc  eeprom.o [1]
 _GenldFullNoMb          0x00009ebf   0x24c  Code  Lc  xprintffull_nomb.o [3]
 _LdtobFullNoMb          0x00009a97   0x3fe  Code  Lc  xprintffull_nomb.o [3]
 _LitobFullNoMb          0x00009947   0x10a  Code  Lc  xprintffull_nomb.o [3]
@@ -1414,7 +1414,7 @@ __aeabi_memcpy4         0x00007fe1          Code  Gb  ABImemcpy.o [5]
 __aeabi_memcpy8         0x00007fe1          Code  Gb  ABImemcpy.o [5]
 __aeabi_ui2d            0x00001a41          Code  Gb  U32ToDbl.o [4]
 __aeabi_uldivmod        0x0000a285          Code  Gb  I64DivMod.o [5]
-__cmain                 0x0000fd35          Code  Gb  cmain.o [5]
+__cmain                 0x0000fd85          Code  Gb  cmain.o [5]
 __exit                  0x0000a9b1    0x14  Code  Gb  exit.o [6]
 __iar_Exp32             0x00001d81   0x278  Code  Gb  iar_Exp32.o [4]
 __iar_Fail_s            0x0000a1b1    0x1e  Code  Gb  xfail_s.o [3]
@@ -1435,7 +1435,7 @@ __iar_cos32             0x00002679     0x4  Code  Gb  cos_sin32.o [4]
 __iar_cos_medium32      0x00002679     0x4  Code  Gb  cos_sin32.o [4]
 __iar_cos_mediumf       0x00002679     0x4  Code  Gb  cos_sin32.o [4]
 __iar_dadd              0x0000a731          Code  Gb  DblSub.o [4]
-__iar_data_init3        0x0000fd55    0x28  Code  Gb  data_init.o [5]
+__iar_data_init3        0x0000fda5    0x28  Code  Gb  data_init.o [5]
 __iar_dsub              0x0000a849          Code  Gb  DblAdd.o [4]
 __iar_dsubStart         0x0000a85b          Code  Gb  DblAdd.o [4]
 __iar_exp32             0x00001741    0x3c  Code  Gb  exp32.o [4]
@@ -1446,15 +1446,15 @@ __iar_frexp             0x0000a515          Code  Gb  frexp.o [4]
 __iar_frexp32           0x00002a85          Code  Gb  frexpf.o [4]
 __iar_frexpf            0x00002a99          Code  Gb  frexpf.o [4]
 __iar_frexpl            0x0000a515          Code  Gb  frexp.o [4]
-__iar_init_vfp          0x0000fd11          Code  Gb  fpinit_M.o [4]
+__iar_init_vfp          0x0000fd61          Code  Gb  fpinit_M.o [4]
 __iar_ldexp32           0x000029c1          Code  Gb  ldexpf.o [4]
 __iar_ldexp64           0x0000a5a9          Code  Gb  ldexp.o [4]
 __iar_packbits_init_single3
-                        0x0000fc95    0x38  Code  Gb  packbits_init_single.o [5]
+                        0x0000fce5    0x38  Code  Gb  packbits_init_single.o [5]
 __iar_pow32             0x0000249d     0x4  Code  Gb  pow32.o [4]
 __iar_pow_medium32      0x0000249d     0x4  Code  Gb  pow32.o [4]
 __iar_pow_mediumf       0x0000249d     0x4  Code  Gb  pow32.o [4]
-__iar_program_start     0x0000fd03          Code  Gb  cstartup_M.o [5]
+__iar_program_start     0x0000fd53          Code  Gb  cstartup_M.o [5]
 __iar_scalbln32         0x000029c1          Code  Gb  ldexpf.o [4]
 __iar_scalbln64         0x0000a5a9          Code  Gb  ldexp.o [4]
 __iar_scalbn32          0x000029c1          Code  Gb  ldexpf.o [4]
@@ -1473,14 +1473,14 @@ __iar_vfp___iar_fmod32  0x00001ff9          Code  Gb  fmodf.o [4]
 __iar_vfp_atof          0x0000bb1f     0x8  Code  Gb  math_wrappers64.o [4]
 __iar_vfp_fmodf         0x00001ff9          Code  Gb  fmodf.o [4]
 __iar_xatanf            0x00008751          Code  Gb  xatanf.o [4]
-__iar_zero_init3        0x0000fc55    0x40  Code  Gb  zero_init3.o [5]
-__low_level_init        0x0000fd4f     0x4  Code  Gb  low_level_init.o [3]
+__iar_zero_init3        0x0000fca5    0x40  Code  Gb  zero_init3.o [5]
+__low_level_init        0x0000fd9f     0x4  Code  Gb  low_level_init.o [3]
 __vector_table          0x00000000   0x26c  Data  Gb  startup_ewarm.o [1]
-_call_main              0x0000fd41          Code  Gb  cmain.o [5]
-_exit                   0x0000fd81          Code  Gb  cexit.o [5]
-_main                   0x0000fd4b          Code  Gb  cmain.o [5]
+_call_main              0x0000fd91          Code  Gb  cmain.o [5]
+_exit                   0x0000fdd1          Code  Gb  cexit.o [5]
+_main                   0x0000fd9b          Code  Gb  cmain.o [5]
 abort                   0x0000a82d     0x6  Code  Gb  abort.o [3]
-abs                     0x0000f065     0x8  Code  Gb  abs.o [3]
+abs                     0x0000f0b5     0x8  Code  Gb  abs.o [3]
 accelKi                 0x20007c34     0x4  Data  Lc  attitudesolving_B.o [1]
 accelKp                 0x20007c38     0x4  Data  Lc  attitudesolving_B.o [1]
 accel_alpha             0x20007c3c     0x4  Data  Lc  attitudesolving_B.o [1]
@@ -1538,44 +1538,44 @@ bias_time_count         0x20007d90     0x2  Data  Gb  core_autopilot.o [1]
 bound                   0x000019d1    0x28  Code  Lc  virtualflybar.o [1]
 bound_min_max           0x0000177d    0x2a  Code  Gb  misc_math.o [1]
 bound_sym               0x000017a7    0x10  Code  Gb  misc_math.o [1]
-bzero                   0x0000d04b    0x10  Code  Gb  YRK_NRF24L0.o [1]
+bzero                   0x0000d09b    0x10  Code  Gb  YRK_NRF24L0.o [1]
 circular_modulus_deg    0x000017b9    0x3c  Code  Gb  misc_math.o [1]
-command_handler         0x0000c66d   0x4a2  Code  Gb  control_command_B.o [1]
-command_handler_normal  0x0000cb1d   0x274  Code  Gb  control_command_B.o [1]
+command_handler         0x0000c66d   0x4ec  Code  Gb  control_command_B.o [1]
+command_handler_normal  0x0000cb65   0x274  Code  Gb  control_command_B.o [1]
 complimentary_filter_status
                         0x20007dba     0x1  Data  Lc  attitudesolving_B.o [1]
-config_spi              0x0000cec9    0x3a  Code  Gb  YRK_NRF24L0.o [1]
-config_ssi_gpio         0x0000cdf1    0xd8  Code  Gb  YRK_NRF24L0.o [1]
+config_spi              0x0000cf19    0x3a  Code  Gb  YRK_NRF24L0.o [1]
+config_ssi_gpio         0x0000ce41    0xd8  Code  Gb  YRK_NRF24L0.o [1]
 control_flag            0x20007d4c     0x4  Data  Gb  Pic_hold.o [1]
 control_x_out           0x20007c5c     0x4  Data  Gb  core_autopilot.o [1]
 control_y_out           0x20007c58     0x4  Data  Gb  core_autopilot.o [1]
 cosf                    0x00002679     0x4  Code  Gb  cos_sin32.o [4]
-data_common_init        0x0000fa5d    0x34  Code  Gb  data_common.o [1]
+data_common_init        0x0000faad    0x34  Code  Gb  data_common.o [1]
 ddiv                    0x0000bc95    0xd0  Code  Lc  strto64.o [4]
 delta_picx              0x20007d3c     0x4  Data  Lc  Pic_hold.o [1]
 delta_picy              0x20007d40     0x4  Data  Lc  Pic_hold.o [1]
 deriv_gamma             0x2000005c     0x4  Data  Lc  pid.o [1]
 deriv_tau               0x20000058     0x4  Data  Lc  pid.o [1]
 dmul                    0x0000bbc1    0xd2  Code  Lc  strto64.o [4]
-eeprom_read             0x0000e8e1    0x5e  Code  Gb  eepromqsj.o [1]
+eeprom_read             0x0000e931    0x5e  Code  Gb  eepromqsj.o [1]
 eeprom_readdate         0x20007b50    0x14  Data  Gb  eepromqsj.o [1]
-eeprom_write            0x0000e93f    0x70  Code  Gb  eepromqsj.o [1]
-exit                    0x0000fd7d     0x4  Code  Gb  exit.o [3]
+eeprom_write            0x0000e98f    0x70  Code  Gb  eepromqsj.o [1]
+exit                    0x0000fdcd     0x4  Code  Gb  exit.o [3]
 expf                    0x00001741    0x3c  Code  Gb  exp32.o [4]
 expo3                   0x000017f5    0x46  Code  Gb  misc_math.o [1]
-fix_cotrol              0x0000d809   0x1fa  Code  Gb  Pic_hold.o [1]
+fix_cotrol              0x0000d859   0x1fa  Code  Gb  Pic_hold.o [1]
 flag_nrf                0x20007d98     0x2  Data  Lc  data_transfer.o [1]
 flightStatus            0x20007c68     0x4  Data  Gb  data_common.o [1]
-flight_init_task        0x0000f13d    0x40  Code  Lc  TM4C.o [1]
-flight_routine_task     0x0000ebe7   0x1a2  Code  Gb  flight_routine.o [1]
+flight_init_task        0x0000f18d    0x40  Code  Lc  TM4C.o [1]
+flight_routine_task     0x0000ec37   0x1a2  Code  Gb  flight_routine.o [1]
 fmodf                   0x00002009          Code  Gb  fmodf.o [4]
 frexpf                  0x00002a85          Code  Gb  frexpf.o [4]
 g_pfnRAMVectors         0x20000400   0x26c  Data  Lc  interrupt.o [1]
-g_pui32EnRegs           0x00010094    0x14  Data  Lc  interrupt.o [1]
-g_pui32GPIOBaseAddrs    0x0000fb70    0x78  Data  Lc  gpio.o [1]
-g_pui32Priority         0x0000feac    0x20  Data  Lc  interrupt.o [1]
-g_pui32Regs             0x0000fad4    0x9c  Data  Lc  interrupt.o [1]
-g_pui32Xtals            0x0000fbe8    0x6c  Data  Lc  sysctl.o [1]
+g_pui32EnRegs           0x000100e4    0x14  Data  Lc  interrupt.o [1]
+g_pui32GPIOBaseAddrs    0x0000fbc0    0x78  Data  Lc  gpio.o [1]
+g_pui32Priority         0x0000fefc    0x20  Data  Lc  interrupt.o [1]
+g_pui32Regs             0x0000fb24    0x9c  Data  Lc  interrupt.o [1]
+g_pui32Xtals            0x0000fc38    0x6c  Data  Lc  sysctl.o [1]
 getattdata              0x00008601    0xec  Code  Gb  sensorfetch.o [1]
 goto_count              0x20007d8e     0x2  Data  Gb  core_autopilot.o [1]
 gyro_alpha              0x20007d70     0x4  Data  Lc  stabilization_B.o [1]
@@ -1585,12 +1585,12 @@ gyro_temp_bias          0x20007bc8     0xc  Data  Lc  attitudesolving_B.o [1]
 gyrosBias               0x20007bd4     0xc  Data  Gb  data_common.o [1]
 gyrosData               0x20007b74    0x10  Data  Gb  data_common.o [1]
 high                    0x20007dc6     0x1  Data  Lc  relay_tuning.o [1]
-hold                    0x0000ee79   0x114  Code  Gb  hold.o [1]
+hold                    0x0000eec9   0x114  Code  Gb  hold.o [1]
 horizonRateFraction     0x20007d78     0x4  Data  Lc  stabilization_B.o [1]
 key_flag                0x20007d9c     0x2  Data  Lc  flight_routine.o [1]
 ks103_delta_distance    0x20007c78     0x4  Data  Gb  KS103.o [1]
 ks103_distance          0x20007c70     0x4  Data  Gb  KS103.o [1]
-ks103_handler           0x0000e5d1    0x60  Code  Gb  KS103.o [1]
+ks103_handler           0x0000e621    0x60  Code  Gb  KS103.o [1]
 ks103_last_distance     0x20007c74     0x4  Data  Gb  KS103.o [1]
 land_flag               0x20007dbb     0x1  Data  Gb  core_autopilot.o [1]
 lastHighTime            0x20007d50     0x4  Data  Gb  relay_tuning.o [1]
@@ -1601,18 +1601,18 @@ lasts                   0x20007c6c     0x4  Data  Lc  hold.o [1]
 ldexp                   0x0000a5a9          Code  Gb  ldexp.o [4]
 ldexpf                  0x000029c1          Code  Gb  ldexpf.o [4]
 ldexpl                  0x0000a5a9          Code  Gb  ldexp.o [4]
-led_init                0x0000f6ed    0x38  Code  Gb  YRK_LED.o [1]
+led_init                0x0000f73d    0x38  Code  Gb  YRK_LED.o [1]
 lowThrottleZeroIntegral
                         0x20007dcb     0x1  Data  Lc  stabilization_B.o [1]
-main                    0x0000f06d    0x5a  Code  Gb  TM4C.o [1]
+main                    0x0000f0bd    0x5a  Code  Gb  TM4C.o [1]
 max_axis_lock           0x20007dc8     0x1  Data  Lc  stabilization_B.o [1]
 max_axislock_rate       0x20007dc9     0x1  Data  Lc  stabilization_B.o [1]
 memchr                  0x0000a22d          Code  Gb  memchr.o [5]
-mixing                  0x0000ef8d    0xd8  Code  Gb  mixer.o [1]
+mixing                  0x0000efdd    0xd8  Code  Gb  mixer.o [1]
 motorSettings           0x20007a80    0x20  Data  Gb  param_common.o [1]
-motor_reset             0x0000df8d    0x7c  Code  Gb  motor_control.o [1]
-motorcontrol_init       0x0000dd6d   0x12e  Code  Gb  motor_control.o [1]
-motorspeed_set          0x0000de9b    0xf2  Code  Gb  motor_control.o [1]
+motor_reset             0x0000dfdd    0x7c  Code  Gb  motor_control.o [1]
+motorcontrol_init       0x0000ddbd   0x12e  Code  Gb  motor_control.o [1]
+motorspeed_set          0x0000deeb    0xf2  Code  Gb  motor_control.o [1]
 mpu6050_I2C_RecvACK     0x00008abd    0x46  Code  Gb  YRK_MPU6050_SOFT.o [1]
 mpu6050_I2C_RecvByte    0x00008b43    0x60  Code  Gb  YRK_MPU6050_SOFT.o [1]
 mpu6050_I2C_SendACK     0x00008a8f    0x2e  Code  Gb  YRK_MPU6050_SOFT.o [1]
@@ -1626,29 +1626,29 @@ mpu6050_soft_init       0x00008c3d    0x7a  Code  Gb  YRK_MPU6050_SOFT.o [1]
 mpu6050_soft_read_reg   0x00008be3    0x36  Code  Gb  YRK_MPU6050_SOFT.o [1]
 mpu6050_soft_write_reg  0x00008bbd    0x26  Code  Gb  YRK_MPU6050_SOFT.o [1]
 nrf_flag                0x20007d94     0x2  Data  Gb  data_transfer.o [1]
-nrf_getcmd              0x0000e7fd    0x48  Code  Gb  data_transfer.o [1]
-nrf_handler             0x0000d3b7   0x12a  Code  Gb  YRK_NRF24L0.o [1]
-nrf_init                0x0000cf13    0xc0  Code  Gb  YRK_NRF24L0.o [1]
+nrf_getcmd              0x0000e84d    0x48  Code  Gb  data_transfer.o [1]
+nrf_handler             0x0000d407   0x12a  Code  Gb  YRK_NRF24L0.o [1]
+nrf_init                0x0000cf63    0xc0  Code  Gb  YRK_NRF24L0.o [1]
 nrf_irq_flag            0x20007d96     0x2  Data  Gb  data_transfer.o [1]
 nrf_irq_tx_addr         0x20007d7c     0x4  Data  Gb  YRK_NRF24L0.o [1]
 nrf_irq_tx_flag         0x20007dd1     0x1  Data  Gb  YRK_NRF24L0.o [1]
 nrf_irq_tx_pnum         0x20007d80     0x4  Data  Gb  YRK_NRF24L0.o [1]
-nrf_link_check          0x0000d11f    0x52  Code  Gb  YRK_NRF24L0.o [1]
+nrf_link_check          0x0000d16f    0x52  Code  Gb  YRK_NRF24L0.o [1]
 nrf_mode                0x20007dcd     0x1  Data  Gb  YRK_NRF24L0.o [1]
-nrf_readbuf             0x0000d0db    0x44  Code  Lc  YRK_NRF24L0.o [1]
-nrf_readreg             0x0000d07d    0x24  Code  Lc  YRK_NRF24L0.o [1]
-nrf_rx                  0x0000d235   0x11c  Code  Gb  YRK_NRF24L0.o [1]
+nrf_readbuf             0x0000d12b    0x44  Code  Lc  YRK_NRF24L0.o [1]
+nrf_readreg             0x0000d0cd    0x24  Code  Lc  YRK_NRF24L0.o [1]
+nrf_rx                  0x0000d285   0x11c  Code  Gb  YRK_NRF24L0.o [1]
 nrf_rx_flag             0x20007dd0     0x1  Data  Gb  YRK_NRF24L0.o [1]
 nrf_rx_front            0x20007dce     0x1  Data  Gb  YRK_NRF24L0.o [1]
-nrf_rx_mode             0x0000d171    0x64  Code  Lc  YRK_NRF24L0.o [1]
+nrf_rx_mode             0x0000d1c1    0x64  Code  Lc  YRK_NRF24L0.o [1]
 nrf_rx_rear             0x20007dcf     0x1  Data  Gb  YRK_NRF24L0.o [1]
-nrf_sendstate           0x0000e845    0x68  Code  Gb  data_transfer.o [1]
-nrf_tx                  0x0000d351    0x66  Code  Gb  YRK_NRF24L0.o [1]
-nrf_tx_mode             0x0000d1d5    0x60  Code  Lc  YRK_NRF24L0.o [1]
-nrf_writebuf            0x0000d0a1    0x3a  Code  Lc  YRK_NRF24L0.o [1]
-nrf_writereg            0x0000d05b    0x22  Code  Lc  YRK_NRF24L0.o [1]
-nrfspiinit              0x0000cf03    0x10  Code  Gb  YRK_NRF24L0.o [1]
-param_common_init       0x0000da71   0x2fc  Code  Gb  param_common.o [1]
+nrf_sendstate           0x0000e895    0x68  Code  Gb  data_transfer.o [1]
+nrf_tx                  0x0000d3a1    0x66  Code  Gb  YRK_NRF24L0.o [1]
+nrf_tx_mode             0x0000d225    0x60  Code  Lc  YRK_NRF24L0.o [1]
+nrf_writebuf            0x0000d0f1    0x3a  Code  Lc  YRK_NRF24L0.o [1]
+nrf_writereg            0x0000d0ab    0x22  Code  Lc  YRK_NRF24L0.o [1]
+nrfspiinit              0x0000cf53    0x10  Code  Gb  YRK_NRF24L0.o [1]
+param_common_init       0x0000dac1   0x2fc  Code  Gb  param_common.o [1]
 pic_x_cm                0x20007d1c     0x4  Data  Gb  Pic_hold.o [1]
 pic_x_i                 0x20007d2c     0x4  Data  Gb  Pic_hold.o [1]
 pic_y_cm                0x20007d20     0x4  Data  Gb  Pic_hold.o [1]
@@ -1669,7 +1669,7 @@ quat_copy               0x00008441    0x12  Code  Gb  coordinate_conversions.o [
 rateDesired             0x20007be0     0xc  Data  Gb  data_common.o [1]
 rateDesiredAxis         0x2000006c     0x4  Data  Lc  stabilization_B.o [1]
 rateRelayRunning        0x20007d68     0x4  Data  Lc  relay_tuning.o [1]
-receive_date_check      0x0000e695   0x168  Code  Gb  data_transfer.o [1]
+receive_date_check      0x0000e6e5   0x168  Code  Gb  data_transfer.o [1]
 relay                   0x20007ad8    0x18  Data  Gb  data_common.o [1]
 relaySettings           0x20007b94    0x10  Data  Gb  param_common.o [1]
 rot_mult                0x00008453    0xfa  Code  Gb  coordinate_conversions.o [1]
@@ -1686,11 +1686,11 @@ sensorData              0x200079ec    0x28  Data  Gb  data_common.o [1]
 sensorSettings          0x200078e0    0x70  Data  Gb  param_common.o [1]
 sin_lookup_deg          0x000014d9    0x44  Code  Gb  sin_lookup.o [1]
 sin_lookup_initialize   0x000014d5     0x4  Code  Gb  sin_lookup.o [1]
-sin_table               0x0000e108   0x2d0  Data  Gb  sin_lookup.o [1]
+sin_table               0x0000e158   0x2d0  Data  Gb  sin_lookup.o [1]
 sinf                    0x0000267d     0x4  Code  Gb  cos_sin32.o [4]
 sprintf                 0x0000bb29    0x40  Code  Gb  sprintf.o [3]
 sqrtf                   0x000029a1          Code  Gb  sqrtf.o [4]
-ssi_cmd                 0x0000cfd3    0x78  Code  Gb  YRK_NRF24L0.o [1]
+ssi_cmd                 0x0000d023    0x78  Code  Gb  YRK_NRF24L0.o [1]
 stabDesired             0x20007b08    0x18  Data  Gb  data_common.o [1]
 stabDesiredAxis         0x20000064     0x4  Data  Lc  stabilization_B.o [1]
 stabilizationSettings   0x20006814    0xdc  Data  Gb  param_common.o [1]
@@ -1702,16 +1702,16 @@ stabilization_virtual_flybar_pirocomp
                         0x0000194d    0x6e  Code  Gb  virtualflybar.o [1]
 stabilize               0x00000481   0xfbe  Code  Gb  stabilization_B.o [1]
 stablization_mode       0x20007dbc     0x1  Data  Gb  core_autopilot.o [1]
-start_task              0x0000f0c9    0x74  Code  Lc  TM4C.o [1]
+start_task              0x0000f119    0x74  Code  Lc  TM4C.o [1]
 strchr                  0x0000a199          Code  Gb  strchr.o [5]
 strcspn                 0x0000bb9b    0x22  Code  Gb  strcspn.o [3]
 strlen                  0x0000a1f5          Code  Gb  strlen.o [5]
 strspn                  0x0000bb79    0x22  Code  Gb  strspn.o [3]
 strtok                  0x0000bad1    0x48  Code  Gb  strtok.o [3]
 t_tim0_cnt              0x20007c60     0x4  Data  Gb  core_t_timer.o [1]
-testpurpose_tim0_init   0x0000fa21    0x32  Code  Gb  core_t_timer.o [1]
+testpurpose_tim0_init   0x0000fa71    0x32  Code  Gb  core_t_timer.o [1]
 thisTime                0x20007d58     0x4  Data  Gb  relay_tuning.o [1]
-tim1_init               0x0000f8f5    0x5c  Code  Gb  YRK_init.o [1]
+tim1_init               0x0000f945    0x5c  Code  Gb  YRK_init.o [1]
 timer                   0x20007abc    0x1c  Data  Gb  data_common.o [1]
 trimAngles              0x20007c1c     0x8  Data  Gb  data_common.o [1]
 trim_accels             0x20007bbc     0xc  Data  Lc  attitudesolving_B.o [1]
@@ -1733,14 +1733,14 @@ yawBiasRate             0x20007c40     0x4  Data  Lc  attitudesolving_B.o [1]
 zero_during_arming      0x20007db7     0x1  Data  Lc  attitudesolving_B.o [1]
 
 
-[1] = C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C\Project_Files\Debug\Obj
+[1] = C:\Users\victo\Documents\GitHub\SHU_FlightControl_TM4C_rev1.0.4\SHU_FlightControl_TM4C\Project_Files\Debug\Obj
 [2] = command line
 [3] = dl7M_tln.a
 [4] = m7M_tls.a
 [5] = rt7M_tl.a
 [6] = shb_l.a
 
-  63 126 bytes of readonly  code memory
+  63 206 bytes of readonly  code memory
    3 191 bytes of readonly  data memory
   31 320 bytes of readwrite data memory
 
