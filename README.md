@@ -9,17 +9,11 @@ Flight control firmware development based on TI TM4C MCU
 rev1.0.4 2017/8/13:
 NUEDC final version
 warning: this version code has problem of starting rotor which require further revision
-
 1.add key detect to enable flight mode change
-
 2.rewrite auto control code
-
 3.add pic hold to hold drone horizontally when no optical flow sensor is applicable
-
 4.split "flight init task" to 4 differrent functions to persue improved expensibility
-
 5.add "one-key startup" in "flight routine task"
-
 6.several trivial adjustment to meet the need of the competition
 
 
