@@ -36,20 +36,25 @@ static float SumY=0;
 float SumX_amend=0;
 float SumY_amend=0;
 
+float flow_distance=0, flow_delta_distance=0, flow_last_distance=0;
 /* test              */
 float Xmm_Send=0;
 float Ymm_Send=0;
 static float last_roll=0;
 static float last_pitch=0;
 //const float radians_to_pixels_x = 10.9, radians_to_pixels_y = 10.9;
-const float radians_to_pixels_x = 6.95, radians_to_pixels_y = 6.95;
+
+/* stable para: 6.95 6.95              */
+
+static const float radians_to_pixels_x = 6.95*1.2, radians_to_pixels_y = 6.95*1.2;
+//static const float radians_to_pixels_x = 4.63*0.75, radians_to_pixels_y = 4.63*0.75;
 /* test              */
 
 //static const float conv_factor =  0.0010f;
 //static const float conv_factor =  0.00085f;
 //static const float conv_factor =  0.00085f;
 //static const float conv_factor =  0.001275f;
-static const float conv_factor =  0.00153;
+static const float conv_factor =  0.00153*0.85;
 
 
 static float ByteToFloat(char *byteArry)
@@ -63,30 +68,17 @@ void PX4Flow_uart_init(uint32 band,void (*pfnHandler)(void))
   SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
   SysCtlPeripheralEnable(SYSCTL_PERIPH_UART6);
   
-  GPIOPinConfigure(GPIO_PD4_U6RX);                    //配置输出引脚    PB1=usb1Rx
+  GPIOPinConfigure(GPIO_PD4_U6RX);                   
   GPIOPinTypeUART(GPIO_PORTD_BASE, GPIO_PIN_4);
   
-  GPIOPinConfigure(GPIO_PD5_U6TX);                     //配置输出引脚    PB1=usb1Rx ,PB2=usb1TX
+  GPIOPinConfigure(GPIO_PD5_U6TX);                     
   GPIOPinTypeUART(GPIO_PORTD_BASE, GPIO_PIN_5);
   
   IntRegister(INT_UART6,pfnHandler);  
-  IntEnable(INT_UART6); //enable the UART interrupt
-  UARTIntEnable(UART6_BASE, UART_INT_RX); //only enable RX and TX interrupts
+  IntEnable(INT_UART6); 
+  UARTIntEnable(UART6_BASE, UART_INT_RX);
   UARTClockSourceSet(UART6_BASE, UART_CLOCK_SYSTEM);
   UARTStdioConfig(6, band, ROM_SysCtlClockGet());
-
-//  UARTConfigSetExpClk(UART6_BASE,
-//                      SysCtlClockGet(),
-//                      band,
-//                      (UART_CONFIG_PAR_NONE | UART_CONFIG_STOP_ONE |
-//                       UART_CONFIG_WLEN_8));
-//
-//  IntRegister(INT_UART6,pfnHandler);
-//  
-//  UARTFIFODisable(UART6_BASE);  
-//  
-//  IntEnable(INT_UART6);                                                       //enable the UART interrupt
-//  UARTIntEnable(UART6_BASE, UART_INT_RX);  
 }
 
 void FLOW_MAVLINK(unsigned char data)
@@ -187,10 +179,11 @@ void FLOW_MAVLINK(unsigned char data)
                                               |((uint64_t)flow_buf_rad[2]<<16)
                                                 |((uint64_t)flow_buf_rad[1]<<8)
                                                   |((uint64_t)flow_buf_rad[0]));
-      flow_rad.integration_time_us=(uint32_t)((flow_buf_rad[11]<<24)
-                                              |(flow_buf_rad[10]<<16)
-                                                |(flow_buf_rad[9]<<8)
-                                                  |(flow_buf_rad[8]));
+      
+      flow_rad.integration_time_us = (uint32_t)((flow_buf_rad[11]<<24)
+                                                |(flow_buf_rad[10]<<16)
+                                                  |(flow_buf_rad[9]<<8)
+                                                    |(flow_buf_rad[8]));
       floattobyte[0]=flow_buf_rad[12];
       floattobyte[1]=flow_buf_rad[13];
       floattobyte[2]=flow_buf_rad[14];
@@ -216,6 +209,7 @@ void FLOW_MAVLINK(unsigned char data)
       floattobyte[2]=flow_buf_rad[30];
       floattobyte[3]=flow_buf_rad[31];
       flow_rad.integrated_zgyro=ByteToFloat(floattobyte);
+      
       flow_rad.time_delta_distance_us=(uint32_t)((flow_buf_rad[35]<<24)
                                                  |(flow_buf_rad[34]<<16)
                                                    |(flow_buf_rad[33]<<8)
@@ -230,7 +224,12 @@ void FLOW_MAVLINK(unsigned char data)
       flow_rad.quality=(flow_buf_rad[43]);
       
       px4_sumx+=flow_rad.integrated_x*1000;
-      px4_sumy+=flow_rad.integrated_y*1000; 
+      px4_sumy+=flow_rad.integrated_y*1000;
+      
+      flow_distance = flow_rad.distance * 1000;
+      flow_delta_distance = flow_distance - flow_last_distance;
+      flow_last_distance = flow_distance;
+
 //      px4_sumx += (flow_rad.integrated_x - flow_rad.integrated_xgyro) * 1000;
 //      px4_sumy += (flow_rad.integrated_y - flow_rad.integrated_ygyro) * 1000; 
     }
@@ -249,9 +248,7 @@ void px4_data_fix(void)
   static float High_Now_before=0;
   
   //float sum_x,sum_y;
-  float High_Now;
-  //unsigned char move=0;
-  //move=ADNS3080_Data_Buffer[0];
+  float High_Now;;
   
   y_mm =(float)px4_sumy - (diff_roll * radians_to_pixels_y);
   x_mm =(float)px4_sumx - (diff_pitch * radians_to_pixels_x);
@@ -262,7 +259,7 @@ void px4_data_fix(void)
 //  y_mm =(float)px4_sumy;
 //  x_mm =(float)px4_sumx;
   
-  High_Now = ks103_distance;   //单位是毫米
+  High_Now = ks103_distance;
   if(High_Now-High_Now_before>1000 || High_Now_before-High_Now<-1000)
   {
     High_Now=High_Now_before;
@@ -292,7 +289,7 @@ void px4_data_fix(void)
   SumX_amend=SumX/10;
   SumY_amend=SumY/10;
   
-  px4_sumx=0;                                                                   //::note::usage of px4_sumx/y, and why clear here?   
+  px4_sumx=0;  
   px4_sumy=0;
   High_Now_before=High_Now;
   

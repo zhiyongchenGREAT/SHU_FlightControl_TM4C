@@ -1,13 +1,20 @@
 #include "mixer.h"
 
-extern float cos_lookup_deg(float angle);
+
 void mixing(_Bool armed)
 {
   float m1=0,m2=0,m3=0,m4=0;
   float t,r,p,y;
-  t=actuatorDesired.Throttle/(100.0*0.9);//*cos_lookup_deg(fabs(attitudeActual.Pitch))*cos_lookup_deg(fabs(attitudeActual.Roll))  );
+
+/*  testing              */
+  
+//  actuatorDesired.Roll = bound_sym(actuatorDesired.Roll,0.02f);
+//  actuatorDesired.Pitch = bound_sym(actuatorDesired.Pitch,0.02f);
+//  actuatorDesired.Yaw = bound_sym(actuatorDesired.Yaw,0.1f);
+  
+  t=actuatorDesired.Throttle/(100.0*0.9);
   r=actuatorDesired.Roll;
-  p=actuatorDesired.Pitch;                                                      //::Note:: NO data transfered to p & y?
+  p=actuatorDesired.Pitch;                                                      
   y=actuatorDesired.Yaw;
   m1=t+r-p+y;
   m2=t-r-p-y;

@@ -60,7 +60,6 @@ void getattdata()
  */
 int8 senfetch(float *prelim_accels, float *prelim_gyros, GlobalAttitudeVariables *glblAtt, GyrosBiasData *gyrosBias, SensorSettingsData *inertialSensorSettings)
 {
-  //getattdata();
 	//Rotated data from internal gryoscope sensor frame into board sensor frame
 	prelim_gyros[0] = sensorData.G_X * inertialSensorSettings->GyroScale[SENSORSETTINGS_GYROSCALE_X];//!!@@
 	prelim_gyros[1] = sensorData.G_Y * inertialSensorSettings->GyroScale[SENSORSETTINGS_GYROSCALE_Y];

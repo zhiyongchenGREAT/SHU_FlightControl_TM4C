@@ -30,6 +30,13 @@
 #include "eepromqsj.h"
 #include "flight_routine.h"
 #include "core_uartstdio.h"
+#include "core_ppm.h"
+#include "renesas_interface.h"
+#include "Pic_hold.h"
+#include "CORE_TASK.h"
+#include "CORE_TASK1.h"
+#include "CORE_TASK2.h"
+#include "CORE_TASK3.h"
 
 
 #endif //__BASICFLIGHT_INCLUDES_H__

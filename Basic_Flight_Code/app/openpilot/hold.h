@@ -7,9 +7,6 @@
 #include <basicflight_includes.h>
 #include <app_includes.h>
 #include <OS_includes.h>
-//void AttitudeInitialize();
 
-extern bool lowthrottle;
-
-void hold();
+extern void hold();
 #endif // HOLD_H

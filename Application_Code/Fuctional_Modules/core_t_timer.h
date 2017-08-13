@@ -30,7 +30,8 @@
 #include <app_includes.h>
 #include <OS_includes.h>
 
-void testpurpose_tim0_init(void);
+extern void testpurpose_tim0_init(void);
+extern void tim3_init(void (*pfnHandler)(void));
 
 extern volatile CPU_INT32U t_tim0_cnt;
 

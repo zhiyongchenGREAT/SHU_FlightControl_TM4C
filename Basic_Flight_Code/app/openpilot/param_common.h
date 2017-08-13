@@ -30,6 +30,7 @@
 #include "stabilizationsettings.h"
 
 #define CTL_RATE 2500
+//#define CTL_RATE_STABILIZATION 50000
 
 extern struct SensorSettingsData sensorSettings;
 extern struct AttitudeSettingsData attitudeSettings;
@@ -38,7 +39,6 @@ extern struct RelayTuningSettingsData relaySettings;
 extern struct ActuatorSettingsData actuatorSettings;
 extern struct MixerSettingsData mixerSettings;
 extern struct MotorSettingsData motorSettings;
-//extern struct ManualControlSettingsData manualControlSettings;
 
 void param_common_init();
 

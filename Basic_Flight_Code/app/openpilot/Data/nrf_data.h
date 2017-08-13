@@ -1,12 +1,10 @@
-
 #ifndef NRF_DATA_H
-
 #define NRF_DATA_H
-
 
 #define NRF_DATA_PACKET_INT 12
 #define NRF_DATA_PACKET_CHAR NRF_DATA_PACKET_INT*2
 #define NRF_DATA_PACKET NRF_DATA_PACKET_CHAR
+
 union NrfBuff
 {
   uint8  Data_char[NRF_DATA_PACKET_CHAR];                                       //Data_char[24]
@@ -14,6 +12,4 @@ union NrfBuff
 };
 typedef union NrfBuff NrfBuff;
 
-
-
-#endif  //NRFDATA_H
+#endif  //NRF_DATA_H

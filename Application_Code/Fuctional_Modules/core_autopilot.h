@@ -10,5 +10,11 @@
 #include <OS_includes.h>
 
 extern float auto_throttle, error_throttle;
+extern float control_y_out, control_x_out;
 
-#endif
+extern int16 goto_count;
+extern uint8 stablization_mode;
+extern uint8 land_flag;
+extern uint16 bias_time_count;
+
+#endif //__CORE_AUTOPILOT_H__

@@ -1,50 +1,37 @@
 #include "control_command.h"
 
-uint16 arming=0;
-float Yaw_con_before=0;
-float Yaw_fixed=0;
-bool fly=false;
-bool exfly=false;
-bool sweep_mode=false;
+static uint16 arming=0;
+static float Yaw_con_before=0;
+static float Yaw_fixed=0;
 
 void command_handler()                                                          
 {
   
-  stabDesired.Mode=(Nrf_in_switch[4]/30.0);                                     //stabDesired is a StabilizationDesiredData struct
+  stabDesired.Mode=(Nrf_in_switch[4]/30.0);
+  
   if(IMU_ext_flag==1)
     stabDesired.Mode=0;
-  if(stabDesired.Mode<50&&stabDesired.Mode>25)   //怀疑这个是一个悬停模式
-  {
-    stabDesired.Throttle=35;          
-    stabDesired.Pitch=UART_Buff_In.Data_int[0]/1000.0+Nrf_Buf_In.Data_int[0]/30.0;
-    stabDesired.Roll=UART_Buff_In.Data_int[1]/1000.0+Nrf_Buf_In.Data_int[1]/30.0;
-    stabDesired.Yaw=UART_Buff_In.Data_int[3]/300.0+Nrf_Buf_In.Data_int[3]/30.0;
-  }
-  else                                          //定高模式
-  {
-    stabDesired.Throttle=(Nrf_in_switch[2])/30.0 + auto_throttle;                               //approximately 2~105; seems these value are all mannually bound within 0~100
-    //#define HANG_FLIGHT_MODE
-#ifdef HANG_FLIGHT_MODE	      
-    stabDesired.Pitch=Nrf_in_switch[0]/30.0;// + angle_x_out;
-    stabDesired.Roll=Nrf_in_switch[1]/30.0;//+ angle_y_out;
-#else
-    stabDesired.Pitch=Nrf_in_switch[0]/30.0 + angle_x_out;
-    stabDesired.Roll=Nrf_in_switch[1]/30.0 + angle_y_out;
-#endif
-    if(fabs(Nrf_in_switch[3]/30.0)>5)
-      stabDesired.Yaw=Nrf_in_switch[3]/30.0;
-    else
-      stabDesired.Yaw=Yaw_fixed;//attitudeActual.Yaw;
-  }
   
+/* approximately 2~105; seems these value are all mannually bound within 0~100                */
+
+  stabDesired.Throttle=(Nrf_in_switch[2])/30.0 + auto_throttle;
+  stabDesired.Pitch=Nrf_in_switch[0]/30.0 + angle_x_out;
+  stabDesired.Roll=Nrf_in_switch[1]/30.0 + angle_y_out;
+  if(fabs(Nrf_in_switch[3]/30.0)>5)
+    stabDesired.Yaw=Nrf_in_switch[3]/30.0;
+  else
+    stabDesired.Yaw=Yaw_fixed;
+
   if(fabs(Nrf_in_switch[3]/30.0)<=5 && fabs(Yaw_con_before)>5)
     Yaw_fixed=attitudeActual.Yaw;
   
   Yaw_con_before=Nrf_in_switch[3]/30.0;
+
+/* DS1 indicate whether the flight lock has been presented: ON unlock OFF lock              */
   
   if(stabDesired.Mode>25)
   {
-    LED1_ON();                                                                  //DS1 indicate whether the flight lock has been presented: ON unlock OFF lock
+    LED1_ON();                                                                  
     switch(flightStatus.Armed)
     {
     case FLIGHTSTATUS_ARMED_DISARMED:
@@ -53,7 +40,8 @@ void command_handler()
       break;
     case FLIGHTSTATUS_ARMED_ARMING:
       arming++;
-      if(arming>50)
+//      if(arming>50)
+    if(arming>5)
         flightStatus.Armed=FLIGHTSTATUS_ARMED_ARMED; 
       break;
     case FLIGHTSTATUS_ARMED_ARMED:
@@ -64,14 +52,17 @@ void command_handler()
         stabDesired.StabilizationMode[2]=STABILIZATIONDESIRED_STABILIZATIONMODE_RATE;
         stabDesired.StabilizationMode[3]=STABILIZATIONDESIRED_STABILIZATIONMODE_ATTITUDEHOLD;
       }
-      else if(stabDesired.Mode<125)                                                                //这是我们要用的模式 //We only have .Mode==15 or .Mode==100
+
+/* The mode we use, we have .Mode==15 or .Mode==100              */
+      
+      else if(stabDesired.Mode<125)                                                                
       {
         stabDesired.StabilizationMode[0]=STABILIZATIONDESIRED_STABILIZATIONMODE_ATTITUDE;
         stabDesired.StabilizationMode[1]=STABILIZATIONDESIRED_STABILIZATIONMODE_ATTITUDE;
         if(fabs(Nrf_in_switch[3]/30.0)>5)
-          stabDesired.StabilizationMode[2]=STABILIZATIONDESIRED_STABILIZATIONMODE_RATE;            //学长为RATE      //ATTITUDE
+          stabDesired.StabilizationMode[2]=STABILIZATIONDESIRED_STABILIZATIONMODE_RATE;
         else
-          stabDesired.StabilizationMode[2]=STABILIZATIONDESIRED_STABILIZATIONMODE_ATTITUDE;        //::note::What are these data structure for?!
+          stabDesired.StabilizationMode[2]=STABILIZATIONDESIRED_STABILIZATIONMODE_ATTITUDE;
         stabDesired.StabilizationMode[3]=STABILIZATIONDESIRED_STABILIZATIONMODE_ATTITUDEHOLD;
       }
       else
@@ -81,7 +72,8 @@ void command_handler()
         stabDesired.StabilizationMode[2]=STABILIZATIONDESIRED_STABILIZATIONMODE_RATE;
         stabDesired.StabilizationMode[3]=STABILIZATIONDESIRED_STABILIZATIONMODE_RATE;
       }
-      arming=51;
+//      arming=51;
+      arming=6;
       break;
     }
     
@@ -100,7 +92,8 @@ void command_handler()
       break;
     case FLIGHTSTATUS_ARMED_ARMED:
       arming--;
-      if(arming<10)
+//      if(arming<10)
+      if(arming<2)   
         flightStatus.Armed=FLIGHTSTATUS_ARMED_DISARMED;
       break;
     }

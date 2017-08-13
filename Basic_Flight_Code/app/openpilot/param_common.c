@@ -48,6 +48,8 @@ void param_common_init()
   attitudeSettings.FilterChoice=ATTITUDESETTINGS_FILTERCHOICE_CCC;
   attitudeSettings.TrimFlight=ATTITUDESETTINGS_TRIMFLIGHT_NORMAL;
   
+/* inner loop pid              */
+
   stabilizationSettings.RollRatePID[0]=0.0017;
   stabilizationSettings.RollRatePID[1]=0.0;
   stabilizationSettings.RollRatePID[2]=0.000072;
@@ -60,6 +62,8 @@ void param_common_init()
   stabilizationSettings.YawRatePID[1]=0.0035;
   stabilizationSettings.YawRatePID[2]=0;
   stabilizationSettings.YawRatePID[3]=0.3;
+
+/* outer loop pid              */
   
   stabilizationSettings.RollPI[0]=2.8;
   stabilizationSettings.RollPI[1]=0;
