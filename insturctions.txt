@@ -1,0 +1,45 @@
+自动起飞：
+
+@+0~63 
+
+e.g. @40
+
+自动降落：
+
+##
+
+向左:
+
+!L
+
+右：
+
+!R
+
+前
+
+!F
+
+后
+
+!B
+
+上
+
+!U
+
+下
+
+!D
+
+注意：使用数传控制，在TASK0任务创建中创建autopilot_test autotakeoff autolanding三个任务才可以使用，遥控器必须解锁才可发送以上指令，否则上天，成功发送回传"ok！"
+
+Telemetry PID adjust instructions:
+
+"~0.045|0.0035|37.6|0.045|0.0035|37.6|0.0017|0.0|0.000072|0.0017|0.0|0.000072|0.0035|0.0035|0.0|20|0|90\r\n"
+	FLOWX		FLOWY		INNER_PITCH		INNER_ROLL	INNER_YAW	HEIGHT
+  P      I      D    P     I      D     P     I    D        P     I    D        P       I    D  P  I  D
+
+Renesas instructions：
+0x55 0xaa 0x00 0x00 '|' 0x00 0x00 '|' 0x00 0x0d 0x0a
+ HEAD        X              Y          SIG    END
