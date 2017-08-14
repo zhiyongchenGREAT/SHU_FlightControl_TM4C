@@ -4,7 +4,7 @@ Flight control firmware development based on TI TM4C MCU
 
 !!!Important note:
 
-1. The flight mode should be set to "00" to enable manual control, "01"-"03" is prohibited to use in normal case & need to be rewrote when performing spcific use. Be very carful since mode "01"-"03" may contain automatic flight task.
+1. The flight mode should be set to "00" to enable manual control, "01"-"03" is prohibited to use in normal case & need to be rewritten when performing spcific use. Be very carful since mode "01"-"03" may contain automatic flight task.
 
 2. The parameters in control_command.c & FLOW_B.c must be reconfig costomizedly when performing on different drone.
 
