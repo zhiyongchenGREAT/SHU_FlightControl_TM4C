@@ -11,13 +11,21 @@ Flight control firmware development based on TI TM4C MCU
 3. Telemetry(UART1) instructions is contained in "Instrucions.txt".
 
 4. PORT definition:
+
 UART1 > Telemetry
+
 UART2 > Renesas interface(Specific use in NUEDC)
+
 UART6 > Optical flow sensor
+
 IIC3 > Sonar sensor
+
 NRF_PORT > NRF
+
 SSI2 > 3 channal additional PWM OUT(used as gimbal control) & Telemetry mode control
+
 ROTOR_PORT > 4 channal main PWM OUT
+
 UART7_PORT > PPM Capture(Optional Remote controller interface, cannot be used temporarily because of crash with main flight task, which need further research)
 
 
